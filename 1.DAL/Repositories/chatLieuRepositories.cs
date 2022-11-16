@@ -17,7 +17,17 @@ namespace _1.DAL.Repositories
         }
         public bool addchatLieu(chatLieu ChatLieu)
         {
-            throw new NotImplementedException();
+            try
+            {
+                Guid chatLieuId = Guid.NewGuid();
+                DbContext.Add(ChatLieu);
+                DbContext.SaveChanges();
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
         public IEnumerable<chatLieu> GetAll()
         {
