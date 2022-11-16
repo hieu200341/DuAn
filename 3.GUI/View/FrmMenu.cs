@@ -20,9 +20,9 @@ namespace _3.GUI.View
         {
             InitializeComponent();
             random = new Random();
-            //btnCloseChildForm.Visible = false;
+            btn_closechildform.Visible = false;
             this.Text = string.Empty;
-            this.ControlBox = false;
+            //this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
@@ -53,7 +53,7 @@ namespace _3.GUI.View
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     ThemeColor.PrimaryColor = color;
                     ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-                    //btnCloseChildForm.Visible = true;
+                    btn_closechildform.Visible = true;
                 }
             }
         }
@@ -89,27 +89,27 @@ namespace _3.GUI.View
 
         private void btn_buy_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new View.FrmMuaHang(), sender);
         }
 
         private void btn_hoadon_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new View.FrmHoaDon(), sender);
         }
 
         private void btn_khachhang_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new View.FrmKH(), sender);
         }
 
         private void btn_nhanvien_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new View.FrmNV(), sender);
         }
 
         private void btn_sanpham_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenChildForm(new View.FrmSanPham(), sender);
         }
 
         private void btn_lienhe_Click(object sender, EventArgs e)
@@ -120,6 +120,22 @@ namespace _3.GUI.View
         private void FrmMenu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_closechildform_Click(object sender, EventArgs e)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            Reset();
+        }
+        private void Reset()
+        {
+            DisableButton();
+            lb_home.Text = "HOME";
+            panelHome.BackColor = Color.FromArgb(0, 0, 192);
+            panelLogo.BackColor = Color.FromArgb(39, 39, 58);
+            currentButton = null;
+            btn_closechildform.Visible = false;
         }
     }
 }

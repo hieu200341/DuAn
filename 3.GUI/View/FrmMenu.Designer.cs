@@ -41,6 +41,7 @@
             this.panelHome = new System.Windows.Forms.Panel();
             this.lb_home = new System.Windows.Forms.Label();
             this.panelmanchinh = new System.Windows.Forms.Panel();
+            this.btn_closechildform = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHome.SuspendLayout();
@@ -59,7 +60,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 594);
+            this.panelMenu.Size = new System.Drawing.Size(220, 638);
             this.panelMenu.TabIndex = 0;
             // 
             // btn_lienhe
@@ -194,12 +195,13 @@
             // 
             // panelHome
             // 
-            this.panelHome.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panelHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panelHome.Controls.Add(this.btn_closechildform);
             this.panelHome.Controls.Add(this.lb_home);
             this.panelHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHome.Location = new System.Drawing.Point(220, 0);
             this.panelHome.Name = "panelHome";
-            this.panelHome.Size = new System.Drawing.Size(1273, 80);
+            this.panelHome.Size = new System.Drawing.Size(1310, 80);
             this.panelHome.TabIndex = 0;
             // 
             // lb_home
@@ -208,7 +210,7 @@
             this.lb_home.AutoSize = true;
             this.lb_home.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lb_home.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_home.Location = new System.Drawing.Point(592, 21);
+            this.lb_home.Location = new System.Drawing.Point(611, 21);
             this.lb_home.Name = "lb_home";
             this.lb_home.Size = new System.Drawing.Size(106, 37);
             this.lb_home.TabIndex = 0;
@@ -219,14 +221,27 @@
             this.panelmanchinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelmanchinh.Location = new System.Drawing.Point(220, 80);
             this.panelmanchinh.Name = "panelmanchinh";
-            this.panelmanchinh.Size = new System.Drawing.Size(1273, 514);
+            this.panelmanchinh.Size = new System.Drawing.Size(1310, 558);
             this.panelmanchinh.TabIndex = 1;
+            // 
+            // btn_closechildform
+            // 
+            this.btn_closechildform.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_closechildform.FlatAppearance.BorderSize = 0;
+            this.btn_closechildform.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_closechildform.Image = global::_3.GUI.Properties.Resources.icons8_multiply_64;
+            this.btn_closechildform.Location = new System.Drawing.Point(0, 0);
+            this.btn_closechildform.Name = "btn_closechildform";
+            this.btn_closechildform.Size = new System.Drawing.Size(94, 80);
+            this.btn_closechildform.TabIndex = 0;
+            this.btn_closechildform.UseVisualStyleBackColor = true;
+            this.btn_closechildform.Click += new System.EventHandler(this.btn_closechildform_Click);
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1493, 594);
+            this.ClientSize = new System.Drawing.Size(1530, 638);
             this.Controls.Add(this.panelmanchinh);
             this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelMenu);
@@ -256,5 +271,6 @@
         private Label lb_home;
         private Label label2;
         private Panel panelmanchinh;
+        private Button btn_closechildform;
     }
 }
