@@ -39,9 +39,10 @@
             this.panelLogo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelHome = new System.Windows.Forms.Panel();
+            this.btn_closechildform = new System.Windows.Forms.Button();
             this.lb_home = new System.Windows.Forms.Label();
             this.panelmanchinh = new System.Windows.Forms.Panel();
-            this.btn_closechildform = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHome.SuspendLayout();
@@ -50,6 +51,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.btn_lienhe);
             this.panelMenu.Controls.Add(this.btn_sanpham);
             this.panelMenu.Controls.Add(this.btn_nhanvien);
@@ -94,7 +96,7 @@
             this.btn_sanpham.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.btn_sanpham.Size = new System.Drawing.Size(220, 60);
             this.btn_sanpham.TabIndex = 4;
-            this.btn_sanpham.Text = "  Sản Phẩm";
+            this.btn_sanpham.Text = "  Thống kê";
             this.btn_sanpham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_sanpham.UseVisualStyleBackColor = true;
             this.btn_sanpham.Click += new System.EventHandler(this.btn_sanpham_Click);
@@ -204,6 +206,19 @@
             this.panelHome.Size = new System.Drawing.Size(1310, 80);
             this.panelHome.TabIndex = 0;
             // 
+            // btn_closechildform
+            // 
+            this.btn_closechildform.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btn_closechildform.FlatAppearance.BorderSize = 0;
+            this.btn_closechildform.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_closechildform.Image = global::_3.GUI.Properties.Resources.icons8_multiply_64;
+            this.btn_closechildform.Location = new System.Drawing.Point(0, 0);
+            this.btn_closechildform.Name = "btn_closechildform";
+            this.btn_closechildform.Size = new System.Drawing.Size(94, 80);
+            this.btn_closechildform.TabIndex = 0;
+            this.btn_closechildform.UseVisualStyleBackColor = true;
+            this.btn_closechildform.Click += new System.EventHandler(this.btn_closechildform_Click);
+            // 
             // lb_home
             // 
             this.lb_home.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -224,18 +239,22 @@
             this.panelmanchinh.Size = new System.Drawing.Size(1310, 558);
             this.panelmanchinh.TabIndex = 1;
             // 
-            // btn_closechildform
+            // button1
             // 
-            this.btn_closechildform.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btn_closechildform.FlatAppearance.BorderSize = 0;
-            this.btn_closechildform.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_closechildform.Image = global::_3.GUI.Properties.Resources.icons8_multiply_64;
-            this.btn_closechildform.Location = new System.Drawing.Point(0, 0);
-            this.btn_closechildform.Name = "btn_closechildform";
-            this.btn_closechildform.Size = new System.Drawing.Size(94, 80);
-            this.btn_closechildform.TabIndex = 0;
-            this.btn_closechildform.UseVisualStyleBackColor = true;
-            this.btn_closechildform.Click += new System.EventHandler(this.btn_closechildform_Click);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 578);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(220, 60);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Đăng xuất";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmMenu
             // 
@@ -272,5 +291,6 @@
         private Label label2;
         private Panel panelmanchinh;
         private Button btn_closechildform;
+        private Button button1;
     }
 }

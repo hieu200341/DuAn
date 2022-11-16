@@ -36,14 +36,14 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -109,24 +109,6 @@
             this.label4.TabIndex = 17;
             this.label4.Text = "Trạng thái";
             // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(956, 486);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 63);
-            this.button4.TabIndex = 26;
-            this.button4.Text = "Sửa nhân viên";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(564, 486);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 63);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Thêm nhân viên";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -183,20 +165,46 @@
             // 
             // button5
             // 
+            this.button5.Image = global::_3.GUI.Properties.Resources.icons8_trash_32;
             this.button5.Location = new System.Drawing.Point(774, 486);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(122, 63);
-            this.button5.TabIndex = 27;
-            this.button5.Text = "Xóa nhân viên";
+            this.button5.Size = new System.Drawing.Size(137, 63);
+            this.button5.TabIndex = 32;
+            this.button5.Text = "Xóa hóa đơn";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
+            this.button4.Location = new System.Drawing.Point(956, 486);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(139, 63);
+            this.button4.TabIndex = 31;
+            this.button4.Text = "Sửa hóa đơn";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::_3.GUI.Properties.Resources.icons8_add_new_32;
+            this.button1.Location = new System.Drawing.Point(564, 486);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(156, 63);
+            this.button1.TabIndex = 30;
+            this.button1.Text = "Thêm hóa đơn";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
+            this.button2.Image = global::_3.GUI.Properties.Resources.icons8_search_32;
             this.button2.Location = new System.Drawing.Point(1119, 486);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 63);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Tìm nhân viên";
+            this.button2.TabIndex = 33;
+            this.button2.Text = "Tìm hóa đơn";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmNV
@@ -204,13 +212,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1319, 579);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button2);
             this.Name = "FrmNV";
             this.Text = "FrmNV";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -231,14 +239,14 @@
         private TextBox textBox2;
         private TextBox textBox1;
         private Label label4;
-        private Button button4;
-        private Button button1;
         private DataGridView dataGridView1;
         private Label label3;
         private Label label2;
         private Label label1;
         private Panel panel1;
         private Button button5;
+        private Button button4;
+        private Button button1;
         private Button button2;
     }
 }

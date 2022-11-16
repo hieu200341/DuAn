@@ -109,7 +109,7 @@ namespace _3.GUI.View
 
         private void btn_sanpham_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.FrmSanPham(), sender);
+            OpenChildForm(new View.FrmThongKe(), sender);
         }
 
         private void btn_lienhe_Click(object sender, EventArgs e)
@@ -136,6 +136,11 @@ namespace _3.GUI.View
             panelLogo.BackColor = Color.FromArgb(39, 39, 58);
             currentButton = null;
             btn_closechildform.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

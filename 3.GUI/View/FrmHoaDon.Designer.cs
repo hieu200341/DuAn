@@ -148,29 +148,35 @@
             // 
             // button5
             // 
+            this.button5.Image = global::_3.GUI.Properties.Resources.icons8_trash_32;
             this.button5.Location = new System.Drawing.Point(743, 468);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(122, 63);
+            this.button5.Size = new System.Drawing.Size(137, 63);
             this.button5.TabIndex = 20;
             this.button5.Text = "Xóa hóa đơn";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button5.UseVisualStyleBackColor = true;
             // 
             // button4
             // 
+            this.button4.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
             this.button4.Location = new System.Drawing.Point(925, 468);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 63);
+            this.button4.Size = new System.Drawing.Size(139, 63);
             this.button4.TabIndex = 19;
             this.button4.Text = "Sửa hóa đơn";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
+            this.button1.Image = global::_3.GUI.Properties.Resources.icons8_add_new_32;
             this.button1.Location = new System.Drawing.Point(533, 468);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(131, 63);
+            this.button1.Size = new System.Drawing.Size(156, 63);
             this.button1.TabIndex = 18;
             this.button1.Text = "Thêm hóa đơn";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
@@ -185,11 +191,13 @@
             // 
             // button2
             // 
+            this.button2.Image = global::_3.GUI.Properties.Resources.icons8_search_32;
             this.button2.Location = new System.Drawing.Point(1088, 468);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(114, 63);
             this.button2.TabIndex = 23;
             this.button2.Text = "Tìm hóa đơn";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             // 
             // textBox5

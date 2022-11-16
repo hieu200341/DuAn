@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace _3.GUI.View
 {
-    public partial class FrmSanPham : Form
+    public partial class FrmThongKe : Form
     {
-        public FrmSanPham()
+        public FrmThongKe()
         {
             InitializeComponent();
         }
