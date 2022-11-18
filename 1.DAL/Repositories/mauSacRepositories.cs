@@ -58,5 +58,10 @@ namespace _1.DAL.Repositories
                 return false;
             }
         }
+
+        List<mauSac> ImauSacRepositories.GetAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace _1.DAL.IRepositories
 {
     public interface ImauSacRepositories
     {
-        IEnumerable<mauSac> GetAll(); // Lấy tất cả các SP trong DB
+        List<mauSac> GetAll(); // Lấy tất cả các SP trong DB
         mauSac GetById(Guid id); // Lấy sản phẩm theo ID
         bool addMauSac(mauSac MauSac); // Thêm Sản phẩm
         bool RemoveMauSac(mauSac MauSac); // Xóa

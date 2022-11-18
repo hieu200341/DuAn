@@ -51,8 +51,8 @@ namespace _3.GUI.View
                     currentButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                     panelHome.BackColor = color;
                     panelLogo.BackColor = ThemeColor.ChangeColorBrightness(color, -0.3);
-                    ThemeColor.PrimaryColor = color;
-                    ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
+                    //ThemeColor.PrimaryColor = color;
+                    //ThemeColor.SecondaryColor = ThemeColor.ChangeColorBrightness(color, -0.3);
                     btn_closechildform.Visible = true;
                 }
             }
@@ -62,7 +62,7 @@ namespace _3.GUI.View
             if (activeForm != null)
             {
                 activeForm.Close();
-            } 
+            }
             ActivateButton(btnSender);
             activeForm = childForm;
             childForm.TopLevel = false;
@@ -72,7 +72,7 @@ namespace _3.GUI.View
             this.panelmanchinh.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lb_home.Text = childForm.Text;
+            //lb_home.Text = childForm.Text;
         }
         private void DisableButton()
         {
@@ -90,31 +90,37 @@ namespace _3.GUI.View
         private void btn_buy_Click(object sender, EventArgs e)
         {
             OpenChildForm(new View.FrmMuaHang(), sender);
+            lb_home.Text = btn_buy.Text;
         }
 
         private void btn_hoadon_Click(object sender, EventArgs e)
         {
             OpenChildForm(new View.FrmHoaDon(), sender);
+            lb_home.Text = btn_hoadon.Text;
         }
 
         private void btn_khachhang_Click(object sender, EventArgs e)
         {
             OpenChildForm(new View.FrmKH(), sender);
+            lb_home.Text = btn_khachhang.Text;
         }
 
         private void btn_nhanvien_Click(object sender, EventArgs e)
         {
             OpenChildForm(new View.FrmNV(), sender);
+            lb_home.Text = btn_nhanvien.Text;
         }
 
         private void btn_sanpham_Click(object sender, EventArgs e)
         {
             OpenChildForm(new View.FrmThongKe(), sender);
+            lb_home.Text = btn_sanpham.Text;
         }
 
         private void btn_lienhe_Click(object sender, EventArgs e)
         {
             OpenChildForm(new View.FrmLienHe(), sender);
+            lb_home.Text = btn_lienhe.Text;
         }
 
         private void FrmMenu_Load(object sender, EventArgs e)
@@ -140,7 +146,16 @@ namespace _3.GUI.View
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            DialogResult dialogResult = MessageBox.Show("bạn có muốn đăng xuất không?", "Cảnh báo!",MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã hủy đăng xuất");
+            }
+            
         }
     }
 }
