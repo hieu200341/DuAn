@@ -58,5 +58,10 @@ namespace _1.DAL.Repositories
                 return false;
             }
         }
+
+        List<chucVu> IchucVuRepositories.GetAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -6,7 +6,7 @@ namespace _1.DAL.IRepositories
 {
     public interface IhoaDonRepositories
     {
-        IEnumerable<hoaDon> GetAll(); // Lấy tất cả các SP trong DB
+        List<hoaDon> GetAll(); // Lấy tất cả các SP trong DB
         hoaDon GetById(Guid id); // Lấy sản phẩm theo ID
         bool addHoaDon(hoaDon HoaDon); // Thêm Sản phẩm
         bool RemoveHoaDon(hoaDon HoaDon); // Xóa

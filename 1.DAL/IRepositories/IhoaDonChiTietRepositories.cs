@@ -6,7 +6,7 @@ namespace _1.DAL.IRepositories
 {
     public interface IhoaDonChiTietRepositories
     {
-        IEnumerable<hoaDonChiTiet> GetAll(); // Lấy tất cả các SP trong DB
+        List<hoaDonChiTiet> GetAll(); // Lấy tất cả các SP trong DB
         hoaDonChiTiet GetById(Guid id); // Lấy sản phẩm theo ID
         bool addHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet); // Thêm Sản phẩm
         bool RemoveHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet); // Xóa

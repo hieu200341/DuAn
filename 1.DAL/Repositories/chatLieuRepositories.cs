@@ -69,5 +69,10 @@ namespace _1.DAL.Repositories
                 return false;
             }
         }
+
+        List<chatLieu> IchatLieuRepositories.GetAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

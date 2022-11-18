@@ -58,5 +58,10 @@ namespace _1.DAL.Repositories
                 return false;
             }
         }
+
+        List<sanPham> IsanPhamRepositories.GetAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

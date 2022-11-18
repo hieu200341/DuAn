@@ -93,6 +93,16 @@ namespace _3.GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_facebook_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-facebook-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_home_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-home-64", resourceCulture);
@@ -126,6 +136,36 @@ namespace _3.GUI.Properties {
         internal static System.Drawing.Bitmap icons8_trash_32 {
             get {
                 object obj = ResourceManager.GetObject("icons8-trash-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_24 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap z3888192563839_b45c8878ff8d19ff6d0cc247cc492018 {
+            get {
+                object obj = ResourceManager.GetObject("z3888192563839_b45c8878ff8d19ff6d0cc247cc492018", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

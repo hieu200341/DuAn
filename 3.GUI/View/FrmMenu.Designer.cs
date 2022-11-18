@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.btn_lienhe = new System.Windows.Forms.Button();
             this.btn_sanpham = new System.Windows.Forms.Button();
             this.btn_nhanvien = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.btn_closechildform = new System.Windows.Forms.Button();
             this.lb_home = new System.Windows.Forms.Label();
             this.panelmanchinh = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHome.SuspendLayout();
@@ -64,6 +64,23 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 638);
             this.panelMenu.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(0, 578);
+            this.button1.Name = "button1";
+            this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button1.Size = new System.Drawing.Size(220, 60);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Đăng xuất";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_lienhe
             // 
@@ -197,7 +214,7 @@
             // 
             // panelHome
             // 
-            this.panelHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.panelHome.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.panelHome.Controls.Add(this.btn_closechildform);
             this.panelHome.Controls.Add(this.lb_home);
             this.panelHome.Dock = System.Windows.Forms.DockStyle.Top;
@@ -238,23 +255,6 @@
             this.panelmanchinh.Name = "panelmanchinh";
             this.panelmanchinh.Size = new System.Drawing.Size(1310, 558);
             this.panelmanchinh.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 578);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(220, 60);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Đăng xuất";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FrmMenu
             // 

@@ -6,7 +6,7 @@ namespace _1.DAL.IRepositories
 {
     public interface IsizeRepositories
     {
-        IEnumerable<size> GetAll(); 
+        List<size> GetAll(); 
         size GetById(Guid id); 
         bool addsize(size Size); 
         bool RemoveSize(size Size); 

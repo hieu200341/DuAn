@@ -6,7 +6,7 @@ namespace _1.DAL.IRepositories
 {
     public interface InhanVienRepositories
     {
-        IEnumerable<nhanVien> GetAll(); // Lấy tất cả các SP trong DB
+        List<nhanVien> GetAll(); // Lấy tất cả các SP trong DB
         nhanVien GetById(Guid id); // Lấy sản phẩm theo ID
         bool addNhanVien(nhanVien NhanVien); // Thêm Sản phẩm
         bool RemoveNhanVien(nhanVien NhanVien); // Xóa

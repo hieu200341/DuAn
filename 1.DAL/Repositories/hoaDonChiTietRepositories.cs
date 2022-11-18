@@ -58,5 +58,10 @@ namespace _1.DAL.Repositories
                 return false;
             }
         }
+
+        List<hoaDonChiTiet> IhoaDonChiTietRepositories.GetAll()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
