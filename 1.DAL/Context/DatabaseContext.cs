@@ -33,8 +33,9 @@ namespace _1.DAL.Context
         {
             // Thực hiện các ràng buộc kết nối
             base.OnConfiguring(optionsBuilder.
-                UseSqlServer("Data Source=LAPTOP-S17TKNI9\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True"));
+                UseSqlServer("Data Source=DESKTOP-CRIH29T\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True"));
         }
+        
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

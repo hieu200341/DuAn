@@ -11,10 +11,16 @@ namespace _1.DAL.Repositories
     public class chatLieuRepositories: IchatLieuRepositories
     {
         DatabaseContext DbContext;
-        public chatLieuRepositories(DatabaseContext DbContext)
+
+        public chatLieuRepositories()
         {
-            this.DbContext = DbContext;
+            DbContext = new DatabaseContext();
         }
+
+        //public chatLieuRepositories(DatabaseContext DbContext)
+        //{
+        //    this.DbContext = DbContext;
+        //}
         public bool addchatLieu(chatLieu ChatLieu)
         {
             try
@@ -29,7 +35,7 @@ namespace _1.DAL.Repositories
                 return false;
             }
         }
-        public IEnumerable<chatLieu> GetAll()
+        public List<chatLieu> GetAll()
         {
             return DbContext.chatLieus.ToList();
         }
@@ -70,9 +76,9 @@ namespace _1.DAL.Repositories
             }
         }
 
-        List<chatLieu> IchatLieuRepositories.GetAll()
-        {
-            throw new NotImplementedException();
-        }
+        //List<chatLieu> IchatLieuRepositories.GetAll()
+        //{
+        //    return DbContext.chatLieus.ToList();
+        //}
     }
 }
