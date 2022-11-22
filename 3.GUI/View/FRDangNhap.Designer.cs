@@ -30,10 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FRDangNhap));
             this.button1 = new System.Windows.Forms.Button();
-            this.tb_user = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.tb_pass = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -46,6 +43,7 @@
             this.btn_buy = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.tb_user = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,43 +59,16 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // tb_user
+            // tb_pass
             // 
-            this.tb_user.Location = new System.Drawing.Point(187, 142);
-            this.tb_user.Name = "tb_user";
-            this.tb_user.Size = new System.Drawing.Size(251, 27);
-            this.tb_user.TabIndex = 2;
-            this.tb_user.TextChanged += new System.EventHandler(this.tb_user_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(187, 214);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.ShortcutsEnabled = false;
-            this.textBox2.Size = new System.Drawing.Size(251, 27);
-            this.textBox2.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(99, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "UserName";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(99, 221);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 20);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Password";
+            this.tb_pass.Location = new System.Drawing.Point(118, 227);
+            this.tb_pass.Name = "tb_pass";
+            this.tb_pass.ShortcutsEnabled = false;
+            this.tb_pass.Size = new System.Drawing.Size(251, 27);
+            this.tb_pass.TabIndex = 3;
+            this.tb_pass.Text = "Password";
+            this.tb_pass.Enter += new System.EventHandler(this.textBox2_Enter);
+            this.tb_pass.Leave += new System.EventHandler(this.tb_pass_Leave);
             // 
             // linkLabel1
             // 
@@ -109,6 +80,8 @@
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Forgot your password?";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            this.linkLabel1.Click += new System.EventHandler(this.linkLabel1_Click);
             // 
             // checkBox1
             // 
@@ -218,12 +191,24 @@
             this.panel6.Size = new System.Drawing.Size(50, 50);
             this.panel6.TabIndex = 12;
             // 
+            // tb_user
+            // 
+            this.tb_user.Location = new System.Drawing.Point(118, 145);
+            this.tb_user.Name = "tb_user";
+            this.tb_user.ShortcutsEnabled = false;
+            this.tb_user.Size = new System.Drawing.Size(251, 27);
+            this.tb_user.TabIndex = 13;
+            this.tb_user.Text = "Username";
+            this.tb_user.Enter += new System.EventHandler(this.tb_user_Enter_1);
+            this.tb_user.Leave += new System.EventHandler(this.tb_user_Leave_1);
+            // 
             // FRDangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(517, 570);
+            this.Controls.Add(this.tb_user);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.btn_buy);
@@ -235,14 +220,12 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.tb_user);
+            this.Controls.Add(this.tb_pass);
             this.Controls.Add(this.button1);
             this.Name = "FRDangNhap";
-            this.Text = "FRDangNhap";
+            this.Text = "Sign in";
             this.Load += new System.EventHandler(this.FRDangNhap_Load);
+            this.Leave += new System.EventHandler(this.FRDangNhap_Leave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -253,10 +236,7 @@
         #endregion
 
         private Button button1;
-        private TextBox tb_user;
-        private TextBox textBox2;
-        private Label label1;
-        private Label label2;
+        private TextBox tb_pass;
         private LinkLabel linkLabel1;
         private CheckBox checkBox1;
         private Panel panel1;
@@ -269,5 +249,6 @@
         private Button btn_buy;
         private Panel panel5;
         private Panel panel6;
+        private TextBox tb_user;
     }
 }
