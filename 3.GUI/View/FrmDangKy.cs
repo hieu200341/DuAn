@@ -24,8 +24,13 @@ namespace _3.GUI.View
 
         private void btn_buy_Click(object sender, EventArgs e)
         {
-             FRDangNhap fRDangNhap = new FRDangNhap();
-             fRDangNhap.ShowDialog();
+            FRDangNhap fRDangNhap = new FRDangNhap();
+            fRDangNhap.ShowDialog();
+        }
+
+        private void tb_user_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

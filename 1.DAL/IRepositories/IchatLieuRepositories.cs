@@ -6,10 +6,9 @@ namespace _1.DAL.IRepositories
 {
     public interface IchatLieuRepositories
     {
-        List<chatLieu> GetAll(); // Lấy tất cả các SP trong DB
-        chatLieu GetById(Guid id); // Lấy sản phẩm theo ID
-        bool addchatLieu(chatLieu ChatLieu); // Thêm Sản phẩm
-        bool RemoveChatLieu(chatLieu ChatLieu); // Xóa
-        bool UpdateChatLieu(chatLieu ChatLieu); // Sửa 1 sản phẩm
+        List<chatLieu> GetchatLieuFromDB();
+        bool addchatLieu(chatLieu ChatLieu);
+        bool RemoveChatLieu(chatLieu ChatLieu);
+        bool UpdateChatLieu(chatLieu ChatLieu);
     }
 }

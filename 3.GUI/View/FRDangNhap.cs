@@ -48,5 +48,78 @@ namespace _3.GUI.View
             FrmDangKy frmDangKy = new FrmDangKy();  
             frmDangKy.ShowDialog();
         }
+        private void tb_user_Enter(object sender, EventArgs e)
+        {
+            if (tb_user.Text == "UserName")
+            {
+                tb_user.Text = "";
+
+            }
+        }
+        private void tb_user_Leave(object sender, EventArgs e)
+        {
+            if (tb_user.Text == "")
+            {
+                tb_user.Text = "UserName";
+               
+            }
+        }
+
+       
+
+        private void textBox2_Enter(object sender, EventArgs e)
+        {
+            if(tb_pass.Text == "Password")
+            {
+                tb_pass.Text = "";
+               
+                tb_pass.UseSystemPasswordChar = true;
+            }
+        }
+
+        private void FRDangNhap_Leave(object sender, EventArgs e)
+        {
+            if (tb_pass.Text == "")
+            {
+                tb_pass.Text = "Password";
+                
+                tb_pass.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void tb_user_Enter_1(object sender, EventArgs e)
+        {
+            if(tb_user.Text== "Username")
+            {
+                tb_user.Text = "";
+            }
+        }
+
+        private void tb_user_Leave_1(object sender, EventArgs e)
+        {
+            if(tb_user.Text == "")
+            {
+                tb_user.Text = "Username";
+            }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_Click(object sender, EventArgs e)
+        {
+            FrmQuenMk frmQuenMk = new FrmQuenMk();
+            frmQuenMk.ShowDialog();
+        }
+
+        private void tb_pass_Leave(object sender, EventArgs e)
+        {
+            if(tb_pass.Text == "")
+            {
+                tb_pass.Text="Password";
+            }
+        }
     }
 }

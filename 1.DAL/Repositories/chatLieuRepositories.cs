@@ -5,80 +5,43 @@ using System.Linq;
 using _1.DAL.Context;
 using _1.DAL.IRepositories;
 using _1.DAL.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace _1.DAL.Repositories
 {
-    public class chatLieuRepositories: IchatLieuRepositories
+    public class chatLieuRepositories : IchatLieuRepositories
     {
-        DatabaseContext DbContext;
-
+        private List<chatLieu> _lstChatLieu;
+        private DatabaseContext _context;
         public chatLieuRepositories()
         {
-            DbContext = new DatabaseContext();
+            _lstChatLieu = new List<chatLieu>();
+            _context = new DatabaseContext();
         }
-
-        //public chatLieuRepositories(DatabaseContext DbContext)
-        //{
-        //    this.DbContext = DbContext;
-        //}
         public bool addchatLieu(chatLieu ChatLieu)
         {
-            try
-            {
-                Guid chatLieuId = Guid.NewGuid();
-                DbContext.Add(ChatLieu);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-        public List<chatLieu> GetAll()
-        {
-            return DbContext.chatLieus.ToList();
-        }
-        public chatLieu GetById(Guid id)
-        {
-            var chatlieu = DbContext.chatLieus.Find(id);
-            // Find(param) chỉ dùng với id của sản phẩm
-            var chatLieu2 = DbContext.chatLieus.
-                FirstOrDefault(p => p.IdChatLieu == id);
-            return chatLieu2; // sanpham2
-
+            _context.Add(ChatLieu);
+            _context.SaveChanges();
+            return true;
         }
         public bool RemoveChatLieu(chatLieu ChatLieu) // Xóa sản phẩm
         {
-            try
-            {
-                DbContext.chatLieus.Remove(ChatLieu);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            _context.Remove(ChatLieu);
+            _context.SaveChanges();
+            return true;
 
         }
         public bool UpdateChatLieu(chatLieu ChatLieu)
         {
-            try
-            {
-                DbContext.chatLieus.Update(ChatLieu);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            _context.Update(ChatLieu);
+            _context.SaveChanges();
+            return true;
         }
 
-        //List<chatLieu> IchatLieuRepositories.GetAll()
-        //{
-        //    return DbContext.chatLieus.ToList();
-        //}
+        public List<chatLieu> GetchatLieuFromDB()
+        {
+            _lstChatLieu = _context.chatLieus.ToList();
+            return _lstChatLieu;
+        }
     }
 }

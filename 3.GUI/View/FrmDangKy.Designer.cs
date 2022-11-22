@@ -28,57 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tb_user = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_buy = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tb_pass2 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.tb_emailorphone = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label2
+            // tb_user
             // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(69, 226);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 20);
-            this.label2.TabIndex = 19;
-            this.label2.Text = "Phone or Email";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(69, 147);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 20);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Useure Name";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(206, 219);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.ShortcutsEnabled = false;
-            this.textBox2.Size = new System.Drawing.Size(251, 27);
-            this.textBox2.TabIndex = 17;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(206, 147);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 27);
-            this.textBox1.TabIndex = 14;
+            this.tb_user.Location = new System.Drawing.Point(206, 147);
+            this.tb_user.Name = "tb_user";
+            this.tb_user.PlaceholderText = "Username";
+            this.tb_user.Size = new System.Drawing.Size(251, 27);
+            this.tb_user.TabIndex = 14;
+            this.tb_user.TextChanged += new System.EventHandler(this.tb_user_TextChanged);
             // 
             // button1
             // 
@@ -114,42 +87,15 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Already have a account";
             // 
-            // label6
+            // tb_pass2
             // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(69, 293);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 20);
-            this.label6.TabIndex = 28;
-            this.label6.Text = "Password";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(69, 365);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(127, 20);
-            this.label7.TabIndex = 27;
-            this.label7.Text = "Confirm Password";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(206, 358);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.PasswordChar = '*';
-            this.textBox3.ShortcutsEnabled = false;
-            this.textBox3.Size = new System.Drawing.Size(251, 27);
-            this.textBox3.TabIndex = 26;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(206, 286);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(251, 27);
-            this.textBox4.TabIndex = 25;
+            this.tb_pass2.Location = new System.Drawing.Point(206, 358);
+            this.tb_pass2.Name = "tb_pass2";
+            this.tb_pass2.PasswordChar = '*';
+            this.tb_pass2.PlaceholderText = "Confirm Password";
+            this.tb_pass2.ShortcutsEnabled = false;
+            this.tb_pass2.Size = new System.Drawing.Size(251, 27);
+            this.tb_pass2.TabIndex = 26;
             // 
             // panel1
             // 
@@ -172,25 +118,74 @@
             this.label3.Text = "Create Account";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(206, 289);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
+            this.textBox2.PlaceholderText = "Password";
+            this.textBox2.Size = new System.Drawing.Size(253, 27);
+            this.textBox2.TabIndex = 30;
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::_3.GUI.Properties.Resources.icons8_lock_50;
+            this.panel2.Location = new System.Drawing.Point(122, 266);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(50, 50);
+            this.panel2.TabIndex = 31;
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::_3.GUI.Properties.Resources.icons8_mail_50;
+            this.panel3.Location = new System.Drawing.Point(122, 206);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(50, 50);
+            this.panel3.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BackgroundImage = global::_3.GUI.Properties.Resources.icons8_user_501;
+            this.panel4.Location = new System.Drawing.Point(122, 134);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(50, 50);
+            this.panel4.TabIndex = 0;
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = global::_3.GUI.Properties.Resources.icons8_lock_50;
+            this.panel5.Location = new System.Drawing.Point(122, 335);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(50, 50);
+            this.panel5.TabIndex = 32;
+            // 
+            // tb_emailorphone
+            // 
+            this.tb_emailorphone.Location = new System.Drawing.Point(206, 219);
+            this.tb_emailorphone.Name = "tb_emailorphone";
+            this.tb_emailorphone.PlaceholderText = "Email or Phone";
+            this.tb_emailorphone.Size = new System.Drawing.Size(251, 27);
+            this.tb_emailorphone.TabIndex = 0;
+            // 
             // FrmDangKy
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 627);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.tb_emailorphone);
+            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.tb_pass2);
+            this.Controls.Add(this.tb_user);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_buy);
             this.Controls.Add(this.label5);
             this.Name = "FrmDangKy";
-            this.Text = "FrmDangKy";
+            this.Text = "SignUp";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -199,18 +194,18 @@
         }
 
         #endregion
-        private Label label2;
-        private Label label1;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox tb_user;
         private Button button1;
         private Button btn_buy;
         private Label label5;
-        private Label label6;
-        private Label label7;
-        private TextBox textBox3;
-        private TextBox textBox4;
+        private TextBox tb_pass2;
         private Panel panel1;
         private Label label3;
+        private TextBox textBox2;
+        private Panel panel2;
+        private Panel panel3;
+        private Panel panel4;
+        private Panel panel5;
+        private TextBox tb_emailorphone;
     }
 }

@@ -7,61 +7,39 @@ using System.Linq;
 
 namespace _1.DAL.Repositories
 {
-    public class mauSacRepositories: ImauSacRepositories
+    public class mauSacRepositories : ImauSacRepositories
     {
-        DatabaseContext DbContext;
-        public mauSacRepositories(DatabaseContext DbContext)
+        private List<mauSac> _lstMauSac;
+        private DatabaseContext _context;
+        public mauSacRepositories()
         {
-            this.DbContext = DbContext;
+            _lstMauSac = new List<mauSac>();
+            _context = new DatabaseContext();
         }
         public bool addMauSac(mauSac MauSac)
         {
-            throw new NotImplementedException();
+            _context.Add(MauSac);
+            _context.SaveChanges();
+            return true;
         }
-        public IEnumerable<mauSac> GetAll()
-        {
-            return DbContext.mauSacs.ToList();
-        }
-        public mauSac GetById(Guid id)
-        {
-            var MauSac = DbContext.mauSacs.Find(id);
-            // Find(param) chỉ dùng với id của sản phẩm
-            var mauSac2 = DbContext.mauSacs.
-                FirstOrDefault(p => p.IdMauSac == id);
-            return mauSac2; // sanpham2
 
-        }
-        public bool RemoveMauSac(mauSac MauSac) // Xóa sản phẩm
+        public bool RemoveMauSac(mauSac MauSac)
         {
-            try
-            {
-                DbContext.mauSacs.Remove(MauSac);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
+            _context.Remove(MauSac);
+            _context.SaveChanges();
+            return true;
         }
         public bool UpdateMauSac(mauSac MauSac)
         {
-            try
-            {
-                DbContext.mauSacs.Update(MauSac);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            _context.Update(MauSac);
+            _context.SaveChanges();
+            return true;
         }
 
-        List<mauSac> ImauSacRepositories.GetAll()
+        public List<mauSac> GetMauSacFromDB()
         {
-            throw new NotImplementedException();
+            _lstMauSac = _context.mauSacs.ToList();
+            return _lstMauSac;
         }
     }
 }

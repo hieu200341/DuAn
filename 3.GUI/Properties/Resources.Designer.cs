@@ -113,6 +113,26 @@ namespace _3.GUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_lock_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-lock-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_mail_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-mail-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_multiply_64 {
             get {
                 object obj = ResourceManager.GetObject("icons8-multiply-64", resourceCulture);
@@ -156,6 +176,16 @@ namespace _3.GUI.Properties {
         internal static System.Drawing.Bitmap icons8_user_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_user_501 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-user-501", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

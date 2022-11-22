@@ -16,7 +16,7 @@ namespace _1.DAL.Configurations
             // Đặt tên bảng
             builder.ToTable("hoaDonChiTiet");
             // Set khóa chính
-            builder.HasKey(x => new { x.IdHD, x.IdPhamChiTiet });
+            builder.HasKey(x => new { x.maHoaDon, x.maSanPhamChiTiet });
             // Set các ràng buộc cho thuộc tính
             builder.Property(x => x.Soluong).HasColumnName("Soluong")
                 .IsRequired().HasColumnType("int");
@@ -25,9 +25,9 @@ namespace _1.DAL.Configurations
             builder.Property(x => x.Trangthai).HasColumnName("trangThai")
                 .IsRequired().HasColumnType("bit");
             builder.HasOne(x => x.sanPhamChiTiet)
-                .WithMany(x => x.hoaDonChiTiet).HasForeignKey(x => x.IdPhamChiTiet);
+                .WithMany(x => x.hoaDonChiTiet).HasForeignKey(x => x.maSanPhamChiTiet);
             builder.HasOne(x => x.hoaDon)
-                .WithMany(x => x.HoaDonChiTiets).HasForeignKey(x => x.IdHD);
+                .WithMany(x => x.HoaDonChiTiets).HasForeignKey(x => x.maHoaDon);
         }
     }
 }

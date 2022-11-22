@@ -9,59 +9,37 @@ namespace _1.DAL.Repositories
 {
     public class sizeRepositories : IsizeRepositories
     {
-        DatabaseContext DbContext;
-        public sizeRepositories(DatabaseContext DbContext)
+        private List<size> _lstSize;
+        private DatabaseContext _context;
+        public sizeRepositories()
         {
-            this.DbContext = DbContext;
+            _lstSize = new List<size>();
+            _context = new DatabaseContext();
         }
         public bool addsize(size Size)
         {
-            throw new NotImplementedException();
+            _context.Add(Size);
+            _context.SaveChanges();
+            return true;
         }
-        public IEnumerable<size> GetAll()
-        {
-            return DbContext.Sizes.ToList();
-        }
-        public size GetById(Guid id)
-        {
-            var Size = DbContext.Sizes.Find(id);
-            // Find(param) chỉ dùng với id của sản phẩm
-            var Size1 = DbContext.Sizes.
-                FirstOrDefault(p => p.IdSize == id);
-            return Size; // sanpham2
 
-        }
-        public bool RemoveSize(size Size) // Xóa sản phẩm
+        public bool RemoveSize(size Size)
         {
-            try
-            {
-                DbContext.Sizes.Remove(Size);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
+            _context.Remove(Size);
+            _context.SaveChanges();
+            return true;
         }
         public bool UpdateSize(size Size)
         {
-            try
-            {
-                DbContext.Sizes.Update(Size);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            _context.Update(Size);
+            _context.SaveChanges();
+            return true;
         }
 
-        List<size> IsizeRepositories.GetAll()
+        public List<size> GetSizeFromDB()
         {
-            throw new NotImplementedException();
+            _lstSize = _context.Sizes.ToList();
+            return _lstSize;
         }
     }
 }

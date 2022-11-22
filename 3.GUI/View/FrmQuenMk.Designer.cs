@@ -33,6 +33,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,17 +86,28 @@
             this.button1.Text = "Send";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(182, 223);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(256, 24);
+            this.checkBox1.TabIndex = 34;
+            this.checkBox1.Text = "Bạn có phải là người máy không ?";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // FrmQuenMk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(594, 541);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmQuenMk";
-            this.Text = "FrmQuenMk";
+            this.Text = "Forgot";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -110,5 +122,6 @@
         private Label label7;
         private TextBox textBox3;
         private Button button1;
+        private CheckBox checkBox1;
     }
 }

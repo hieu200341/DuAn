@@ -7,61 +7,40 @@ using System.Linq;
 
 namespace _1.DAL.Repositories
 {
-    public class khachHangRepositories: IkhachHangRepositories
+    public class khachHangRepositories : IkhachHangRepositories
     {
-        DatabaseContext DbContext;
-        public khachHangRepositories(DatabaseContext DbContext)
+        private List<khachHang> _lstkhachHang;
+        private DatabaseContext _context;
+        public khachHangRepositories()
         {
-            this.DbContext = DbContext;
+            _lstkhachHang = new List<khachHang>();
+            _context = new DatabaseContext();
+            GetkhachHangFromDB();
         }
         public bool addkhachHang(khachHang KhachHang)
         {
-            throw new NotImplementedException();
+            _context.Add(KhachHang);
+            _context.SaveChanges();
+            return true;
         }
-        public IEnumerable<khachHang> GetAll()
-        {
-            return DbContext.khachHangs.ToList();
-        }
-        public khachHang GetById(Guid id)
-        {
-            var khachHang = DbContext.khachHangs.Find(id);
-            // Find(param) chỉ dùng với id của sản phẩm
-            var khachHang2 = DbContext.khachHangs.
-                FirstOrDefault(p => p.IdKhachHang == id);
-            return khachHang2; // sanpham2
 
-        }
-        public bool RemoveKhachHang(khachHang KhachHang) // Xóa sản phẩm
+        public bool RemoveKhachHang(khachHang KhachHang)
         {
-            try
-            {
-                DbContext.khachHangs.Remove(KhachHang);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
+            _context.Remove(KhachHang);
+            _context.SaveChanges();
+            return true;
         }
         public bool UpdateKhachHang(khachHang KhachHang)
         {
-            try
-            {
-                DbContext.khachHangs.Update(KhachHang);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            _context.Update(KhachHang);
+            _context.SaveChanges();
+            return true;
         }
 
-        List<khachHang> IkhachHangRepositories.GetAll()
+        public List<khachHang> GetkhachHangFromDB()
         {
-            throw new NotImplementedException();
+            _lstkhachHang = _context.khachHangs.ToList();
+            return _lstkhachHang;
         }
     }
 }

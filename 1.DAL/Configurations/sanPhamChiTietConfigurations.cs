@@ -14,7 +14,8 @@ namespace _1.DAL.Configurations
         public void Configure(EntityTypeBuilder<sanPhamChiTiet> builder)
         {
             builder.ToTable("sanPhamChiTiet");
-            builder.HasKey(c => c.IdPhamChiTiet);
+            builder.Property(x => x.IdSanPhamChiTiet).IsRequired();
+            builder.HasKey(c => c.maSanPhamChiTiet);
             builder.Property(c => c.Gianhap).HasColumnType("int").
                 IsRequired();
             builder.Property(c => c.Giaban).HasColumnType("int").
@@ -24,15 +25,15 @@ namespace _1.DAL.Configurations
             builder.Property(c => c.Trangthai).HasColumnType("bit").
                 IsRequired();
             builder.HasOne(x => x.sanPham)
-            .WithMany(g => g.sanPhamChiTiets).HasForeignKey(p => p.IdSP);
+            .WithMany(g => g.sanPhamChiTiets).HasForeignKey(p => p.maSanPham);
             builder.HasOne(x => x.size)
-           .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.IdSize);
+           .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maSize);
             builder.HasOne(x => x.mauSac)
-           .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.IdMauSac);
+           .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maMauSac);
             builder.HasOne(x => x.chatLieu)
-          .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.IdChatLieu);
+          .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maChatLieu);
             builder.HasOne(x => x.hangSX)
-          .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.IdHangSX);
+          .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maHangSX);
         }
     }
 }
