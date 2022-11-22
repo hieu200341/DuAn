@@ -15,8 +15,9 @@ namespace _1.DAL.Configurations
         {
             // Đặt tên bảng
             builder.ToTable("chucVu");
+            builder.Property(x => x.IDchucVu).IsRequired();
             // Set khóa chính
-            builder.HasKey(x => x.IDchucVu);
+            builder.HasKey(x => x.maChucVu);
             // Set các ràng buộc cho thuộc tính
             builder.Property(x => x.tenCV).HasColumnName("tenCV")
                 .IsRequired().HasColumnType("nvarchar(100)");

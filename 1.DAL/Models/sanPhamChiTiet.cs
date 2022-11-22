@@ -8,12 +8,13 @@ namespace _1.DAL.Models
 {
     public class sanPhamChiTiet
     {
-        public Guid IdPhamChiTiet { get; set; }
-        public Guid IdSP { get; set; }
-        public Guid IdMauSac { get; set; }
-        public Guid IdChatLieu { get; set; }
-        public Guid IdSize { get; set; }
-        public Guid IdHangSX { get; set; }
+        public Guid IdSanPhamChiTiet { get; set; }
+        public string maSanPhamChiTiet { get; set; }
+        public string maSanPham { get; set; }
+        public string maMauSac { get; set; }
+        public string maChatLieu { get; set; }
+        public string maSize { get; set; }
+        public string maHangSX { get; set; }
         public double Gianhap { get; set; }
         public double Giaban { get; set; }
         public int Soluong { get; set; }

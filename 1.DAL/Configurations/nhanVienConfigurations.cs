@@ -15,8 +15,9 @@ namespace _1.DAL.Configurations
         {
             // Đặt tên bảng
             builder.ToTable("nhanVien");
+            builder.Property(x => x.IdNV).IsRequired();
             // Set khóa chính
-            builder.HasKey(x => x.IdNV);
+            builder.HasKey(x => x.maNhanVien);
             // Set các ràng buộc cho thuộc tính
             builder.Property(x => x.TenNV).HasColumnName("TenNV")
                 .IsRequired().HasColumnType("nvarchar(100)");
@@ -29,7 +30,7 @@ namespace _1.DAL.Configurations
             builder.Property(x => x.tinhTrang).HasColumnName("tinhTrang")
                 .IsRequired().HasColumnType("bit");
             builder.HasOne(x => x.chucVu)
-          .WithMany(g => g.NhanViens).HasForeignKey(p => p.IDchucVu);
+          .WithMany(g => g.NhanViens).HasForeignKey(p => p.maChucVu);
         }
     }
 }

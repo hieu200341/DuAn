@@ -6,10 +6,9 @@ namespace _1.DAL.IRepositories
 {
     public interface IhoaDonChiTietRepositories
     {
-        List<hoaDonChiTiet> GetAll(); // Lấy tất cả các SP trong DB
-        hoaDonChiTiet GetById(Guid id); // Lấy sản phẩm theo ID
-        bool addHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet); // Thêm Sản phẩm
-        bool RemoveHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet); // Xóa
-        bool UpdateHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet); // Sửa 1 sản phẩm
+        List<hoaDonChiTiet> GetHoaDonChiTietFromDB();
+        bool addHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet);
+        bool RemoveHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet);
+        bool UpdateHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet);
     }
 }

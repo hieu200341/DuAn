@@ -7,61 +7,39 @@ using System.Linq;
 
 namespace _1.DAL.Repositories
 {
-    public class hoaDonRepositories: IhoaDonRepositories
+    public class hoaDonRepositories : IhoaDonRepositories
     {
-        DatabaseContext DbContext;
-        public hoaDonRepositories(DatabaseContext DbContext)
+        private List<hoaDon> _lsthoaDon;
+        private DatabaseContext _context;
+        public hoaDonRepositories()
         {
-            this.DbContext = DbContext;
+            _lsthoaDon = new List<hoaDon>();
+            _context = new DatabaseContext();
         }
         public bool addHoaDon(hoaDon HoaDon)
         {
-            throw new NotImplementedException();
+            _context.Add(HoaDon);
+            _context.SaveChanges();
+            return true;
         }
-        public IEnumerable<hoaDon> GetAll()
-        {
-            return DbContext.hoaDons.ToList();
-        }
-        public hoaDon GetById(Guid id)
-        {
-            var hoadon = DbContext.hoaDons.Find(id);
-            // Find(param) chỉ dùng với id của sản phẩm
-            var hoaDon2 = DbContext.hoaDons.
-                FirstOrDefault(p => p.IdHD == id);
-            return hoaDon2; // sanpham2
 
-        }
-        public bool RemoveHoaDon(hoaDon HoaDon) // Xóa sản phẩm
+        public bool RemoveHoaDon(hoaDon HoaDon)
         {
-            try
-            {
-                DbContext.hoaDons.Remove(HoaDon);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
+            _context.Remove(HoaDon);
+            _context.SaveChanges();
+            return true;
         }
         public bool UpdateHoaDon(hoaDon HoaDon)
         {
-            try
-            {
-                DbContext.hoaDons.Update(HoaDon);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            _context.Update(HoaDon);
+            _context.SaveChanges();
+            return true;
         }
 
-        List<hoaDon> IhoaDonRepositories.GetAll()
+        public List<hoaDon> GetHoaDonFromDB()
         {
-            throw new NotImplementedException();
+            _lsthoaDon = _context.hoaDons.ToList();
+            return _lsthoaDon;
         }
     }
 }

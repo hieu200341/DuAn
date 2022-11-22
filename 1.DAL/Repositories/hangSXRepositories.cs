@@ -7,61 +7,39 @@ using _1.DAL.Models;
 
 namespace _1.DAL.Repositories
 {
-    public class hangSXRepositories: IhangSXRepositories
+    public class hangSXRepositories : IhangSXRepositories
     {
-        DatabaseContext DbContext;
-        public hangSXRepositories(DatabaseContext DbContext)
+        private List<hangSX> _lsthangSX;
+        private DatabaseContext _context;
+        public hangSXRepositories()
         {
-            this.DbContext = DbContext;
+            _lsthangSX = new List<hangSX>();
+            _context = new DatabaseContext();
         }
         public bool addHangSX(hangSX HangSX)
         {
-            throw new NotImplementedException();
+            _context.Add(HangSX);
+            _context.SaveChanges();
+            return true;
         }
-        public IEnumerable<hangSX> GetAll()
-        {
-            return DbContext.hangSXes.ToList();
-        }
-        public hangSX GetById(Guid id)
-        {
-            var hangsx = DbContext.hangSXes.Find(id);
-            // Find(param) chỉ dùng với id của sản phẩm
-            var hangSX2 = DbContext.hangSXes.
-                FirstOrDefault(p => p.IdHangSX == id);
-            return hangSX2; // sanpham2
 
-        }
-        public bool RemoveHangSX(hangSX HangSX) // Xóa sản phẩm
+        public bool RemoveHangSX(hangSX HangSX)
         {
-            try
-            {
-                DbContext.hangSXes.Remove(HangSX);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
+            _context.Remove(HangSX);
+            _context.SaveChanges();
+            return true;
         }
         public bool UpdateHangSX(hangSX HangSX)
         {
-            try
-            {
-                DbContext.hangSXes.Update(HangSX);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            _context.Update(HangSX);
+            _context.SaveChanges();
+            return true;
         }
 
-        List<hangSX> IhangSXRepositories.GetAll()
+        public List<hangSX> GetHangSXFromDB()
         {
-            throw new NotImplementedException();
+            _lsthangSX = _context.hangSXes.ToList();
+            return _lsthangSX;
         }
     }
 }

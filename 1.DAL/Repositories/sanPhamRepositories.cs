@@ -9,59 +9,37 @@ namespace _1.DAL.Repositories
 {
     public class sanPhamRepositories : IsanPhamRepositories
     {
-        DatabaseContext DbContext;
-        public sanPhamRepositories(DatabaseContext DbContext)
-        { 
-            this.DbContext = DbContext;
-        }
-        public bool addSanPham(sanPham sanPham)
+        private List<sanPham> _lstSanPham;
+        private DatabaseContext _context;
+        public sanPhamRepositories()
         {
-            throw new NotImplementedException();
+            _lstSanPham = new List<sanPham>();
+            _context = new DatabaseContext();
         }
-        public IEnumerable<sanPham> GetAll()
+        public bool addSanPham(sanPham Sanpham)
         {
-            return DbContext.Sanphams.ToList();
-        }
-        public sanPham GetById(Guid id)
-        {
-            var sanpham = DbContext.Sanphams.Find(id);
-            // Find(param) chỉ dùng với id của sản phẩm
-            var sanpham2 = DbContext.Sanphams.
-                FirstOrDefault(p => p.IdSP == id);
-            return sanpham; // sanpham2
-
-        }
-        public bool RemoveSanpham(sanPham sanpham) // Xóa sản phẩm
-        {
-            try
-            {
-                DbContext.Sanphams.Remove(sanpham);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
-        }
-        public bool UpdateSanpham(sanPham sanpham)
-        {
-            try
-            {
-                DbContext.Sanphams.Update(sanpham);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            _context.Add(Sanpham);
+            _context.SaveChanges();
+            return true;
         }
 
-        List<sanPham> IsanPhamRepositories.GetAll()
+        public bool RemoveSanpham(sanPham Sanpham)
         {
-            throw new NotImplementedException();
+            _context.Remove(Sanpham);
+            _context.SaveChanges();
+            return true;
+        }
+        public bool UpdateSanpham(sanPham Sanpham)
+        {
+            _context.Update(Sanpham);
+            _context.SaveChanges();
+            return true;
+        }
+
+        public List<sanPham> GetSanPhamFromDB()
+        {
+            _lstSanPham = _context.Sanphams.ToList();
+            return _lstSanPham;
         }
     }
 }

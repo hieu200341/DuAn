@@ -9,8 +9,9 @@ namespace _1.DAL.Models
     public class hoaDon
     {
         public Guid IdHD { get; set; }
-        public Guid IdNV { get; set; }
-        public Guid IdKhachHang { get; set; }
+        public string maHoaDon { get; set; }
+        public string maNhanVien { get; set; }
+        public string SDT_KH { get; set; }
         public DateTime ngayBan { get; set; }
         public DateTime ngayTT { get; set; }
         public bool trangThai { get; set; }
