@@ -7,61 +7,39 @@ using System.Linq;
 
 namespace _1.DAL.Repositories
 {
-    public class hoaDonChiTietRepositories: IhoaDonChiTietRepositories
+    public class hoaDonChiTietRepositories : IhoaDonChiTietRepositories
     {
-        DatabaseContext DbContext;
-        public hoaDonChiTietRepositories(DatabaseContext DbContext)
+        private List<hoaDonChiTiet> _lsthoaDonChiTiet;
+        private DatabaseContext _context;
+        public hoaDonChiTietRepositories()
         {
-            this.DbContext = DbContext;
+            _lsthoaDonChiTiet = new List<hoaDonChiTiet>();
+            _context = new DatabaseContext();
         }
         public bool addHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet)
         {
-            throw new NotImplementedException();
+            _context.Add(HoaDonChiTiet);
+            _context.SaveChanges();
+            return true;
         }
-        public IEnumerable<hoaDonChiTiet> GetAll()
-        {
-            return DbContext.hoaDonChiTiets.ToList();
-        }
-        public hoaDonChiTiet GetById(Guid id)
-        {
-            var hoadonchitiet = DbContext.hoaDonChiTiets.Find(id);
-            // Find(param) chỉ dùng với id của sản phẩm
-            var hoaDonChiTiet2 = DbContext.hoaDonChiTiets.
-                FirstOrDefault(p => p.IdHD == id);
-            return hoaDonChiTiet2; // sanpham2
 
-        }
-        public bool RemoveHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet) // Xóa sản phẩm
+        public bool RemoveHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet)
         {
-            try
-            {
-                DbContext.hoaDonChiTiets.Remove(HoaDonChiTiet);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
+            _context.Remove(HoaDonChiTiet);
+            _context.SaveChanges();
+            return true;
         }
         public bool UpdateHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet)
         {
-            try
-            {
-                DbContext.hoaDonChiTiets.Update(HoaDonChiTiet);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            _context.Update(HoaDonChiTiet);
+            _context.SaveChanges();
+            return true;
         }
 
-        List<hoaDonChiTiet> IhoaDonChiTietRepositories.GetAll()
+        public List<hoaDonChiTiet> GetHoaDonChiTietFromDB()
         {
-            throw new NotImplementedException();
+            _lsthoaDonChiTiet = _context.hoaDonChiTiets.ToList();
+            return _lsthoaDonChiTiet;
         }
     }
 }

@@ -6,10 +6,10 @@ namespace _1.DAL.IRepositories
 {
     public interface IhangSXRepositories
     {
-        List<hangSX> GetAll(); // Lấy tất cả các SP trong DB
-        hangSX GetById(Guid id); // Lấy sản phẩm theo ID
-        bool addHangSX(hangSX HangSX); // Thêm Sản phẩm
-        bool RemoveHangSX(hangSX HangSX); // Xóa
-        bool UpdateHangSX(hangSX HangSX); // Sửa 1 sản phẩm
+        List<hangSX> GetHangSXFromDB();
+
+        bool addHangSX(hangSX HangSX);
+        bool RemoveHangSX(hangSX HangSX);
+        bool UpdateHangSX(hangSX HangSX);
     }
 }

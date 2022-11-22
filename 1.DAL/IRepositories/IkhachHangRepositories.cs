@@ -6,10 +6,9 @@ namespace _1.DAL.IRepositories
 {
     public interface IkhachHangRepositories
     {
-        List<khachHang> GetAll(); // Lấy tất cả các SP trong DB
-        khachHang GetById(Guid id); // Lấy sản phẩm theo ID
-        bool addkhachHang(khachHang KhachHang); // Thêm Sản phẩm
-        bool RemoveKhachHang(khachHang KhachHang); // Xóa
-        bool UpdateKhachHang(khachHang KhachHang); // Sửa 1 sản phẩm
+        List<khachHang> GetkhachHangFromDB();
+        bool addkhachHang(khachHang KhachHang);
+        bool RemoveKhachHang(khachHang KhachHang);
+        bool UpdateKhachHang(khachHang KhachHang);
     }
 }

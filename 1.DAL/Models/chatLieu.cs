@@ -9,6 +9,7 @@ namespace _1.DAL.Models
     public class chatLieu
     {
         public Guid IdChatLieu { get; set; }
+        public string maChatLieu { get; set; }
         public string tenCL { get; set; }
         public bool trangThai { get; set; }
         public virtual List<sanPhamChiTiet>? SanphamChitietss { get; set; }

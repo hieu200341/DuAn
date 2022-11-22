@@ -9,59 +9,37 @@ namespace _1.DAL.Repositories
 {
     public class sanPhamChiTietRepositories : IsanPhamChiTietRepositories
     {
-        DatabaseContext DbContext;
-        public sanPhamChiTietRepositories(DatabaseContext DbContext)
+        private List<sanPhamChiTiet> _lstSanPhamChiTiet;
+        private DatabaseContext _context;
+        public sanPhamChiTietRepositories()
         {
-            this.DbContext = DbContext;
+            _lstSanPhamChiTiet = new List<sanPhamChiTiet>();
+            _context = new DatabaseContext();
         }
         public bool addsanPhamChiTiet(sanPhamChiTiet SanPhamChiTiet)
         {
-            throw new NotImplementedException();
+            _context.Add(SanPhamChiTiet);
+            _context.SaveChanges();
+            return true;
         }
-        public IEnumerable<sanPhamChiTiet> GetAll()
-        {
-            return DbContext.sanPhamChiTiets.ToList();
-        }
-        public sanPhamChiTiet GetById(Guid id)
-        {
-            var SanPhamChiTiet = DbContext.Sanphams.Find(id);
-            // Find(param) chỉ dùng với id của sản phẩm
-            var sanPhamChiTiet2 = DbContext.sanPhamChiTiets.
-                FirstOrDefault(p => p.IdPhamChiTiet == id);
-            return sanPhamChiTiet2; // sanpham2
 
-        }
-        public bool RemoveSanPhamChiTiet(sanPhamChiTiet SanPhamChiTiet) // Xóa sản phẩm
+        public bool RemoveSanPhamChiTiet(sanPhamChiTiet SanPhamChiTiet)
         {
-            try
-            {
-                DbContext.sanPhamChiTiets.Remove(SanPhamChiTiet);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-
+            _context.Remove(SanPhamChiTiet);
+            _context.SaveChanges();
+            return true;
         }
         public bool UpdateSanPhamChiTiet(sanPhamChiTiet SanPhamChiTiet)
         {
-            try
-            {
-                DbContext.sanPhamChiTiets.Update(SanPhamChiTiet);
-                DbContext.SaveChanges();
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
+            _context.Update(SanPhamChiTiet);
+            _context.SaveChanges();
+            return true;
         }
 
-        List<sanPhamChiTiet> IsanPhamChiTietRepositories.GetAll()
+        public List<sanPhamChiTiet> GetSanPhamChiTietFromDB()
         {
-            throw new NotImplementedException();
+            _lstSanPhamChiTiet = _context.sanPhamChiTiets.ToList();
+            return _lstSanPhamChiTiet;
         }
     }
 }

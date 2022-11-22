@@ -15,8 +15,9 @@ namespace _1.DAL.Configurations
         {
             // Đặt tên bảng
             builder.ToTable("chatLieu");
+            builder.Property(x => x.IdChatLieu).IsRequired();
             // Set khóa chính
-            builder.HasKey(x => x.IdChatLieu);
+            builder.HasKey(x => x.maChatLieu);
             // Set các ràng buộc cho thuộc tính
             builder.Property(x => x.tenCL).HasColumnName("tenCL")
                 .IsRequired().HasColumnType("nvarchar(100)");
