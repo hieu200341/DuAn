@@ -22,8 +22,7 @@ namespace _1.DAL.Context
         public DbSet<chucVu> chucVus { get; set; }
         public DbSet<hangSX> hangSXes { get; set; }
         public DbSet<hoaDon> hoaDons { get; set; }
-        public DbSet<sanPham> Sanphams { get; set; }
-        public DbSet<sanPhamChiTiet> sanPhamChiTiets { get; set; }
+        public DbSet<SanPham> sanPhamChiTiets { get; set; }
         public DbSet<hoaDonChiTiet> hoaDonChiTiets { get; set; }
         public DbSet<mauSac> mauSacs { get; set; }
         public DbSet<nhanVien> nhanViens { get; set; }
@@ -33,7 +32,9 @@ namespace _1.DAL.Context
         {
             // Thực hiện các ràng buộc kết nối
             base.OnConfiguring(optionsBuilder.
-                UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True"));
+
+                //; User ID = daonvph18705; Password = 123
+                UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAn_1;Integrated Security=True"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
