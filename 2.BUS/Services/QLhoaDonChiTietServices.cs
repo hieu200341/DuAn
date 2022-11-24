@@ -23,7 +23,7 @@ namespace _2.BUS.Services
 
         public bool addHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet)
         {
-            _hoaDonChiTiet.addHoaDonChiTiet(HoaDonChiTiet);
+           _hoaDonChiTiet.addHoaDonChiTiet(HoaDonChiTiet);
             return true;
         }
 

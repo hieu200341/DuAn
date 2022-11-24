@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace _2.BUS.Services
 {
-    internal class QLhangSXServices : IQLhangSXServices
+    public class QLhangSXServices : IQLhangSXServices
     {
         private IhangSXRepositories _hangSX;
         private List<hangSX> _lsthangSX;
@@ -18,7 +18,7 @@ namespace _2.BUS.Services
         public QLhangSXServices()
         {
             _lsthangSX = new List<hangSX>();
-            _hangSX = new hangSXRepositories();
+           _hangSX = new hangSXRepositories();
         }
 
         public bool addHangSX(hangSX HangSX)
