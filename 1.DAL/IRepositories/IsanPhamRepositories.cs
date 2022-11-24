@@ -6,9 +6,9 @@ namespace _1.DAL.IRepositories
 {
     public interface IsanPhamRepositories
     {
-        List<SanPham> GetSanPhamChiTietFromDB(); 
-        bool addsanPhamChiTiet(SanPham SanPhamChiTiet); 
-        bool RemoveSanPhamChiTiet(SanPham SanPhamChiTiet); 
-        bool UpdateSanPhamChiTiet(SanPham SanPhamChiTiet); 
+        List<SanPham> GetSanPhamFromDB(); 
+        bool addsanPham(SanPham SanPham); 
+        bool RemoveSanPham(SanPham SanPham); 
+        bool UpdateSanPham(SanPham SanPham); 
     }
 }

@@ -12,36 +12,36 @@ namespace _2.BUS.Services
 {
     internal class QLsanPhamServices : IQLsanPhamServices
     {
-        private IsanPhamRepositories _sanPhamChiTiet;
-        private List<SanPham> _lstsanPhamChiTiet;
+        private IsanPhamRepositories _sanPham;
+        private List<SanPham> _lstsanPham;
 
         public QLsanPhamServices()
         {
-            _lstsanPhamChiTiet = new List<SanPham>();
-            _sanPhamChiTiet = new sanPhamChiTietRepositories();
+            _lstsanPham = new List<SanPham>();
+            _sanPham = new sanPhamRepositories();
         }
 
-        public bool addsanPhamChiTiet(SanPham SanPhamChiTiet)
+        public bool addsanPham(SanPham SanPham)
         {
-            _sanPhamChiTiet.addsanPhamChiTiet(SanPhamChiTiet);
+            _sanPham.addsanPham(SanPham);
             return true;
         }
 
-        public bool RemoveSanPhamChiTiet(SanPham SanPhamChiTiet)
+        public bool RemoveSanPham(SanPham SanPham)
         {
-            _sanPhamChiTiet.RemoveSanPhamChiTiet(SanPhamChiTiet);
+            _sanPham.RemoveSanPham(SanPham);
             return true;
         }
 
-        public List<SanPham> GetSanPhamChiTietFromDB()
+        public List<SanPham> GetSanPhamFromDB()
         {
-            _lstsanPhamChiTiet = _sanPhamChiTiet.GetSanPhamChiTietFromDB();
-            return _lstsanPhamChiTiet;
+            _lstsanPham = _sanPham.GetSanPhamFromDB();
+            return _lstsanPham;
         }
 
-        public bool UpdateSanPhamChiTiet(SanPham SanPhamChiTiet)
+        public bool UpdateSanPham(SanPham SanPham)
         {
-            _sanPhamChiTiet.UpdateSanPhamChiTiet(SanPhamChiTiet);
+            _sanPham.UpdateSanPham(SanPham);
             return true;
         }
     }

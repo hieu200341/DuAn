@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1.DAL.Migrations
 {
-    public partial class _1111 : Migration
+    public partial class _1222 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -80,20 +80,6 @@ namespace _1.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Sanpham",
-                columns: table => new
-                {
-                    maSanPham = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    IdSP = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    TenSP = table.Column<string>(type: "nvarchar(100)", nullable: false),
-                    Trangthai = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Sanpham", x => x.maSanPham);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "size",
                 columns: table => new
                 {
@@ -133,16 +119,16 @@ namespace _1.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "sanPhamChiTiet",
+                name: "sanPham",
                 columns: table => new
                 {
-                    maSanPhamChiTiet = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    IdSanPhamChiTiet = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     maSanPham = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    IdSanPham = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     maMauSac = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     maChatLieu = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     maSize = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     maHangSX = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    TenSP = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Gianhap = table.Column<int>(type: "int", nullable: false),
                     Giaban = table.Column<int>(type: "int", nullable: false),
                     Soluong = table.Column<int>(type: "int", nullable: false),
@@ -150,33 +136,27 @@ namespace _1.DAL.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_sanPhamChiTiet", x => x.maSanPhamChiTiet);
+                    table.PrimaryKey("PK_sanPham", x => x.maSanPham);
                     table.ForeignKey(
-                        name: "FK_sanPhamChiTiet_chatLieu_maChatLieu",
+                        name: "FK_sanPham_chatLieu_maChatLieu",
                         column: x => x.maChatLieu,
                         principalTable: "chatLieu",
                         principalColumn: "maChatLieu",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_sanPhamChiTiet_hangSX_maHangSX",
+                        name: "FK_sanPham_hangSX_maHangSX",
                         column: x => x.maHangSX,
                         principalTable: "hangSX",
                         principalColumn: "maHangSX",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_sanPhamChiTiet_mauSac_maMauSac",
+                        name: "FK_sanPham_mauSac_maMauSac",
                         column: x => x.maMauSac,
                         principalTable: "mauSac",
                         principalColumn: "maMauSac",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_sanPhamChiTiet_Sanpham_maSanPham",
-                        column: x => x.maSanPham,
-                        principalTable: "Sanpham",
-                        principalColumn: "maSanPham",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_sanPhamChiTiet_size_maSize",
+                        name: "FK_sanPham_size_maSize",
                         column: x => x.maSize,
                         principalTable: "size",
                         principalColumn: "maSize",
@@ -232,10 +212,10 @@ namespace _1.DAL.Migrations
                         principalColumn: "maHoaDon",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_hoaDonChiTiet_sanPhamChiTiet_maSanPhamChiTiet",
+                        name: "FK_hoaDonChiTiet_sanPham_maSanPhamChiTiet",
                         column: x => x.maSanPhamChiTiet,
-                        principalTable: "sanPhamChiTiet",
-                        principalColumn: "maSanPhamChiTiet",
+                        principalTable: "sanPham",
+                        principalColumn: "maSanPham",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -260,28 +240,23 @@ namespace _1.DAL.Migrations
                 column: "maChucVu");
 
             migrationBuilder.CreateIndex(
-                name: "IX_sanPhamChiTiet_maChatLieu",
-                table: "sanPhamChiTiet",
+                name: "IX_sanPham_maChatLieu",
+                table: "sanPham",
                 column: "maChatLieu");
 
             migrationBuilder.CreateIndex(
-                name: "IX_sanPhamChiTiet_maHangSX",
-                table: "sanPhamChiTiet",
+                name: "IX_sanPham_maHangSX",
+                table: "sanPham",
                 column: "maHangSX");
 
             migrationBuilder.CreateIndex(
-                name: "IX_sanPhamChiTiet_maMauSac",
-                table: "sanPhamChiTiet",
+                name: "IX_sanPham_maMauSac",
+                table: "sanPham",
                 column: "maMauSac");
 
             migrationBuilder.CreateIndex(
-                name: "IX_sanPhamChiTiet_maSanPham",
-                table: "sanPhamChiTiet",
-                column: "maSanPham");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_sanPhamChiTiet_maSize",
-                table: "sanPhamChiTiet",
+                name: "IX_sanPham_maSize",
+                table: "sanPham",
                 column: "maSize");
         }
 
@@ -294,7 +269,7 @@ namespace _1.DAL.Migrations
                 name: "hoaDon");
 
             migrationBuilder.DropTable(
-                name: "sanPhamChiTiet");
+                name: "sanPham");
 
             migrationBuilder.DropTable(
                 name: "khachHang");
@@ -310,9 +285,6 @@ namespace _1.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "mauSac");
-
-            migrationBuilder.DropTable(
-                name: "Sanpham");
 
             migrationBuilder.DropTable(
                 name: "size");

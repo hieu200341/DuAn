@@ -9,9 +9,9 @@ namespace _2.BUS.IServices
 {
     public interface IQLsanPhamServices
     {
-        List<SanPham> GetSanPhamChiTietFromDB();
-        bool addsanPhamChiTiet(SanPham SanPhamChiTiet);
-        bool RemoveSanPhamChiTiet(SanPham SanPhamChiTiet);
-        bool UpdateSanPhamChiTiet(SanPham SanPhamChiTiet);
+        List<SanPham> GetSanPhamFromDB();
+        bool addsanPham(SanPham SanPhamChiTiet);
+        bool RemoveSanPham(SanPham SanPhamChiTiet);
+        bool UpdateSanPham(SanPham SanPhamChiTiet);
     }
 }

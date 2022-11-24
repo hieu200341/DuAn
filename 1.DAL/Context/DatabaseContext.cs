@@ -22,7 +22,7 @@ namespace _1.DAL.Context
         public DbSet<chucVu> chucVus { get; set; }
         public DbSet<hangSX> hangSXes { get; set; }
         public DbSet<hoaDon> hoaDons { get; set; }
-        public DbSet<SanPham> sanPhamChiTiets { get; set; }
+        public DbSet<SanPham> sanPhams { get; set; }
         public DbSet<hoaDonChiTiet> hoaDonChiTiets { get; set; }
         public DbSet<mauSac> mauSacs { get; set; }
         public DbSet<nhanVien> nhanViens { get; set; }
@@ -34,7 +34,7 @@ namespace _1.DAL.Context
             base.OnConfiguring(optionsBuilder.
 
                 //; User ID = daonvph18705; Password = 123
-                UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAn_1;Integrated Security=True"));
+                UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuA;Integrated Security=True"));
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

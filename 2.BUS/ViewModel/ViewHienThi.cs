@@ -17,8 +17,7 @@ namespace _2.BUS.ViewModel
         public khachHang khachHangs { get; set; }
         public mauSac mauSacs { get; set; }
         public nhanVien nhanViens { get; set; }
-        public sanPhamChiTiet sanPhamChiTiet { get; set; }
-        public sanPham sanPhams { get; set; }
+        public SanPham SanPhams { get; set; }
         public size sizes { get; set; }
     }
 }
