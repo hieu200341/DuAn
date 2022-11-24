@@ -6,9 +6,9 @@ namespace _1.DAL.IRepositories
 {
     public interface IhoaDonRepositories
     {
-        List<hoaDon> GetHoaDonFromDB();
-        bool addHoaDon(hoaDon HoaDon);
-        bool RemoveHoaDon(hoaDon HoaDon);
-        bool UpdateHoaDon(hoaDon HoaDon);
+        List<hoaDon> GetHoaDonFromDB(); 
+        bool addHoaDon(hoaDon HoaDon); 
+        bool RemoveHoaDon(hoaDon HoaDon); 
+        bool UpdateHoaDon(hoaDon HoaDon); 
     }
 }

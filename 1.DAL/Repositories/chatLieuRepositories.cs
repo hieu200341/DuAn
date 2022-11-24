@@ -9,13 +9,13 @@ using Microsoft.EntityFrameworkCore;
 
 namespace _1.DAL.Repositories
 {
-    public class chatLieuRepositories : IchatLieuRepositories
+    public class chatLieuRepositories: IchatLieuRepositories
     {
         private List<chatLieu> _lstChatLieu;
         private DatabaseContext _context;
         public chatLieuRepositories()
         {
-            _lstChatLieu = new List<chatLieu>();
+            _lstChatLieu= new List<chatLieu>();
             _context = new DatabaseContext();
         }
         public bool addchatLieu(chatLieu ChatLieu)

@@ -6,9 +6,9 @@ namespace _1.DAL.IRepositories
 {
     public interface IchucVuRepositories
     {
-        List<chucVu> GetchucVuFromDB();
-        bool addChucVu(chucVu ChucVu);
-        bool RemoveChucVu(chucVu ChucVu);
-        bool UpdateChucVu(chucVu ChucVu);
+        List<chucVu> GetchucVuFromDB(); 
+        bool addChucVu(chucVu ChucVu); 
+        bool RemoveChucVu(chucVu ChucVu); 
+        bool UpdateChucVu(chucVu ChucVu); 
     }
 }

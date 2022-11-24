@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace _1.DAL.Repositories
 {
-    public class hoaDonRepositories : IhoaDonRepositories
+    public class hoaDonRepositories: IhoaDonRepositories
     {
         private List<hoaDon> _lsthoaDon;
         private DatabaseContext _context;

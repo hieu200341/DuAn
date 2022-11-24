@@ -6,9 +6,9 @@ namespace _1.DAL.IRepositories
 {
     public interface IhoaDonChiTietRepositories
     {
-        List<hoaDonChiTiet> GetHoaDonChiTietFromDB();
-        bool addHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet);
-        bool RemoveHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet);
-        bool UpdateHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet);
+        List<hoaDonChiTiet> GetHoaDonChiTietFromDB(); 
+        bool addHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet); 
+        bool RemoveHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet); 
+        bool UpdateHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet); 
     }
 }

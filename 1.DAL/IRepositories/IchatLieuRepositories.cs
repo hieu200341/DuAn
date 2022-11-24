@@ -6,9 +6,9 @@ namespace _1.DAL.IRepositories
 {
     public interface IchatLieuRepositories
     {
-        List<chatLieu> GetchatLieuFromDB();
-        bool addchatLieu(chatLieu ChatLieu);
-        bool RemoveChatLieu(chatLieu ChatLieu);
-        bool UpdateChatLieu(chatLieu ChatLieu);
+        List<chatLieu> GetchatLieuFromDB(); 
+        bool addchatLieu(chatLieu ChatLieu); 
+        bool RemoveChatLieu(chatLieu ChatLieu); 
+        bool UpdateChatLieu(chatLieu ChatLieu); 
     }
 }

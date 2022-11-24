@@ -6,9 +6,9 @@ namespace _1.DAL.IRepositories
 {
     public interface InhanVienRepositories
     {
-        List<nhanVien> GetNhanVienFromDB();
-        bool addNhanVien(nhanVien NhanVien);
-        bool RemoveNhanVien(nhanVien NhanVien);
-        bool UpdateNhanVien(nhanVien NhanVien);
+        List<nhanVien> GetNhanVienFromDB(); 
+        bool addNhanVien(nhanVien NhanVien); 
+        bool RemoveNhanVien(nhanVien NhanVien); 
+        bool UpdateNhanVien(nhanVien NhanVien); 
     }
 }

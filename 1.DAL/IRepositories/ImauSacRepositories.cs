@@ -6,9 +6,9 @@ namespace _1.DAL.IRepositories
 {
     public interface ImauSacRepositories
     {
-        List<mauSac> GetMauSacFromDB();
-        bool addMauSac(mauSac MauSac);
-        bool RemoveMauSac(mauSac MauSac);
-        bool UpdateMauSac(mauSac MauSac);
+        List<mauSac> GetMauSacFromDB(); 
+        bool addMauSac(mauSac MauSac); 
+        bool RemoveMauSac(mauSac MauSac); 
+        bool UpdateMauSac(mauSac MauSac); 
     }
 }

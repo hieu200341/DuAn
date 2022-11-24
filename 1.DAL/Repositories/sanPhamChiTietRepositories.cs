@@ -7,36 +7,36 @@ using System;
 
 namespace _1.DAL.Repositories
 {
-    public class sanPhamChiTietRepositories : IsanPhamChiTietRepositories
+    public class sanPhamChiTietRepositories : IsanPhamRepositories
     {
-        private List<sanPhamChiTiet> _lstSanPhamChiTiet;
+        private List<SanPham> _lstSanPhamChiTiet;
         private DatabaseContext _context;
         public sanPhamChiTietRepositories()
         {
-            _lstSanPhamChiTiet = new List<sanPhamChiTiet>();
+            _lstSanPhamChiTiet = new List<SanPham>();
             _context = new DatabaseContext();
         }
-        public bool addsanPhamChiTiet(sanPhamChiTiet SanPhamChiTiet)
+        public bool addsanPhamChiTiet(SanPham SanPhamChiTiet)
         {
             _context.Add(SanPhamChiTiet);
             _context.SaveChanges();
             return true;
         }
 
-        public bool RemoveSanPhamChiTiet(sanPhamChiTiet SanPhamChiTiet)
+        public bool RemoveSanPhamChiTiet(SanPham SanPhamChiTiet)
         {
             _context.Remove(SanPhamChiTiet);
             _context.SaveChanges();
             return true;
         }
-        public bool UpdateSanPhamChiTiet(sanPhamChiTiet SanPhamChiTiet)
-        {
+        public bool UpdateSanPhamChiTiet(SanPham SanPhamChiTiet)
+    {
             _context.Update(SanPhamChiTiet);
             _context.SaveChanges();
             return true;
         }
 
-        public List<sanPhamChiTiet> GetSanPhamChiTietFromDB()
+        public List<SanPham> GetSanPhamChiTietFromDB()
         {
             _lstSanPhamChiTiet = _context.sanPhamChiTiets.ToList();
             return _lstSanPhamChiTiet;

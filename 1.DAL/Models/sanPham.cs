@@ -6,12 +6,23 @@ using System.Threading.Tasks;
 
 namespace _1.DAL.Models
 {
-    public class sanPham
+    public class SanPham
     {
-        public Guid IdSP { get; set; }
+        public Guid IdSanPham { get; set; }
         public string maSanPham { get; set; }
+        public string maMauSac { get; set; }
+        public string maChatLieu { get; set; }
+        public string maSize { get; set; }
+        public string maHangSX { get; set; }
         public string TenSP { get; set; }
-        public bool trangThai { get; set; }
-        public virtual List<sanPhamChiTiet>? sanPhamChiTiets { get; set; }
+        public double Gianhap { get; set; }
+        public double Giaban { get; set; }
+        public int Soluong { get; set; }
+        public bool Trangthai { get; set; }
+        public mauSac mauSac { get; set; }
+        public size size { get; set; }
+        public hangSX hangSX { get; set; }
+        public chatLieu chatLieu { get; set; }
+        public List<hoaDonChiTiet> hoaDonChiTiet { get; set; }
     }
 }

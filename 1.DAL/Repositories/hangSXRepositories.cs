@@ -7,7 +7,7 @@ using _1.DAL.Models;
 
 namespace _1.DAL.Repositories
 {
-    public class hangSXRepositories : IhangSXRepositories
+    public class hangSXRepositories: IhangSXRepositories
     {
         private List<hangSX> _lsthangSX;
         private DatabaseContext _context;
@@ -23,7 +23,7 @@ namespace _1.DAL.Repositories
             return true;
         }
 
-        public bool RemoveHangSX(hangSX HangSX)
+        public bool RemoveHangSX(hangSX HangSX) 
         {
             _context.Remove(HangSX);
             _context.SaveChanges();

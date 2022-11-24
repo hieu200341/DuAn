@@ -12,6 +12,6 @@ namespace _1.DAL.Models
         public string maMauSac { set; get; }
         public string tenMau { get; set; }
         public bool trangThai { get; set; }
-        public virtual List<sanPhamChiTiet>? SanphamChitietss { get; set; }
+        public virtual List<SanPham>? SanphamChitietss { get; set; }
     }
 }

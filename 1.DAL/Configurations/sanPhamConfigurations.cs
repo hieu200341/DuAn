@@ -9,20 +9,30 @@ using System.Threading.Tasks;
 
 namespace _1.DAL.Configurations
 {
-    public class sanPhamConfigurations : IEntityTypeConfiguration<sanPham>
+    public class sanPhamConfigurations : IEntityTypeConfiguration<SanPham>
     {
-        public void Configure(EntityTypeBuilder<sanPham> builder)
+        public void Configure(EntityTypeBuilder<SanPham> builder)
         {
-            // Đặt tên bảng
-            builder.ToTable("Sanpham");
-            builder.Property(x => x.IdSP).IsRequired();
-            // Set khóa chính
-            builder.HasKey(x => x.maSanPham);
-            // Set các ràng buộc cho thuộc tính
-            builder.Property(x => x.TenSP).HasColumnName("TenSP")
-                .IsRequired().HasColumnType("nvarchar(100)");
-            builder.Property(x => x.trangThai).HasColumnName("Trangthai")
-                .IsRequired().HasColumnType("bit");
+            builder.ToTable("sanPham");
+            builder.Property(x => x.IdSanPham).IsRequired();
+            builder.HasKey(c => c.maSanPham);
+            builder.Property(c => c.TenSP).IsRequired();
+            builder.Property(c => c.Gianhap).HasColumnType("int").
+                IsRequired();
+            builder.Property(c => c.Giaban).HasColumnType("int").
+                IsRequired();
+            builder.Property(c => c.Soluong).HasColumnType("int").
+                IsRequired();
+            builder.Property(c => c.Trangthai).HasColumnType("bit").
+                IsRequired();
+            builder.HasOne(x => x.size)
+           .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maSize);
+            builder.HasOne(x => x.mauSac)
+           .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maMauSac);
+            builder.HasOne(x => x.chatLieu)
+          .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maChatLieu);
+            builder.HasOne(x => x.hangSX)
+          .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maHangSX);
         }
     }
 }

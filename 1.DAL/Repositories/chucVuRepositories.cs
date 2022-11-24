@@ -7,7 +7,7 @@ using _1.DAL.IRepositories;
 
 namespace _1.DAL.Repositories
 {
-    public class chucVuRepositories : IchucVuRepositories
+    public class chucVuRepositories: IchucVuRepositories
     {
         private List<chucVu> _lstChucVu;
         private DatabaseContext _context;
@@ -22,7 +22,7 @@ namespace _1.DAL.Repositories
             _context.SaveChanges();
             return true;
         }
-
+        
         public bool RemoveChucVu(chucVu ChucVu) // Xóa sản phẩm
         {
             _context.Remove(ChucVu);

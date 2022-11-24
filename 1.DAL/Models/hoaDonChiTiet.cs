@@ -13,7 +13,7 @@ namespace _1.DAL.Models
         public int Soluong { get; set; }
         public float donGia { get; set; }
         public bool Trangthai { get; set; }
-        public sanPhamChiTiet sanPhamChiTiet { get; set; }
+        public SanPham sanPhamChiTiet { get; set; }
         public hoaDon hoaDon { get; set; }
     }
 }

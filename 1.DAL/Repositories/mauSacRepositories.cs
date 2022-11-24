@@ -7,7 +7,7 @@ using System.Linq;
 
 namespace _1.DAL.Repositories
 {
-    public class mauSacRepositories : ImauSacRepositories
+    public class mauSacRepositories: ImauSacRepositories
     {
         private List<mauSac> _lstMauSac;
         private DatabaseContext _context;
