@@ -18,7 +18,6 @@ namespace _1.DAL.Context
         public DatabaseContext(DbContextOptions options) : base(options)
         {
         }
-        public DbSet<chatLieu> chatLieus { get; set; }
         public DbSet<chucVu> chucVus { get; set; }
         public DbSet<hangSX> hangSXes { get; set; }
         public DbSet<hoaDon> hoaDons { get; set; }

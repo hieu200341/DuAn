@@ -22,7 +22,6 @@ namespace _1.DAL.Models
         public mauSac mauSac { get; set; }
         public size size { get; set; }
         public hangSX hangSX { get; set; }
-        public chatLieu chatLieu { get; set; }
         public List<hoaDonChiTiet> hoaDonChiTiet { get; set; }
     }
 }

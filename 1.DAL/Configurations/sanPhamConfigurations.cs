@@ -29,8 +29,6 @@ namespace _1.DAL.Configurations
            .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maSize);
             builder.HasOne(x => x.mauSac)
            .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maMauSac);
-            builder.HasOne(x => x.chatLieu)
-          .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maChatLieu);
             builder.HasOne(x => x.hangSX)
           .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maHangSX);
         }

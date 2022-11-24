@@ -9,7 +9,6 @@ namespace _2.BUS.ViewModel
 {
     public class ViewHienThi
     {
-        public chatLieu chatLieus { get; set; }
         public chucVu chucVus { get; set; }
         public hangSX hangSXs { get; set; }
         public hoaDonChiTiet HoaDonChiTiets { get; set; }
