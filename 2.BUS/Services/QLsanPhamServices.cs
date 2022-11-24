@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace _2.BUS.Services
 {
-    internal class QLsanPhamServices : IQLsanPhamServices
+    public class QLsanPhamServices : IQLsanPhamServices
     {
         private IsanPhamRepositories _sanPham;
         private List<SanPham> _lstsanPham;

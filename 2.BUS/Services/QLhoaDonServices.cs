@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace _2.BUS.Services
 {
-    internal class QLhoaDonServices : IQLhoaDonServices
+    public class QLhoaDonServices : IQLhoaDonServices
     {
         private IhoaDonRepositories _hoaDon;
         private List<hoaDon> _lsthoaDon;

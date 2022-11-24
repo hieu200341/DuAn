@@ -69,7 +69,7 @@ namespace _3.GUI.View.FromSanPham
             if (update != null)
             {
                 update.tenMau = tbt_TenMau.Text;
-                update.trangThai = rb_KHD.Checked;
+                update.trangThai = rb_HoatDong.Checked;
                 _QLmauSacServices.UpdateMauSac(update);
                 MessageBox.Show("Cập nhật màu sắc thành công");
                 loadData();

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace _2.BUS.Services
 {
-    internal class QLnhanVienServices : IQLnhanVienServices
+    public class QLnhanVienServices : IQLnhanVienServices
     {
         private InhanVienRepositories _nhanVien;
         private List<nhanVien> _lstnhanVien;

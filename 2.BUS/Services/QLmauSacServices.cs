@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace _2.BUS.Services
 {
-    internal class QLmauSacServices : IQLmauSacServices
+    public class QLmauSacServices : IQLmauSacServices
     {
         private ImauSacRepositories _mauSac;
         private List<mauSac> _lstmauSac;

@@ -25,6 +25,7 @@ namespace _1.DAL.Configurations
                 IsRequired();
             builder.Property(c => c.Trangthai).HasColumnType("bit").
                 IsRequired();
+            builder.Property(c => c.linkAnh).IsRequired();
             builder.HasOne(x => x.size)
            .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maSize);
             builder.HasOne(x => x.mauSac)

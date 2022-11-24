@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace _2.BUS.Services
 {
-    internal class QLsizeServices : IQLsizeServices
+    public class QLsizeServices : IQLsizeServices
     {
         private IsizeRepositories _size;
         private List<size> _lstsize;
