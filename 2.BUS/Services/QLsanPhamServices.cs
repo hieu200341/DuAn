@@ -21,15 +21,15 @@ namespace _2.BUS.Services
             _sanPham = new sanPhamRepositories();
         }
 
-        public bool addsanPham(SanPham SanPham)
+        public bool addsanPham(SanPham sanPham)
         {
-            _sanPham.addsanPham(SanPham);
+            _sanPham.addsanPham(sanPham);
             return true;
         }
 
-        public bool RemoveSanPham(SanPham SanPham)
+        public bool RemoveSanPham(SanPham sanPham)
         {
-            _sanPham.RemoveSanPham(SanPham);
+            _sanPham.RemoveSanPham(sanPham);
             return true;
         }
 
@@ -39,9 +39,9 @@ namespace _2.BUS.Services
             return _lstsanPham;
         }
 
-        public bool UpdateSanPham(SanPham SanPham)
+        public bool UpdateSanPham(SanPham sanPham)
         {
-            _sanPham.UpdateSanPham(SanPham);
+            _sanPham.UpdateSanPham(sanPham);
             return true;
         }
     }

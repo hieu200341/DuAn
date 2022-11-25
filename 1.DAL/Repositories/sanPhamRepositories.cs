@@ -16,22 +16,22 @@ namespace _1.DAL.Repositories
             _lstSanPham = new List<SanPham>();
             _context = new DatabaseContext();
         }
-        public bool addsanPham(SanPham SanPham)
+        public bool addsanPham(SanPham sanPham)
         {
-            _context.Add(SanPham);
+            _context.Add(sanPham);
             _context.SaveChanges();
             return true;
         }
 
-        public bool RemoveSanPham(SanPham SanPham)
+        public bool RemoveSanPham(SanPham sanPham)
         {
-            _context.Remove(SanPham);
+            _context.Remove(sanPham);
             _context.SaveChanges();
             return true;
         }
-        public bool UpdateSanPham(SanPham SanPham)
+        public bool UpdateSanPham(SanPham sanPham)
     {
-            _context.Update(SanPham);
+            _context.Update(sanPham);
             _context.SaveChanges();
             return true;
         }

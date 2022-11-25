@@ -14,8 +14,8 @@ namespace _1.DAL.Models
         public string maSize { get; set; }
         public string maHangSX { get; set; }
         public string TenSP { get; set; }
-        public double Gianhap { get; set; }
-        public double Giaban { get; set; }
+        public decimal Gianhap { get; set; }
+        public decimal Giaban { get; set; }
         public int Soluong { get; set; }
         public bool Trangthai { get; set; }
         public string linkAnh { get; set; }

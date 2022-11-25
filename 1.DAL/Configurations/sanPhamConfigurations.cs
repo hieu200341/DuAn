@@ -17,12 +17,9 @@ namespace _1.DAL.Configurations
             builder.Property(x => x.IdSanPham).IsRequired();
             builder.HasKey(c => c.maSanPham);
             builder.Property(c => c.TenSP).IsRequired();
-            builder.Property(c => c.Gianhap).HasColumnType("int").
-                IsRequired();
-            builder.Property(c => c.Giaban).HasColumnType("int").
-                IsRequired();
-            builder.Property(c => c.Soluong).HasColumnType("int").
-                IsRequired();
+            builder.Property(c => c.Gianhap).IsRequired();
+            builder.Property(c => c.Giaban).IsRequired();
+            builder.Property(c => c.Soluong).IsRequired();
             builder.Property(c => c.Trangthai).HasColumnType("bit").
                 IsRequired();
             builder.Property(c => c.linkAnh).IsRequired();
