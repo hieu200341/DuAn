@@ -43,6 +43,7 @@ namespace _3.GUI.View.FromSanPham
             {
                 cb_NSX.Items.Add(item.tenHangSX);
             }
+            cb_NSX.SelectedIndex = 0;
         }
         public void LoadMauSac()
         {
@@ -51,14 +52,18 @@ namespace _3.GUI.View.FromSanPham
             {
                 cb_Mau.Items.Add(item.tenMau);
             }
+            cb_Mau.SelectedIndex = 0;
         }
         public void LoadSize()
         {
+            cb_size.Items.Clear();
+            cb_size.Items.Add("..");
             var size = _qLsizeServices.GetSizeFromDB();
             foreach (var item in size)
             {
                 cb_size.Items.Add(item.SiZe);
             }
+            cb_size.SelectedIndex = 0;
         }
         public void loadDuLieu()
         {
@@ -169,12 +174,13 @@ namespace _3.GUI.View.FromSanPham
                     Gianhap = Convert.ToDecimal(tbt_giaNhap.Text),
                     Giaban = Convert.ToDecimal(tbt_giaBan.Text),
                     Soluong = Convert.ToInt32(tbt_soLuong.Text),
-                    maMauSac = Convert.ToString(cb_Mau.SelectedValue),
-                    maSize = Convert.ToString(cb_size.SelectedValue),
-                    maHangSX = Convert.ToString(cb_NSX.SelectedValue),
+                    maMauSac = _qLmauSacServices.GetMauSacFromDB()[cb_Mau.SelectedIndex + 1].maMauSac,
+                    maSize = _qLsizeServices.GetSizeFromDB()[cb_size.SelectedIndex + 1].maSize,
+                    maHangSX = _QLhangServices.GetHangSXFromDB()[cb_NSX.SelectedIndex + 1].maHangSX,
                     Trangthai = rb_con.Checked,
                     linkAnh = Avatar
                 };
+                
                 _qLsanPhamServices.addsanPham(sp);
                 MessageBox.Show("Thêm sản phẩm thành công");
                 loadDuLieu();

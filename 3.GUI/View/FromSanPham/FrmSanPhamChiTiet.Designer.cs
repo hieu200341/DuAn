@@ -59,10 +59,9 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tbt_timKiem = new System.Windows.Forms.TextBox();
             this.dtgv_sanPham = new System.Windows.Forms.DataGridView();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -368,10 +367,9 @@
             // 
             this.dtgv_sanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_sanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column10,
             this.Column1,
-            this.Column3,
             this.Column2,
+            this.Column3,
             this.Column4,
             this.Column5,
             this.Column6,
@@ -385,12 +383,6 @@
             this.dtgv_sanPham.Size = new System.Drawing.Size(1321, 266);
             this.dtgv_sanPham.TabIndex = 0;
             // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "ID";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            // 
             // Column1
             // 
             this.Column1.HeaderText = "Mã sản phẩm";
@@ -398,19 +390,19 @@
             this.Column1.Name = "Column1";
             this.Column1.Width = 125;
             // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Giá nhập";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 140;
-            // 
             // Column2
             // 
             this.Column2.HeaderText = "Tên sản phẩm";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.Width = 150;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Giá nhập";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 140;
             // 
             // Column4
             // 
@@ -509,10 +501,9 @@
         private DataGridView dtgv_sanPham;
         private Label label11;
         private TextBox tbt_timKiem;
-        private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
         private DataGridViewTextBoxColumn Column6;
