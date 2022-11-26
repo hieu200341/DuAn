@@ -1,4 +1,5 @@
 ﻿using _1.DAL.Models;
+using _2.BUS.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,5 +14,6 @@ namespace _2.BUS.IServices
         bool addsanPham(SanPham sanPham);
         bool RemoveSanPham(SanPham sanPham);
         bool UpdateSanPham(SanPham sanPham);
+        List<ViewHienThi> getViewSanPham();
     }
 }

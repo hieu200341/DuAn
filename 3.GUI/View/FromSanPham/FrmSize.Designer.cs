@@ -33,19 +33,17 @@
             this.rb_HoatDong = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.tbt_TenSize = new System.Windows.Forms.TextBox();
-            this.tbt_maSize = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_them = new System.Windows.Forms.Button();
             this.btn_lamMoi = new System.Windows.Forms.Button();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtgv_Size = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btb_CapNhat = new System.Windows.Forms.Button();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btb_CapNhat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Size)).BeginInit();
@@ -58,9 +56,7 @@
             this.groupBox1.Controls.Add(this.rb_HoatDong);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbt_TenSize);
-            this.groupBox1.Controls.Add(this.tbt_maSize);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(188, 69);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(435, 242);
@@ -106,13 +102,6 @@
             this.tbt_TenSize.Size = new System.Drawing.Size(211, 27);
             this.tbt_TenSize.TabIndex = 3;
             // 
-            // tbt_maSize
-            // 
-            this.tbt_maSize.Location = new System.Drawing.Point(186, 45);
-            this.tbt_maSize.Name = "tbt_maSize";
-            this.tbt_maSize.Size = new System.Drawing.Size(211, 27);
-            this.tbt_maSize.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -121,15 +110,6 @@
             this.label2.Size = new System.Drawing.Size(63, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên Size";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã Size";
             // 
             // btn_them
             // 
@@ -184,6 +164,27 @@
             this.dtgv_Size.TabIndex = 0;
             this.dtgv_Size.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Size_CellClick);
             // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Mã Size";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Size";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tình trạng";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 200;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btn_thoat);
@@ -206,27 +207,6 @@
             this.btb_CapNhat.Text = "Cập nhật";
             this.btb_CapNhat.UseVisualStyleBackColor = true;
             this.btb_CapNhat.Click += new System.EventHandler(this.btb_CapNhat_Click);
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Mã Size";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Size";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tình trạng";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 200;
             // 
             // FrmSize
             // 
@@ -253,9 +233,7 @@
         private RadioButton rb_HoatDong;
         private Label label3;
         private TextBox tbt_TenSize;
-        private TextBox tbt_maSize;
         private Label label2;
-        private Label label1;
         private Button btn_them;
         private Button btn_lamMoi;
         private Button btn_thoat;

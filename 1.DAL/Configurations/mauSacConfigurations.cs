@@ -17,6 +17,7 @@ namespace _1.DAL.Configurations
             builder.ToTable("mauSac");
             // Set khóa chính
             builder.HasKey(x => x.maMauSac);
+            builder.Property(x => x.maMauSac).UseIdentityColumn(1, 1);
             // Set các ràng buộc cho thuộc tính
             builder.Property(x => x.tenMau).HasColumnName("tenMau")
                 .IsRequired().HasColumnType("nvarchar(100)");

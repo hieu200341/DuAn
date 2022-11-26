@@ -15,6 +15,7 @@ namespace _1.DAL.Configurations
         {
             builder.ToTable("sanPham");
             builder.HasKey(c => c.maSanPham);
+            builder.Property(x => x.maSanPham).UseIdentityColumn(1, 1);
             builder.Property(c => c.TenSP).IsRequired();
             builder.Property(c => c.Gianhap).IsRequired();
             builder.Property(c => c.Giaban).IsRequired();

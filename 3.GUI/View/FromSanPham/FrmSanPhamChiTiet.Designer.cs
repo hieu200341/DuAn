@@ -43,13 +43,11 @@
             this.tbt_giaBan = new System.Windows.Forms.TextBox();
             this.tbt_giaNhap = new System.Windows.Forms.TextBox();
             this.tbt_ten = new System.Windows.Forms.TextBox();
-            this.tbt_ma = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.btn_lamMoi = new System.Windows.Forms.Button();
@@ -92,13 +90,11 @@
             this.groupBox1.Controls.Add(this.tbt_giaBan);
             this.groupBox1.Controls.Add(this.tbt_giaNhap);
             this.groupBox1.Controls.Add(this.tbt_ten);
-            this.groupBox1.Controls.Add(this.tbt_ma);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(21, 43);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1096, 335);
@@ -224,13 +220,6 @@
             this.tbt_ten.Size = new System.Drawing.Size(197, 27);
             this.tbt_ten.TabIndex = 7;
             // 
-            // tbt_ma
-            // 
-            this.tbt_ma.Location = new System.Drawing.Point(146, 45);
-            this.tbt_ma.Name = "tbt_ma";
-            this.tbt_ma.Size = new System.Drawing.Size(197, 27);
-            this.tbt_ma.TabIndex = 6;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -275,15 +264,6 @@
             this.label2.Size = new System.Drawing.Size(100, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên sản phẩm";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 46);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã sản phẩm";
             // 
             // groupBox2
             // 
@@ -471,7 +451,6 @@
         #endregion
 
         private GroupBox groupBox1;
-        private Label label1;
         private PictureBox pictureBox2;
         private PictureBox ptb_linkAnh;
         private ComboBox cb_size;
@@ -486,7 +465,6 @@
         private TextBox tbt_giaBan;
         private TextBox tbt_giaNhap;
         private TextBox tbt_ten;
-        private TextBox tbt_ma;
         private Label label6;
         private Label label5;
         private Label label4;

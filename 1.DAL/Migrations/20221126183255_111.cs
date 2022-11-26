@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1.DAL.Migrations
 {
-    public partial class _1 : Migration
+    public partial class _111 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,8 @@ namespace _1.DAL.Migrations
                 name: "chucVu",
                 columns: table => new
                 {
-                    maChucVu = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    maChucVu = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     tenCV = table.Column<string>(type: "nvarchar(100)", nullable: false)
                 },
                 constraints: table =>
@@ -25,7 +26,8 @@ namespace _1.DAL.Migrations
                 name: "hangSX",
                 columns: table => new
                 {
-                    maHangSX = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    maHangSX = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     tenHangSX = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     trangThai = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -53,7 +55,8 @@ namespace _1.DAL.Migrations
                 name: "mauSac",
                 columns: table => new
                 {
-                    maMauSac = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    maMauSac = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     tenMau = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     trangThai = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -66,7 +69,8 @@ namespace _1.DAL.Migrations
                 name: "size",
                 columns: table => new
                 {
-                    maSize = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    maSize = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     SiZe = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     trangThai = table.Column<bool>(type: "bit", nullable: false)
                 },
@@ -79,8 +83,9 @@ namespace _1.DAL.Migrations
                 name: "nhanVien",
                 columns: table => new
                 {
-                    maNhanVien = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    maChucVu = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    maNhanVien = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    maChucVu = table.Column<int>(type: "int", nullable: false),
                     TenNV = table.Column<string>(type: "nvarchar(100)", nullable: false),
                     diaChi = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     SDT = table.Column<string>(type: "nvarchar(100)", nullable: false),
@@ -103,10 +108,11 @@ namespace _1.DAL.Migrations
                 name: "sanPham",
                 columns: table => new
                 {
-                    maSanPham = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    maMauSac = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    maSize = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    maHangSX = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    maSanPham = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    maMauSac = table.Column<int>(type: "int", nullable: false),
+                    maSize = table.Column<int>(type: "int", nullable: false),
+                    maHangSX = table.Column<int>(type: "int", nullable: false),
                     TenSP = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Gianhap = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
                     Giaban = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
@@ -141,8 +147,9 @@ namespace _1.DAL.Migrations
                 name: "hoaDon",
                 columns: table => new
                 {
-                    maHoaDon = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    maNhanVien = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    maHoaDon = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    maNhanVien = table.Column<int>(type: "int", nullable: false),
                     SDT_KH = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     ngayBan = table.Column<DateTime>(type: "date", nullable: false),
                     ngayTT = table.Column<DateTime>(type: "date", nullable: false),
@@ -169,15 +176,15 @@ namespace _1.DAL.Migrations
                 name: "hoaDonChiTiet",
                 columns: table => new
                 {
-                    maHoaDon = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    maSanPhamChiTiet = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    maHoaDon = table.Column<int>(type: "int", nullable: false),
+                    maSanPham = table.Column<int>(type: "int", nullable: false),
                     Soluong = table.Column<int>(type: "int", nullable: false),
                     donGia = table.Column<int>(type: "int", nullable: false),
                     trangThai = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_hoaDonChiTiet", x => new { x.maHoaDon, x.maSanPhamChiTiet });
+                    table.PrimaryKey("PK_hoaDonChiTiet", x => new { x.maHoaDon, x.maSanPham });
                     table.ForeignKey(
                         name: "FK_hoaDonChiTiet_hoaDon_maHoaDon",
                         column: x => x.maHoaDon,
@@ -185,8 +192,8 @@ namespace _1.DAL.Migrations
                         principalColumn: "maHoaDon",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_hoaDonChiTiet_sanPham_maSanPhamChiTiet",
-                        column: x => x.maSanPhamChiTiet,
+                        name: "FK_hoaDonChiTiet_sanPham_maSanPham",
+                        column: x => x.maSanPham,
                         principalTable: "sanPham",
                         principalColumn: "maSanPham",
                         onDelete: ReferentialAction.Cascade);
@@ -203,9 +210,9 @@ namespace _1.DAL.Migrations
                 column: "SDT_KH");
 
             migrationBuilder.CreateIndex(
-                name: "IX_hoaDonChiTiet_maSanPhamChiTiet",
+                name: "IX_hoaDonChiTiet_maSanPham",
                 table: "hoaDonChiTiet",
-                column: "maSanPhamChiTiet");
+                column: "maSanPham");
 
             migrationBuilder.CreateIndex(
                 name: "IX_nhanVien_maChucVu",

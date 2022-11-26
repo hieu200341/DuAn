@@ -17,6 +17,7 @@ namespace _1.DAL.Configurations
             builder.ToTable("hoaDon");
             // Set khóa chính
             builder.HasKey(x => x.maHoaDon);
+            builder.Property(x => x.maHoaDon).UseIdentityColumn(1, 1);
             // Set các ràng buộc cho thuộc tính
             builder.Property(x => x.ngayBan).HasColumnName("ngayBan")
                 .IsRequired().HasColumnType("date");

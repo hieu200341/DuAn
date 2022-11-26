@@ -24,8 +24,11 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.chucVu", b =>
                 {
-                    b.Property<string>("maChucVu")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maChucVu")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maChucVu"), 1L, 1);
 
                     b.Property<string>("tenCV")
                         .IsRequired()
@@ -39,8 +42,11 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.hangSX", b =>
                 {
-                    b.Property<string>("maHangSX")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maHangSX")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maHangSX"), 1L, 1);
 
                     b.Property<string>("tenHangSX")
                         .IsRequired()
@@ -58,16 +64,18 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.hoaDon", b =>
                 {
-                    b.Property<string>("maHoaDon")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maHoaDon")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maHoaDon"), 1L, 1);
 
                     b.Property<string>("SDT_KH")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("maNhanVien")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maNhanVien")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("ngayBan")
                         .HasColumnType("date")
@@ -92,11 +100,11 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.hoaDonChiTiet", b =>
                 {
-                    b.Property<string>("maHoaDon")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maHoaDon")
+                        .HasColumnType("int");
 
-                    b.Property<string>("maSanPhamChiTiet")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maSanPham")
+                        .HasColumnType("int");
 
                     b.Property<int>("Soluong")
                         .HasColumnType("int")
@@ -110,9 +118,9 @@ namespace _1.DAL.Migrations
                         .HasColumnType("int")
                         .HasColumnName("donGia");
 
-                    b.HasKey("maHoaDon", "maSanPhamChiTiet");
+                    b.HasKey("maHoaDon", "maSanPham");
 
-                    b.HasIndex("maSanPhamChiTiet");
+                    b.HasIndex("maSanPham");
 
                     b.ToTable("hoaDonChiTiet", (string)null);
                 });
@@ -147,8 +155,11 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.mauSac", b =>
                 {
-                    b.Property<string>("maMauSac")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maMauSac")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maMauSac"), 1L, 1);
 
                     b.Property<string>("tenMau")
                         .IsRequired()
@@ -166,8 +177,11 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.nhanVien", b =>
                 {
-                    b.Property<string>("maNhanVien")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maNhanVien")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maNhanVien"), 1L, 1);
 
                     b.Property<string>("SDT")
                         .IsRequired()
@@ -188,9 +202,8 @@ namespace _1.DAL.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("email");
 
-                    b.Property<string>("maChucVu")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maChucVu")
+                        .HasColumnType("int");
 
                     b.Property<string>("matKhau")
                         .IsRequired()
@@ -210,8 +223,11 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.SanPham", b =>
                 {
-                    b.Property<string>("maSanPham")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maSanPham")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maSanPham"), 1L, 1);
 
                     b.Property<decimal>("Giaban")
                         .HasColumnType("decimal(18,2)");
@@ -233,17 +249,14 @@ namespace _1.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("maHangSX")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maHangSX")
+                        .HasColumnType("int");
 
-                    b.Property<string>("maMauSac")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maMauSac")
+                        .HasColumnType("int");
 
-                    b.Property<string>("maSize")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maSize")
+                        .HasColumnType("int");
 
                     b.HasKey("maSanPham");
 
@@ -258,8 +271,11 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.size", b =>
                 {
-                    b.Property<string>("maSize")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("maSize")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maSize"), 1L, 1);
 
                     b.Property<string>("SiZe")
                         .IsRequired()
@@ -302,15 +318,15 @@ namespace _1.DAL.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("_1.DAL.Models.SanPham", "sanPhamChiTiet")
+                    b.HasOne("_1.DAL.Models.SanPham", "sanPham")
                         .WithMany("hoaDonChiTiet")
-                        .HasForeignKey("maSanPhamChiTiet")
+                        .HasForeignKey("maSanPham")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("hoaDon");
 
-                    b.Navigation("sanPhamChiTiet");
+                    b.Navigation("sanPham");
                 });
 
             modelBuilder.Entity("_1.DAL.Models.nhanVien", b =>

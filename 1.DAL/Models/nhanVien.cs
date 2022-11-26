@@ -8,8 +8,8 @@ namespace _1.DAL.Models
 {
     public class nhanVien
     {
-        public string maNhanVien { get; set; }
-        public string maChucVu { get; set; }
+        public int maNhanVien { get; set; }
+        public int maChucVu { get; set; }
         public string TenNV { get; set; }
         public string diaChi { get; set; }
         public string SDT { get; set; }
