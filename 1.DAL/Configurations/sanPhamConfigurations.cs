@@ -14,7 +14,6 @@ namespace _1.DAL.Configurations
         public void Configure(EntityTypeBuilder<SanPham> builder)
         {
             builder.ToTable("sanPham");
-            builder.Property(x => x.IdSanPham).IsRequired();
             builder.HasKey(c => c.maSanPham);
             builder.Property(c => c.TenSP).IsRequired();
             builder.Property(c => c.Gianhap).IsRequired();

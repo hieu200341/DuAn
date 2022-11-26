@@ -15,7 +15,6 @@ namespace _1.DAL.Configurations
         {
             // Đặt tên bảng
             builder.ToTable("hangSX");
-            builder.Property(x => x.IdHangSX).IsRequired();
             // Set khóa chính
             builder.HasKey(x => x.maHangSX);
             // Set các ràng buộc cho thuộc tính

@@ -15,7 +15,6 @@ namespace _1.DAL.Configurations
         {
             // Đặt tên bảng
             builder.ToTable("hoaDon");
-            builder.Property(x => x.IdHD).IsRequired();
             // Set khóa chính
             builder.HasKey(x => x.maHoaDon);
             // Set các ràng buộc cho thuộc tính

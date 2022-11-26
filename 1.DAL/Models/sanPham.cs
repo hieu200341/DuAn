@@ -8,7 +8,6 @@ namespace _1.DAL.Models
 {
     public class SanPham
     {
-        public Guid IdSanPham { get; set; }
         public string maSanPham { get; set; }
         public string maMauSac { get; set; }
         public string maSize { get; set; }

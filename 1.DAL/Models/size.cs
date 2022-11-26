@@ -8,7 +8,6 @@ namespace _1.DAL.Models
 {
     public class size
     {
-        public Guid IdSize { get; set; }
         public string maSize { get; set; }
         public string SiZe { get; set; }
         public bool trangThai { get; set; }

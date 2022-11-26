@@ -41,7 +41,7 @@ namespace _3.GUI.View.FromSanPham
             var nsx = _QLhangServices.GetHangSXFromDB();
             foreach (var item in nsx)
             {
-                cb_NSX.Items.Add(item.maHangSX);
+                cb_NSX.Items.Add(item.tenHangSX);
             }
         }
         public void LoadMauSac()
@@ -49,7 +49,7 @@ namespace _3.GUI.View.FromSanPham
             var mau = _qLmauSacServices.GetMauSacFromDB();
             foreach (var item in mau)
             {
-                cb_Mau.Items.Add(item.maMauSac);
+                cb_Mau.Items.Add(item.tenMau);
             }
         }
         public void LoadSize()
@@ -57,7 +57,7 @@ namespace _3.GUI.View.FromSanPham
             var size = _qLsizeServices.GetSizeFromDB();
             foreach (var item in size)
             {
-                cb_size.Items.Add(item.maSize);
+                cb_size.Items.Add(item.SiZe);
             }
         }
         public void loadDuLieu()
@@ -69,7 +69,6 @@ namespace _3.GUI.View.FromSanPham
                         join d in _QLhangServices.GetHangSXFromDB() on a.maSanPham equals d.maHangSX
                         select new SanPham
                         {
-                            IdSanPham = a.IdSanPham,
                             maSanPham = a.maSanPham,
                             TenSP = a.TenSP,
                             Gianhap = a.Gianhap,
@@ -82,7 +81,7 @@ namespace _3.GUI.View.FromSanPham
                         }).ToList();
             foreach (var item in data)
             {
-                dtgv_sanPham.Rows.Add(item.IdSanPham, item.maSanPham, item.TenSP, item.Gianhap, item.Giaban, item.Soluong,item.mauSac, item.size,item.hangSX,
+                dtgv_sanPham.Rows.Add(item.maSanPham, item.TenSP, item.Gianhap, item.Giaban, item.Soluong,item.mauSac, item.size,item.hangSX,
                     item.Trangthai == true ? "Kinh doanh" : "Ngừng kinh doanh");
             }
         }
@@ -165,15 +164,14 @@ namespace _3.GUI.View.FromSanPham
             {
                 SanPham sp = new SanPham()
                 {
-                    IdSanPham = Guid.NewGuid(),
                     maSanPham = tbt_ma.Text,
                     TenSP = tbt_ten.Text,
                     Gianhap = Convert.ToDecimal(tbt_giaNhap.Text),
                     Giaban = Convert.ToDecimal(tbt_giaBan.Text),
                     Soluong = Convert.ToInt32(tbt_soLuong.Text),
-                    maMauSac = Convert.ToString(cb_Mau.SelectedIndex + 1),
-                    maSize = Convert.ToString(cb_size.SelectedIndex + 1),
-                    maHangSX = Convert.ToString(cb_NSX.SelectedIndex + 1),
+                    maMauSac = Convert.ToString(cb_Mau.SelectedValue),
+                    maSize = Convert.ToString(cb_size.SelectedValue),
+                    maHangSX = Convert.ToString(cb_NSX.SelectedValue),
                     Trangthai = rb_con.Checked,
                     linkAnh = Avatar
                 };

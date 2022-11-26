@@ -30,7 +30,7 @@ namespace _3.GUI.View
             dtgv_NSX.Rows.Clear();
             foreach (var item in _QLhangSXServices.GetHangSXFromDB())
             {
-                dtgv_NSX.Rows.Add(item.IdHangSX, item.maHangSX, item.tenHangSX,
+                dtgv_NSX.Rows.Add(item.maHangSX, item.tenHangSX,
                     item.trangThai == true ? "Hoạt động" : "KHĐ");
             }
             //lblThongKe.Text = "Tổng số nhà cung cấp: " + dtgv_NCC.Rows.Count;
@@ -52,7 +52,6 @@ namespace _3.GUI.View
             {
                 hangSX ncc = new hangSX()
                 {
-                    IdHangSX = Guid.NewGuid(),
                     maHangSX = tbt_maNSX.Text,
                     tenHangSX = tbt_TenNSX.Text,
                     trangThai = rb_HoatDong.Checked,
@@ -83,10 +82,10 @@ namespace _3.GUI.View
         private void dtgv_NSX_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dtgv_NSX.Rows[e.RowIndex];
-            tbt_maNSX.Text = row.Cells[1].Value.ToString();
-            tbt_TenNSX.Text = row.Cells[2].Value.ToString();
-            rb_HoatDong.Checked = row.Cells[3].Value.ToString() == "Hoạt động" ? true : false;
-            rb_KHD.Checked = row.Cells[3].Value.ToString() == "KHĐ" ? true : false;
+            tbt_maNSX.Text = row.Cells[0].Value.ToString();
+            tbt_TenNSX.Text = row.Cells[1].Value.ToString();
+            rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Hoạt động" ? true : false;
+            rb_KHD.Checked = row.Cells[2].Value.ToString() == "KHĐ" ? true : false;
         }
 
         private void btn_lamMoi_Click(object sender, EventArgs e)

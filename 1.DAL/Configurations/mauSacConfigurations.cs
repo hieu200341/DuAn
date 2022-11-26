@@ -15,7 +15,6 @@ namespace _1.DAL.Configurations
         {
             // Đặt tên bảng
             builder.ToTable("mauSac");
-            builder.Property(x => x.IdMauSac).IsRequired();
             // Set khóa chính
             builder.HasKey(x => x.maMauSac);
             // Set các ràng buộc cho thuộc tính

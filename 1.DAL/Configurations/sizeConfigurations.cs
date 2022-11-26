@@ -15,7 +15,6 @@ namespace _1.DAL.Configurations
         {
             // Đặt tên bảng
             builder.ToTable("size");
-            builder.Property(x => x.IdSize).IsRequired();
             // Set khóa chính
             builder.HasKey(x => x.maSize);
             // Set các ràng buộc cho thuộc tính

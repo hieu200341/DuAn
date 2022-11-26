@@ -30,7 +30,7 @@ namespace _3.GUI.View.FromSanPham
             dtgv_Size.Rows.Clear();
             foreach (var item in _QLsizeServices.GetSizeFromDB())
             {
-                dtgv_Size.Rows.Add(item.IdSize, item.maSize, item.SiZe,
+                dtgv_Size.Rows.Add(item.maSize, item.SiZe,
                     item.trangThai == true ? "Còn hàng" : "Hết hàng");
             }
         }
@@ -52,7 +52,6 @@ namespace _3.GUI.View.FromSanPham
             {
                 size addsize = new size()
                 {
-                    IdSize = Guid.NewGuid(),
                     maSize = tbt_maSize.Text,
                     SiZe = tbt_TenSize.Text,
                     trangThai = rb_HoatDong.Checked,
@@ -83,10 +82,10 @@ namespace _3.GUI.View.FromSanPham
         private void dtgv_Size_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dtgv_Size.Rows[e.RowIndex];
-            tbt_maSize.Text = row.Cells[1].Value.ToString();
-            tbt_TenSize.Text = row.Cells[2].Value.ToString();
-            rb_HoatDong.Checked = row.Cells[3].Value.ToString() == "Còn hàng" ? true : false;
-            rb_KHD.Checked = row.Cells[3].Value.ToString() == "Hết hàng" ? true : false;
+            tbt_maSize.Text = row.Cells[0].Value.ToString();
+            tbt_TenSize.Text = row.Cells[1].Value.ToString();
+            rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
+            rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;
         }
     }
 }

@@ -30,7 +30,7 @@ namespace _3.GUI.View.FromSanPham
             dtgv_Mau.Rows.Clear();
             foreach (var item in _QLmauSacServices.GetMauSacFromDB())
             {
-                dtgv_Mau.Rows.Add(item.IdMauSac, item.maMauSac, item.tenMau,
+                dtgv_Mau.Rows.Add( item.maMauSac, item.tenMau,
                     item.trangThai == true ? "Còn hàng" : "Hết hàng");
             }
         }
@@ -52,7 +52,6 @@ namespace _3.GUI.View.FromSanPham
             {
                 mauSac addMau = new mauSac()
                 {
-                    IdMauSac = Guid.NewGuid(),
                     maMauSac = tbt_maMau.Text,
                     tenMau = tbt_TenMau.Text,
                     trangThai = rb_HoatDong.Checked,
@@ -83,10 +82,10 @@ namespace _3.GUI.View.FromSanPham
         private void dtgv_Mau_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             DataGridViewRow row = dtgv_Mau.Rows[e.RowIndex];
-            tbt_maMau.Text = row.Cells[1].Value.ToString();
-            tbt_TenMau.Text = row.Cells[2].Value.ToString();
-            rb_HoatDong.Checked = row.Cells[3].Value.ToString() == "Còn hàng" ? true : false;
-            rb_KHD.Checked = row.Cells[3].Value.ToString() == "Hết hàng" ? true : false;
+            tbt_maMau.Text = row.Cells[0].Value.ToString();
+            tbt_TenMau.Text = row.Cells[1].Value.ToString();
+            rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
+            rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;
         }
     }
 }

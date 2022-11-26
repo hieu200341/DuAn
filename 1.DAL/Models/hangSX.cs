@@ -8,7 +8,6 @@ namespace _1.DAL.Models
 {
     public class hangSX
     {
-        public Guid IdHangSX { get; set; }
         public string maHangSX { get; set; }
         public string tenHangSX { get; set; }
         public bool trangThai { get; set; }

@@ -8,7 +8,6 @@ namespace _1.DAL.Models
 {
     public class mauSac
     {
-        public Guid IdMauSac { get; set; }
         public string maMauSac { set; get; }
         public string tenMau { get; set; }
         public bool trangThai { get; set; }
