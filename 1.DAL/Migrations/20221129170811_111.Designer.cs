@@ -12,7 +12,7 @@ using _1.DAL.Context;
 namespace _1.DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221126183255_111")]
+    [Migration("20221129170811_111")]
     partial class _111
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -40,6 +40,18 @@ namespace _1.DAL.Migrations
                     b.HasKey("maChucVu");
 
                     b.ToTable("chucVu", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            maChucVu = 1,
+                            tenCV = "Quản lý"
+                        },
+                        new
+                        {
+                            maChucVu = 2,
+                            tenCV = "Nhân viên"
+                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.hangSX", b =>
@@ -62,6 +74,26 @@ namespace _1.DAL.Migrations
                     b.HasKey("maHangSX");
 
                     b.ToTable("hangSX", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            maHangSX = 1,
+                            tenHangSX = "Sao Vàng",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            maHangSX = 2,
+                            tenHangSX = "Sahara",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            maHangSX = 3,
+                            tenHangSX = "Tỷ Xuân",
+                            trangThai = true
+                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.hoaDon", b =>
@@ -153,6 +185,32 @@ namespace _1.DAL.Migrations
                     b.HasKey("SDT_KH");
 
                     b.ToTable("khachHang", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            SDT_KH = "0123456789",
+                            TenKH = "Nguyễn Văn A",
+                            diaChi = "Hà Nội",
+                            gioiTinh = true,
+                            trangThai = true
+                        },
+                        new
+                        {
+                            SDT_KH = "0123456567",
+                            TenKH = "Nguyễn Văn B",
+                            diaChi = "Hải Phòng",
+                            gioiTinh = false,
+                            trangThai = true
+                        },
+                        new
+                        {
+                            SDT_KH = "0123456678",
+                            TenKH = "Nguyễn Văn C",
+                            diaChi = "Lạng Sơn",
+                            gioiTinh = true,
+                            trangThai = true
+                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.mauSac", b =>
@@ -175,6 +233,26 @@ namespace _1.DAL.Migrations
                     b.HasKey("maMauSac");
 
                     b.ToTable("mauSac", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            maMauSac = 1,
+                            tenMau = "Xanh",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            maMauSac = 2,
+                            tenMau = "Đỏ",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            maMauSac = 3,
+                            tenMau = "Trắng",
+                            trangThai = true
+                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.nhanVien", b =>
@@ -221,6 +299,30 @@ namespace _1.DAL.Migrations
                     b.HasIndex("maChucVu");
 
                     b.ToTable("nhanVien", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            maNhanVien = 1,
+                            SDT = "0379702133",
+                            TenNV = "Nguyễn Văn Đạo",
+                            diaChi = "Tuyên Quang",
+                            email = "daonvph18705@gmail.com",
+                            maChucVu = 1,
+                            matKhau = "123",
+                            tinhTrang = true
+                        },
+                        new
+                        {
+                            maNhanVien = 2,
+                            SDT = "0379702144",
+                            TenNV = "Nguyễn Văn B",
+                            diaChi = "Hà Nội",
+                            email = "baaa@gmail.com",
+                            maChucVu = 2,
+                            matKhau = "123",
+                            tinhTrang = true
+                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.SanPham", b =>
@@ -269,6 +371,60 @@ namespace _1.DAL.Migrations
                     b.HasIndex("maSize");
 
                     b.ToTable("sanPham", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            maSanPham = 1,
+                            Giaban = 1500m,
+                            Gianhap = 1000m,
+                            Soluong = 1000,
+                            TenSP = "Lacoste",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maHangSX = 1,
+                            maMauSac = 1,
+                            maSize = 1
+                        },
+                        new
+                        {
+                            maSanPham = 2,
+                            Giaban = 2000m,
+                            Gianhap = 1500m,
+                            Soluong = 1200,
+                            TenSP = "Gucci",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maHangSX = 2,
+                            maMauSac = 2,
+                            maSize = 2
+                        },
+                        new
+                        {
+                            maSanPham = 3,
+                            Giaban = 1700m,
+                            Gianhap = 1200m,
+                            Soluong = 1300,
+                            TenSP = "ADLV",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maHangSX = 3,
+                            maMauSac = 3,
+                            maSize = 3
+                        },
+                        new
+                        {
+                            maSanPham = 4,
+                            Giaban = 2100m,
+                            Gianhap = 1600m,
+                            Soluong = 1400,
+                            TenSP = "Uniqlo",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maHangSX = 2,
+                            maMauSac = 3,
+                            maSize = 1
+                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.size", b =>
@@ -291,6 +447,26 @@ namespace _1.DAL.Migrations
                     b.HasKey("maSize");
 
                     b.ToTable("size", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            maSize = 1,
+                            SiZe = "M",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            maSize = 2,
+                            SiZe = "L",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            maSize = 3,
+                            SiZe = "XL",
+                            trangThai = true
+                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.hoaDon", b =>

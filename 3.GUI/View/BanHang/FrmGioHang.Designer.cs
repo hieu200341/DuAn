@@ -37,7 +37,7 @@
             this.label14 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgv_sanPham = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label18 = new System.Windows.Forms.Label();
@@ -50,7 +50,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtgv_gioHang = new System.Windows.Forms.DataGridView();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,10 +85,10 @@
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_sanPham)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_gioHang)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -104,7 +104,7 @@
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.dtgv_sanPham);
             this.groupBox1.Location = new System.Drawing.Point(36, 24);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(857, 375);
@@ -179,10 +179,10 @@
             this.textBox1.Size = new System.Drawing.Size(163, 27);
             this.textBox1.TabIndex = 1;
             // 
-            // dataGridView1
+            // dtgv_sanPham
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgv_sanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_sanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column5,
@@ -190,12 +190,12 @@
             this.Column3,
             this.Column7,
             this.Column4});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 65);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(855, 310);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgv_sanPham.Location = new System.Drawing.Point(0, 65);
+            this.dtgv_sanPham.Name = "dtgv_sanPham";
+            this.dtgv_sanPham.RowHeadersWidth = 51;
+            this.dtgv_sanPham.RowTemplate.Height = 29;
+            this.dtgv_sanPham.Size = new System.Drawing.Size(855, 310);
+            this.dtgv_sanPham.TabIndex = 0;
             // 
             // groupBox2
             // 
@@ -210,7 +210,7 @@
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.pictureBox1);
-            this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.dtgv_gioHang);
             this.groupBox2.Location = new System.Drawing.Point(36, 425);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1007, 359);
@@ -315,22 +315,22 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // dataGridView2
+            // dtgv_gioHang
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgv_gioHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_gioHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column8,
             this.Column9,
             this.Column12,
             this.Column13,
             this.Column10,
             this.Column11});
-            this.dataGridView2.Location = new System.Drawing.Point(0, 40);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 29;
-            this.dataGridView2.Size = new System.Drawing.Size(654, 242);
-            this.dataGridView2.TabIndex = 1;
+            this.dtgv_gioHang.Location = new System.Drawing.Point(0, 40);
+            this.dtgv_gioHang.Name = "dtgv_gioHang";
+            this.dtgv_gioHang.RowHeadersWidth = 51;
+            this.dtgv_gioHang.RowTemplate.Height = 29;
+            this.dtgv_gioHang.Size = new System.Drawing.Size(654, 242);
+            this.dtgv_gioHang.TabIndex = 1;
             // 
             // Column8
             // 
@@ -575,7 +575,7 @@
             this.Column2.HeaderText = "Tên sản phẩm";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.Column2.Width = 130;
             // 
             // Column5
             // 
@@ -596,6 +596,7 @@
             this.Column3.HeaderText = "Đơn giá";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             // 
             // Column7
             // 
@@ -608,7 +609,6 @@
             this.Column4.HeaderText = "Số lượng tồn";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 120;
             // 
             // FrmGioHang
             // 
@@ -623,11 +623,11 @@
             this.Text = "FrmGioHang";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_sanPham)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_gioHang)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox4.ResumeLayout(false);
@@ -641,7 +641,7 @@
         private GroupBox groupBox1;
         private Label label1;
         private TextBox textBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dtgv_sanPham;
         private GroupBox groupBox2;
         private Button button4;
         private Button button3;
@@ -651,7 +651,7 @@
         private TextBox textBox2;
         private Label label2;
         private PictureBox pictureBox1;
-        private DataGridView dataGridView2;
+        private DataGridView dtgv_gioHang;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
         private DataGridViewTextBoxColumn Column12;

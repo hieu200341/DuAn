@@ -199,6 +199,75 @@ namespace _1.DAL.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.InsertData(
+                table: "chucVu",
+                columns: new[] { "maChucVu", "tenCV" },
+                values: new object[,]
+                {
+                    { 1, "Quản lý" },
+                    { 2, "Nhân viên" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "hangSX",
+                columns: new[] { "maHangSX", "tenHangSX", "trangThai" },
+                values: new object[,]
+                {
+                    { 1, "Sao Vàng", true },
+                    { 2, "Sahara", true },
+                    { 3, "Tỷ Xuân", true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "khachHang",
+                columns: new[] { "SDT_KH", "TenKH", "diaChi", "gioiTinh", "trangThai" },
+                values: new object[,]
+                {
+                    { "0123456567", "Nguyễn Văn B", "Hải Phòng", false, true },
+                    { "0123456678", "Nguyễn Văn C", "Lạng Sơn", true, true },
+                    { "0123456789", "Nguyễn Văn A", "Hà Nội", true, true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "mauSac",
+                columns: new[] { "maMauSac", "tenMau", "trangThai" },
+                values: new object[,]
+                {
+                    { 1, "Xanh", true },
+                    { 2, "Đỏ", true },
+                    { 3, "Trắng", true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "size",
+                columns: new[] { "maSize", "SiZe", "trangThai" },
+                values: new object[,]
+                {
+                    { 1, "M", true },
+                    { 2, "L", true },
+                    { 3, "XL", true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "nhanVien",
+                columns: new[] { "maNhanVien", "SDT", "TenNV", "diaChi", "email", "maChucVu", "matKhau", "tinhTrang" },
+                values: new object[,]
+                {
+                    { 1, "0379702133", "Nguyễn Văn Đạo", "Tuyên Quang", "daonvph18705@gmail.com", 1, "123", true },
+                    { 2, "0379702144", "Nguyễn Văn B", "Hà Nội", "baaa@gmail.com", 2, "123", true }
+                });
+
+            migrationBuilder.InsertData(
+                table: "sanPham",
+                columns: new[] { "maSanPham", "Giaban", "Gianhap", "Soluong", "TenSP", "Trangthai", "linkAnh", "maHangSX", "maMauSac", "maSize" },
+                values: new object[,]
+                {
+                    { 1, 1500m, 1000m, 1000, "Lacoste", true, "", 1, 1, 1 },
+                    { 2, 2000m, 1500m, 1200, "Gucci", true, "", 2, 2, 2 },
+                    { 3, 1700m, 1200m, 1300, "ADLV", true, "", 3, 3, 3 },
+                    { 4, 2100m, 1600m, 1400, "Uniqlo", true, "", 2, 3, 1 }
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_hoaDon_maNhanVien",
                 table: "hoaDon",

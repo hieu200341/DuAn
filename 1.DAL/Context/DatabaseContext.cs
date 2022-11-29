@@ -1,5 +1,8 @@
-﻿using _1.DAL.Models;
+﻿using _1.DAL.Configurations;
+using _1.DAL.Extensions;
+using _1.DAL.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,9 +41,18 @@ namespace _1.DAL.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Apply cac config cho cac model
+            //modelBuilder.ApplyConfiguration(new chucVuConfigurations());
+            //modelBuilder.ApplyConfiguration(new hangSXConfigurations());
+            //modelBuilder.ApplyConfiguration(new hoaDonChiTietConfigurations());
+            //modelBuilder.ApplyConfiguration(new hoaDonChiTietConfigurations());
+            //modelBuilder.ApplyConfiguration(new khachHangConfigurations());
+            //modelBuilder.ApplyConfiguration(new mauSacConfigurations());
+            //modelBuilder.ApplyConfiguration(new nhanVienConfigurations());
+            //modelBuilder.ApplyConfiguration(new sanPhamConfigurations());
+            //modelBuilder.ApplyConfiguration(new sizeConfigurations());
+            //modelBuilder.ApplyConfiguration(new ProductInCategoryConfiguration());
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            // Phương thức này sẽ áp dụng tất cả các config hiện có
+            modelBuilder.Seed(); //gọi cái này để seeding data
         }
     }
 }
