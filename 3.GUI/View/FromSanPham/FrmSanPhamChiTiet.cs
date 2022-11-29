@@ -30,6 +30,8 @@ namespace _3.GUI.View.FromSanPham
             _qLsanPhamServices = new QLsanPhamServices();
             _sanPham = new SanPham();
             InitializeComponent();
+            //loadDuLieu();
+            //loadDate();
             rb_con.Checked = true;
             LoadNhaSanXuat();
             LoadMauSac();
@@ -56,8 +58,8 @@ namespace _3.GUI.View.FromSanPham
         }
         public void LoadSize()
         {
-            cb_size.Items.Clear();
-            cb_size.Items.Add("..");
+            //cb_size.Items.Clear();
+            //cb_size.Items.Add("..");
             var size = _qLsizeServices.GetSizeFromDB();
             foreach (var item in size)
             {
@@ -68,26 +70,10 @@ namespace _3.GUI.View.FromSanPham
         public void loadDuLieu()
         {
             dtgv_sanPham.Rows.Clear();
-            var data = (from a in _qLsanPhamServices.GetSanPhamFromDB()
-                        join b in _qLmauSacServices.GetMauSacFromDB() on a.maSanPham equals b.maMauSac
-                        join c in _qLsizeServices.GetSizeFromDB() on a.maSanPham equals c.maSize
-                        join d in _QLhangServices.GetHangSXFromDB() on a.maSanPham equals d.maHangSX
-                        select new SanPham
-                        {
-                            maSanPham = a.maSanPham,
-                            TenSP = a.TenSP,
-                            Gianhap = a.Gianhap,
-                            Giaban = a.Giaban,
-                            Soluong = a.Soluong,
-                            maMauSac = b.tenMau,
-                            maSize = c.SiZe,
-                            maHangSX = d.tenHangSX,
-                            Trangthai = a.Trangthai
-                        }).ToList();
-            foreach (var item in data)
+            foreach (var item in _qLsanPhamServices.getViewSanPham())
             {
-                dtgv_sanPham.Rows.Add(item.maSanPham, item.TenSP, item.Gianhap, item.Giaban, item.Soluong,item.mauSac, item.size,item.hangSX,
-                    item.Trangthai == true ? "Kinh doanh" : "Ngừng kinh doanh");
+                dtgv_sanPham.Rows.Add(item.SanPhams.maSanPham, item.SanPhams.TenSP, item.SanPhams.Gianhap, item.SanPhams.Giaban, item.SanPhams.Soluong,item.mauSacs.tenMau, item.sizes.SiZe,item.hangSXs.tenHangSX,
+                    item.SanPhams.Trangthai == true ? "Còn hàng" : "Hết hàng");
             }
         }
 
@@ -123,15 +109,13 @@ namespace _3.GUI.View.FromSanPham
         }
         private bool checkValidate()
         {
-            if (tbt_ma.Text == "" || tbt_ten.Text == "" || tbt_giaNhap.Text == "" 
+            if ( tbt_ten.Text == "" || tbt_giaNhap.Text == "" 
                 || tbt_giaBan.Text == "" || tbt_soLuong.Text == "" || cb_Mau.Text =="" 
                 || cb_size.Text == ""|| cb_NSX.Text =="") return false;
             return true;
         }
         private void btn_them_Click(object sender, EventArgs e)
         {
-            SanPham accsp = _qLsanPhamServices.GetSanPhamFromDB().FirstOrDefault
-            (p => p.maSanPham == tbt_ma.Text);
             SanPham tsp = _qLsanPhamServices.GetSanPhamFromDB().FirstOrDefault
             (p => p.TenSP == tbt_ten.Text);
             string number = tbt_giaBan.Text;
@@ -142,11 +126,6 @@ namespace _3.GUI.View.FromSanPham
             if (!match.Success)
             {
                 MessageBox.Show("Số lượng, đơn giá nhập hoặc đơn giá bán không hợp lệ");
-            }
-            else if (accsp != null)
-            {
-                MessageBox.Show("Mã hàng đã tồn tại");
-                tbt_ma.Text = "";
             }
             else if (tsp != null)
             {
@@ -169,20 +148,20 @@ namespace _3.GUI.View.FromSanPham
             {
                 SanPham sp = new SanPham()
                 {
-                    maSanPham = tbt_ma.Text,
                     TenSP = tbt_ten.Text,
                     Gianhap = Convert.ToDecimal(tbt_giaNhap.Text),
                     Giaban = Convert.ToDecimal(tbt_giaBan.Text),
                     Soluong = Convert.ToInt32(tbt_soLuong.Text),
-                    maMauSac = _qLmauSacServices.GetMauSacFromDB()[cb_Mau.SelectedIndex + 1].maMauSac,
-                    maSize = _qLsizeServices.GetSizeFromDB()[cb_size.SelectedIndex + 1].maSize,
-                    maHangSX = _QLhangServices.GetHangSXFromDB()[cb_NSX.SelectedIndex + 1].maHangSX,
+                    maMauSac = _qLmauSacServices.GetMauSacFromDB()[cb_Mau.SelectedIndex].maMauSac,
+                    maSize = _qLsizeServices.GetSizeFromDB()[cb_size.SelectedIndex].maSize,
+                    maHangSX = _QLhangServices.GetHangSXFromDB()[cb_NSX.SelectedIndex].maHangSX,
                     Trangthai = rb_con.Checked,
                     linkAnh = Avatar
                 };
                 
                 _qLsanPhamServices.addsanPham(sp);
                 MessageBox.Show("Thêm sản phẩm thành công");
+                //loadDate();
                 loadDuLieu();
 
             }

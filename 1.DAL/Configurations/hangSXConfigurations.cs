@@ -17,6 +17,7 @@ namespace _1.DAL.Configurations
             builder.ToTable("hangSX");
             // Set khóa chính
             builder.HasKey(x => x.maHangSX);
+            builder.Property(x => x.maHangSX).UseIdentityColumn(1, 1);
             // Set các ràng buộc cho thuộc tính
             builder.Property(x => x.tenHangSX).HasColumnName("tenHangSX")
                 .IsRequired().HasColumnType("nvarchar(100)");

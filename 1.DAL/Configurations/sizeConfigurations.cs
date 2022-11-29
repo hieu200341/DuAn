@@ -17,6 +17,7 @@ namespace _1.DAL.Configurations
             builder.ToTable("size");
             // Set khóa chính
             builder.HasKey(x => x.maSize);
+            builder.Property(x => x.maSize).UseIdentityColumn(1, 1);
             // Set các ràng buộc cho thuộc tính
             builder.Property(x => x.SiZe).HasColumnName("SiZe")
                 .IsRequired().HasColumnType("nvarchar(100)");

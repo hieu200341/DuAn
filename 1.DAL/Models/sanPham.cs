@@ -8,10 +8,10 @@ namespace _1.DAL.Models
 {
     public class SanPham
     {
-        public string maSanPham { get; set; }
-        public string maMauSac { get; set; }
-        public string maSize { get; set; }
-        public string maHangSX { get; set; }
+        public int maSanPham { get; set; }
+        public int maMauSac { get; set; }
+        public int maSize { get; set; }
+        public int maHangSX { get; set; }
         public string TenSP { get; set; }
         public decimal Gianhap { get; set; }
         public decimal Giaban { get; set; }

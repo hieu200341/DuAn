@@ -29,23 +29,21 @@
         private void InitializeComponent()
         {
             this.dtgv_Mau = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.btn_lamMoi = new System.Windows.Forms.Button();
             this.btb_CapNhat = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
-            this.tbt_maMau = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.rb_KHD = new System.Windows.Forms.RadioButton();
             this.rb_HoatDong = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.tbt_TenMau = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_Mau)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -66,6 +64,27 @@
             this.dtgv_Mau.Size = new System.Drawing.Size(789, 290);
             this.dtgv_Mau.TabIndex = 0;
             this.dtgv_Mau.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_Mau_CellClick);
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Mã màu sắc";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Tên màu sắc";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tình trạng";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 200;
             // 
             // groupBox3
             // 
@@ -128,13 +147,6 @@
             this.btn_them.UseVisualStyleBackColor = true;
             this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
             // 
-            // tbt_maMau
-            // 
-            this.tbt_maMau.Location = new System.Drawing.Point(186, 45);
-            this.tbt_maMau.Name = "tbt_maMau";
-            this.tbt_maMau.Size = new System.Drawing.Size(211, 27);
-            this.tbt_maMau.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -182,51 +194,19 @@
             this.tbt_TenMau.Size = new System.Drawing.Size(211, 27);
             this.tbt_TenMau.TabIndex = 3;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã màu sắc";
-            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rb_KHD);
             this.groupBox1.Controls.Add(this.rb_HoatDong);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbt_TenMau);
-            this.groupBox1.Controls.Add(this.tbt_maMau);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(117, 60);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(435, 242);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin màu sắc";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Mã màu sắc";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tên màu sắc";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tình trạng";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 200;
             // 
             // FrmMauSac
             // 
@@ -255,13 +235,11 @@
         private Button btn_lamMoi;
         private Button btb_CapNhat;
         private Button btn_them;
-        private TextBox tbt_maMau;
         private Label label2;
         private RadioButton rb_KHD;
         private RadioButton rb_HoatDong;
         private Label label3;
         private TextBox tbt_TenMau;
-        private Label label1;
         private GroupBox groupBox1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

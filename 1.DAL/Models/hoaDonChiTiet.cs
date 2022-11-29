@@ -8,12 +8,12 @@ namespace _1.DAL.Models
 {
     public class hoaDonChiTiet
     {
-        public string maHoaDon { get; set; }
-        public string maSanPhamChiTiet { get; set; }
+        public int maHoaDon { get; set; }
+        public int maSanPham { get; set; }
         public int Soluong { get; set; }
         public float donGia { get; set; }
         public bool Trangthai { get; set; }
-        public SanPham sanPhamChiTiet { get; set; }
+        public SanPham sanPham { get; set; }
         public hoaDon hoaDon { get; set; }
     }
 }

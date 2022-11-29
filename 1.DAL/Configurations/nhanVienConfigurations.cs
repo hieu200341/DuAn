@@ -17,6 +17,7 @@ namespace _1.DAL.Configurations
             builder.ToTable("nhanVien");
             // Set khóa chính
             builder.HasKey(x => x.maNhanVien);
+            builder.Property(x => x.maNhanVien).UseIdentityColumn(1, 1);
             // Set các ràng buộc cho thuộc tính
             builder.Property(x => x.TenNV).HasColumnName("TenNV")
                 .IsRequired().HasColumnType("nvarchar(100)");

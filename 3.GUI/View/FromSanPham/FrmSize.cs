@@ -16,7 +16,7 @@ namespace _3.GUI.View.FromSanPham
     public partial class FrmSize : Form
     {
         private IQLsizeServices _QLsizeServices;
-        private size _size;
+        public size _size;
         public FrmSize()
         {
             _QLsizeServices = new QLsizeServices();
@@ -38,21 +38,20 @@ namespace _3.GUI.View.FromSanPham
         {
 
             size accSize = _QLsizeServices.GetSizeFromDB().FirstOrDefault
-              (p => p.maSize == tbt_maSize.Text);
-            if (tbt_maSize.Text == "" || tbt_TenSize.Text == "")
+              (p => p.SiZe == tbt_TenSize.Text);
+            if (tbt_TenSize.Text == "")
             {
                 MessageBox.Show("Không được để trống thông tin");
             }
             else if (accSize != null)
             {
                 MessageBox.Show("Mã Size đã tồn tại");
-                tbt_maSize.Text = "";
+                tbt_TenSize.Text = "";
             }
             else
             {
                 size addsize = new size()
                 {
-                    maSize = tbt_maSize.Text,
                     SiZe = tbt_TenSize.Text,
                     trangThai = rb_HoatDong.Checked,
                 };
@@ -64,28 +63,51 @@ namespace _3.GUI.View.FromSanPham
 
         private void btb_CapNhat_Click(object sender, EventArgs e)
         {
-            var updateSize = _QLsizeServices.GetSizeFromDB().FirstOrDefault(p => p.maSize == tbt_maSize.Text);
-            if (updateSize != null)
+            //var updateSize = _QLsizeServices.GetSizeFromDB().FirstOrDefault(p => p.maSize == tbt_maSize.Text);
+            //if (updateSize != null)
+            //{
+            //    updateSize.SiZe = tbt_TenSize.Text;
+            //    updateSize.trangThai = rb_HoatDong.Checked;
+            //    _QLsizeServices.UpdateSize(updateSize);
+            //    MessageBox.Show("Cập nhật Size thành công");
+            //    loadData();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bạn nhập sai mã ");
+            //}
+            if (_size == null)
             {
-                updateSize.SiZe = tbt_TenSize.Text;
-                updateSize.trangThai = rb_HoatDong.Checked;
-                _QLsizeServices.UpdateSize(updateSize);
-                MessageBox.Show("Cập nhật Size thành công");
-                loadData();
+                MessageBox.Show("Vui lòng chọn Size");
             }
             else
             {
-                MessageBox.Show("Bạn nhập sai mã ");
+                if (_size.SiZe == tbt_TenSize.Text || (_size.SiZe != tbt_TenSize.Text && _QLsizeServices.GetSizeFromDB().FirstOrDefault(x => x.SiZe == tbt_TenSize.Text) == null))
+                {
+                    _size.SiZe = tbt_TenSize.Text;
+                    _size.trangThai = rb_HoatDong.Checked;
+                    _QLsizeServices.UpdateSize(_size);
+                    MessageBox.Show("Cập nhật thành công");
+                    loadData();
+                    tbt_TenSize.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Tên size đã tồn tại");
+                }
             }
         }
 
         private void dtgv_Size_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dtgv_Size.Rows[e.RowIndex];
-            tbt_maSize.Text = row.Cells[0].Value.ToString();
-            tbt_TenSize.Text = row.Cells[1].Value.ToString();
-            rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
-            rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgv_Size.Rows[e.RowIndex];
+                _size = _QLsizeServices.GetSizeFromDB().FirstOrDefault(x => x.maSize == Convert.ToInt32(row.Cells[0].Value));
+                tbt_TenSize.Text = row.Cells[1].Value.ToString();
+                rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
+                rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;
+            }
         }
     }
 }

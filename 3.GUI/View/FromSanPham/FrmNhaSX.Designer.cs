@@ -33,9 +33,7 @@
             this.rb_HoatDong = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.tbt_TenNSX = new System.Windows.Forms.TextBox();
-            this.tbt_maNSX = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.btn_lamMoi = new System.Windows.Forms.Button();
@@ -58,9 +56,7 @@
             this.groupBox1.Controls.Add(this.rb_HoatDong);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tbt_TenNSX);
-            this.groupBox1.Controls.Add(this.tbt_maNSX);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(33, 39);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(435, 242);
@@ -106,13 +102,6 @@
             this.tbt_TenNSX.Size = new System.Drawing.Size(211, 27);
             this.tbt_TenNSX.TabIndex = 3;
             // 
-            // tbt_maNSX
-            // 
-            this.tbt_maNSX.Location = new System.Drawing.Point(186, 45);
-            this.tbt_maNSX.Name = "tbt_maNSX";
-            this.tbt_maNSX.Size = new System.Drawing.Size(211, 27);
-            this.tbt_maNSX.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -121,15 +110,6 @@
             this.label2.Size = new System.Drawing.Size(118, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên nhà sản xuất";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã nhà sản xuất";
             // 
             // groupBox2
             // 
@@ -255,9 +235,7 @@
         private RadioButton rb_HoatDong;
         private Label label3;
         private TextBox tbt_TenNSX;
-        private TextBox tbt_maNSX;
         private Label label2;
-        private Label label1;
         private GroupBox groupBox2;
         private Button btn_thoat;
         private Button btn_lamMoi;

@@ -17,7 +17,7 @@ namespace _3.GUI.View.FromSanPham
     public partial class FrmMauSac : Form
     {
         private IQLmauSacServices _QLmauSacServices;
-        private mauSac _mauSac;
+        public mauSac _mauSac;
         public FrmMauSac()
         {
             _QLmauSacServices = new QLmauSacServices();
@@ -38,21 +38,20 @@ namespace _3.GUI.View.FromSanPham
         private void btn_them_Click(object sender, EventArgs e)
         {
             mauSac accMau = _QLmauSacServices.GetMauSacFromDB().FirstOrDefault
-              (p => p.maMauSac == tbt_maMau.Text);
-            if (tbt_maMau.Text == "" || tbt_TenMau.Text == "")
+              (p => p.tenMau == tbt_TenMau.Text);
+            if (tbt_TenMau.Text == "")
             {
                 MessageBox.Show("Không được để trống thông tin");
             }
             else if (accMau != null)
             {
-                MessageBox.Show("Mã màu sắc đã tồn tại");
-                tbt_maMau.Text = "";
+                MessageBox.Show("Tên màu đã tồn tại");
+                tbt_TenMau.Text = "";
             }
             else
             {
                 mauSac addMau = new mauSac()
                 {
-                    maMauSac = tbt_maMau.Text,
                     tenMau = tbt_TenMau.Text,
                     trangThai = rb_HoatDong.Checked,
                 };
@@ -64,28 +63,51 @@ namespace _3.GUI.View.FromSanPham
 
         private void btb_CapNhat_Click(object sender, EventArgs e)
         {
-            var update = _QLmauSacServices.GetMauSacFromDB().FirstOrDefault(p => p.maMauSac == tbt_maMau.Text);
-            if (update != null)
+            //var update = _QLmauSacServices.GetMauSacFromDB().FirstOrDefault(p => p.tenMau == tbt_maMau.Text);
+            //if (update != null)
+            //{
+            //    update.tenMau = tbt_TenMau.Text;
+            //    update.trangThai = rb_HoatDong.Checked;
+            //    _QLmauSacServices.UpdateMauSac(update);
+            //    MessageBox.Show("Cập nhật màu sắc thành công");
+            //    loadData();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Bạn nhập sai mã màu sắc");
+            //}
+            if (_mauSac == null)
             {
-                update.tenMau = tbt_TenMau.Text;
-                update.trangThai = rb_HoatDong.Checked;
-                _QLmauSacServices.UpdateMauSac(update);
-                MessageBox.Show("Cập nhật màu sắc thành công");
-                loadData();
+                MessageBox.Show("Vui lòng chọn màu sắc");
             }
             else
             {
-                MessageBox.Show("Bạn nhập sai mã màu sắc");
+                if (_mauSac.tenMau == tbt_TenMau.Text || (_mauSac.tenMau != tbt_TenMau.Text && _QLmauSacServices.GetMauSacFromDB().FirstOrDefault(x => x.tenMau == tbt_TenMau.Text) == null))
+                {
+                    _mauSac.tenMau = tbt_TenMau.Text;
+                    _mauSac.trangThai = rb_HoatDong.Checked;
+                    _QLmauSacServices.UpdateMauSac(_mauSac);
+                    MessageBox.Show("Cập nhật thành công");
+                    loadData();
+                    tbt_TenMau.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Tên màu sắc đã tồn tại");
+                }
             }
         }
 
         private void dtgv_Mau_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridViewRow row = dtgv_Mau.Rows[e.RowIndex];
-            tbt_maMau.Text = row.Cells[0].Value.ToString();
-            tbt_TenMau.Text = row.Cells[1].Value.ToString();
-            rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
-            rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgv_Mau.Rows[e.RowIndex];
+                _mauSac = _QLmauSacServices.GetMauSacFromDB().FirstOrDefault(x => x.maMauSac == Convert.ToInt32(row.Cells[0].Value));
+                tbt_TenMau.Text = row.Cells[1].Value.ToString();
+                rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
+                rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;
+            }
         }
     }
 }
