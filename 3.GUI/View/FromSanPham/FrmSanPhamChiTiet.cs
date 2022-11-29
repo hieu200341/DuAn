@@ -1,6 +1,7 @@
 ﻿using _1.DAL.Models;
 using _2.BUS.IServices;
 using _2.BUS.Services;
+using AForge.Video.DirectShow;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,6 +23,8 @@ namespace _3.GUI.View.FromSanPham
         IQLsanPhamServices _qLsanPhamServices;
         public SanPham _sanPham;
         public string Avatar = "";
+        FilterInfoCollection filterInfoCollection;
+        VideoCaptureDevice videoCaptureDevice;
         public FrmSanPhamChiTiet()
         {
             _qLsizeServices = new QLsizeServices();
@@ -37,6 +40,7 @@ namespace _3.GUI.View.FromSanPham
             LoadMauSac();
             LoadSize();
             loadDuLieu();
+
         }
         public void LoadNhaSanXuat()
         {

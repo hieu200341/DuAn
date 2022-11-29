@@ -36,14 +36,20 @@
             this.tb_diachi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtg_show = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.tb_matkhau = new System.Windows.Forms.TextBox();
-            this.tb_manv = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.rd_khd = new System.Windows.Forms.RadioButton();
             this.rd_hd = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
@@ -112,12 +118,77 @@
             // dtg_show
             // 
             this.dtg_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtg_show.Location = new System.Drawing.Point(564, 30);
+            this.dtg_show.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8});
+            this.dtg_show.Location = new System.Drawing.Point(519, 30);
             this.dtg_show.Name = "dtg_show";
             this.dtg_show.RowHeadersWidth = 51;
             this.dtg_show.RowTemplate.Height = 29;
-            this.dtg_show.Size = new System.Drawing.Size(669, 385);
+            this.dtg_show.Size = new System.Drawing.Size(771, 385);
             this.dtg_show.TabIndex = 24;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã nhân viên";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên nhân viên";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Địa chỉ";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Số điện thoại";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Email";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Mật khẩu";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 80;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Trạng thái";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 80;
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Chức vụ";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 80;
             // 
             // label3
             // 
@@ -150,8 +221,6 @@
             // 
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.tb_matkhau);
-            this.panel1.Controls.Add(this.tb_manv);
-            this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.rd_khd);
             this.panel1.Controls.Add(this.rd_hd);
             this.panel1.Controls.Add(this.label6);
@@ -185,22 +254,6 @@
             this.tb_matkhau.Name = "tb_matkhau";
             this.tb_matkhau.Size = new System.Drawing.Size(177, 27);
             this.tb_matkhau.TabIndex = 42;
-            // 
-            // tb_manv
-            // 
-            this.tb_manv.Location = new System.Drawing.Point(199, 19);
-            this.tb_manv.Name = "tb_manv";
-            this.tb_manv.Size = new System.Drawing.Size(177, 27);
-            this.tb_manv.TabIndex = 39;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(36, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 20);
-            this.label7.TabIndex = 38;
-            this.label7.Text = "Mã nhân viên";
             // 
             // rd_khd
             // 
@@ -330,9 +383,15 @@
         private ComboBox cbb_cv;
         private RadioButton rd_khd;
         private RadioButton rd_hd;
-        private TextBox tb_manv;
-        private Label label7;
         private Label label9;
         private TextBox tb_matkhau;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
     }
 }

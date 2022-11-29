@@ -33,9 +33,7 @@
             this.rb_HoatDong = new System.Windows.Forms.RadioButton();
             this.label3 = new System.Windows.Forms.Label();
             this.tb_tencv = new System.Windows.Forms.TextBox();
-            this.tb_macv = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.btn_lamMoi = new System.Windows.Forms.Button();
             this.btb_CapNhat = new System.Windows.Forms.Button();
@@ -55,9 +53,7 @@
             this.groupBox1.Controls.Add(this.rb_HoatDong);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.tb_tencv);
-            this.groupBox1.Controls.Add(this.tb_macv);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(112, 26);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(435, 242);
@@ -103,13 +99,6 @@
             this.tb_tencv.Size = new System.Drawing.Size(211, 27);
             this.tb_tencv.TabIndex = 3;
             // 
-            // tb_macv
-            // 
-            this.tb_macv.Location = new System.Drawing.Point(186, 45);
-            this.tb_macv.Name = "tb_macv";
-            this.tb_macv.Size = new System.Drawing.Size(211, 27);
-            this.tb_macv.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -118,15 +107,6 @@
             this.label2.Size = new System.Drawing.Size(86, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên chức vụ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Mã chức vụ";
             // 
             // btn_thoat
             // 
@@ -228,9 +208,7 @@
         private RadioButton rb_HoatDong;
         private Label label3;
         private TextBox tb_tencv;
-        private TextBox tb_macv;
         private Label label2;
-        private Label label1;
         private Button btn_thoat;
         private Button btn_lamMoi;
         private Button btb_CapNhat;
