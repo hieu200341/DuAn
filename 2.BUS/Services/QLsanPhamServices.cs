@@ -18,12 +18,12 @@ namespace _2.BUS.Services
         private IQLsizeServices _qLsizeServices;
         private IQLmauSacServices _qLmauSacServices;
         private IQLhangSXServices _qLhangSXServices;
-        private List<ViewHienThi> _lstView;
+        private List<ViewHienThi1> _lstView;
         public QLsanPhamServices()
         {
             _lstsanPham = new List<SanPham>();
             _sanPham = new sanPhamRepositories();
-            _lstView = new List<ViewHienThi>();
+            _lstView = new List<ViewHienThi1>();
             _qLhangSXServices = new QLhangSXServices();
             _qLmauSacServices= new QLmauSacServices();
             _qLsizeServices= new QLsizeServices();
@@ -53,13 +53,13 @@ namespace _2.BUS.Services
             _sanPham.UpdateSanPham(sanPham);
             return true;
         }
-        public List<ViewHienThi> getViewSanPham()
+        public List<ViewHienThi1> getViewSanPham()
         {
             _lstView = (from a in GetSanPhamFromDB()
                         join b in _qLmauSacServices.GetMauSacFromDB() on a.maSanPham equals b.maMauSac
                         join c in _qLhangSXServices.GetHangSXFromDB() on a.maSanPham equals c.maHangSX
                         join d in _qLsizeServices.GetSizeFromDB() on a.maSanPham equals d.maSize
-                        select new ViewHienThi { SanPhams = a, mauSacs = b, hangSXs = c, sizes = d }).ToList();
+                        select new ViewHienThi1 { SanPhams = a, mauSacs = b, hangSXs = c, sizes = d }).ToList();
             return _lstView;
         }
     }

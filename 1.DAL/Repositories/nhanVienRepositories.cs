@@ -18,20 +18,32 @@ namespace _1.DAL.Repositories
         }
         public bool addNhanVien(nhanVien NhanVien)
         {
-            _context.Add(NhanVien);
+            if (NhanVien == null) return false;
+            _context.nhanViens.Add(NhanVien);
             _context.SaveChanges();
             return true;
         }
 
         public bool RemoveNhanVien(nhanVien NhanVien)
         {
-            _context.Remove(NhanVien);
+            if (NhanVien == null) return false;
+            var temp = _context.nhanViens.FirstOrDefault(p => p.maNhanVien == NhanVien.maNhanVien);
+            _context.nhanViens.Remove(temp);
             _context.SaveChanges();
             return true;
         }
         public bool UpdateNhanVien(nhanVien NhanVien)
         {
-            _context.Update(NhanVien);
+            if (NhanVien == null) return false;
+            var temp = _context.nhanViens.FirstOrDefault(p => p.maNhanVien == NhanVien.maNhanVien);
+            temp.TenNV = NhanVien.TenNV;
+            temp.SDT = NhanVien.SDT;
+            temp.chucVu = NhanVien.chucVu;
+            temp.maChucVu = NhanVien.maChucVu;
+            temp.diaChi = NhanVien.diaChi;
+            temp.email = NhanVien.email;
+            temp.matKhau = NhanVien.matKhau;
+            _context.nhanViens.Update(temp);
             _context.SaveChanges();
             return true;
         }

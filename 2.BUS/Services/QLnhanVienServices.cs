@@ -16,46 +16,53 @@ namespace _2.BUS.Services
         private InhanVienRepositories _nhanVien;
         private List<nhanVien> _lstnhanVien;
         private IQLchucVuServices _qlchucVu;
-        private List<ViewHienThi> _lstViewNV;
+        private List<ViewHienThi1> _lstViewNV;
         public QLnhanVienServices()
         {
             _lstnhanVien = new List<nhanVien>();
             _nhanVien = new nhanVienRepositories();
             _qlchucVu= new QLchucVuServices();
-            _lstViewNV = new List<ViewHienThi>();
+            _lstViewNV = new List<ViewHienThi1>();
             GetNhanVienFromDB();
         }
 
-        public bool addNhanVien(nhanVien NhanVien)
+        public string addNhanVien(ViewHienThi1 NhanVien)
         {
-            _nhanVien.addNhanVien(NhanVien);
-            return true;
+            if (NhanVien == null) return "Thêm thất bại";
+            var nvv = NhanVien.nhanViens;
+            if (_nhanVien.addNhanVien(nvv)) return "Thêm thành công";
+            return "Thêm thất bại";
         }
 
-        public bool RemoveNhanVien(nhanVien NhanVien)
+        public List<ViewHienThi1> GetNhanVienFromDB()
         {
-            _nhanVien.RemoveNhanVien(NhanVien);
-            return true;
+            List<ViewHienThi1> nhanVienViews = new List<ViewHienThi1>();
+            nhanVienViews =
+                (from a in _nhanVien.GetNhanVienFromDB()
+                 join b in _qlchucVu.GetchucVuFromDB() on a.maNhanVien equals b.maChucVu
+                 select new ViewHienThi1()
+                 {
+                     nhanViens = a,
+                     chucVus = b,
+                    
+                 }).ToList();
+            return nhanVienViews;
         }
 
-        public List<nhanVien> GetNhanVienFromDB()
+        public string RemoveNhanVien(ViewHienThi1 NhanVien)
         {
-            _lstnhanVien = _nhanVien.GetNhanVienFromDB();
-            return _lstnhanVien;
+            if (NhanVien == null) return "Xóa thất bại";
+            var nvv = NhanVien.nhanViens;
+            if (_nhanVien.RemoveNhanVien(nvv)) return "XÓa thành công";
+            return "Xóa thất bại";
         }
 
-        public bool UpdateNhanVien(nhanVien NhanVien)
+        public string UpdateNhanVien(ViewHienThi1 NhanVien)
         {
-            _nhanVien.UpdateNhanVien(NhanVien);
-            return true;
+            if (NhanVien == null) return "Sửa thất bại";
+            var nvv = NhanVien.nhanViens;
+            if (_nhanVien.UpdateNhanVien(nvv)) return "Sửa thành công";
+            return "Sửa thất bại";
         }
-        public List<ViewHienThi> getViewNhanVien()
-        {
-            var _lstViewNV = (from a in _nhanVien.GetNhanVienFromDB()
-                        join b in _qlchucVu.GetchucVuFromDB() on a.maNhanVien equals b.maChucVu
-                        select new ViewHienThi { nhanViens = a, chucVus = b }).ToList();
-            return _lstViewNV;
-        }
-       
     }
 }

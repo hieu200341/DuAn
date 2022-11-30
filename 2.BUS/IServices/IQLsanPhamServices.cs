@@ -14,6 +14,6 @@ namespace _2.BUS.IServices
         bool addsanPham(SanPham sanPham);
         bool RemoveSanPham(SanPham sanPham);
         bool UpdateSanPham(SanPham sanPham);
-        List<ViewHienThi> getViewSanPham();
+        List<ViewHienThi1> getViewSanPham();
     }
 }

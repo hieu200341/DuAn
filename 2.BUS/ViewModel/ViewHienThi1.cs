@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _2.BUS.ViewModel
 {
-    public class ViewHienThi
+    public class ViewHienThi1
     {
         public chucVu chucVus { get; set; }
         public hangSX hangSXs { get; set; }
