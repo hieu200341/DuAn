@@ -35,12 +35,6 @@ namespace _3.GUI.View.FrmNhanvien
                 dtg_show.Rows.Add(item.maChucVu, item.tenCV);
             }
         }
-      
-
-
-
-       
-
         private void btn_them_Click_1(object sender, EventArgs e)
         {
             //chucVu accchucvu = qLchucVuServices.GetchucVuFromDB().FirstOrDefault(p => p.maChucVu == tb_macv.Text);

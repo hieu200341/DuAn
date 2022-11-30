@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tb_timkiem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_email = new System.Windows.Forms.TextBox();
             this.tb_sdt = new System.Windows.Forms.TextBox();
@@ -62,12 +62,12 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // textBox5
+            // tb_timkiem
             // 
-            this.textBox5.Location = new System.Drawing.Point(564, 438);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(669, 27);
-            this.textBox5.TabIndex = 28;
+            this.tb_timkiem.Location = new System.Drawing.Point(564, 438);
+            this.tb_timkiem.Name = "tb_timkiem";
+            this.tb_timkiem.Size = new System.Drawing.Size(669, 27);
+            this.tb_timkiem.TabIndex = 28;
             // 
             // label5
             // 
@@ -117,6 +117,8 @@
             // 
             // dtg_show
             // 
+            this.dtg_show.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dtg_show.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtg_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_show.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -133,6 +135,7 @@
             this.dtg_show.RowTemplate.Height = 29;
             this.dtg_show.Size = new System.Drawing.Size(771, 385);
             this.dtg_show.TabIndex = 24;
+            this.dtg_show.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_show_CellClick);
             // 
             // Column1
             // 
@@ -301,9 +304,10 @@
             this.btn_xoahoadon.Name = "btn_xoahoadon";
             this.btn_xoahoadon.Size = new System.Drawing.Size(137, 63);
             this.btn_xoahoadon.TabIndex = 32;
-            this.btn_xoahoadon.Text = "Xóa hóa đơn";
+            this.btn_xoahoadon.Text = "Xóa nhân viên";
             this.btn_xoahoadon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_xoahoadon.UseVisualStyleBackColor = true;
+            this.btn_xoahoadon.Click += new System.EventHandler(this.btn_xoahoadon_Click);
             // 
             // btn_sua
             // 
@@ -312,9 +316,10 @@
             this.btn_sua.Name = "btn_sua";
             this.btn_sua.Size = new System.Drawing.Size(139, 63);
             this.btn_sua.TabIndex = 31;
-            this.btn_sua.Text = "Sửa hóa đơn";
+            this.btn_sua.Text = "Sửa nhân viên";
             this.btn_sua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_sua.UseVisualStyleBackColor = true;
+            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
             // 
             // btn_hoadon
             // 
@@ -323,7 +328,7 @@
             this.btn_hoadon.Name = "btn_hoadon";
             this.btn_hoadon.Size = new System.Drawing.Size(156, 63);
             this.btn_hoadon.TabIndex = 30;
-            this.btn_hoadon.Text = "Thêm hóa đơn";
+            this.btn_hoadon.Text = "Thêm nhân viên";
             this.btn_hoadon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_hoadon.UseVisualStyleBackColor = true;
             this.btn_hoadon.Click += new System.EventHandler(this.button1_Click);
@@ -348,11 +353,12 @@
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_hoadon);
             this.Controls.Add(this.btn_tim);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.tb_timkiem);
             this.Controls.Add(this.dtg_show);
             this.Controls.Add(this.panel1);
             this.Name = "FrmNV";
             this.Text = "FrmNV";
+            this.Load += new System.EventHandler(this.FrmNV_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtg_show)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -363,7 +369,7 @@
 
         #endregion
 
-        private TextBox textBox5;
+        private TextBox tb_timkiem;
         private Label label5;
         private TextBox tb_email;
         private TextBox tb_sdt;

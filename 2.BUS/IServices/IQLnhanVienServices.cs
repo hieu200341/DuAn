@@ -10,10 +10,10 @@ namespace _2.BUS.IServices
 {
     public interface IQLnhanVienServices
     {
-        List<nhanVien> GetNhanVienFromDB();
-        bool addNhanVien(nhanVien NhanVien);
-        bool RemoveNhanVien(nhanVien NhanVien);
-        bool UpdateNhanVien(nhanVien NhanVien);
-        List<ViewHienThi> getViewNhanVien();
+        List<ViewHienThi1> GetNhanVienFromDB();
+        string addNhanVien(ViewHienThi1 NhanVien);
+        string RemoveNhanVien(ViewHienThi1 NhanVien);
+        string UpdateNhanVien(ViewHienThi1 NhanVien);
+        //List<ViewHienThi> getViewNhanVien();
     }
 }
