@@ -17,7 +17,7 @@ namespace _2.BUS.Services
     {
         private IhoaDonChiTietRepositories _hoaDonChiTiet;
         private List<hoaDonChiTiet> _lsthoaDonChiTiet;
-        private List<hoaDonCT> _lsthoadonCT;
+        private List<ViewHoaDonCT> _lsthoadonCT;
         private IQLhoaDonServices _qLhoaDonServices;
         private IQLsanPhamServices _qLsanPhamServices;
         private DatabaseContext _dbContex;
@@ -26,7 +26,7 @@ namespace _2.BUS.Services
         {
             _lsthoaDonChiTiet = new List<hoaDonChiTiet>();
             _hoaDonChiTiet = new hoaDonChiTietRepositories();
-            _lsthoadonCT = new List<hoaDonCT>();
+            _lsthoadonCT = new List<ViewHoaDonCT>();
             _qLhoaDonServices = new QLhoaDonServices();
             _qLsanPhamServices= new QLsanPhamServices();
             _dbContex = new DatabaseContext();
@@ -55,15 +55,16 @@ namespace _2.BUS.Services
             _hoaDonChiTiet.UpdateHoaDonChiTiet(HoaDonChiTiet);
             return true;
         }
-        public List<hoaDonCT> getViewHoaDonChiTiet(int maHoaDon)
+        public List<ViewHoaDonCT> getViewHoaDonChiTiet(int maHoaDon)
         {
             var data = (from od in _dbContex.hoaDonChiTiets
-                        join o in _dbContex.hoaDons on od.maHoaDon equals o.maHoaDon
-                        join p in _dbContex.sanPhams on od.maSanPham equals p.maSanPham
-                        where od.maHoaDon == maHoaDon
-                        select new hoaDonCT
+                        join o in _dbContex.hoaDons on od.IDHoaDon equals o.IDHoaDon
+                        join p in _dbContex.sanPhams on od.IDSanPham equals p.IDSanPham
+                        where od.IDHoaDon == maHoaDon
+                        select new ViewHoaDonCT
                         {
-                            maSanPham = od.maSanPham,
+                            ID = od.IDHoaDon,
+                            maSanPham = p.maSP,
                             tenSanPham = p.TenSP,
                             soLuong = od.Soluong,
                             donGia = od.donGia

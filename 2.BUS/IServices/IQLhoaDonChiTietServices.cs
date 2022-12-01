@@ -14,6 +14,6 @@ namespace _2.BUS.IServices
         bool addHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet);
         bool RemoveHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet);
         bool UpdateHoaDonChiTiet(hoaDonChiTiet HoaDonChiTiet);
-        List<hoaDonCT> getViewHoaDonChiTiet(int maHoaDon);
+        List<ViewHoaDonCT> getViewHoaDonChiTiet(int maHoaDon);
     }
 }

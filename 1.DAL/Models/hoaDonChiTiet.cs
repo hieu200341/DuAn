@@ -8,8 +8,8 @@ namespace _1.DAL.Models
 {
     public class hoaDonChiTiet
     {
-        public int maHoaDon { get; set; }
-        public int maSanPham { get; set; }
+        public int IDHoaDon { get; set; }
+        public int IDSanPham { get; set; }
         public int Soluong { get; set; }
         public decimal donGia { get; set; }
         public bool Trangthai { get; set; }

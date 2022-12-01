@@ -18,14 +18,10 @@ namespace _1.DAL.Configurations
             // Set khóa chính
             builder.HasKey(x => x.SDT_KH);
             // Set các ràng buộc cho thuộc tính
-            builder.Property(x => x.TenKH).HasColumnName("TenKH")
-               .IsRequired().HasColumnType("nvarchar(100)");
-            builder.Property(x => x.diaChi).HasColumnName("diaChi")
-               .IsRequired().HasColumnType("nvarchar(100)");
-            builder.Property(x => x.trangThai).HasColumnName("trangThai")
-              .IsRequired().HasColumnType("bit");
-            builder.Property(x => x.gioiTinh).HasColumnName("gioiTinh")
-                .IsRequired().HasColumnType("bit");
+            builder.Property(x => x.TenKH).IsRequired();
+            builder.Property(x => x.diaChi).IsRequired();
+            builder.Property(x => x.trangThai).IsRequired();
+            builder.Property(x => x.gioiTinh).IsRequired();
         }
     }
 }

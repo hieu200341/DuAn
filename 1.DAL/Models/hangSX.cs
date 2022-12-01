@@ -8,8 +8,8 @@ namespace _1.DAL.Models
 {
     public class hangSX
     {
-        public int maHangSX { get; set; }
-        public string tenHangSX { get; set; }
+        public int IDHangSX { get; set; }
+        public string? tenHangSX { get; set; }
         public bool trangThai { get; set; }
         public virtual List<SanPham> SanphamChitietss { get; set; }
     }

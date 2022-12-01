@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace _2.BUS.ViewModel
 {
-    public class hoaDonCT
+    public class ViewHoaDonCT
     {
-        public int maSanPham { get; set; }
+        public int ID { get; set; }
+        public string maSanPham { get; set; }
         public string tenSanPham { get; set; }
         public decimal donGia { get; set; }
         public int soLuong { get; set; }

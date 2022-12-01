@@ -197,6 +197,7 @@
             this.dtgv_sanPham.Size = new System.Drawing.Size(855, 310);
             this.dtgv_sanPham.TabIndex = 0;
             this.dtgv_sanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_sanPham_CellClick);
+            this.dtgv_sanPham.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dtgv_sanPham_CellMouseClick);
             // 
             // Column1
             // 

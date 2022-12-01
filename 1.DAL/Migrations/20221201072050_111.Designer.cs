@@ -12,8 +12,8 @@ using _1.DAL.Context;
 namespace _1.DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221130055736_Duon")]
-    partial class Duon
+    [Migration("20221201072050_111")]
+    partial class _111
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,71 +26,68 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.chucVu", b =>
                 {
-                    b.Property<int>("maChucVu")
+                    b.Property<int>("IDChucVu")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maChucVu"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IDChucVu"), 1L, 1);
 
                     b.Property<string>("tenCV")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("tenCV");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("maChucVu");
+                    b.HasKey("IDChucVu");
 
                     b.ToTable("chucVu", (string)null);
 
                     b.HasData(
                         new
                         {
-                            maChucVu = 1,
+                            IDChucVu = 1,
                             tenCV = "Quản lý"
                         },
                         new
                         {
-                            maChucVu = 2,
+                            IDChucVu = 2,
                             tenCV = "Nhân viên"
                         });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.hangSX", b =>
                 {
-                    b.Property<int>("maHangSX")
+                    b.Property<int>("IDHangSX")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maHangSX"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IDHangSX"), 1L, 1);
 
                     b.Property<string>("tenHangSX")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("tenHangSX");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("trangThai")
-                        .HasColumnType("bit")
-                        .HasColumnName("trangThai");
+                        .HasColumnType("bit");
 
-                    b.HasKey("maHangSX");
+                    b.HasKey("IDHangSX");
 
                     b.ToTable("hangSX", (string)null);
 
                     b.HasData(
                         new
                         {
-                            maHangSX = 1,
+                            IDHangSX = 1,
                             tenHangSX = "Sao Vàng",
                             trangThai = true
                         },
                         new
                         {
-                            maHangSX = 2,
+                            IDHangSX = 2,
                             tenHangSX = "Sahara",
                             trangThai = true
                         },
                         new
                         {
-                            maHangSX = 3,
+                            IDHangSX = 3,
                             tenHangSX = "Tỷ Xuân",
                             trangThai = true
                         });
@@ -98,63 +95,56 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.hoaDon", b =>
                 {
-                    b.Property<int>("maHoaDon")
+                    b.Property<int>("IDHoaDon")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maHoaDon"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IDHoaDon"), 1L, 1);
 
-                    b.Property<string>("SDT_KH")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<int>("maNhanVien")
+                    b.Property<int>("IDNhanVien")
                         .HasColumnType("int");
 
+                    b.Property<string>("SDT_KH")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<DateTime>("ngayBan")
-                        .HasColumnType("date")
-                        .HasColumnName("ngayBan");
+                        .HasColumnType("datetime2");
 
                     b.Property<DateTime>("ngayTT")
-                        .HasColumnType("date")
-                        .HasColumnName("ngayTT");
+                        .HasColumnType("datetime2");
 
                     b.Property<bool>("trangThai")
-                        .HasColumnType("bit")
-                        .HasColumnName("Trangthai");
+                        .HasColumnType("bit");
 
-                    b.HasKey("maHoaDon");
+                    b.HasKey("IDHoaDon");
+
+                    b.HasIndex("IDNhanVien");
 
                     b.HasIndex("SDT_KH");
-
-                    b.HasIndex("maNhanVien");
 
                     b.ToTable("hoaDon", (string)null);
                 });
 
             modelBuilder.Entity("_1.DAL.Models.hoaDonChiTiet", b =>
                 {
-                    b.Property<int>("maHoaDon")
+                    b.Property<int>("IDHoaDon")
                         .HasColumnType("int");
 
-                    b.Property<int>("maSanPham")
+                    b.Property<int>("IDSanPham")
                         .HasColumnType("int");
 
                     b.Property<int>("Soluong")
-                        .HasColumnType("int")
-                        .HasColumnName("Soluong");
+                        .HasColumnType("int");
 
                     b.Property<bool>("Trangthai")
-                        .HasColumnType("bit")
-                        .HasColumnName("trangThai");
+                        .HasColumnType("bit");
 
-                    b.Property<int>("donGia")
-                        .HasColumnType("int")
-                        .HasColumnName("donGia");
+                    b.Property<decimal>("donGia")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("maHoaDon", "maSanPham");
+                    b.HasKey("IDHoaDon", "IDSanPham");
 
-                    b.HasIndex("maSanPham");
+                    b.HasIndex("IDSanPham");
 
                     b.ToTable("hoaDonChiTiet", (string)null);
                 });
@@ -166,21 +156,17 @@ namespace _1.DAL.Migrations
 
                     b.Property<string>("TenKH")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("TenKH");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("diaChi")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("diaChi");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("gioiTinh")
-                        .HasColumnType("bit")
-                        .HasColumnName("gioiTinh");
+                        .HasColumnType("bit");
 
                     b.Property<bool>("trangThai")
-                        .HasColumnType("bit")
-                        .HasColumnName("trangThai");
+                        .HasColumnType("bit");
 
                     b.HasKey("SDT_KH");
 
@@ -215,41 +201,39 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.mauSac", b =>
                 {
-                    b.Property<int>("maMauSac")
+                    b.Property<int>("IDMauSac")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maMauSac"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IDMauSac"), 1L, 1);
 
                     b.Property<string>("tenMau")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("tenMau");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("trangThai")
-                        .HasColumnType("bit")
-                        .HasColumnName("trangThai");
+                        .HasColumnType("bit");
 
-                    b.HasKey("maMauSac");
+                    b.HasKey("IDMauSac");
 
                     b.ToTable("mauSac", (string)null);
 
                     b.HasData(
                         new
                         {
-                            maMauSac = 1,
+                            IDMauSac = 1,
                             tenMau = "Xanh",
                             trangThai = true
                         },
                         new
                         {
-                            maMauSac = 2,
+                            IDMauSac = 2,
                             tenMau = "Đỏ",
                             trangThai = true
                         },
                         new
                         {
-                            maMauSac = 3,
+                            IDMauSac = 3,
                             tenMau = "Trắng",
                             trangThai = true
                         });
@@ -257,69 +241,63 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.nhanVien", b =>
                 {
-                    b.Property<int>("maNhanVien")
+                    b.Property<int>("IDNhanVien")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maNhanVien"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IDNhanVien"), 1L, 1);
+
+                    b.Property<int>("IDChucVu")
+                        .HasColumnType("int");
 
                     b.Property<string>("SDT")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("SDT");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TenNV")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("TenNV");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("diaChi")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("email")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("email");
-
-                    b.Property<int>("maChucVu")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("matKhau")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("matKhau");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("tinhTrang")
-                        .HasColumnType("bit")
-                        .HasColumnName("tinhTrang");
+                        .HasColumnType("bit");
 
-                    b.HasKey("maNhanVien");
+                    b.HasKey("IDNhanVien");
 
-                    b.HasIndex("maChucVu");
+                    b.HasIndex("IDChucVu");
 
                     b.ToTable("nhanVien", (string)null);
 
                     b.HasData(
                         new
                         {
-                            maNhanVien = 1,
+                            IDNhanVien = 1,
+                            IDChucVu = 1,
                             SDT = "0379702133",
                             TenNV = "Nguyễn Văn Đạo",
                             diaChi = "Tuyên Quang",
                             email = "daonvph18705@gmail.com",
-                            maChucVu = 1,
                             matKhau = "123",
                             tinhTrang = true
                         },
                         new
                         {
-                            maNhanVien = 2,
+                            IDNhanVien = 2,
+                            IDChucVu = 2,
                             SDT = "0379702144",
                             TenNV = "Nguyễn Văn B",
                             diaChi = "Hà Nội",
                             email = "baaa@gmail.com",
-                            maChucVu = 2,
                             matKhau = "123",
                             tinhTrang = true
                         });
@@ -327,17 +305,26 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.SanPham", b =>
                 {
-                    b.Property<int>("maSanPham")
+                    b.Property<int>("IDSanPham")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maSanPham"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IDSanPham"), 1L, 1);
 
                     b.Property<decimal>("Giaban")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("Gianhap")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("IDHangSX")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IDMauSac")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IDSize")
+                        .HasColumnType("int");
 
                     b.Property<int>("Soluong")
                         .HasColumnType("int");
@@ -353,117 +340,114 @@ namespace _1.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("maHangSX")
-                        .HasColumnType("int");
+                    b.Property<string>("maSP")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("maMauSac")
-                        .HasColumnType("int");
+                    b.HasKey("IDSanPham");
 
-                    b.Property<int>("maSize")
-                        .HasColumnType("int");
+                    b.HasIndex("IDHangSX");
 
-                    b.HasKey("maSanPham");
+                    b.HasIndex("IDMauSac");
 
-                    b.HasIndex("maHangSX");
-
-                    b.HasIndex("maMauSac");
-
-                    b.HasIndex("maSize");
+                    b.HasIndex("IDSize");
 
                     b.ToTable("sanPham", (string)null);
 
                     b.HasData(
                         new
                         {
-                            maSanPham = 1,
+                            IDSanPham = 1,
                             Giaban = 1500m,
                             Gianhap = 1000m,
+                            IDHangSX = 1,
+                            IDMauSac = 1,
+                            IDSize = 1,
                             Soluong = 1000,
                             TenSP = "Lacoste",
                             Trangthai = true,
                             linkAnh = "",
-                            maHangSX = 1,
-                            maMauSac = 1,
-                            maSize = 1
+                            maSP = "SP01"
                         },
                         new
                         {
-                            maSanPham = 2,
+                            IDSanPham = 2,
                             Giaban = 2000m,
                             Gianhap = 1500m,
+                            IDHangSX = 2,
+                            IDMauSac = 2,
+                            IDSize = 2,
                             Soluong = 1200,
                             TenSP = "Gucci",
                             Trangthai = true,
                             linkAnh = "",
-                            maHangSX = 2,
-                            maMauSac = 2,
-                            maSize = 2
+                            maSP = "SP02"
                         },
                         new
                         {
-                            maSanPham = 3,
+                            IDSanPham = 3,
                             Giaban = 1700m,
                             Gianhap = 1200m,
+                            IDHangSX = 3,
+                            IDMauSac = 3,
+                            IDSize = 3,
                             Soluong = 1300,
                             TenSP = "ADLV",
                             Trangthai = true,
                             linkAnh = "",
-                            maHangSX = 3,
-                            maMauSac = 3,
-                            maSize = 3
+                            maSP = "SP03"
                         },
                         new
                         {
-                            maSanPham = 4,
+                            IDSanPham = 4,
                             Giaban = 2100m,
                             Gianhap = 1600m,
+                            IDHangSX = 2,
+                            IDMauSac = 3,
+                            IDSize = 1,
                             Soluong = 1400,
                             TenSP = "Uniqlo",
                             Trangthai = true,
                             linkAnh = "",
-                            maHangSX = 2,
-                            maMauSac = 3,
-                            maSize = 1
+                            maSP = "SP04"
                         });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.size", b =>
                 {
-                    b.Property<int>("maSize")
+                    b.Property<int>("IDSize")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maSize"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IDSize"), 1L, 1);
 
                     b.Property<string>("SiZe")
                         .IsRequired()
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("SiZe");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("trangThai")
-                        .HasColumnType("bit")
-                        .HasColumnName("trangThai");
+                        .HasColumnType("bit");
 
-                    b.HasKey("maSize");
+                    b.HasKey("IDSize");
 
                     b.ToTable("size", (string)null);
 
                     b.HasData(
                         new
                         {
-                            maSize = 1,
+                            IDSize = 1,
                             SiZe = "M",
                             trangThai = true
                         },
                         new
                         {
-                            maSize = 2,
+                            IDSize = 2,
                             SiZe = "L",
                             trangThai = true
                         },
                         new
                         {
-                            maSize = 3,
+                            IDSize = 3,
                             SiZe = "XL",
                             trangThai = true
                         });
@@ -471,17 +455,15 @@ namespace _1.DAL.Migrations
 
             modelBuilder.Entity("_1.DAL.Models.hoaDon", b =>
                 {
-                    b.HasOne("_1.DAL.Models.khachHang", "khachHang")
+                    b.HasOne("_1.DAL.Models.nhanVien", "nhanVien")
                         .WithMany("HoaDons")
-                        .HasForeignKey("SDT_KH")
+                        .HasForeignKey("IDNhanVien")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("_1.DAL.Models.nhanVien", "nhanVien")
+                    b.HasOne("_1.DAL.Models.khachHang", "khachHang")
                         .WithMany("HoaDons")
-                        .HasForeignKey("maNhanVien")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SDT_KH");
 
                     b.Navigation("khachHang");
 
@@ -492,13 +474,13 @@ namespace _1.DAL.Migrations
                 {
                     b.HasOne("_1.DAL.Models.hoaDon", "hoaDon")
                         .WithMany("HoaDonChiTiets")
-                        .HasForeignKey("maHoaDon")
+                        .HasForeignKey("IDHoaDon")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("_1.DAL.Models.SanPham", "sanPham")
                         .WithMany("hoaDonChiTiet")
-                        .HasForeignKey("maSanPham")
+                        .HasForeignKey("IDSanPham")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -511,7 +493,7 @@ namespace _1.DAL.Migrations
                 {
                     b.HasOne("_1.DAL.Models.chucVu", "chucVu")
                         .WithMany("NhanViens")
-                        .HasForeignKey("maChucVu")
+                        .HasForeignKey("IDChucVu")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -522,19 +504,19 @@ namespace _1.DAL.Migrations
                 {
                     b.HasOne("_1.DAL.Models.hangSX", "hangSX")
                         .WithMany("SanphamChitietss")
-                        .HasForeignKey("maHangSX")
+                        .HasForeignKey("IDHangSX")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("_1.DAL.Models.mauSac", "mauSac")
                         .WithMany("SanphamChitietss")
-                        .HasForeignKey("maMauSac")
+                        .HasForeignKey("IDMauSac")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("_1.DAL.Models.size", "size")
                         .WithMany("SanphamChitietss")
-                        .HasForeignKey("maSize")
+                        .HasForeignKey("IDSize")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

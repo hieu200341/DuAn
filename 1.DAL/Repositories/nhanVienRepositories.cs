@@ -27,7 +27,7 @@ namespace _1.DAL.Repositories
         public bool RemoveNhanVien(nhanVien NhanVien)
         {
             if (NhanVien == null) return false;
-            var temp = _context.nhanViens.FirstOrDefault(p => p.maNhanVien == NhanVien.maNhanVien);
+            var temp = _context.nhanViens.FirstOrDefault(p => p.IDNhanVien == NhanVien.IDNhanVien);
             _context.nhanViens.Remove(temp);
             _context.SaveChanges();
             return true;
@@ -35,11 +35,11 @@ namespace _1.DAL.Repositories
         public bool UpdateNhanVien(nhanVien NhanVien)
         {
             if (NhanVien == null) return false;
-            var temp = _context.nhanViens.FirstOrDefault(p => p.maNhanVien == NhanVien.maNhanVien);
+            var temp = _context.nhanViens.FirstOrDefault(p => p.IDNhanVien == NhanVien.IDNhanVien);
             temp.TenNV = NhanVien.TenNV;
             temp.SDT = NhanVien.SDT;
             temp.chucVu = NhanVien.chucVu;
-            temp.maChucVu = NhanVien.maChucVu;
+            temp.IDChucVu = NhanVien.IDChucVu;
             temp.diaChi = NhanVien.diaChi;
             temp.email = NhanVien.email;
             temp.matKhau = NhanVien.matKhau;

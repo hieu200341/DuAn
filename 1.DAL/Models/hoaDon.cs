@@ -8,9 +8,9 @@ namespace _1.DAL.Models
 {
     public class hoaDon
     {
-        public int maHoaDon { get; set; }
-        public int maNhanVien { get; set; }
-        public string SDT_KH { get; set; }
+        public int IDHoaDon { get; set; }
+        public int IDNhanVien { get; set; }
+        public string? SDT_KH { get; set; }
         public DateTime ngayBan { get; set; }
         public DateTime ngayTT { get; set; }
         public bool trangThai { get; set; }
