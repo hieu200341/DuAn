@@ -152,8 +152,8 @@ namespace _3.GUI.View.FromSanPham
                 {
                     maSP = tbt_maSP.Text,
                     TenSP = tbt_ten.Text,
-                    Gianhap = Convert.ToDecimal(tbt_giaNhap.Text),
-                    Giaban = Convert.ToDecimal(tbt_giaBan.Text),
+                    Gianhap = float.Parse(tbt_giaNhap.Text),
+                    Giaban = float.Parse(tbt_giaBan.Text),
                     Soluong = Convert.ToInt32(tbt_soLuong.Text),
                     IDMauSac = _qLmauSacServices.GetMauSacFromDB()[cb_Mau.SelectedIndex].IDMauSac,
                     IDSize = _qLsizeServices.GetSizeFromDB()[cb_size.SelectedIndex].IDSize,

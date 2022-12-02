@@ -13,6 +13,7 @@ namespace _1.DAL.Models
         public bool gioiTinh { get; set; }
         public string? diaChi { get; set; }
         public bool trangThai { get; set; }
+        public int diem { get; set; }
         public virtual List<hoaDon> HoaDons { get; set; }
     }
 }

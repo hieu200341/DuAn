@@ -14,8 +14,8 @@ namespace _1.DAL.Models
         public int IDHangSX { get; set; }
         public string? TenSP { get; set; }
         public string? maSP { get; set; }
-        public decimal Gianhap { get; set; }
-        public decimal Giaban { get; set; }
+        public float Gianhap { get; set; }
+        public float Giaban { get; set; }
         public int Soluong { get; set; }
         public bool Trangthai { get; set; }
         public string? linkAnh { get; set; }

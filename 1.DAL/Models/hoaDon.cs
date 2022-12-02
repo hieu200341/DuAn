@@ -11,8 +11,9 @@ namespace _1.DAL.Models
         public int IDHoaDon { get; set; }
         public int IDNhanVien { get; set; }
         public string? SDT_KH { get; set; }
+        public float tongTien { get; set; }
         public DateTime ngayBan { get; set; }
-        public DateTime ngayTT { get; set; }
+        public string ghiChu { get; set; }
         public bool trangThai { get; set; }
         public virtual List<hoaDonChiTiet> HoaDonChiTiets { get; set; }
         public nhanVien nhanVien { get; set; }

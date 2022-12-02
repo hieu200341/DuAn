@@ -23,9 +23,9 @@ namespace _1.DAL.Extensions
                 new hangSX() { IDHangSX = 3, tenHangSX = "Tỷ Xuân", trangThai = true }
                 );
             modelBuilder.Entity<khachHang>().HasData(
-                new khachHang() { SDT_KH = "0123456789", TenKH = "Nguyễn Văn A", gioiTinh=true, diaChi="Hà Nội", trangThai=true },
-                new khachHang() { SDT_KH = "0123456567", TenKH = "Nguyễn Văn B", gioiTinh = false, diaChi = "Hải Phòng", trangThai = true },
-                new khachHang() { SDT_KH = "0123456678", TenKH = "Nguyễn Văn C", gioiTinh = true, diaChi = "Lạng Sơn", trangThai = true }
+                new khachHang() { SDT_KH = "0123456789", TenKH = "Nguyễn Văn A", gioiTinh=true, diaChi="Hà Nội", trangThai=true, diem = 10000 },
+                new khachHang() { SDT_KH = "0123456567", TenKH = "Nguyễn Văn B", gioiTinh = false, diaChi = "Hải Phòng", trangThai = true, diem = 10000 },
+                new khachHang() { SDT_KH = "0123456678", TenKH = "Nguyễn Văn C", gioiTinh = true, diaChi = "Lạng Sơn", trangThai = true, diem = 10000 }
                 );
             modelBuilder.Entity<mauSac>().HasData(
                 new mauSac() { IDMauSac = 1, tenMau = "Xanh" ,trangThai = true},

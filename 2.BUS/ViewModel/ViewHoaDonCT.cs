@@ -11,7 +11,7 @@ namespace _2.BUS.ViewModel
         public int ID { get; set; }
         public string maSanPham { get; set; }
         public string tenSanPham { get; set; }
-        public decimal donGia { get; set; }
+        public float donGia { get; set; }
         public int soLuong { get; set; }
 
     }

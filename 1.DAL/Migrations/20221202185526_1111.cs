@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1.DAL.Migrations
 {
-    public partial class _111 : Migration
+    public partial class _1111 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,7 +44,8 @@ namespace _1.DAL.Migrations
                     TenKH = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     gioiTinh = table.Column<bool>(type: "bit", nullable: false),
                     diaChi = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    trangThai = table.Column<bool>(type: "bit", nullable: false)
+                    trangThai = table.Column<bool>(type: "bit", nullable: false),
+                    diem = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -115,8 +116,8 @@ namespace _1.DAL.Migrations
                     IDHangSX = table.Column<int>(type: "int", nullable: false),
                     TenSP = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     maSP = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Gianhap = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Giaban = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Gianhap = table.Column<float>(type: "real", nullable: false),
+                    Giaban = table.Column<float>(type: "real", nullable: false),
                     Soluong = table.Column<int>(type: "int", nullable: false),
                     Trangthai = table.Column<bool>(type: "bit", nullable: false),
                     linkAnh = table.Column<string>(type: "nvarchar(max)", nullable: false)
@@ -152,8 +153,9 @@ namespace _1.DAL.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IDNhanVien = table.Column<int>(type: "int", nullable: false),
                     SDT_KH = table.Column<string>(type: "nvarchar(450)", nullable: true),
+                    tongTien = table.Column<float>(type: "real", nullable: false),
                     ngayBan = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ngayTT = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ghiChu = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     trangThai = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -179,7 +181,7 @@ namespace _1.DAL.Migrations
                     IDHoaDon = table.Column<int>(type: "int", nullable: false),
                     IDSanPham = table.Column<int>(type: "int", nullable: false),
                     Soluong = table.Column<int>(type: "int", nullable: false),
-                    donGia = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    donGia = table.Column<float>(type: "real", nullable: false),
                     Trangthai = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
@@ -220,12 +222,12 @@ namespace _1.DAL.Migrations
 
             migrationBuilder.InsertData(
                 table: "khachHang",
-                columns: new[] { "SDT_KH", "TenKH", "diaChi", "gioiTinh", "trangThai" },
+                columns: new[] { "SDT_KH", "TenKH", "diaChi", "diem", "gioiTinh", "trangThai" },
                 values: new object[,]
                 {
-                    { "0123456567", "Nguyễn Văn B", "Hải Phòng", false, true },
-                    { "0123456678", "Nguyễn Văn C", "Lạng Sơn", true, true },
-                    { "0123456789", "Nguyễn Văn A", "Hà Nội", true, true }
+                    { "0123456567", "Nguyễn Văn B", "Hải Phòng", 10000, false, true },
+                    { "0123456678", "Nguyễn Văn C", "Lạng Sơn", 10000, true, true },
+                    { "0123456789", "Nguyễn Văn A", "Hà Nội", 10000, true, true }
                 });
 
             migrationBuilder.InsertData(
@@ -262,10 +264,10 @@ namespace _1.DAL.Migrations
                 columns: new[] { "IDSanPham", "Giaban", "Gianhap", "IDHangSX", "IDMauSac", "IDSize", "Soluong", "TenSP", "Trangthai", "linkAnh", "maSP" },
                 values: new object[,]
                 {
-                    { 1, 1500m, 1000m, 1, 1, 1, 1000, "Lacoste", true, "", "SP01" },
-                    { 2, 2000m, 1500m, 2, 2, 2, 1200, "Gucci", true, "", "SP02" },
-                    { 3, 1700m, 1200m, 3, 3, 3, 1300, "ADLV", true, "", "SP03" },
-                    { 4, 2100m, 1600m, 2, 3, 1, 1400, "Uniqlo", true, "", "SP04" }
+                    { 1, 1500f, 1000f, 1, 1, 1, 1000, "Lacoste", true, "", "SP01" },
+                    { 2, 2000f, 1500f, 2, 2, 2, 1200, "Gucci", true, "", "SP02" },
+                    { 3, 1700f, 1200f, 3, 3, 3, 1300, "ADLV", true, "", "SP03" },
+                    { 4, 2100f, 1600f, 2, 3, 1, 1400, "Uniqlo", true, "", "SP04" }
                 });
 
             migrationBuilder.CreateIndex(
