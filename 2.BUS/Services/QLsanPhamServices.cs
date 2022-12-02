@@ -56,9 +56,9 @@ namespace _2.BUS.Services
         public List<ViewHienThi1> getViewSanPham()
         {
             _lstView = (from a in GetSanPhamFromDB()
-                        join b in _qLmauSacServices.GetMauSacFromDB() on a.IDMauSac equals b.IDMauSac
-                        join c in _qLhangSXServices.GetHangSXFromDB() on a.IDHangSX equals c.IDHangSX
-                        join d in _qLsizeServices.GetSizeFromDB() on a.IDSize equals d.IDSize
+                        join b in _qLmauSacServices.GetMauSacFromDB() on a.maSanPham equals b.maMauSac
+                        join c in _qLhangSXServices.GetHangSXFromDB() on a.maSanPham equals c.maHangSX
+                        join d in _qLsizeServices.GetSizeFromDB() on a.maSanPham equals d.maSize
                         select new ViewHienThi1 { SanPhams = a, mauSacs = b, hangSXs = c, sizes = d }).ToList();
             return _lstView;
         }

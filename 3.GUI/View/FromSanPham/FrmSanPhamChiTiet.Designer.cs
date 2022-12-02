@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbt_maSP = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ptb_linkAnh = new System.Windows.Forms.PictureBox();
             this.cb_size = new System.Windows.Forms.ComboBox();
@@ -59,7 +57,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.tbt_timKiem = new System.Windows.Forms.TextBox();
             this.dtgv_sanPham = new System.Windows.Forms.DataGridView();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,8 +76,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.tbt_maSP);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.ptb_linkAnh);
             this.groupBox1.Controls.Add(this.cb_size);
@@ -106,22 +101,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sản phẩm";
-            // 
-            // tbt_maSP
-            // 
-            this.tbt_maSP.Location = new System.Drawing.Point(146, 41);
-            this.tbt_maSP.Name = "tbt_maSP";
-            this.tbt_maSP.Size = new System.Drawing.Size(197, 27);
-            this.tbt_maSP.TabIndex = 24;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 44);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 20);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Mã sản phẩm";
             // 
             // pictureBox2
             // 
@@ -368,7 +347,6 @@
             // 
             this.dtgv_sanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_sanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column10,
             this.Column1,
             this.Column2,
             this.Column3,
@@ -384,14 +362,6 @@
             this.dtgv_sanPham.RowTemplate.Height = 29;
             this.dtgv_sanPham.Size = new System.Drawing.Size(1321, 266);
             this.dtgv_sanPham.TabIndex = 0;
-            this.dtgv_sanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_sanPham_CellClick);
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "ID";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 125;
             // 
             // Column1
             // 
@@ -509,9 +479,6 @@
         private DataGridView dtgv_sanPham;
         private Label label11;
         private TextBox tbt_timKiem;
-        private TextBox tbt_maSP;
-        private Label label1;
-        private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;

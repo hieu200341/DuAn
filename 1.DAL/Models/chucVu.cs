@@ -8,7 +8,7 @@ namespace _1.DAL.Models
 {
     public class chucVu
     {
-        public int IDChucVu { get; set; }
+        public int maChucVu { get; set; }
         public string tenCV { get; set; }
         public virtual List<nhanVien> NhanViens { get; set; }
     }

@@ -12,13 +12,8 @@ using _1.DAL.Context;
 namespace _1.DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-<<<<<<<< HEAD:1.DAL/Migrations/20221202185526_1111.Designer.cs
-    [Migration("20221202185526_1111")]
-    partial class _1111
-========
-    [Migration("20221129170811_111")]
-    partial class _111
->>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3:1.DAL/Migrations/20221129170811_111.Designer.cs
+    [Migration("20221129084230_duanone")]
+    partial class duanone
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,18 +40,6 @@ namespace _1.DAL.Migrations
                     b.HasKey("maChucVu");
 
                     b.ToTable("chucVu", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            maChucVu = 1,
-                            tenCV = "Quản lý"
-                        },
-                        new
-                        {
-                            maChucVu = 2,
-                            tenCV = "Nhân viên"
-                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.hangSX", b =>
@@ -79,26 +62,6 @@ namespace _1.DAL.Migrations
                     b.HasKey("maHangSX");
 
                     b.ToTable("hangSX", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            maHangSX = 1,
-                            tenHangSX = "Sao Vàng",
-                            trangThai = true
-                        },
-                        new
-                        {
-                            maHangSX = 2,
-                            tenHangSX = "Sahara",
-                            trangThai = true
-                        },
-                        new
-                        {
-                            maHangSX = 3,
-                            tenHangSX = "Tỷ Xuân",
-                            trangThai = true
-                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.hoaDon", b =>
@@ -113,27 +76,16 @@ namespace _1.DAL.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-<<<<<<<< HEAD:1.DAL/Migrations/20221202185526_1111.Designer.cs
-                    b.Property<string>("ghiChu")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-========
                     b.Property<int>("maNhanVien")
                         .HasColumnType("int");
->>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3:1.DAL/Migrations/20221129170811_111.Designer.cs
 
                     b.Property<DateTime>("ngayBan")
                         .HasColumnType("date")
                         .HasColumnName("ngayBan");
 
-<<<<<<<< HEAD:1.DAL/Migrations/20221202185526_1111.Designer.cs
-                    b.Property<float>("tongTien")
-                        .HasColumnType("real");
-========
                     b.Property<DateTime>("ngayTT")
                         .HasColumnType("date")
                         .HasColumnName("ngayTT");
->>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3:1.DAL/Migrations/20221129170811_111.Designer.cs
 
                     b.Property<bool>("trangThai")
                         .HasColumnType("bit")
@@ -164,14 +116,9 @@ namespace _1.DAL.Migrations
                         .HasColumnType("bit")
                         .HasColumnName("trangThai");
 
-<<<<<<<< HEAD:1.DAL/Migrations/20221202185526_1111.Designer.cs
-                    b.Property<float>("donGia")
-                        .HasColumnType("real");
-========
                     b.Property<int>("donGia")
                         .HasColumnType("int")
                         .HasColumnName("donGia");
->>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3:1.DAL/Migrations/20221129170811_111.Designer.cs
 
                     b.HasKey("maHoaDon", "maSanPham");
 
@@ -195,9 +142,6 @@ namespace _1.DAL.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("diaChi");
 
-                    b.Property<int>("diem")
-                        .HasColumnType("int");
-
                     b.Property<bool>("gioiTinh")
                         .HasColumnType("bit")
                         .HasColumnName("gioiTinh");
@@ -209,35 +153,6 @@ namespace _1.DAL.Migrations
                     b.HasKey("SDT_KH");
 
                     b.ToTable("khachHang", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            SDT_KH = "0123456789",
-                            TenKH = "Nguyễn Văn A",
-                            diaChi = "Hà Nội",
-                            diem = 10000,
-                            gioiTinh = true,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            SDT_KH = "0123456567",
-                            TenKH = "Nguyễn Văn B",
-                            diaChi = "Hải Phòng",
-                            diem = 10000,
-                            gioiTinh = false,
-                            trangThai = true
-                        },
-                        new
-                        {
-                            SDT_KH = "0123456678",
-                            TenKH = "Nguyễn Văn C",
-                            diaChi = "Lạng Sơn",
-                            diem = 10000,
-                            gioiTinh = true,
-                            trangThai = true
-                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.mauSac", b =>
@@ -260,26 +175,6 @@ namespace _1.DAL.Migrations
                     b.HasKey("maMauSac");
 
                     b.ToTable("mauSac", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            maMauSac = 1,
-                            tenMau = "Xanh",
-                            trangThai = true
-                        },
-                        new
-                        {
-                            maMauSac = 2,
-                            tenMau = "Đỏ",
-                            trangThai = true
-                        },
-                        new
-                        {
-                            maMauSac = 3,
-                            tenMau = "Trắng",
-                            trangThai = true
-                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.nhanVien", b =>
@@ -326,30 +221,6 @@ namespace _1.DAL.Migrations
                     b.HasIndex("maChucVu");
 
                     b.ToTable("nhanVien", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            maNhanVien = 1,
-                            SDT = "0379702133",
-                            TenNV = "Nguyễn Văn Đạo",
-                            diaChi = "Tuyên Quang",
-                            email = "daonvph18705@gmail.com",
-                            maChucVu = 1,
-                            matKhau = "123",
-                            tinhTrang = true
-                        },
-                        new
-                        {
-                            maNhanVien = 2,
-                            SDT = "0379702144",
-                            TenNV = "Nguyễn Văn B",
-                            diaChi = "Hà Nội",
-                            email = "baaa@gmail.com",
-                            maChucVu = 2,
-                            matKhau = "123",
-                            tinhTrang = true
-                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.SanPham", b =>
@@ -360,11 +231,11 @@ namespace _1.DAL.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("maSanPham"), 1L, 1);
 
-                    b.Property<float>("Giaban")
-                        .HasColumnType("real");
+                    b.Property<decimal>("Giaban")
+                        .HasColumnType("decimal(18,2)");
 
-                    b.Property<float>("Gianhap")
-                        .HasColumnType("real");
+                    b.Property<decimal>("Gianhap")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Soluong")
                         .HasColumnType("int");
@@ -398,96 +269,6 @@ namespace _1.DAL.Migrations
                     b.HasIndex("maSize");
 
                     b.ToTable("sanPham", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-<<<<<<<< HEAD:1.DAL/Migrations/20221202185526_1111.Designer.cs
-                            IDSanPham = 1,
-                            Giaban = 1500f,
-                            Gianhap = 1000f,
-                            IDHangSX = 1,
-                            IDMauSac = 1,
-                            IDSize = 1,
-========
-                            maSanPham = 1,
-                            Giaban = 1500m,
-                            Gianhap = 1000m,
->>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3:1.DAL/Migrations/20221129170811_111.Designer.cs
-                            Soluong = 1000,
-                            TenSP = "Lacoste",
-                            Trangthai = true,
-                            linkAnh = "",
-                            maHangSX = 1,
-                            maMauSac = 1,
-                            maSize = 1
-                        },
-                        new
-                        {
-<<<<<<<< HEAD:1.DAL/Migrations/20221202185526_1111.Designer.cs
-                            IDSanPham = 2,
-                            Giaban = 2000f,
-                            Gianhap = 1500f,
-                            IDHangSX = 2,
-                            IDMauSac = 2,
-                            IDSize = 2,
-========
-                            maSanPham = 2,
-                            Giaban = 2000m,
-                            Gianhap = 1500m,
->>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3:1.DAL/Migrations/20221129170811_111.Designer.cs
-                            Soluong = 1200,
-                            TenSP = "Gucci",
-                            Trangthai = true,
-                            linkAnh = "",
-                            maHangSX = 2,
-                            maMauSac = 2,
-                            maSize = 2
-                        },
-                        new
-                        {
-<<<<<<<< HEAD:1.DAL/Migrations/20221202185526_1111.Designer.cs
-                            IDSanPham = 3,
-                            Giaban = 1700f,
-                            Gianhap = 1200f,
-                            IDHangSX = 3,
-                            IDMauSac = 3,
-                            IDSize = 3,
-========
-                            maSanPham = 3,
-                            Giaban = 1700m,
-                            Gianhap = 1200m,
->>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3:1.DAL/Migrations/20221129170811_111.Designer.cs
-                            Soluong = 1300,
-                            TenSP = "ADLV",
-                            Trangthai = true,
-                            linkAnh = "",
-                            maHangSX = 3,
-                            maMauSac = 3,
-                            maSize = 3
-                        },
-                        new
-                        {
-<<<<<<<< HEAD:1.DAL/Migrations/20221202185526_1111.Designer.cs
-                            IDSanPham = 4,
-                            Giaban = 2100f,
-                            Gianhap = 1600f,
-                            IDHangSX = 2,
-                            IDMauSac = 3,
-                            IDSize = 1,
-========
-                            maSanPham = 4,
-                            Giaban = 2100m,
-                            Gianhap = 1600m,
->>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3:1.DAL/Migrations/20221129170811_111.Designer.cs
-                            Soluong = 1400,
-                            TenSP = "Uniqlo",
-                            Trangthai = true,
-                            linkAnh = "",
-                            maHangSX = 2,
-                            maMauSac = 3,
-                            maSize = 1
-                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.size", b =>
@@ -510,26 +291,6 @@ namespace _1.DAL.Migrations
                     b.HasKey("maSize");
 
                     b.ToTable("size", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            maSize = 1,
-                            SiZe = "M",
-                            trangThai = true
-                        },
-                        new
-                        {
-                            maSize = 2,
-                            SiZe = "L",
-                            trangThai = true
-                        },
-                        new
-                        {
-                            maSize = 3,
-                            SiZe = "XL",
-                            trangThai = true
-                        });
                 });
 
             modelBuilder.Entity("_1.DAL.Models.hoaDon", b =>

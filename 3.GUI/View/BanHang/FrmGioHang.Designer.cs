@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbt_timKiem = new System.Windows.Forms.TextBox();
             this.dtgv_sanPham = new System.Windows.Forms.DataGridView();
+<<<<<<< HEAD
             this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +47,8 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+=======
+>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbl_Diem = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -87,6 +90,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_sanPham)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -200,6 +210,7 @@
             this.dtgv_sanPham.RowTemplate.Height = 29;
             this.dtgv_sanPham.Size = new System.Drawing.Size(855, 310);
             this.dtgv_sanPham.TabIndex = 0;
+<<<<<<< HEAD
             this.dtgv_sanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_sanPham_CellClick);
             // 
             // Column16
@@ -257,6 +268,8 @@
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
             this.Column4.Width = 115;
+=======
+>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3
             // 
             // groupBox2
             // 
@@ -415,9 +428,12 @@
             this.dtgv_gioHang.RowTemplate.Height = 29;
             this.dtgv_gioHang.Size = new System.Drawing.Size(660, 242);
             this.dtgv_gioHang.TabIndex = 1;
+<<<<<<< HEAD
             this.dtgv_gioHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_gioHang_CellClick);
             this.dtgv_gioHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_gioHang_CellValueChanged);
             this.dtgv_gioHang.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_gioHang_CellValueChanged);
+=======
+>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3
             // 
             // Column8
             // 
@@ -659,6 +675,52 @@
             this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã hóa đơn";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã sản phẩm";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên sản phẩm";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 130;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Màu sắc";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Size";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Đơn giá";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Nhà sản xuất";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Số lượng tồn";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
             // 
             // FrmGioHang
             // 

@@ -30,7 +30,7 @@ namespace _3.GUI.View.FromSanPham
             dtgv_Size.Rows.Clear();
             foreach (var item in _QLsizeServices.GetSizeFromDB())
             {
-                dtgv_Size.Rows.Add(item.IDSize, item.SiZe,
+                dtgv_Size.Rows.Add(item.maSize, item.SiZe,
                     item.trangThai == true ? "Còn hàng" : "Hết hàng");
             }
         }
@@ -103,7 +103,7 @@ namespace _3.GUI.View.FromSanPham
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dtgv_Size.Rows[e.RowIndex];
-                _size = _QLsizeServices.GetSizeFromDB().FirstOrDefault(x => x.IDSize == Convert.ToInt32(row.Cells[0].Value));
+                _size = _QLsizeServices.GetSizeFromDB().FirstOrDefault(x => x.maSize == Convert.ToInt32(row.Cells[0].Value));
                 tbt_TenSize.Text = row.Cells[1].Value.ToString();
                 rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
                 rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;

@@ -31,7 +31,7 @@ namespace _3.GUI.View
             dtgv_NSX.Rows.Clear();
             foreach (var item in _QLhangSXServices.GetHangSXFromDB())
             {
-                dtgv_NSX.Rows.Add(item.IDHangSX, item.tenHangSX,
+                dtgv_NSX.Rows.Add(item.maHangSX, item.tenHangSX,
                     item.trangThai == true ? "Hoạt động" : "KHĐ");
             }
             //lblThongKe.Text = "Tổng số nhà cung cấp: " + dtgv_NCC.Rows.Count;
@@ -104,7 +104,7 @@ namespace _3.GUI.View
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dtgv_NSX.Rows[e.RowIndex];
-                _hangSX = _QLhangSXServices.GetHangSXFromDB().FirstOrDefault(x => x.IDHangSX == Convert.ToInt32(row.Cells[0].Value));
+                _hangSX = _QLhangSXServices.GetHangSXFromDB().FirstOrDefault(x => x.maHangSX == Convert.ToInt32(row.Cells[0].Value));
                 tbt_TenNSX.Text = row.Cells[1].Value.ToString();
                 rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
                 rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;

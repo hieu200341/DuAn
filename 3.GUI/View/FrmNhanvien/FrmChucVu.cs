@@ -32,7 +32,7 @@ namespace _3.GUI.View.FrmNhanvien
             dtg_show.Columns[1].Name = "Tên chức vụ";
             foreach (var item in qLchucVuServices.GetchucVuFromDB())
             {
-                dtg_show.Rows.Add(item.IDChucVu, item.tenCV);
+                dtg_show.Rows.Add(item.maChucVu, item.tenCV);
             }
         }
         private void btn_them_Click_1(object sender, EventArgs e)
@@ -111,7 +111,7 @@ namespace _3.GUI.View.FrmNhanvien
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dtg_show.Rows[e.RowIndex];
-                _chucVu = qLchucVuServices.GetchucVuFromDB().FirstOrDefault(x => x.IDChucVu == Convert.ToInt32(row.Cells[0].Value));
+                _chucVu = qLchucVuServices.GetchucVuFromDB().FirstOrDefault(x => x.maChucVu == Convert.ToInt32(row.Cells[0].Value));
                 tb_tencv.Text = row.Cells[1].Value.ToString();
                 //rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
                 //rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;

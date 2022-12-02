@@ -34,22 +34,22 @@ namespace _3.GUI.View
         public void loadDuLieu()
         {
             dtg_show.Rows.Clear();
-            //dtg_show.ColumnCount = 8;
-            //dtg_show.Columns[0].Name = "Mã nhân viên";
-            //dtg_show.Columns[1].Name = "Tên nhân viên";
-            //dtg_show.Columns[2].Name = "Địa chỉ";
-            //dtg_show.Columns[3].Name = "Số điện thoại";
-            //dtg_show.Columns[4].Name = "Email";
-            //dtg_show.Columns[5].Name = "Mật khẩu";
-            //dtg_show.Columns[6].Name = "Tình trạng";
-            //dtg_show.Columns[7].Name = "Chức vụ";
-            //if (tb_timkiem.Text != "")
-            //{
+            dtg_show.ColumnCount = 8;
+            dtg_show.Columns[0].Name = "Mã nhân viên";
+            dtg_show.Columns[1].Name = "Tên nhân viên";
+            dtg_show.Columns[2].Name = "Địa chỉ";
+            dtg_show.Columns[3].Name = "Số điện thoại";
+            dtg_show.Columns[4].Name = "Email";
+            dtg_show.Columns[5].Name = "Mật khẩu";
+            dtg_show.Columns[6].Name = "Tình trạng";
+            dtg_show.Columns[7].Name = "Chức vụ";
+            if (tb_timkiem.Text != "")
+            {
                 
-            //}
+            }
             foreach (var item in _IqLnhanVienServices.GetNhanVienFromDB())
             {
-                dtg_show.Rows.Add(item.nhanViens.IDNhanVien, item.nhanViens.TenNV, item.nhanViens.diaChi, item.nhanViens.SDT, item.nhanViens.email, item.nhanViens.matKhau, item.nhanViens.tinhTrang == true ? "Hoạt động" : "Không hoạt động", item.nhanViens.IDChucVu);
+                dtg_show.Rows.Add(item.nhanViens.maNhanVien, item.nhanViens.TenNV, item.nhanViens.diaChi, item.nhanViens.SDT, item.nhanViens.email, item.nhanViens.matKhau, item.nhanViens.tinhTrang == true ? "Hoạt động" : "Không hoạt động", item.nhanViens.maChucVu);
             }
             ////foreach (var item in _IqLnhanVienServices.getViewNhanVien())
             //{
@@ -79,11 +79,11 @@ namespace _3.GUI.View
             ViewHienThi1 nhan = new ViewHienThi1();
             nhan.nhanViens = new nhanVien();
             {
-                nhan.nhanViens.IDNhanVien = _maclick;
+                nhan.nhanViens.maNhanVien = _maclick;
                 nhan.nhanViens.TenNV = tb_ten.Text;
                 nhan.nhanViens.SDT = tb_sdt.Text;
                 nhan.nhanViens.email = tb_email.Text;
-                nhan.nhanViens.IDChucVu = _IQLchucVuServices.GetchucVuFromDB()[cbb_cv.SelectedIndex].IDChucVu;
+                nhan.nhanViens.maChucVu = _IQLchucVuServices.GetchucVuFromDB()[cbb_cv.SelectedIndex].maChucVu;
                 nhan.nhanViens.diaChi = tb_diachi.Text;
                 nhan.nhanViens.matKhau = tb_matkhau.Text;
                 nhan.nhanViens.tinhTrang = rd_hd.Checked;
@@ -162,7 +162,7 @@ namespace _3.GUI.View
             if (dialogResult == DialogResult.Yes)
             {
                 var x = GetData();
-                x.nhanViens.IDNhanVien = _maclick;
+                x.nhanViens.maNhanVien = _maclick;
                 MessageBox.Show(_IqLnhanVienServices.RemoveNhanVien(x));
                 loadDuLieu();
             }
@@ -196,7 +196,7 @@ namespace _3.GUI.View
             if (dialogResult == DialogResult.Yes)
             {
                 var x = GetData();
-                x.nhanViens.IDNhanVien = _maclick;
+                x.nhanViens.maNhanVien = _maclick;
                 MessageBox.Show(_IqLnhanVienServices.UpdateNhanVien(x));
                 loadDuLieu();
             }

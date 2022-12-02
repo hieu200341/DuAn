@@ -23,6 +23,8 @@ namespace _3.GUI.View.FromSanPham
         IQLsanPhamServices _qLsanPhamServices;
         public SanPham _sanPham;
         public string Avatar = "";
+        FilterInfoCollection filterInfoCollection;
+        VideoCaptureDevice videoCaptureDevice;
         public FrmSanPhamChiTiet()
         {
             _qLsizeServices = new QLsizeServices();
@@ -74,7 +76,7 @@ namespace _3.GUI.View.FromSanPham
             dtgv_sanPham.Rows.Clear();
             foreach (var item in _qLsanPhamServices.getViewSanPham())
             {
-                dtgv_sanPham.Rows.Add(item.SanPhams.IDSanPham,item.SanPhams.maSP, item.SanPhams.TenSP, item.SanPhams.Gianhap, item.SanPhams.Giaban, item.SanPhams.Soluong,item.mauSacs.tenMau, item.sizes.SiZe,item.hangSXs.tenHangSX,
+                dtgv_sanPham.Rows.Add(item.SanPhams.maSanPham, item.SanPhams.TenSP, item.SanPhams.Gianhap, item.SanPhams.Giaban, item.SanPhams.Soluong,item.mauSacs.tenMau, item.sizes.SiZe,item.hangSXs.tenHangSX,
                     item.SanPhams.Trangthai == true ? "Còn hàng" : "Hết hàng");
             }
         }
@@ -150,14 +152,13 @@ namespace _3.GUI.View.FromSanPham
             {
                 SanPham sp = new SanPham()
                 {
-                    maSP = tbt_maSP.Text,
                     TenSP = tbt_ten.Text,
                     Gianhap = float.Parse(tbt_giaNhap.Text),
                     Giaban = float.Parse(tbt_giaBan.Text),
                     Soluong = Convert.ToInt32(tbt_soLuong.Text),
-                    IDMauSac = _qLmauSacServices.GetMauSacFromDB()[cb_Mau.SelectedIndex].IDMauSac,
-                    IDSize = _qLsizeServices.GetSizeFromDB()[cb_size.SelectedIndex].IDSize,
-                    IDHangSX = _QLhangServices.GetHangSXFromDB()[cb_NSX.SelectedIndex].IDHangSX,
+                    maMauSac = _qLmauSacServices.GetMauSacFromDB()[cb_Mau.SelectedIndex].maMauSac,
+                    maSize = _qLsizeServices.GetSizeFromDB()[cb_size.SelectedIndex].maSize,
+                    maHangSX = _QLhangServices.GetHangSXFromDB()[cb_NSX.SelectedIndex].maHangSX,
                     Trangthai = rb_con.Checked,
                     linkAnh = Avatar
                 };
@@ -168,11 +169,6 @@ namespace _3.GUI.View.FromSanPham
                 loadDuLieu();
 
             }
-        }
-
-        private void dtgv_sanPham_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
         }
     }
 }

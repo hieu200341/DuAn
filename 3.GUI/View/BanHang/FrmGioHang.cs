@@ -1,16 +1,11 @@
-﻿using _1.DAL.IRepositories;
-using _1.DAL.Models;
-using _1.DAL.Repositories;
-using _2.BUS.IServices;
+﻿using _2.BUS.IServices;
 using _2.BUS.Services;
-using _2.BUS.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,6 +15,7 @@ namespace _3.GUI.View.BanHang
 {
     public partial class FrmGioHang : Form
     {
+<<<<<<< HEAD
         
         private IQLsanPhamServices _SanPham;
         private IQLhoaDonChiTietServices _hoaDonChiTiet;
@@ -32,6 +28,12 @@ namespace _3.GUI.View.BanHang
         public int oID;
         public FrmGioHang()
         {
+=======
+        private IQLsanPhamServices _qLsanPhamServices;
+        public FrmGioHang()
+        {
+            _qLsanPhamServices= new QLsanPhamServices();
+>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3
             InitializeComponent();
             _SanPham = new QLsanPhamServices();
             _hoaDonChiTiet = new QLhoaDonChiTietServices();
@@ -42,16 +44,20 @@ namespace _3.GUI.View.BanHang
             oID = -1;
 
             LoadSanPham();
+<<<<<<< HEAD
             loadHDcho();
+=======
+>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3
         }
         public void LoadSanPham()
         {
             dtgv_HDcho.Rows.Clear();
             foreach (var item in _SanPham.getViewSanPham())
             {
-                dtgv_sanPham.Rows.Add(item.SanPhams.IDSanPham, item.SanPhams.TenSP, item.mauSacs.tenMau, item.sizes.SiZe, item.SanPhams.Giaban, item.hangSXs.tenHangSX, item.SanPhams.Soluong);
+                dtgv_sanPham.Rows.Add(item.SanPhams.maSanPham, item.SanPhams.TenSP, item.mauSacs.tenMau, item.sizes.SiZe, item.SanPhams.Giaban, item.hangSXs.tenHangSX, item.SanPhams.Soluong);
             }
         }
+<<<<<<< HEAD
         public void loadGioHang()
         {
             dtgv_gioHang.Rows.Clear();
@@ -478,5 +484,7 @@ namespace _3.GUI.View.BanHang
                 lbl_Diem.Text = "";
             }
         }
+=======
+>>>>>>> 1710443d32302164027f53c3117c1f3cc70e67a3
     }
 }

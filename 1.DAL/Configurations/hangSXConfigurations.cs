@@ -16,11 +16,13 @@ namespace _1.DAL.Configurations
             // Đặt tên bảng
             builder.ToTable("hangSX");
             // Set khóa chính
-            builder.HasKey(x => x.IDHangSX);
-            builder.Property(x => x.IDHangSX).UseIdentityColumn(1, 1);
+            builder.HasKey(x => x.maHangSX);
+            builder.Property(x => x.maHangSX).UseIdentityColumn(1, 1);
             // Set các ràng buộc cho thuộc tính
-            builder.Property(x => x.tenHangSX).IsRequired();
-            builder.Property(x => x.trangThai).IsRequired();
+            builder.Property(x => x.tenHangSX).HasColumnName("tenHangSX")
+                .IsRequired().HasColumnType("nvarchar(100)");
+            builder.Property(x => x.trangThai).HasColumnName("trangThai")
+                .IsRequired().HasColumnType("bit");
         }
     }
 }
