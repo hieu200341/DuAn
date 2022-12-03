@@ -26,12 +26,12 @@ namespace _3.GUI.View
             
             for (int i = 0; i < Acc.Count; i++)
             {
-                if (tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.maChucVu == 1)
+                if (tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.IDChucVu == 1)
                 {
                     FrmMenu f = new FrmMenu();
                     f.ShowDialog();
                 }
-                if (tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.maChucVu == 2)
+                if (tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.IDChucVu == 2)
                 {
                     FrmMenu f = new FrmMenu();
                     f.FrmNV();

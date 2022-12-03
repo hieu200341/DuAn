@@ -35,20 +35,12 @@ namespace _1.DAL.Context
         {
             //Thực hiện các ràng buộc kết nối
             //base.OnConfiguring(optionsBuilder.
-
-<<<<<<< HEAD
-                //; User ID = daonvph18705; Password = 123
-                UseSqlServer("DESKTOP - T0CSGCJ\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True"));
-            
-=======
             //    ; User ID = daonvph18705; Password = 123
-            //    UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True"));
             if (!optionsBuilder.IsConfigured)
             {
                 // Lấy code về muốn kết nối database thì phải sửa lại dòng này
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True");
             }
->>>>>>> 33a27ea21b69dab0825ad3dc65caa64f5960f8e6
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
