@@ -16,13 +16,11 @@ namespace _1.DAL.Configurations
             // Đặt tên bảng
             builder.ToTable("size");
             // Set khóa chính
-            builder.HasKey(x => x.maSize);
-            builder.Property(x => x.maSize).UseIdentityColumn(1, 1);
+            builder.HasKey(x => x.IDSize);
+            builder.Property(x => x.IDSize).UseIdentityColumn(1, 1);
             // Set các ràng buộc cho thuộc tính
-            builder.Property(x => x.SiZe).HasColumnName("SiZe")
-                .IsRequired().HasColumnType("nvarchar(100)");
-            builder.Property(x => x.trangThai).HasColumnName("trangThai")
-                .IsRequired().HasColumnType("bit");
+            builder.Property(x => x.SiZe).IsRequired();
+            builder.Property(x => x.trangThai).IsRequired();
         }
     }
 }

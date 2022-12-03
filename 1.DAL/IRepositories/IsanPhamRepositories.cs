@@ -1,14 +1,17 @@
 ﻿using _1.DAL.Models;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace _1.DAL.IRepositories
 {
     public interface IsanPhamRepositories
     {
-        List<SanPham> GetSanPhamFromDB(); 
-        bool addsanPham(SanPham sanPham); 
-        bool RemoveSanPham(SanPham sanPham); 
-        bool UpdateSanPham(SanPham sanPham); 
+        List<sanPham1> GetsanPhamFromDB();
+        bool addsanPham(sanPham1 SanPham);
+        bool RemovesanPham(sanPham1 SanPham);
+        bool UpdatesanPham(sanPham1 SanPham);
     }
 }

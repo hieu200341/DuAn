@@ -30,7 +30,7 @@ namespace _3.GUI.View.FromSanPham
             dtgv_Mau.Rows.Clear();
             foreach (var item in _QLmauSacServices.GetMauSacFromDB())
             {
-                dtgv_Mau.Rows.Add( item.maMauSac, item.tenMau,
+                dtgv_Mau.Rows.Add( item.IDMauSac, item.tenMau,
                     item.trangThai == true ? "Còn hàng" : "Hết hàng");
             }
         }
@@ -103,7 +103,7 @@ namespace _3.GUI.View.FromSanPham
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dtgv_Mau.Rows[e.RowIndex];
-                _mauSac = _QLmauSacServices.GetMauSacFromDB().FirstOrDefault(x => x.maMauSac == Convert.ToInt32(row.Cells[0].Value));
+                _mauSac = _QLmauSacServices.GetMauSacFromDB().FirstOrDefault(x => x.IDMauSac == Convert.ToInt32(row.Cells[0].Value));
                 tbt_TenMau.Text = row.Cells[1].Value.ToString();
                 rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
                 rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;

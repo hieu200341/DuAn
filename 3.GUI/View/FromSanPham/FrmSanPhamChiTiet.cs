@@ -20,18 +20,16 @@ namespace _3.GUI.View.FromSanPham
         IQLhangSXServices _QLhangServices;
         IQLmauSacServices _qLmauSacServices;
         IQLsizeServices _qLsizeServices;
-        IQLsanPhamServices _qLsanPhamServices;
-        public SanPham _sanPham;
+        IQLsanPhamChiTietServices _qLsanPhamServices;
+        public sanPhamChiTiet _sanPham;
         public string Avatar = "";
-        FilterInfoCollection filterInfoCollection;
-        VideoCaptureDevice videoCaptureDevice;
         public FrmSanPhamChiTiet()
         {
             _qLsizeServices = new QLsizeServices();
             _qLmauSacServices = new QLmauSacServices();
             _QLhangServices = new QLhangSXServices();
-            _qLsanPhamServices = new QLsanPhamServices();
-            _sanPham = new SanPham();
+            _qLsanPhamServices = new QLsanPhamChiTietServices();
+            _sanPham = new sanPhamChiTiet();
             InitializeComponent();
             //loadDuLieu();
             //loadDate();
@@ -74,10 +72,10 @@ namespace _3.GUI.View.FromSanPham
         public void loadDuLieu()
         {
             dtgv_sanPham.Rows.Clear();
-            foreach (var item in _qLsanPhamServices.getViewSanPham())
+            foreach (var item in _qLsanPhamServices.getViewSanPhamCT())
             {
-                dtgv_sanPham.Rows.Add(item.SanPhams.maSanPham, item.SanPhams.TenSP, item.SanPhams.Gianhap, item.SanPhams.Giaban, item.SanPhams.Soluong,item.mauSacs.tenMau, item.sizes.SiZe,item.hangSXs.tenHangSX,
-                    item.SanPhams.Trangthai == true ? "Còn hàng" : "Hết hàng");
+                dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet,item.SanPhamChiTiets.maSP, item.SanPhamChiTiets.TenSP, item.SanPhamChiTiets.Gianhap, item.SanPhamChiTiets.Giaban, item.SanPhamChiTiets.Soluong,item.mauSacs.tenMau, item.sizes.SiZe,item.hangSXs.tenHangSX,
+                    item.SanPhamChiTiets.Trangthai == true ? "Còn hàng" : "Hết hàng");
             }
         }
 
@@ -120,7 +118,7 @@ namespace _3.GUI.View.FromSanPham
         }
         private void btn_them_Click(object sender, EventArgs e)
         {
-            SanPham tsp = _qLsanPhamServices.GetSanPhamFromDB().FirstOrDefault
+            sanPhamChiTiet tsp = _qLsanPhamServices.GetSanPhamCTTFromDB().FirstOrDefault
             (p => p.TenSP == tbt_ten.Text);
             string number = tbt_giaBan.Text;
             number = tbt_giaNhap.Text;
@@ -150,15 +148,16 @@ namespace _3.GUI.View.FromSanPham
             }
             else
             {
-                SanPham sp = new SanPham()
+                sanPhamChiTiet sp = new sanPhamChiTiet()
                 {
+                    maSP = tbt_maSP.Text,
                     TenSP = tbt_ten.Text,
                     Gianhap = float.Parse(tbt_giaNhap.Text),
                     Giaban = float.Parse(tbt_giaBan.Text),
                     Soluong = Convert.ToInt32(tbt_soLuong.Text),
-                    maMauSac = _qLmauSacServices.GetMauSacFromDB()[cb_Mau.SelectedIndex].maMauSac,
-                    maSize = _qLsizeServices.GetSizeFromDB()[cb_size.SelectedIndex].maSize,
-                    maHangSX = _QLhangServices.GetHangSXFromDB()[cb_NSX.SelectedIndex].maHangSX,
+                    IDMauSac = _qLmauSacServices.GetMauSacFromDB()[cb_Mau.SelectedIndex].IDMauSac,
+                    IDSize = _qLsizeServices.GetSizeFromDB()[cb_size.SelectedIndex].IDSize,
+                    IDHangSX = _QLhangServices.GetHangSXFromDB()[cb_NSX.SelectedIndex].IDHangSX,
                     Trangthai = rb_con.Checked,
                     linkAnh = Avatar
                 };
@@ -169,6 +168,11 @@ namespace _3.GUI.View.FromSanPham
                 loadDuLieu();
 
             }
+        }
+
+        private void dtgv_sanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
         }
     }
 }

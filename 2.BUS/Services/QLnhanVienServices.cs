@@ -39,9 +39,9 @@ namespace _2.BUS.Services
             List<ViewHienThi1> nhanVienViews = new List<ViewHienThi1>();
             nhanVienViews =
                 (from a in _nhanVien.GetNhanVienFromDB()
-                 join b in _qlchucVu.GetchucVuFromDB() on a.maChucVu equals  b.maChucVu
+                 join b in _qlchucVu.GetchucVuFromDB() on a.IDChucVu equals b.IDChucVu
                  select new ViewHienThi1()
-                 {  
+                 {
                      nhanViens = a,
                      chucVus = b,
                     

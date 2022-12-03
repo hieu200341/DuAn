@@ -49,7 +49,7 @@ namespace _3.GUI.View
             }
             foreach (var item in _IqLnhanVienServices.GetNhanVienFromDB())
             {
-                dtg_show.Rows.Add(item.nhanViens.maNhanVien, item.nhanViens.TenNV, item.nhanViens.diaChi, item.nhanViens.SDT, item.nhanViens.email, item.nhanViens.matKhau, item.nhanViens.tinhTrang == true ? "Hoạt động" : "Không hoạt động", item.nhanViens.maChucVu);
+                dtg_show.Rows.Add(item.nhanViens.IDNhanVien, item.nhanViens.TenNV, item.nhanViens.diaChi, item.nhanViens.SDT, item.nhanViens.email, item.nhanViens.matKhau, item.nhanViens.tinhTrang == true ? "Hoạt động" : "Không hoạt động", item.chucVus.tenCV);
             }
             ////foreach (var item in _IqLnhanVienServices.getViewNhanVien())
             //{
@@ -79,11 +79,11 @@ namespace _3.GUI.View
             ViewHienThi1 nhan = new ViewHienThi1();
             nhan.nhanViens = new nhanVien();
             {
-                nhan.nhanViens.maNhanVien = _maclick;
+                nhan.nhanViens.IDNhanVien = _maclick;
                 nhan.nhanViens.TenNV = tb_ten.Text;
                 nhan.nhanViens.SDT = tb_sdt.Text;
                 nhan.nhanViens.email = tb_email.Text;
-                nhan.nhanViens.maChucVu = _IQLchucVuServices.GetchucVuFromDB()[cbb_cv.SelectedIndex].maChucVu;
+                nhan.nhanViens.IDChucVu = _IQLchucVuServices.GetchucVuFromDB()[cbb_cv.SelectedIndex].IDChucVu;
                 nhan.nhanViens.diaChi = tb_diachi.Text;
                 nhan.nhanViens.matKhau = tb_matkhau.Text;
                 nhan.nhanViens.tinhTrang = rd_hd.Checked;
@@ -162,7 +162,7 @@ namespace _3.GUI.View
             if (dialogResult == DialogResult.Yes)
             {
                 var x = GetData();
-                x.nhanViens.maNhanVien = _maclick;
+                x.nhanViens.IDNhanVien = _maclick;
                 MessageBox.Show(_IqLnhanVienServices.RemoveNhanVien(x));
                 loadDuLieu();
             }
@@ -196,7 +196,7 @@ namespace _3.GUI.View
             if (dialogResult == DialogResult.Yes)
             {
                 var x = GetData();
-                x.nhanViens.maNhanVien = _maclick;
+                x.nhanViens.IDNhanVien = _maclick;
                 MessageBox.Show(_IqLnhanVienServices.UpdateNhanVien(x));
                 loadDuLieu();
             }
