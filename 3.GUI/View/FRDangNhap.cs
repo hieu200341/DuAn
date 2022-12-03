@@ -23,29 +23,37 @@ namespace _3.GUI.View
         public void Check()
         {
             var Acc = _sv.GetNhanVienFromDB().ToList();
-            
-            for (int i = 0; i < Acc.Count; i++)
-            {
-                if (tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.IDChucVu == 1)
-                {
-                    FrmMenu f = new FrmMenu();
-                    f.ShowDialog();
-                }
-                if (tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.IDChucVu == 2)
-                {
-                    FrmMenu f = new FrmMenu();
-                    f.FrmNV();
-                    f.ShowDialog();
-                }
-            }
-            MessageBox.Show("Kiểm tra lại tk mk");
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
+
             if (tb_user.Text == "" || tb_pass.Text == "")
             {
                 MessageBox.Show("Vui lòng điền tài khoản mật khẩu");
             }
+            else
+            {
+                for (int i = 0; i < Acc.Count; i++)
+                {
+                    if (tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.IDChucVu == 1)
+                    {
+                        MessageBox.Show("Đăng nhập với tư cách quản lí");
+                        FrmMenu f = new FrmMenu();
+                        f.ShowDialog();
+                        return;
+                    }
+                    else if(tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.IDChucVu == 2)
+                    {
+                        MessageBox.Show("Đăng nhập với tư cách nhân viên");
+                        FrmMenu f = new FrmMenu();
+                        f.FrmNV();
+                        f.ShowDialog();
+                        return;
+                    }                                                               
+                }
+                MessageBox.Show("Kiểm tra lại tk mk");
+            }                        
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
             Check();
         }
 
@@ -58,15 +66,14 @@ namespace _3.GUI.View
         {
 
         }
-
-        private void tb_user_TextChanged(object sender, EventArgs e)
-        {
-            tb_user.Clear();
-        }
-
         private void FRDangNhap_Load(object sender, EventArgs e)
         {
-
+            tb_user.Text = Properties.Settings.Default.tk;
+            tb_pass.Text = Properties.Settings.Default.mk;
+            if(Properties.Settings.Default.tk != "")
+            {
+                checkBox1.Checked = true;
+            }
         }
 
         private void btn_buy_Click(object sender, EventArgs e)
@@ -74,61 +81,18 @@ namespace _3.GUI.View
             FrmDangKy frmDangKy = new FrmDangKy();  
             frmDangKy.ShowDialog();
         }
-        private void tb_user_Enter(object sender, EventArgs e)
-        {
-            if (tb_user.Text == "UserName")
-            {
-                tb_user.Text = "";
 
-            }
-        }
-        private void tb_user_Leave(object sender, EventArgs e)
-        {
-            if (tb_user.Text == "")
-            {
-                tb_user.Text = "UserName";
-               
-            }
-        }
 
-       
-
-        private void textBox2_Enter(object sender, EventArgs e)
-        {
-            if(tb_pass.Text == "Password")
-            {
-                tb_pass.Text = "";
-               
-                tb_pass.UseSystemPasswordChar = true;
-            }
-        }
 
         private void FRDangNhap_Leave(object sender, EventArgs e)
         {
             if (tb_pass.Text == "")
             {
                 tb_pass.Text = "Password";
-                
+
                 tb_pass.UseSystemPasswordChar = false;
             }
         }
-
-        private void tb_user_Enter_1(object sender, EventArgs e)
-        {
-            if(tb_user.Text== "Username")
-            {
-                tb_user.Text = "";
-            }
-        }
-
-        private void tb_user_Leave_1(object sender, EventArgs e)
-        {
-            if(tb_user.Text == "")
-            {
-                tb_user.Text = "Username";
-            }
-        }
-
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
@@ -140,17 +104,23 @@ namespace _3.GUI.View
             frmQuenMk.ShowDialog();
         }
 
-        private void tb_pass_Leave(object sender, EventArgs e)
-        {
-            if(tb_pass.Text == "")
-            {
-                tb_pass.Text="Password";
-            }
-        }
-
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (tb_user.Text != "" || tb_pass.Text != "")
+            {
+                if(checkBox1.Checked == true)
+                {
+                    string user = tb_user.Text;
+                    string pass = tb_pass.Text;
+                    Properties.Settings.Default.tk = user;
+                    Properties.Settings.Default.mk = pass;
+                    Properties.Settings.Default.Save();
+                }
+                else
+                {
+                    Properties.Settings.Default.Reset();
+                }
+            }
         }
     }
 }

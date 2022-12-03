@@ -12,7 +12,7 @@ using _1.DAL.Context;
 namespace _1.DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221203124115_111")]
+    [Migration("20221203140208_111")]
     partial class _111
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
