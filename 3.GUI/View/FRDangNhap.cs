@@ -7,20 +7,46 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using _2.BUS.IServices;
+using _2.BUS.Services;
 namespace _3.GUI.View
 {
     public partial class FRDangNhap : Form
     {
+        IQLnhanVienServices _sv;
         public FRDangNhap()
         {
+            _sv = new QLnhanVienServices();
             InitializeComponent();
         }
 
+        public void Check()
+        {
+            var Acc = _sv.GetNhanVienFromDB().ToList();
+            
+            for (int i = 0; i < Acc.Count; i++)
+            {
+                if (tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.maChucVu == 1)
+                {
+                    FrmMenu f = new FrmMenu();
+                    f.ShowDialog();
+                }
+                if (tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.maChucVu == 2)
+                {
+                    FrmMenu f = new FrmMenu();
+                    f.FrmNV();
+                    f.ShowDialog();
+                }
+            }
+            MessageBox.Show("Kiểm tra lại tk mk");
+        }
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmMenu frm = new FrmMenu();
-            frm.ShowDialog();
+            if (tb_user.Text == "" || tb_pass.Text == "")
+            {
+                MessageBox.Show("Vui lòng điền tài khoản mật khẩu");
+            }
+            Check();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -120,6 +146,11 @@ namespace _3.GUI.View
             {
                 tb_pass.Text="Password";
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

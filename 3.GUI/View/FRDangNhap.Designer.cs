@@ -93,6 +93,7 @@
             this.checkBox1.TabIndex = 7;
             this.checkBox1.Text = "Remember Me";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // panel1
             // 
@@ -106,11 +107,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Montserrat", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(209, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 32);
+            this.label3.Size = new System.Drawing.Size(135, 29);
             this.label3.TabIndex = 0;
             this.label3.Text = "My Account";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
