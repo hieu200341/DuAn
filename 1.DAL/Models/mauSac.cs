@@ -8,9 +8,9 @@ namespace _1.DAL.Models
 {
     public class mauSac
     {
-        public int maMauSac { set; get; }
+        public int IDMauSac { set; get; }
         public string tenMau { get; set; }
         public bool trangThai { get; set; }
-        public virtual List<SanPham>? SanphamChitietss { get; set; }
+        public virtual List<sanPhamChiTiet>? SanphamChitietss { get; set; }
     }
 }

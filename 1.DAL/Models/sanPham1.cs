@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace _1.DAL.Models
 {
-    public class hangSX
+    public class sanPham1
     {
-        public int IDHangSX { get; set; }
-        public string? tenHangSX { get; set; }
+        public int IDsanPham { get; set; }
+        public string tenLoaiHang { get; set; }
         public bool trangThai { get; set; }
-        public virtual List<sanPhamChiTiet> SanphamChitietss { get; set; }
+        public virtual List<sanPhamChiTiet>? SanphamChitietss { get; set; }
     }
 }

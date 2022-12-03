@@ -2,7 +2,6 @@
 using _1.DAL.Models;
 using _1.DAL.Repositories;
 using _2.BUS.IServices;
-using _2.BUS.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,53 +13,36 @@ namespace _2.BUS.Services
     public class QLsanPhamServices : IQLsanPhamServices
     {
         private IsanPhamRepositories _sanPham;
-        private List<SanPham> _lstsanPham;
-        private IQLsizeServices _qLsizeServices;
-        private IQLmauSacServices _qLmauSacServices;
-        private IQLhangSXServices _qLhangSXServices;
-        private List<ViewHienThi1> _lstView;
+        private List<sanPham1> _lstsanPham;
+
         public QLsanPhamServices()
         {
-            _lstsanPham = new List<SanPham>();
+            _lstsanPham = new List<sanPham1>();
             _sanPham = new sanPhamRepositories();
-            _lstView = new List<ViewHienThi1>();
-            _qLhangSXServices = new QLhangSXServices();
-            _qLmauSacServices= new QLmauSacServices();
-            _qLsizeServices= new QLsizeServices();
-            GetSanPhamFromDB();
         }
 
-        public bool addsanPham(SanPham sanPham)
+        public bool addsanPham(sanPham1 SanPham)
         {
-            _sanPham.addsanPham(sanPham);
+            _sanPham.addsanPham(SanPham);
             return true;
         }
 
-        public bool RemoveSanPham(SanPham sanPham)
+        public bool RemovesanPham(sanPham1 SanPham)
         {
-            _sanPham.RemoveSanPham(sanPham);
+            _sanPham.RemovesanPham(SanPham);
             return true;
         }
 
-        public List<SanPham> GetSanPhamFromDB()
+        public List<sanPham1> GetsanPhamFromDB()
         {
-            _lstsanPham = _sanPham.GetSanPhamFromDB();
+            _lstsanPham = _sanPham.GetsanPhamFromDB();
             return _lstsanPham;
         }
 
-        public bool UpdateSanPham(SanPham sanPham)
+        public bool UpdatesanPham(sanPham1 SanPham)
         {
-            _sanPham.UpdateSanPham(sanPham);
+            _sanPham.UpdatesanPham(SanPham);
             return true;
-        }
-        public List<ViewHienThi1> getViewSanPham()
-        {
-            _lstView = (from a in GetSanPhamFromDB()
-                        join b in _qLmauSacServices.GetMauSacFromDB() on a.maSanPham equals b.maMauSac
-                        join c in _qLhangSXServices.GetHangSXFromDB() on a.maSanPham equals c.maHangSX
-                        join d in _qLsizeServices.GetSizeFromDB() on a.maSanPham equals d.maSize
-                        select new ViewHienThi1 { SanPhams = a, mauSacs = b, hangSXs = c, sizes = d }).ToList();
-            return _lstView;
         }
     }
 }

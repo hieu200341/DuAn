@@ -1,6 +1,6 @@
 ﻿using _1.DAL.Models;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,26 +9,18 @@ using System.Threading.Tasks;
 
 namespace _1.DAL.Configurations
 {
-    public class sanPhamConfigurations : IEntityTypeConfiguration<SanPham>
+    public class sanPhamConfigurations : IEntityTypeConfiguration<sanPham1>
     {
-        public void Configure(EntityTypeBuilder<SanPham> builder)
+        public void Configure(EntityTypeBuilder<sanPham1> builder)
         {
+            // Đặt tên bảng
             builder.ToTable("sanPham");
-            builder.HasKey(c => c.maSanPham);
-            builder.Property(x => x.maSanPham).UseIdentityColumn(1, 1);
-            builder.Property(c => c.TenSP).IsRequired();
-            builder.Property(c => c.Gianhap).IsRequired();
-            builder.Property(c => c.Giaban).IsRequired();
-            builder.Property(c => c.Soluong).IsRequired();
-            builder.Property(c => c.Trangthai).HasColumnType("bit").
-                IsRequired();
-            builder.Property(c => c.linkAnh).IsRequired();
-            builder.HasOne(x => x.size)
-           .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maSize);
-            builder.HasOne(x => x.mauSac)
-           .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maMauSac);
-            builder.HasOne(x => x.hangSX)
-          .WithMany(g => g.SanphamChitietss).HasForeignKey(p => p.maHangSX);
+            // Set khóa chính
+            builder.HasKey(x => x.IDsanPham);
+            builder.Property(x => x.IDsanPham).UseIdentityColumn(1, 1);
+            // Set các ràng buộc cho thuộc tính
+            builder.Property(x => x.tenLoaiHang).IsRequired();
+            builder.Property(x => x.trangThai).IsRequired();
         }
     }
 }

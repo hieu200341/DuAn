@@ -18,31 +18,20 @@ namespace _1.DAL.Repositories
         }
         public bool addHoaDon(hoaDon HoaDon)
         {
-            if (HoaDon == null) return false;
             _context.Add(HoaDon);
             _context.SaveChanges();
             return true;
-            
         }
 
         public bool RemoveHoaDon(hoaDon HoaDon)
         {
-            if (HoaDon == null) return false;
-            var temp = _context.hoaDons.FirstOrDefault(c => c.maHoaDon == HoaDon.maHoaDon);
-            _context.Remove(temp);
+            _context.Remove(HoaDon);
             _context.SaveChanges();
             return true;
         }
         public bool UpdateHoaDon(hoaDon HoaDon)
         {
-            if (HoaDon == null) return false;
-            var temp = _context.hoaDons.FirstOrDefault(c => c.maHoaDon == HoaDon.maHoaDon);
-            temp.maNhanVien = HoaDon.maNhanVien;
-            temp.SDT_KH = HoaDon.SDT_KH;
-            temp.ngayBan = HoaDon.ngayBan;
-            temp.ngayTT = HoaDon.ngayTT;
-            temp.trangThai = HoaDon.trangThai;
-            _context.Update(temp);
+            _context.Update(HoaDon);
             _context.SaveChanges();
             return true;
         }

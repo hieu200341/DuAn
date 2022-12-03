@@ -24,7 +24,8 @@ namespace _1.DAL.Context
         public DbSet<chucVu> chucVus { get; set; }
         public DbSet<hangSX> hangSXes { get; set; }
         public DbSet<hoaDon> hoaDons { get; set; }
-        public DbSet<SanPham> sanPhams { get; set; }
+        public DbSet<sanPhamChiTiet> sanPhamCTs { get; set; }
+        public DbSet<sanPham1> sanPhams { get; set; }
         public DbSet<hoaDonChiTiet> hoaDonChiTiets { get; set; }
         public DbSet<mauSac> mauSacs { get; set; }
         public DbSet<nhanVien> nhanViens { get; set; }
@@ -32,27 +33,38 @@ namespace _1.DAL.Context
         public DbSet<size> Sizes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Thực hiện các ràng buộc kết nối
-            base.OnConfiguring(optionsBuilder.
+            //Thực hiện các ràng buộc kết nối
+            //base.OnConfiguring(optionsBuilder.
 
+<<<<<<< HEAD
                 //; User ID = daonvph18705; Password = 123
                 UseSqlServer("DESKTOP - T0CSGCJ\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True"));
             
+=======
+            //    ; User ID = daonvph18705; Password = 123
+            //    UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True"));
+            if (!optionsBuilder.IsConfigured)
+            {
+                // Lấy code về muốn kết nối database thì phải sửa lại dòng này
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True");
+            }
+>>>>>>> 33a27ea21b69dab0825ad3dc65caa64f5960f8e6
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //modelBuilder.ApplyConfiguration(new chucVuConfigurations());
-            //modelBuilder.ApplyConfiguration(new hangSXConfigurations());
-            //modelBuilder.ApplyConfiguration(new hoaDonChiTietConfigurations());
-            //modelBuilder.ApplyConfiguration(new hoaDonChiTietConfigurations());
-            //modelBuilder.ApplyConfiguration(new khachHangConfigurations());
-            //modelBuilder.ApplyConfiguration(new mauSacConfigurations());
-            //modelBuilder.ApplyConfiguration(new nhanVienConfigurations());
-            //modelBuilder.ApplyConfiguration(new sanPhamConfigurations());
-            //modelBuilder.ApplyConfiguration(new sizeConfigurations());
+            modelBuilder.ApplyConfiguration(new chucVuConfigurations());
+            modelBuilder.ApplyConfiguration(new hangSXConfigurations());
+            modelBuilder.ApplyConfiguration(new hoaDonConfigurations());
+            modelBuilder.ApplyConfiguration(new hoaDonChiTietConfigurations());
+            modelBuilder.ApplyConfiguration(new khachHangConfigurations());
+            modelBuilder.ApplyConfiguration(new mauSacConfigurations());
+            modelBuilder.ApplyConfiguration(new nhanVienConfigurations());
+            modelBuilder.ApplyConfiguration(new sanPhamChiTietConfigurations());
+            modelBuilder.ApplyConfiguration(new sizeConfigurations());
+            modelBuilder.ApplyConfiguration(new sanPhamConfigurations());
             //modelBuilder.ApplyConfiguration(new ProductInCategoryConfiguration());
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            //modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
             modelBuilder.Seed(); //gọi cái này để seeding data
         }
     }

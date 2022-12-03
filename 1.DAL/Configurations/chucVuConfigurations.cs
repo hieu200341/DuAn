@@ -16,11 +16,10 @@ namespace _1.DAL.Configurations
             // Đặt tên bảng
             builder.ToTable("chucVu");
             // Set khóa chính
-            builder.HasKey(x => x.maChucVu);
-            builder.Property(x => x.maChucVu).UseIdentityColumn(1, 1);
+            builder.HasKey(x => x.IDChucVu);
+            builder.Property(x => x.IDChucVu).UseIdentityColumn(1, 1);
             // Set các ràng buộc cho thuộc tính
-            builder.Property(x => x.tenCV).HasColumnName("tenCV")
-                .IsRequired().HasColumnType("nvarchar(100)");
+            builder.Property(x => x.tenCV).IsRequired();
         }
     }
 }

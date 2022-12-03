@@ -16,13 +16,11 @@ namespace _1.DAL.Configurations
             // Đặt tên bảng
             builder.ToTable("mauSac");
             // Set khóa chính
-            builder.HasKey(x => x.maMauSac);
-            builder.Property(x => x.maMauSac).UseIdentityColumn(1, 1);
+            builder.HasKey(x => x.IDMauSac);
+            builder.Property(x => x.IDMauSac).UseIdentityColumn(1, 1);
             // Set các ràng buộc cho thuộc tính
-            builder.Property(x => x.tenMau).HasColumnName("tenMau")
-                .IsRequired().HasColumnType("nvarchar(100)");
-            builder.Property(x => x.trangThai).HasColumnName("trangThai")
-                .IsRequired().HasColumnType("bit");
+            builder.Property(x => x.tenMau).IsRequired();
+            builder.Property(x => x.trangThai).IsRequired();
         }
     }
 }
