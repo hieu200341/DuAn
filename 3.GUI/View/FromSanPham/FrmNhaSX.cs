@@ -106,8 +106,8 @@ namespace _3.GUI.View
                 DataGridViewRow row = dtgv_NSX.Rows[e.RowIndex];
                 _hangSX = _QLhangSXServices.GetHangSXFromDB().FirstOrDefault(x => x.IDHangSX == Convert.ToInt32(row.Cells[0].Value));
                 tbt_TenNSX.Text = row.Cells[1].Value.ToString();
-                rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Còn hàng" ? true : false;
-                rb_KHD.Checked = row.Cells[2].Value.ToString() == "Hết hàng" ? true : false;
+                rb_HoatDong.Checked = row.Cells[2].Value.ToString() == "Hoạt động" ? true : false;
+                rb_KHD.Checked = row.Cells[2].Value.ToString() == "Không hoạt động" ? true : false;
             }
         }
 

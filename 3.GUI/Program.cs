@@ -14,7 +14,7 @@ namespace _3.GUI
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmGioHang());
+            Application.Run(new FrmSanPhamChiTiet());
         }
     }
 }
