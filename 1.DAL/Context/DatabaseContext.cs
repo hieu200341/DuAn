@@ -36,7 +36,8 @@ namespace _1.DAL.Context
             base.OnConfiguring(optionsBuilder.
 
                 //; User ID = daonvph18705; Password = 123
-                UseSqlServer("Data Source=DESKTOP-CRIH29T\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True"));
+                UseSqlServer("DESKTOP - T0CSGCJ\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True"));
+            
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

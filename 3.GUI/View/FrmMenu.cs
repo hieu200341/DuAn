@@ -57,6 +57,11 @@ namespace _3.GUI.View
                 }
             }
         }
+        public void FrmNV()
+        {
+            btn_nhanvien.Enabled = false;
+            btn_sanpham.Enabled = false;
+        }
         private void OpenChildForm(Form childForm, object btnSender)
         {
             if (activeForm != null)
