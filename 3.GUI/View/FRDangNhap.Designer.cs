@@ -63,12 +63,10 @@
             // 
             this.tb_pass.Location = new System.Drawing.Point(118, 227);
             this.tb_pass.Name = "tb_pass";
+            this.tb_pass.PlaceholderText = "Mật khẩu";
             this.tb_pass.ShortcutsEnabled = false;
             this.tb_pass.Size = new System.Drawing.Size(251, 27);
             this.tb_pass.TabIndex = 3;
-            this.tb_pass.Text = "Password";
-            this.tb_pass.Enter += new System.EventHandler(this.textBox2_Enter);
-            this.tb_pass.Leave += new System.EventHandler(this.tb_pass_Leave);
             // 
             // linkLabel1
             // 
@@ -196,12 +194,10 @@
             // 
             this.tb_user.Location = new System.Drawing.Point(118, 145);
             this.tb_user.Name = "tb_user";
+            this.tb_user.PlaceholderText = "Tài khoản";
             this.tb_user.ShortcutsEnabled = false;
             this.tb_user.Size = new System.Drawing.Size(251, 27);
             this.tb_user.TabIndex = 13;
-            this.tb_user.Text = "Username";
-            this.tb_user.Enter += new System.EventHandler(this.tb_user_Enter_1);
-            this.tb_user.Leave += new System.EventHandler(this.tb_user_Leave_1);
             // 
             // FRDangNhap
             // 
