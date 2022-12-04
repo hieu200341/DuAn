@@ -94,7 +94,7 @@ namespace _3.GUI.View
 
         private void btn_buy_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.FrmMuaHang(), sender);
+            OpenChildForm(new View.BanHang.FrmGioHang(), sender);
             lb_home.Text = btn_buy.Text;
         }
 
