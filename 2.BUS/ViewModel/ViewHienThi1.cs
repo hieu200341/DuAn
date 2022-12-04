@@ -18,5 +18,6 @@ namespace _2.BUS.ViewModel
         public nhanVien nhanViens { get; set; }
         public sanPhamChiTiet SanPhamChiTiets { get; set; }
         public size sizes { get; set; }
+        public sanPham1 sanPhams { get; set; }
     }
 }

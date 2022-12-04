@@ -38,9 +38,12 @@ namespace _1.DAL.Extensions
                 new size() { IDSize = 3, SiZe = "XL", trangThai = true }
                 );
             modelBuilder.Entity<sanPham1>().HasData(
-              new sanPham1() { IDsanPham = 1, tenLoaiHang = "Áo ba lỗ", trangThai = true },
-              new sanPham1() { IDsanPham = 2, tenLoaiHang = "Áo Phông", trangThai = true },
-              new sanPham1() { IDsanPham = 3, tenLoaiHang = "Áo Phông 2", trangThai = true }
+              new sanPham1() { IDsanPham = 1, tenLoaiHang = "Cổ tròn", trangThai = true },
+              new sanPham1() { IDsanPham = 2, tenLoaiHang = "Cổ tim", trangThai = true },
+              new sanPham1() { IDsanPham = 3, tenLoaiHang = "Oversize", trangThai = true },
+              new sanPham1() { IDsanPham = 4, tenLoaiHang = "Ba lỗ", trangThai = true },
+              new sanPham1() { IDsanPham = 5, tenLoaiHang = "Cổ chữ V", trangThai = true },
+              new sanPham1() { IDsanPham = 6, tenLoaiHang = "Polo", trangThai = true }
              
               );
             modelBuilder.Entity<nhanVien>().HasData(

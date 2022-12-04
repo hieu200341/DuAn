@@ -18,6 +18,7 @@ namespace _2.BUS.Services
         private IQLsizeServices _qLsizeServices;
         private IQLmauSacServices _qLmauSacServices;
         private IQLhangSXServices _qLhangSXServices;
+        private IQLsanPhamServices _qLsanPhamServices;
         private List<ViewHienThi1> _lstView;
         public QLsanPhamChiTietServices()
         {
@@ -27,6 +28,7 @@ namespace _2.BUS.Services
             _qLhangSXServices = new QLhangSXServices();
             _qLmauSacServices= new QLmauSacServices();
             _qLsizeServices= new QLsizeServices();
+            _qLsanPhamServices = new QLsanPhamServices();
             GetSanPhamCTTFromDB();
         }
 
@@ -59,7 +61,8 @@ namespace _2.BUS.Services
                         join b in _qLmauSacServices.GetMauSacFromDB() on a.IDMauSac equals b.IDMauSac
                         join c in _qLhangSXServices.GetHangSXFromDB() on a.IDHangSX equals c.IDHangSX
                         join d in _qLsizeServices.GetSizeFromDB() on a.IDSize equals d.IDSize
-                        select new ViewHienThi1 { SanPhamChiTiets = a, mauSacs = b, hangSXs = c, sizes = d }).ToList();
+                        join e in _qLsanPhamServices.GetsanPhamFromDB() on a.IDsanPham equals e.IDsanPham
+                        select new ViewHienThi1 { SanPhamChiTiets = a, mauSacs = b, hangSXs = c, sizes = d, sanPhams = e }).ToList();
             return _lstView;
         }
     }
