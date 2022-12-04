@@ -35,8 +35,9 @@ namespace _3.GUI.View
                     if (tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.IDChucVu == 1)
                     {
                         MessageBox.Show("Đăng nhập với tư cách quản lí");
+                        
                         FrmMenu f = new FrmMenu();
-                        f.ShowDialog();
+                        f.ShowDialog();                        
                         return;
                     }
                     else if(tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.IDChucVu == 2)
@@ -52,19 +53,13 @@ namespace _3.GUI.View
             }                        
         }
         private void button1_Click(object sender, EventArgs e)
-        {
-            
-            Check();
+        {            
+            Check();            
         }
 
         private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
+        {           
+            
         }
         private void FRDangNhap_Load(object sender, EventArgs e)
         {
@@ -73,25 +68,7 @@ namespace _3.GUI.View
             if(Properties.Settings.Default.tk != "")
             {
                 checkBox1.Checked = true;
-            }
-        }
-
-        private void btn_buy_Click(object sender, EventArgs e)
-        {
-            FrmDangKy frmDangKy = new FrmDangKy();  
-            frmDangKy.ShowDialog();
-        }
-
-
-
-        private void FRDangNhap_Leave(object sender, EventArgs e)
-        {
-            if (tb_pass.Text == "")
-            {
-                tb_pass.Text = "Password";
-
-                tb_pass.UseSystemPasswordChar = false;
-            }
+            }           
         }
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -101,7 +78,7 @@ namespace _3.GUI.View
         private void linkLabel1_Click(object sender, EventArgs e)
         {
             FrmQuenMk frmQuenMk = new FrmQuenMk();
-            frmQuenMk.ShowDialog();
+            frmQuenMk.ShowDialog();            
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)

@@ -10,7 +10,7 @@ namespace _3.GUI
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmSanPhamChiTiet());
+            Application.Run(new FRDangNhap());
         }
     }
 }
