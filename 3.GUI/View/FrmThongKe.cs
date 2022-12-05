@@ -44,9 +44,9 @@ namespace _3.GUI.View
             {
                 cbb_thang.Items.Add(i);
             }
-            var x = Convert.ToInt32(_order.GetHoaDonFromDB().First().ngayBan.ToString("yyyy"));
-            var y = Convert.ToInt32(_order.GetHoaDonFromDB().Last().ngayBan.ToString("yyyy"));
-            for (int i = x; i <= y; i++)
+            //var x = Convert.ToInt32(_order.GetHoaDonFromDB().First().ngayBan.ToString("yyyy"));
+            //var y = Convert.ToInt32(_order.GetHoaDonFromDB().Last().ngayBan.ToString("yyyy"));
+            for (int i = 0; i <= 9999; i++)
             {
                 cbb_nam.Items.Add(i);
             }
