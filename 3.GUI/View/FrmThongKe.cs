@@ -129,11 +129,7 @@ namespace _3.GUI.View
 
         private void btn_clean_Click(object sender, EventArgs e)
         {
-            
-            tb_sdt.Clear();
-            cbb_thang.Items.Clear();
-            cbb_nam.Items.Clear();
-
+                
         }
     }
 }
