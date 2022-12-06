@@ -78,7 +78,7 @@ namespace _3.GUI.View.BanHang
             dtg_hoadon.Rows.Clear();
             dtg_hoadonchitiet.Rows.Clear();
             int value;
-            if (tbt_timk.Text != "")
+            if (tbt_timk.Text != " ")
             {
                 if (int.TryParse(tbt_timk.Text, out value))
                 {
@@ -98,7 +98,7 @@ namespace _3.GUI.View.BanHang
                 }
                     else
                 {
-                    MessageBox.Show("Mã hóa đơn phải là số");
+                    MessageBox.Show("Yêu cầu kiểm tra lại thông tin cần tìm");
                     LoadHD();
                 } 
             }
