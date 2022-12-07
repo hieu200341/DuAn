@@ -19,35 +19,78 @@ namespace _3.GUI.View.BanHang
 {
     public partial class FrmGioHang : Form
     {
-        
-        private IQLsanPhamChiTietServices _SanPham;
-        private IQLhoaDonChiTietServices _hoaDonChiTiet;
-        private IQLhoaDonServices _hoaDon;
-        private IQLkhachHangServices _KhachHang;
+
+        private IQLsanPhamChiTietServices _qlSanPhamCT;
+        private IQLhoaDonChiTietServices _qlhoaDonChiTiet;
+        private IQLhoaDonServices _qlhoaDon;
+        private IQLkhachHangServices _qlKhachHang;
         public List<ViewHoaDonCT> _lstViewHoaDon;
+        private IQLhangSXServices _qlNSX;
+        private IQLsizeServices _qlsize;
+        private IQLsanPhamServices _qlSanPham;
+        private IQLmauSacServices _qlMausac;
         public int pID;
         public khachHang KH;
         public int oID;
         public FrmGioHang()
         {
             InitializeComponent();
-            _SanPham = new QLsanPhamChiTietServices();
-            _hoaDonChiTiet = new QLhoaDonChiTietServices();
-            _hoaDon = new QLhoaDonServices();
-            _KhachHang = new QLkhachHangServices();
+            _qlMausac = new QLmauSacServices();
+            _qlNSX = new QLhangSXServices();
+            _qlsize = new QLsizeServices();
+            _qlSanPham = new QLsanPhamServices();
+            _qlSanPhamCT = new QLsanPhamChiTietServices();
+            _qlhoaDonChiTiet = new QLhoaDonChiTietServices();
+            _qlhoaDon = new QLhoaDonServices();
+            _qlKhachHang = new QLkhachHangServices();
             _lstViewHoaDon = new List<ViewHoaDonCT>();
             KH = new khachHang();
             oID = -1;
-
             LoadSanPham();
             loadHDcho();
+            LoadNhaSanXuat();
+            LoadMauSac();
+            LoadSize();
+        }
+        public void LoadNhaSanXuat()
+        {
+            cbb_NSX.Items.Clear();
+            cbb_NSX.Items.Add("Tất cả");
+            var nsx = _qlNSX.GetHangSXFromDB().Where(x => x.trangThai == true);
+            foreach (var item in nsx)
+            {
+                cbb_NSX.Items.Add(item.tenHangSX.ToString());
+            }
+            cbb_NSX.SelectedIndex = 0;
+        }
+        public void LoadMauSac()
+        {
+            cbb_Mau.Items.Clear();
+            cbb_Mau.Items.Add("Tất cả");
+            var mau = _qlMausac.GetMauSacFromDB().Where(x => x.trangThai == true);
+            foreach (var item in mau)
+            {
+                cbb_Mau.Items.Add(item.tenMau.ToString());
+            }
+            cbb_Mau.SelectedIndex = 0;
+        }
+        public void LoadSize()
+        {
+            cbb_size.Items.Clear();
+            cbb_size.Items.Add("Tất cả");
+            var size = _qlsize.GetSizeFromDB().Where(x => x.trangThai == true);
+            foreach (var item in size)
+            {
+                cbb_size.Items.Add(item.SiZe.ToString());
+            }
+            cbb_size.SelectedIndex = 0;
         }
         public void LoadSanPham()
         {
-            dtgv_HDcho.Rows.Clear();
-            foreach (var item in _SanPham.getViewSanPhamCT())
+            dtgv_sanPham.Rows.Clear();
+            foreach (var item in _qlSanPhamCT.getViewSanPhamCT())
             {
-                dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet, item.SanPhamChiTiets.TenSP, item.mauSacs.tenMau, item.sizes.SiZe, item.SanPhamChiTiets.Giaban, item.hangSXs.tenHangSX, item.SanPhamChiTiets.Soluong);
+                dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet, item.SanPhamChiTiets.maSP, item.SanPhamChiTiets.TenSP, item.mauSacs.tenMau, item.sizes.SiZe, item.SanPhamChiTiets.Giaban, item.hangSXs.tenHangSX, item.SanPhamChiTiets.Soluong);
             }
         }
         public void loadGioHang()
@@ -62,17 +105,21 @@ namespace _3.GUI.View.BanHang
         public void loadHDcho()
         {
             dtgv_HDcho.Rows.Clear();
-            var hdCho = _hoaDon.GetHoaDonFromDB().Where(x => x.trangThai == false);
+            var hdCho = _qlhoaDon.getViewhoaDon().Where(x => x.hoaDons.trangThai == false);
             foreach (var item in hdCho)
             {
-                dtgv_HDcho.Rows.Add(item.IDHoaDon.ToString());
+                dtgv_HDcho.Rows.Add(item.hoaDons.IDHoaDon, item.khachHangs.TenKH);
             }
         }
-        public void addCart(int pID)
+        public void themGioHang(int pID)
         {
-            var p = _SanPham.getViewSanPhamCT().FirstOrDefault(x => x.SanPhamChiTiets.IDSanPhamChiTiet == pID);
+            var p = _qlSanPhamCT.getViewSanPhamCT().FirstOrDefault(x => x.SanPhamChiTiets.IDSanPhamChiTiet == pID);
             var data = _lstViewHoaDon.FirstOrDefault(x => x.ID == p.SanPhamChiTiets.IDSanPhamChiTiet);
-            if (data == null)
+            if (p.SanPhamChiTiets.Soluong <= 0)
+            {
+                MessageBox.Show("Hết hàng ");
+            }
+            else if (data == null)
             {
                 ViewHoaDonCT viewHDCT = new ViewHoaDonCT()
                 {
@@ -83,7 +130,7 @@ namespace _3.GUI.View.BanHang
                     maSanPham = p.SanPhamChiTiets.maSP
                 };
                 _lstViewHoaDon.Add(viewHDCT);
-            }
+            } 
             else
             {
                 if (data.soLuong == p.SanPhamChiTiets.Soluong)
@@ -116,7 +163,7 @@ namespace _3.GUI.View.BanHang
                         }
                         else
                         {
-                            var p = _SanPham.GetSanPhamCTTFromDB().FirstOrDefault(x => x.IDSanPhamChiTiet == _lstViewHoaDon[r.Index].ID);
+                            var p = _qlSanPhamCT.GetSanPhamCTTFromDB().FirstOrDefault(x => x.IDSanPhamChiTiet == _lstViewHoaDon[r.Index].ID);
                             if (p.Soluong < Convert.ToInt32(dtgv_gioHang.Rows[r.Index].Cells[2].Value))
                             {
                                 MessageBox.Show("Sản phẩm trong giỏ hàng đã vượt quá số lượng cho phép");
@@ -144,7 +191,7 @@ namespace _3.GUI.View.BanHang
             {
                 DataGridViewRow r = dtgv_sanPham.Rows[e.RowIndex];
                 pID = Convert.ToInt32(r.Cells[0].Value.ToString());
-                addCart(pID);
+                themGioHang(pID);
             }
         }
 
@@ -161,11 +208,11 @@ namespace _3.GUI.View.BanHang
         {
             if (int.TryParse(tbt_maHD.Text, out int m))
             {
-                hoaDon o = _hoaDon.GetHoaDonFromDB().FirstOrDefault(x => x.IDHoaDon == Convert.ToInt32(tbt_maHD.Text) && x.trangThai == false);
+                hoaDon o = _qlhoaDon.GetHoaDonFromDB().FirstOrDefault(x => x.IDHoaDon == Convert.ToInt32(tbt_maHD.Text) && x.trangThai == false);
                 if (o != null)
                 {
                     lbl_Tong.Text = o.tongTien.ToString();
-                    var khach = _KhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == o.SDT_KH);
+                    var khach = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == o.SDT_KH);
                     lbl_giamGia.Text = $"(Tối đa : {khach.diem})";
                 }
                 else
@@ -212,7 +259,8 @@ namespace _3.GUI.View.BanHang
                 {
                     Tong += item.donGia * item.soLuong;
                 }
-                KH = _KhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
+                KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
+
                 if (KH != null)
                 {
                     hoaDon HD = new hoaDon()
@@ -224,7 +272,7 @@ namespace _3.GUI.View.BanHang
                         trangThai = false,
                         ghiChu = ""
                     };
-                    _hoaDon.addHoaDon(HD);
+                    _qlhoaDon.addHoaDon(HD);
                     foreach (var item in _lstViewHoaDon)
                     {
                         hoaDonChiTiet od = new hoaDonChiTiet()
@@ -234,15 +282,24 @@ namespace _3.GUI.View.BanHang
                             donGia = item.donGia,
                             Soluong = item.soLuong
                         };
-                        _hoaDonChiTiet.addHoaDonChiTiet(od);
-                        var p = _SanPham.GetSanPhamCTTFromDB().FirstOrDefault(x => x.IDSanPhamChiTiet == item.ID);
-                        p.Soluong -= item.soLuong;
-                        _SanPham.UpdateSanPham(p);
+                        _qlhoaDonChiTiet.addHoaDonChiTiet(od);
+                        var p = _qlSanPhamCT.GetSanPhamCTTFromDB().FirstOrDefault(x => x.IDSanPhamChiTiet == item.ID);
+                        //if (p.Soluong <= 0)
+                        //{
+                        //    MessageBox.Show("Hết hàng");
+                        //}
+                        //else
+                        //{
+                            p.Soluong -= item.soLuong;
+                            _qlSanPhamCT.UpdateSanPham(p);
+                        //}
+
+                       
                     }
 
-                    tbt_maHD.Text = HD.IDHoaDon.ToString();
-                    lbl_Tong.Text = HD.tongTien.ToString();
-                    lbl_tongTien.Text = "";
+                    //tbt_maHD.Text = HD.IDHoaDon.ToString();
+                    //lbl_Tong.Text = HD.tongTien.ToString();
+                    //lbl_tongTien.Text = "";
                     MessageBox.Show($"Tạo hóa đơn thành công. ID: {HD.IDHoaDon}");
                     loadHDcho();
                     _lstViewHoaDon = new List<ViewHoaDonCT>();
@@ -265,14 +322,14 @@ namespace _3.GUI.View.BanHang
                 if (_lstViewHoaDon.Any())
                 {
                     int Tien = 0;
-                    KH = _KhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
+                    KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
                     if (KH != null)
                     {
-                        var HD = _hoaDon.GetHoaDonFromDB().FirstOrDefault(x => x.IDHoaDon == oID);
-                        var HDCT = _hoaDonChiTiet.GetHoaDonChiTietFromDB().Where(x => x.IDHoaDon == oID);
+                        var HD = _qlhoaDon.GetHoaDonFromDB().FirstOrDefault(x => x.IDHoaDon == oID);
+                        var HDCT = _qlhoaDonChiTiet.GetHoaDonChiTietFromDB().Where(x => x.IDHoaDon == oID);
                         foreach (var item in HDCT)
                         {
-                            _hoaDonChiTiet.RemoveHoaDonChiTiet(item);
+                            _qlhoaDonChiTiet.RemoveHoaDonChiTiet(item);
                         }
 
 
@@ -286,21 +343,21 @@ namespace _3.GUI.View.BanHang
                                 Soluong = item.soLuong
                             };
                             Tien += Convert.ToInt32(item.donGia * item.soLuong);
-                            _hoaDonChiTiet.addHoaDonChiTiet(hoaDonChi);
-                            var SP = _SanPham.GetSanPhamCTTFromDB().FirstOrDefault(x => x.IDSanPhamChiTiet == item.ID);
+                            _qlhoaDonChiTiet.addHoaDonChiTiet(hoaDonChi);
+                            var SP = _qlSanPhamCT.GetSanPhamCTTFromDB().FirstOrDefault(x => x.IDSanPhamChiTiet == item.ID);
                             SP.Soluong -= item.soLuong;
-                            _SanPham.UpdateSanPham(SP);
+                            _qlSanPhamCT.UpdateSanPham(SP);
                         }
 
                         HD.ngayBan = DateTime.Now;
                         HD.SDT_KH = KH.SDT_KH;
                         HD.tongTien = Tien;
-                        _hoaDon.UpdateHoaDon(HD);
+                        _qlhoaDon.UpdateHoaDon(HD);
 
                         tbt_maHD.Text = oID.ToString();
-                        lbl_Tong.Text = HD.ToString();
+                        lbl_tongTien.Text = Tien.ToString();
                         tbt_SDT.Text = "";
-                        lbl_tongTien.Text = "";
+                        lbl_Tong.Text = "";
                         MessageBox.Show($"Cập nhật hóa đơn thành công. ID: {oID}");
                         oID = -1;
                         loadHDcho();
@@ -330,15 +387,15 @@ namespace _3.GUI.View.BanHang
                 oID = Convert.ToInt32(r.Cells[0].Value.ToString());
                 tbt_maHD.Text = oID.ToString();
 
-                var HDCT = _hoaDonChiTiet.GetHoaDonChiTietFromDB().Where(x => x.IDHoaDon == oID);
-                var HD = _hoaDon.GetHoaDonFromDB().FirstOrDefault(x => x.IDHoaDon == oID).SDT_KH;
-                var KH = _KhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == HD);
+                var HDCT = _qlhoaDonChiTiet.GetHoaDonChiTietFromDB().Where(x => x.IDHoaDon == oID);
+                var HD = _qlhoaDon.GetHoaDonFromDB().FirstOrDefault(x => x.IDHoaDon == oID).SDT_KH;
+                var KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == HD);
                 tbt_SDT.Text = KH.SDT_KH;
 
                 _lstViewHoaDon = new List<ViewHoaDonCT>();
                 foreach (var item in HDCT)
                 {
-                    var SP = _SanPham.GetSanPhamCTTFromDB().FirstOrDefault(x => x.IDSanPhamChiTiet == item.IDSanPham);
+                    var SP = _qlSanPhamCT.GetSanPhamCTTFromDB().FirstOrDefault(x => x.IDSanPhamChiTiet == item.IDSanPham);
 
                     ViewHoaDonCT ViewHDCT = new ViewHoaDonCT()
                     {
@@ -394,17 +451,21 @@ namespace _3.GUI.View.BanHang
 
         private void btn_thanhToan_Click(object sender, EventArgs e)
         {
-            hoaDon HD = _hoaDon.GetHoaDonFromDB().FirstOrDefault(x => x.IDHoaDon == Convert.ToInt32(tbt_maHD.Text) && x.trangThai == false);
+            hoaDon HD = _qlhoaDon.GetHoaDonFromDB().FirstOrDefault(p => Convert.ToString(p.IDHoaDon) == tbt_maHD.Text && p.trangThai == false);
             if (HD == null)
             {
                 MessageBox.Show("Đơn hàng không tồn tại hoặc đã thanh toán");
                 lbl_tongTien.Text = "0";
             }
+            else if (tbt_maHD.Text == "")
+            {
+                MessageBox.Show("Đơn hàng không tồn tại");
+            }
             else
             {
-                var KhachH = _KhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == HD.SDT_KH);
+                var KhachH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == HD.SDT_KH);
                 int x;
-                if (tbt_giamGia.Text == "" || Convert.ToInt32(lbl_TienThua.Text) < 0 || tbt_tienKhachDua.Text == "" || (!int.TryParse(tbt_giamGia.Text, out x) && tbt_giamGia.Text != "") || !int.TryParse(tbt_tienKhachDua.Text, out int y) || Convert.ToInt32(tbt_giamGia.Text) > Convert.ToInt32(lbl_tongTien.Text))
+                if (tbt_giamGia.Text == "" || float.Parse(tbt_giamGia.Text) < 0 || float.Parse(lbl_TienThua.Text) < 0 || tbt_tienKhachDua.Text == "" || (!float.TryParse(tbt_giamGia.Text, out float z) && tbt_giamGia.Text != "") || !float.TryParse(tbt_tienKhachDua.Text, out float y) || float.Parse(tbt_giamGia.Text) > float.Parse(lbl_tongTien.Text))
                 {
                     MessageBox.Show("Vui lòng nhập đúng số tiền");
                 }
@@ -414,7 +475,7 @@ namespace _3.GUI.View.BanHang
                     if (dialogResult == DialogResult.Yes)
                     {
                         HD.trangThai = true;
-                        _hoaDon.UpdateHoaDon(HD);
+                        _qlhoaDon.UpdateHoaDon(HD);
                         if (tbt_tienKhachDua.Text == "0" && float.Parse(tbt_giamGia.Text) > HD.tongTien)
                         {
                             lbl_TienThua.Text = "0";
@@ -424,22 +485,28 @@ namespace _3.GUI.View.BanHang
                         {
                             if (tbt_giamGia.Text != "")
                             {
-                                KhachH.diem = KhachH.diem + Convert.ToInt32(HD.tongTien / 100) - Convert.ToInt32(tbt_giamGia.Text);
+                                KhachH.diem = KhachH.diem + Convert.ToInt32((HD.tongTien * 10) / 100) - Convert.ToInt32(tbt_giamGia.Text);
                             }
                             else
                             {
-                                KhachH.diem += Convert.ToInt32(HD.tongTien / 100);
+                                KhachH.diem += Convert.ToInt32((HD.tongTien * 10) / 100);
                             }
                         }
-                        _KhachHang.UpdateKhachHang(KhachH);
+                        _qlKhachHang.UpdateKhachHang(KhachH);
                         MessageBox.Show("Thanh toán thành công");
+                        tbt_maHD.Text = "";
+                        tbt_SDT.Text = "";
                         tbt_giamGia.Text = "";
+                        lbl_giamGia.Text = "";
                         tbt_tienKhachDua.Text = "";
-                        lbl_tongTien.Text = "0";
+                        lbl_Tong.Text = "";
+                        lbl_tongTien.Text = "";
                         lbl_TienThua.Text = "0";
                         tbt_ghiChu.Text = "";
+                        _lstViewHoaDon = new List<ViewHoaDonCT>();
                         loadGioHang();
                         loadHDcho();
+                        LoadSanPham();
                     }
                 }
             }
@@ -460,7 +527,7 @@ namespace _3.GUI.View.BanHang
         {
             if (int.TryParse(tbt_SDT.Text, out int x))
             {
-                KH = _KhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
+                KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
                 if (KH != null)
                 {
                     lbl_tenKhach.Text = KH.TenKH;
@@ -556,6 +623,87 @@ namespace _3.GUI.View.BanHang
                 }
             }
             //InHoaDon();
+        }
+
+        private void cbb_NSX_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbb_NSX.Text == "Tất cả")
+            {
+                dtgv_sanPham.Rows.Clear();
+                foreach (var item in _qlSanPhamCT.getViewSanPhamCT())
+                {
+                    dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet, item.SanPhamChiTiets.maSP, item.SanPhamChiTiets.TenSP,
+                        item.mauSacs.tenMau, item.sizes.SiZe, item.SanPhamChiTiets.Giaban, item.hangSXs.tenHangSX, item.SanPhamChiTiets.Soluong);
+                }
+            }
+            else
+            {
+                var timNSX = _qlSanPhamCT.getViewSanPhamCT().Where(p => p.hangSXs.tenHangSX == cbb_NSX.Text);
+                dtgv_sanPham.Rows.Clear();
+                foreach (var item in timNSX)
+                {
+                    dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet, item.SanPhamChiTiets.maSP, item.SanPhamChiTiets.TenSP, item.mauSacs.tenMau, item.sizes.SiZe,
+                        item.SanPhamChiTiets.Giaban, item.hangSXs.tenHangSX, item.SanPhamChiTiets.Soluong);
+                }
+            }
+        }
+
+        private void cbb_size_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbb_size.Text == "Tất cả")
+            {
+                dtgv_sanPham.Rows.Clear();
+                foreach (var item in _qlSanPhamCT.getViewSanPhamCT())
+                {
+                    dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet, item.SanPhamChiTiets.maSP, item.SanPhamChiTiets.TenSP, item.mauSacs.tenMau,
+                        item.sizes.SiZe, item.SanPhamChiTiets.Giaban, item.hangSXs.tenHangSX, item.SanPhamChiTiets.Soluong);
+                }
+            }
+            else
+            {
+                var timsize = _qlSanPhamCT.getViewSanPhamCT().Where(p => p.sizes.SiZe == cbb_size.Text);
+                dtgv_sanPham.Rows.Clear();
+                foreach (var item in timsize)
+                {
+                    dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet, item.SanPhamChiTiets.maSP,
+                        item.SanPhamChiTiets.TenSP, item.mauSacs.tenMau, item.sizes.SiZe, item.SanPhamChiTiets.Giaban, item.hangSXs.tenHangSX, item.SanPhamChiTiets.Soluong);
+                }
+            }
+        }
+
+        private void cbb_Mau_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbb_Mau.Text == "Tất cả")
+            {
+                dtgv_sanPham.Rows.Clear();
+                foreach (var item in _qlSanPhamCT.getViewSanPhamCT())
+                {
+                    dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet, item.SanPhamChiTiets.maSP, item.SanPhamChiTiets.TenSP,
+                        item.mauSacs.tenMau, item.sizes.SiZe, item.SanPhamChiTiets.Giaban, item.hangSXs.tenHangSX, item.SanPhamChiTiets.Soluong);
+                }
+            }
+            else
+            {
+                var timMau = _qlSanPhamCT.getViewSanPhamCT().Where(p => p.mauSacs.tenMau == cbb_Mau.Text);
+                dtgv_sanPham.Rows.Clear();
+                foreach (var item in timMau)
+                {
+                    dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet, item.SanPhamChiTiets.maSP,
+                        item.SanPhamChiTiets.TenSP, item.mauSacs.tenMau, item.sizes.SiZe, item.SanPhamChiTiets.Giaban, item.hangSXs.tenHangSX, item.SanPhamChiTiets.Soluong);
+                }
+            }
+        }
+
+        private void tbt_timKiem_TextChanged(object sender, EventArgs e)
+        {
+            dtgv_sanPham.Rows.Clear();
+            foreach (var item in _qlSanPhamCT.getViewSanPhamCT().Where(x => x.SanPhamChiTiets.TenSP.ToLower().Contains(tbt_timKiem.Text) || x.SanPhamChiTiets.maSP.ToLower().Contains(tbt_timKiem.Text.ToLower())
+            || x.mauSacs.tenMau.ToLower().Contains(tbt_timKiem.Text) || x.hangSXs.tenHangSX.ToLower().Contains(tbt_timKiem.Text)
+            || x.sizes.SiZe.ToLower().Contains(tbt_timKiem.Text) || x.sanPhams.tenLoaiHang.ToLower().Contains(tbt_timKiem.Text)
+            || Convert.ToString(x.SanPhamChiTiets.IDsanPham).Contains(tbt_timKiem.Text)))
+            {
+                dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet, item.SanPhamChiTiets.maSP, item.SanPhamChiTiets.TenSP, item.mauSacs.tenMau, item.sizes.SiZe, item.SanPhamChiTiets.Giaban, item.hangSXs.tenHangSX, item.SanPhamChiTiets.Soluong);
+            }
         }
         //private void InHoaDon()
         //{
