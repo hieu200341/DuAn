@@ -105,13 +105,13 @@ namespace _3.GUI.View.BanHang
         public void loadHDcho()
         {
             dtgv_HDcho.Rows.Clear();
-            var hdCho = _qlhoaDon.GetHoaDonFromDB().Where(x => x.trangThai == false);
+            var hdCho = _qlhoaDon.getViewhoaDon().Where(x => x.hoaDons.trangThai == false);
             foreach (var item in hdCho)
             {
-                dtgv_HDcho.Rows.Add(item.IDHoaDon.ToString());
+                dtgv_HDcho.Rows.Add(item.hoaDons.IDHoaDon, item.khachHangs.TenKH);
             }
         }
-        public void addCart(int pID)
+        public void themGioHang(int pID)
         {
             var p = _qlSanPhamCT.getViewSanPhamCT().FirstOrDefault(x => x.SanPhamChiTiets.IDSanPhamChiTiet == pID);
             var data = _lstViewHoaDon.FirstOrDefault(x => x.ID == p.SanPhamChiTiets.IDSanPhamChiTiet);
@@ -187,7 +187,7 @@ namespace _3.GUI.View.BanHang
             {
                 DataGridViewRow r = dtgv_sanPham.Rows[e.RowIndex];
                 pID = Convert.ToInt32(r.Cells[0].Value.ToString());
-                addCart(pID);
+                themGioHang(pID);
             }
         }
 
@@ -437,17 +437,20 @@ namespace _3.GUI.View.BanHang
 
         private void btn_thanhToan_Click(object sender, EventArgs e)
         {
-            hoaDon HD = _qlhoaDon.GetHoaDonFromDB().FirstOrDefault(x => x.IDHoaDon == Convert.ToInt32(tbt_maHD.Text) && x.trangThai == false);
+            hoaDon HD = _qlhoaDon.GetHoaDonFromDB().FirstOrDefault(p => Convert.ToString(p.IDHoaDon) == tbt_maHD.Text && p.trangThai == false);
             if (HD == null)
             {
                 MessageBox.Show("Đơn hàng không tồn tại hoặc đã thanh toán");
                 lbl_tongTien.Text = "0";
+            }else if(tbt_maHD.Text == "")
+            {
+                MessageBox.Show("Đơn hàng không tồn tại");
             }
             else
             {
                 var KhachH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == HD.SDT_KH);
                 int x;
-                if (tbt_giamGia.Text == "" || Convert.ToInt32(lbl_TienThua.Text) < 0 || tbt_tienKhachDua.Text == "" || (!int.TryParse(tbt_giamGia.Text, out x) && tbt_giamGia.Text != "") || !int.TryParse(tbt_tienKhachDua.Text, out int y) || Convert.ToInt32(tbt_giamGia.Text) > Convert.ToInt32(lbl_tongTien.Text))
+                if (tbt_giamGia.Text == "" || float.Parse(tbt_giamGia.Text) <= 0|| float.Parse(lbl_TienThua.Text) < 0 || tbt_tienKhachDua.Text == "" || (!float.TryParse(tbt_giamGia.Text, out float z) && tbt_giamGia.Text != "") || !float.TryParse(tbt_tienKhachDua.Text, out float y) || float.Parse(tbt_giamGia.Text) > float.Parse(lbl_tongTien.Text))
                 {
                     MessageBox.Show("Vui lòng nhập đúng số tiền");
                 }
@@ -482,11 +485,13 @@ namespace _3.GUI.View.BanHang
                         lbl_giamGia.Text = "";
                         tbt_tienKhachDua.Text = "";
                         lbl_Tong.Text = "";
+                        lbl_tongTien.Text = "";
                         lbl_TienThua.Text = "0";
                         tbt_ghiChu.Text = "";
-                        dtgv_gioHang.Rows.Clear();
+                        _lstViewHoaDon = new List<ViewHoaDonCT>();
+                        loadGioHang();
                         loadHDcho();
-                        loadHDcho();
+                        LoadSanPham();
                     }
                 }
             }
@@ -598,7 +603,7 @@ namespace _3.GUI.View.BanHang
         private void tbt_timKiem_TextChanged(object sender, EventArgs e)
         {
             dtgv_sanPham.Rows.Clear();
-            foreach (var item in _qlSanPhamCT.getViewSanPhamCT().Where(x => x.SanPhamChiTiets.maSP.ToLower().Contains(tbt_timKiem.Text.ToLower()) || x.SanPhamChiTiets.TenSP.ToLower().Contains(tbt_timKiem.Text)
+            foreach (var item in _qlSanPhamCT.getViewSanPhamCT().Where(x => x.SanPhamChiTiets.TenSP.ToLower().Contains(tbt_timKiem.Text) || x.SanPhamChiTiets.maSP.ToLower().Contains(tbt_timKiem.Text.ToLower())
             || x.mauSacs.tenMau.ToLower().Contains(tbt_timKiem.Text) || x.hangSXs.tenHangSX.ToLower().Contains(tbt_timKiem.Text)
             || x.sizes.SiZe.ToLower().Contains(tbt_timKiem.Text) || x.sanPhams.tenLoaiHang.ToLower().Contains(tbt_timKiem.Text)
             || Convert.ToString(x.SanPhamChiTiets.IDsanPham).Contains(tbt_timKiem.Text)))
