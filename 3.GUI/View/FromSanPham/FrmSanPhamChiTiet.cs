@@ -360,7 +360,7 @@ namespace _3.GUI.View.FromSanPham
             }
 
         }
-
+       
         private void btn_xuat_Click(object sender, EventArgs e)
         {
             string filePath = "";

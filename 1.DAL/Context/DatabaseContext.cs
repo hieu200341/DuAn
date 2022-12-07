@@ -40,6 +40,8 @@ namespace _1.DAL.Context
             {
                 // Lấy code về muốn kết nối database thì phải sửa lại dòng này
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True");
+
+                //optionsBuilder.UseSqlServer("Data Source=DESKTOP-T0CSGCJ\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True");
             }
         }
         //Data Source=DESKTOP-T0CSGCJ\SQLEXPRESS;Initial Catalog=DuAnOne;Persist Security Info=True;User ID=accmoitao5;Password=***********
