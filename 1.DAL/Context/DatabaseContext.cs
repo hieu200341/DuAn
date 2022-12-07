@@ -38,7 +38,7 @@ namespace _1.DAL.Context
             //    ; User ID = daonvph18705; Password = 123
             if (!optionsBuilder.IsConfigured)
             {
-                // Lấy code về muốn kết nối database thì phải sửa lại dòng này
+
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True");
             }
         }
