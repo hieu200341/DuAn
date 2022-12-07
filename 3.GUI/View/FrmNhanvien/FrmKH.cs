@@ -30,27 +30,42 @@ namespace _3.GUI.View
             dtgv_KH.ColumnCount = 5;
             dtgv_KH.Columns[0].Name = "Số Điện Thoại";
             dtgv_KH.Columns[1].Name = "Tên Khách Hàng";
-            dtgv_KH.Columns[2].Name = "Số Điện Thoại";
-            dtgv_KH.Columns[3].Name = "Giới Tính";
-            dtgv_KH.Columns[4].Name = "Địa Chỉ";
+            dtgv_KH.Columns[2].Name = "Giới Tính";
+            dtgv_KH.Columns[3].Name = "Địa Chỉ";
+            dtgv_KH.Columns[4].Name = "Điểm tích lũy";
             dtgv_KH.Rows.Clear();
             foreach (var item in _QLkhachHangServices.GetkhachHangFromDB())
             {
-                dtgv_KH.Rows.Add(item.SDT_KH, item.TenKH, item.gioiTinh == true ? "Nam" : "Nữ", item.diaChi);
+                dtgv_KH.Rows.Add(item.SDT_KH, item.TenKH, item.gioiTinh == true ? "Nam" : "Nữ", item.diaChi, item.diem);
             }
         }
         private void btn_Them_Click(object sender, EventArgs e)
         {
-            khachHang kh = new khachHang()
+            khachHang accKH = _QLkhachHangServices.GetkhachHangFromDB().FirstOrDefault
+              (p => p.SDT_KH == tbt_SDT.Text);
+            if (tbt_SDT.Text == "" || tbt_TenKH.Text == "" || tbt_SDT.Text =="")
             {
-                SDT_KH = tbt_SDT.Text,
-                TenKH = tbt_TenKH.Text,
-                diaChi = tbt_DiaChi.Text,
-                gioiTinh = rb_nam.Checked == true ? true : false,
-            };
-            _QLkhachHangServices.addkhachHang(kh);
-            MessageBox.Show("Thêm thành công");
-            loaddata();
+                MessageBox.Show("Không được để trống thông tin");
+            }
+            else if (accKH != null)
+            {
+                MessageBox.Show("Số điện thoại khách hàng đã tồn tại");
+                tbt_SDT.Text = "";
+            }
+            else
+            {
+                khachHang addKH = new khachHang()
+                {
+                    SDT_KH = tbt_SDT.Text,
+                    TenKH = tbt_TenKH.Text,
+                    diaChi = tbt_DiaChi.Text,
+                    gioiTinh = rb_nam.Checked == true ? true : false,
+                    diem = 0,
+                };
+                _QLkhachHangServices.addkhachHang(addKH);
+                MessageBox.Show("Thêm khách hàng thành công");
+                loaddata();
+            }
         }
 
         private void dtgv_KH_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -79,13 +94,25 @@ namespace _3.GUI.View
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             var update = _QLkhachHangServices.GetkhachHangFromDB().FirstOrDefault(p => p.SDT_KH == tbt_SDT.Text);
-            update.TenKH = tbt_TenKH.Text;
-            update.SDT_KH = tbt_SDT.Text;
-            update.diaChi = tbt_DiaChi.Text;
-            update.gioiTinh = rb_nam.Checked == true ? true : false;
-            _QLkhachHangServices.UpdateKhachHang(update);
-            MessageBox.Show("sửa thành công");
-            loaddata();
+            if (tbt_SDT.Text == "" || tbt_TenKH.Text == "" || tbt_SDT.Text == "")
+            {
+                MessageBox.Show("Không được để trống thông tin");
+            }
+            else if (update == null)
+            {
+                MessageBox.Show("Số điện thoại khách hàng không tồn tại");
+                tbt_SDT.Text = "";
+            }
+            else
+            {
+                update.TenKH = tbt_TenKH.Text;
+                update.SDT_KH = tbt_SDT.Text;
+                update.diaChi = tbt_DiaChi.Text;
+                update.gioiTinh = rb_nam.Checked == true ? true : false;
+                _QLkhachHangServices.UpdateKhachHang(update);
+                MessageBox.Show("sửa thành công");
+                loaddata();
+            }
         }
 
         private void tbt_TimKiem_TextChanged(object sender, EventArgs e)
@@ -93,13 +120,13 @@ namespace _3.GUI.View
             dtgv_KH.ColumnCount = 5;
             dtgv_KH.Columns[0].Name = "Số Điện Thoại";
             dtgv_KH.Columns[1].Name = "Tên Khách Hàng";
-            dtgv_KH.Columns[2].Name = "Số Điện Thoại";
-            dtgv_KH.Columns[3].Name = "Giới Tính";
-            dtgv_KH.Columns[4].Name = "Địa Chỉ";
+            dtgv_KH.Columns[2].Name = "Giới Tính";
+            dtgv_KH.Columns[3].Name = "Địa Chỉ";
+            dtgv_KH.Columns[4].Name = "Điểm tích lũy";
             dtgv_KH.Rows.Clear();
             foreach (var item in _QLkhachHangServices.GetkhachHangFromDB().Where(x => x.TenKH.ToLower().Contains(tbt_TimKiem.Text.ToLower()) || x.SDT_KH.Contains(tbt_TimKiem.Text)))
             {
-                dtgv_KH.Rows.Add(item.SDT_KH, item.TenKH, item.gioiTinh == true ? "Nam" : "Nữ", item.diaChi);
+                dtgv_KH.Rows.Add(item.SDT_KH, item.TenKH, item.gioiTinh == true ? "Nam" : "Nữ", item.diaChi, item.diem);
             }
         }
 
