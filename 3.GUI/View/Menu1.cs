@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace _3.GUI.View
 {
-    public partial class FrmMenu : Form
+    public partial class Menu1 : Form
     {
         private Button currentButton;
         private Random random;
         private int tempIndex;
         private Form activeForm;
-        public FrmMenu()
+        public Menu1()
         {
             InitializeComponent();
             random = new Random();
@@ -25,7 +25,6 @@ namespace _3.GUI.View
             //this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
-
         private Color SelectThemeColor()
         {
             int index = random.Next(ThemeColor.ColorList.Count);
@@ -57,10 +56,17 @@ namespace _3.GUI.View
                 }
             }
         }
-        public void FrmNV()
+        private void DisableButton()
         {
-            btn_nhanvien.Enabled = false;
-            btn_thongke.Enabled = false;
+            foreach (Control previousBtn in panelMenu.Controls)
+            {
+                if (previousBtn.GetType() == typeof(Button))
+                {
+                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
+                    previousBtn.ForeColor = Color.Gainsboro;
+                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
         }
         private void OpenChildForm(Form childForm, object btnSender)
         {
@@ -78,18 +84,6 @@ namespace _3.GUI.View
             childForm.BringToFront();
             childForm.Show();
             //lb_home.Text = childForm.Text;
-        }
-        private void DisableButton()
-        {
-            foreach (Control previousBtn in panelMenu.Controls)
-            {
-                if (previousBtn.GetType() == typeof(Button))
-                {
-                    previousBtn.BackColor = Color.FromArgb(51, 51, 76);
-                    previousBtn.ForeColor = Color.Gainsboro;
-                    previousBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-                }
-            }
         }
 
         private void btn_buy_Click(object sender, EventArgs e)
@@ -110,30 +104,24 @@ namespace _3.GUI.View
             lb_home.Text = btn_khachhang.Text;
         }
 
-        private void btn_nhanvien_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.FrmNV(), sender);
-            lb_home.Text = btn_nhanvien.Text;
+            OpenChildForm(new View.FromSanPham.FrmSanPhamChiTiet(), sender);
+            lb_home.Text = btn_sanpham.Text;
         }
 
-        private void btn_sanpham_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.FrmThongKe(), sender);
-            lb_home.Text = btn_thongke.Text;
-        }
+            DialogResult dialogResult = MessageBox.Show("bạn có muốn đăng xuất không?", "Cảnh báo!", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Bạn đã hủy đăng xuất");
+            }
 
-       
-
-        private void FrmMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_closechildform_Click(object sender, EventArgs e)
-        {
-            if (activeForm != null)
-                activeForm.Close();
-            Reset();
         }
         private void Reset()
         {
@@ -145,30 +133,34 @@ namespace _3.GUI.View
             btn_closechildform.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_closechildform_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("bạn có muốn đăng xuất không?", "Cảnh báo!",MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Bạn đã hủy đăng xuất");
-            }
-            
+            if (activeForm != null)
+                activeForm.Close();
+            Reset();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void panelmanchinh_Paint(object sender, PaintEventArgs e)
         {
-            OpenChildForm(new View.FromSanPham.FrmSanPhamChiTiet(), sender);
-            lb_home.Text = btn_hoadon.Text;
+
         }
 
-        private void btn_sanpham_Click_1(object sender, EventArgs e)
+        private void Menu1_Load(object sender, EventArgs e)
         {
-            OpenChildForm(new View.FrmThongKe(), sender);
-            lb_home.Text = btn_thongke.Text;
+            var layEmail = Properties.Settings.Default.TKdaLogin;
+            var nhanvien = _nhanVienService.GetNhanVienFromDB().FirstOrDefault(p => p.Gmail == layEmail);
+
+            lb_MaNv.Text = nhanvien.MaNhanVien;
+            lb_TenNv.Text = nhanvien.TenNhanVien;
+            lb_Email.Text = nhanvien.Gmail;
+            lb_DiaChi.Text = nhanvien.DiaChi;
+            lb_Sdt.Text = nhanvien.SDT;
+            lb_GioiTinh.Text = nhanvien.GioiTinh == 1 ? "Nam" : "Nữ";
+
+            var role = _chucVuService.GetChucVuFromDB().FirstOrDefault(x => x.IdChucVu == nhanvien.IdChucVu);
+            lb_TenDn.Text = nhanvien.TenNhanVien;
+            lb_ChucVu.Text = role.TenCV;
+            pictureBox1.Image = Image.FromFile(nhanvien.LinkAnh);
         }
     }
 }

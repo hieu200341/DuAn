@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btn_thongke = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_nhanvien = new System.Windows.Forms.Button();
             this.btn_khachhang = new System.Windows.Forms.Button();
@@ -41,9 +43,6 @@
             this.btn_closechildform = new System.Windows.Forms.Button();
             this.lb_home = new System.Windows.Forms.Label();
             this.panelmanchinh = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btn_sanpham = new System.Windows.Forms.Button();
-            this.btn_lienhe = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHome.SuspendLayout();
@@ -52,8 +51,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
-            this.panelMenu.Controls.Add(this.btn_lienhe);
-            this.panelMenu.Controls.Add(this.btn_sanpham);
+            this.panelMenu.Controls.Add(this.btn_thongke);
             this.panelMenu.Controls.Add(this.button2);
             this.panelMenu.Controls.Add(this.button1);
             this.panelMenu.Controls.Add(this.btn_nhanvien);
@@ -66,6 +64,42 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 638);
             this.panelMenu.TabIndex = 0;
+            // 
+            // btn_thongke
+            // 
+            this.btn_thongke.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_thongke.FlatAppearance.BorderSize = 0;
+            this.btn_thongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_thongke.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_thongke.Image = ((System.Drawing.Image)(resources.GetObject("btn_thongke.Image")));
+            this.btn_thongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thongke.Location = new System.Drawing.Point(0, 380);
+            this.btn_thongke.Name = "btn_thongke";
+            this.btn_thongke.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_thongke.Size = new System.Drawing.Size(220, 60);
+            this.btn_thongke.TabIndex = 10;
+            this.btn_thongke.Text = "  Thống kê";
+            this.btn_thongke.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_thongke.UseVisualStyleBackColor = true;
+            this.btn_thongke.Click += new System.EventHandler(this.btn_sanpham_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(0, 320);
+            this.button2.Name = "button2";
+            this.button2.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button2.Size = new System.Drawing.Size(220, 60);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "  Sản phẩm";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -223,58 +257,6 @@
             this.panelmanchinh.Size = new System.Drawing.Size(1310, 558);
             this.panelmanchinh.TabIndex = 1;
             // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 320);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(220, 60);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "  Sản phẩm";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btn_sanpham
-            // 
-            this.btn_sanpham.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_sanpham.FlatAppearance.BorderSize = 0;
-            this.btn_sanpham.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sanpham.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_sanpham.Image = ((System.Drawing.Image)(resources.GetObject("btn_sanpham.Image")));
-            this.btn_sanpham.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_sanpham.Location = new System.Drawing.Point(0, 380);
-            this.btn_sanpham.Name = "btn_sanpham";
-            this.btn_sanpham.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_sanpham.Size = new System.Drawing.Size(220, 60);
-            this.btn_sanpham.TabIndex = 10;
-            this.btn_sanpham.Text = "  Thống kê";
-            this.btn_sanpham.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_sanpham.UseVisualStyleBackColor = true;
-            // 
-            // btn_lienhe
-            // 
-            this.btn_lienhe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_lienhe.FlatAppearance.BorderSize = 0;
-            this.btn_lienhe.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_lienhe.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_lienhe.Image = ((System.Drawing.Image)(resources.GetObject("btn_lienhe.Image")));
-            this.btn_lienhe.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_lienhe.Location = new System.Drawing.Point(0, 440);
-            this.btn_lienhe.Name = "btn_lienhe";
-            this.btn_lienhe.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_lienhe.Size = new System.Drawing.Size(220, 60);
-            this.btn_lienhe.TabIndex = 11;
-            this.btn_lienhe.Text = "  Liên Hệ";
-            this.btn_lienhe.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_lienhe.UseVisualStyleBackColor = true;
-            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -310,8 +292,7 @@
         private Panel panelmanchinh;
         private Button btn_closechildform;
         private Button button1;
-        private Button btn_lienhe;
-        private Button btn_sanpham;
         private Button button2;
+        private Button btn_thongke;
     }
 }
