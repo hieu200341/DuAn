@@ -11,7 +11,7 @@ namespace _3.GUI
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Menu1());
+            Application.Run(new FRDangNhap());
         }
     }
 }

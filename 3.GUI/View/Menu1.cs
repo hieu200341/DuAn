@@ -7,17 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using _2.BUS.IServices;
+using _2.BUS.Services;
 namespace _3.GUI.View
 {
     public partial class Menu1 : Form
     {
+        IQLnhanVienServices _services;
         private Button currentButton;
         private Random random;
         private int tempIndex;
         private Form activeForm;
         public Menu1()
         {
+            _services = new QLnhanVienServices();
             InitializeComponent();
             random = new Random();
             btn_closechildform.Visible = false;
@@ -147,20 +150,25 @@ namespace _3.GUI.View
 
         private void Menu1_Load(object sender, EventArgs e)
         {
-            var layEmail = Properties.Settings.Default.TKdaLogin;
-            var nhanvien = _nhanVienService.GetNhanVienFromDB().FirstOrDefault(p => p.Gmail == layEmail);
+            //var layEmail = Properties.Settings.Default.TKdaLogin;
+            //var nhanvien = _nhanVienService.GetNhanVienFromDB().FirstOrDefault(p => p.Gmail == layEmail);
 
-            lb_MaNv.Text = nhanvien.MaNhanVien;
-            lb_TenNv.Text = nhanvien.TenNhanVien;
-            lb_Email.Text = nhanvien.Gmail;
-            lb_DiaChi.Text = nhanvien.DiaChi;
-            lb_Sdt.Text = nhanvien.SDT;
-            lb_GioiTinh.Text = nhanvien.GioiTinh == 1 ? "Nam" : "Nữ";
+            //lb_MaNv.Text = nhanvien.MaNhanVien;
+            //lb_TenNv.Text = nhanvien.TenNhanVien;
+            //lb_Email.Text = nhanvien.Gmail;
+            //lb_DiaChi.Text = nhanvien.DiaChi;
+            //lb_Sdt.Text = nhanvien.SDT;
+            //lb_GioiTinh.Text = nhanvien.GioiTinh == 1 ? "Nam" : "Nữ";
 
-            var role = _chucVuService.GetChucVuFromDB().FirstOrDefault(x => x.IdChucVu == nhanvien.IdChucVu);
-            lb_TenDn.Text = nhanvien.TenNhanVien;
-            lb_ChucVu.Text = role.TenCV;
-            pictureBox1.Image = Image.FromFile(nhanvien.LinkAnh);
+            //var role = _chucVuService.GetChucVuFromDB().FirstOrDefault(x => x.IdChucVu == nhanvien.IdChucVu);
+            //lb_TenDn.Text = nhanvien.TenNhanVien;
+            //lb_ChucVu.Text = role.TenCV;
+            //pictureBox1.Image = Image.FromFile(nhanvien.LinkAnh);
+        }
+
+        private void btn_DoiMk_Click(object sender, EventArgs e)
+        {
+            //
         }
     }
 }
