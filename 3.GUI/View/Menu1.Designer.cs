@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu1));
             this.panelmanchinh = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.tbt_email = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.btn_DoiMk = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
@@ -80,6 +82,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.tbt_email);
+            this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.btn_DoiMk);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label15);
@@ -95,12 +99,30 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đổi mật khẩu";
             // 
+            // tbt_email
+            // 
+            this.tbt_email.Location = new System.Drawing.Point(183, 56);
+            this.tbt_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbt_email.Name = "tbt_email";
+            this.tbt_email.Size = new System.Drawing.Size(188, 27);
+            this.tbt_email.TabIndex = 57;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(26, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.TabIndex = 56;
+            this.label1.Text = "Email";
+            // 
             // btn_DoiMk
             // 
             this.btn_DoiMk.ForeColor = System.Drawing.Color.Black;
-            this.btn_DoiMk.Location = new System.Drawing.Point(115, 252);
+            this.btn_DoiMk.Location = new System.Drawing.Point(183, 269);
             this.btn_DoiMk.Name = "btn_DoiMk";
-            this.btn_DoiMk.Size = new System.Drawing.Size(211, 32);
+            this.btn_DoiMk.Size = new System.Drawing.Size(188, 32);
             this.btn_DoiMk.TabIndex = 55;
             this.btn_DoiMk.Text = "Đổi mật khẩu";
             this.btn_DoiMk.UseVisualStyleBackColor = true;
@@ -110,7 +132,7 @@
             // 
             this.label16.AutoSize = true;
             this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(37, 181);
+            this.label16.Location = new System.Drawing.Point(19, 218);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(134, 20);
             this.label16.TabIndex = 54;
@@ -120,7 +142,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(37, 124);
+            this.label15.Location = new System.Drawing.Point(26, 167);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(100, 20);
             this.label15.TabIndex = 53;
@@ -130,15 +152,15 @@
             // 
             this.label14.AutoSize = true;
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(37, 65);
+            this.label14.Location = new System.Drawing.Point(26, 112);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(89, 20);
             this.label14.TabIndex = 49;
-            this.label14.Text = "Mật khẩu củ";
+            this.label14.Text = "Mật khẩu cũ";
             // 
             // tbt_XacNhanMK
             // 
-            this.tbt_XacNhanMK.Location = new System.Drawing.Point(183, 181);
+            this.tbt_XacNhanMK.Location = new System.Drawing.Point(183, 211);
             this.tbt_XacNhanMK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbt_XacNhanMK.Name = "tbt_XacNhanMK";
             this.tbt_XacNhanMK.Size = new System.Drawing.Size(188, 27);
@@ -146,7 +168,7 @@
             // 
             // tbt_MkMoi
             // 
-            this.tbt_MkMoi.Location = new System.Drawing.Point(183, 117);
+            this.tbt_MkMoi.Location = new System.Drawing.Point(183, 160);
             this.tbt_MkMoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbt_MkMoi.Name = "tbt_MkMoi";
             this.tbt_MkMoi.Size = new System.Drawing.Size(188, 27);
@@ -154,7 +176,7 @@
             // 
             // tbt_Mk
             // 
-            this.tbt_Mk.Location = new System.Drawing.Point(183, 62);
+            this.tbt_Mk.Location = new System.Drawing.Point(183, 109);
             this.tbt_Mk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbt_Mk.Name = "tbt_Mk";
             this.tbt_Mk.Size = new System.Drawing.Size(188, 27);
@@ -502,5 +524,7 @@
         private Label label11;
         private Label label6;
         private Label label8;
+        private TextBox tbt_email;
+        private Label label1;
     }
 }

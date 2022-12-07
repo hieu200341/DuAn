@@ -9,10 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using _2.BUS.IServices;
 using _2.BUS.Services;
+using _2.BUS.ViewModel;
 namespace _3.GUI.View
 {
     public partial class Menu1 : Form
     {
+        ViewHienThi1 v1 = new ViewHienThi1();
         IQLnhanVienServices _services;
         private Button currentButton;
         private Random random;
@@ -165,10 +167,34 @@ namespace _3.GUI.View
             //lb_ChucVu.Text = role.TenCV;
             //pictureBox1.Image = Image.FromFile(nhanvien.LinkAnh);
         }
-
         private void btn_DoiMk_Click(object sender, EventArgs e)
         {
-            //
+            var taikhoan = _services.GetNhanVienFromDB().FirstOrDefault(c => c.nhanViens.email == tbt_email.Text);
+            var newpass = tbt_MkMoi.Text;
+            var repass = tbt_XacNhanMK.Text;
+
+            if (tbt_Mk.Text ==""|| tbt_MkMoi.Text==""|| tbt_XacNhanMK.Text == ""||tbt_email.Text=="")
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin");
+                return;
+            }
+            else
+            {
+                if (taikhoan != null && tbt_Mk.Text == taikhoan.nhanViens.matKhau && newpass == repass)
+                {
+                    taikhoan.nhanViens.matKhau = newpass;
+                    _services.UpdateNhanVien(taikhoan);
+                    MessageBox.Show("Đổi mật khẩu thành công, vui lòng đăng nhập lại");
+                    Application.Restart();
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng kiểm tra lại thông tin nhập");
+                    
+                }
+                
+            }
         }
     }
 }

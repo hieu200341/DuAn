@@ -48,7 +48,7 @@ namespace _3.GUI.View
                         return;
                     }                                                               
                 }
-                MessageBox.Show("Kiểm tra lại tk mk");
+                MessageBox.Show("Tài khoản hoặc mật khẩu chưa chính xác");
             }                        
         }
         private void button1_Click(object sender, EventArgs e)
