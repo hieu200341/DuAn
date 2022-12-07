@@ -111,6 +111,8 @@
             // 
             // btn_thoat
             // 
+            this.btn_thoat.Image = global::_3.GUI.Properties.Resources.icons8_esc_301;
+            this.btn_thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_thoat.Location = new System.Drawing.Point(176, 104);
             this.btn_thoat.Name = "btn_thoat";
             this.btn_thoat.Size = new System.Drawing.Size(138, 50);
@@ -120,6 +122,8 @@
             // 
             // btn_lamMoi
             // 
+            this.btn_lamMoi.Image = global::_3.GUI.Properties.Resources.icons8_repeat_301;
+            this.btn_lamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_lamMoi.Location = new System.Drawing.Point(21, 104);
             this.btn_lamMoi.Name = "btn_lamMoi";
             this.btn_lamMoi.Size = new System.Drawing.Size(138, 50);
@@ -129,6 +133,8 @@
             // 
             // btb_CapNhat
             // 
+            this.btb_CapNhat.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
+            this.btb_CapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btb_CapNhat.Location = new System.Drawing.Point(176, 35);
             this.btb_CapNhat.Name = "btb_CapNhat";
             this.btb_CapNhat.Size = new System.Drawing.Size(138, 50);
@@ -139,6 +145,8 @@
             // 
             // btn_them
             // 
+            this.btn_them.Image = global::_3.GUI.Properties.Resources.icons8_add_new_32;
+            this.btn_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_them.Location = new System.Drawing.Point(21, 36);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(138, 50);

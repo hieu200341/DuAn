@@ -3,6 +3,7 @@ using _2.BUS.IServices;
 using _2.BUS.Services;
 using _2.BUS.ViewModel;
 using _3.GUI.Utilities;
+using OfficeOpenXml;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,10 +44,11 @@ namespace _3.GUI.View
             dtg_show.Columns[5].Name = "Mật khẩu";
             dtg_show.Columns[6].Name = "Tình trạng";
             dtg_show.Columns[7].Name = "Chức vụ";
-            if (tb_timkiem.Text != "")
-            {
-                
-            }
+            //lstNv = _IqLnhanVienServices.GetNhanVienFromDB();
+            //if (tb_timkiem.Text != "")
+            //{
+            //    lstNv = _IqLnhanVienServices.GetNhanVienFromDB().
+            //}
             foreach (var item in _IqLnhanVienServices.GetNhanVienFromDB())
             {
                 dtg_show.Rows.Add(item.nhanViens.IDNhanVien, item.nhanViens.TenNV, item.nhanViens.diaChi, item.nhanViens.SDT, item.nhanViens.email, item.nhanViens.matKhau, item.nhanViens.tinhTrang == true ? "Hoạt động" : "Không hoạt động", item.chucVus.tenCV);
@@ -158,18 +160,7 @@ namespace _3.GUI.View
         //}
         private void btn_xoahoadon_Click(object sender, EventArgs e)
         {
-            DialogResult dialogResult = MessageBox.Show("bạn có muốn xóa không ? ", "cảnh báo", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                var x = GetData();
-                x.nhanViens.IDNhanVien = _maclick;
-                MessageBox.Show(_IqLnhanVienServices.RemoveNhanVien(x));
-                loadDuLieu();
-            }
-            else
-            {
-                MessageBox.Show("bạn đã hủy xóa");
-            }
+            clear();
         }
 
         private void dtg_show_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -248,7 +239,35 @@ namespace _3.GUI.View
         {
             loadDuLieu();
         }
+        private void clear()
+        {
+            tb_ten.Text = "";
+            tb_email.Text = "";
+            tb_matkhau.Text = "";
+            tb_sdt.Text = "";
+            tb_diachi.Text = "";
+            cbb_cv.Text = "";
+            tb_timkiem.Text = "";
+        }
+        private void tb_timkiem_TextChanged(object sender, EventArgs e)
+        {
+            var timkiem = _IqLnhanVienServices.GetNhanVienFromDB().Where(p => p.nhanViens.TenNV.Contains(tb_ten.Text));
+            dtg_show.Rows.Clear();
+            foreach (var item in timkiem)
+            {
+                
+                dtg_show.Rows.Add(item.nhanViens.IDNhanVien, item.nhanViens.TenNV, item.nhanViens.diaChi, item.nhanViens.SDT, item.nhanViens.email, item.nhanViens.matKhau, item.nhanViens.tinhTrang == true ? "Hoạt động" : "Không hoạt động", item.chucVus.tenCV);
+            }
+        }
+
+        private void btn_tim_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+      
+
     }
-    }
+}
 
 

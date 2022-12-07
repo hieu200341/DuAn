@@ -110,7 +110,7 @@
             this.groupBox1.Controls.Add(this.dtgv_sanPham);
             this.groupBox1.Location = new System.Drawing.Point(36, 24);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(857, 375);
+            this.groupBox1.Size = new System.Drawing.Size(995, 375);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách sản phẩm";
@@ -198,7 +198,7 @@
             this.dtgv_sanPham.Name = "dtgv_sanPham";
             this.dtgv_sanPham.RowHeadersWidth = 51;
             this.dtgv_sanPham.RowTemplate.Height = 29;
-            this.dtgv_sanPham.Size = new System.Drawing.Size(855, 310);
+            this.dtgv_sanPham.Size = new System.Drawing.Size(976, 310);
             this.dtgv_sanPham.TabIndex = 0;
             this.dtgv_sanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_sanPham_CellClick);
             // 
@@ -276,7 +276,7 @@
             this.groupBox2.Controls.Add(this.dtgv_gioHang);
             this.groupBox2.Location = new System.Drawing.Point(36, 425);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(1007, 359);
+            this.groupBox2.Size = new System.Drawing.Size(1145, 359);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Giỏ hàng";
@@ -284,7 +284,7 @@
             // lbl_Diem
             // 
             this.lbl_Diem.AutoSize = true;
-            this.lbl_Diem.Location = new System.Drawing.Point(804, 246);
+            this.lbl_Diem.Location = new System.Drawing.Point(920, 246);
             this.lbl_Diem.Name = "lbl_Diem";
             this.lbl_Diem.Size = new System.Drawing.Size(24, 20);
             this.lbl_Diem.TabIndex = 15;
@@ -293,7 +293,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(662, 246);
+            this.label21.Location = new System.Drawing.Point(778, 246);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(96, 20);
             this.label21.TabIndex = 14;
@@ -302,7 +302,7 @@
             // lbl_tongTien
             // 
             this.lbl_tongTien.AutoSize = true;
-            this.lbl_tongTien.Location = new System.Drawing.Point(804, 288);
+            this.lbl_tongTien.Location = new System.Drawing.Point(920, 288);
             this.lbl_tongTien.Name = "lbl_tongTien";
             this.lbl_tongTien.Size = new System.Drawing.Size(24, 20);
             this.lbl_tongTien.TabIndex = 13;
@@ -311,7 +311,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(662, 288);
+            this.label18.Location = new System.Drawing.Point(778, 288);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(72, 20);
             this.label18.TabIndex = 12;
@@ -320,7 +320,7 @@
             // lbl_tenKhach
             // 
             this.lbl_tenKhach.AutoSize = true;
-            this.lbl_tenKhach.Location = new System.Drawing.Point(804, 204);
+            this.lbl_tenKhach.Location = new System.Drawing.Point(920, 204);
             this.lbl_tenKhach.Name = "lbl_tenKhach";
             this.lbl_tenKhach.Size = new System.Drawing.Size(24, 20);
             this.lbl_tenKhach.TabIndex = 11;
@@ -370,7 +370,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(662, 204);
+            this.label3.Location = new System.Drawing.Point(778, 204);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(111, 20);
             this.label3.TabIndex = 6;
@@ -378,7 +378,7 @@
             // 
             // tbt_SDT
             // 
-            this.tbt_SDT.Location = new System.Drawing.Point(804, 155);
+            this.tbt_SDT.Location = new System.Drawing.Point(920, 155);
             this.tbt_SDT.Name = "tbt_SDT";
             this.tbt_SDT.Size = new System.Drawing.Size(193, 27);
             this.tbt_SDT.TabIndex = 4;
@@ -387,7 +387,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(662, 158);
+            this.label2.Location = new System.Drawing.Point(778, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(115, 20);
             this.label2.TabIndex = 3;
@@ -395,7 +395,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(666, 40);
+            this.pictureBox1.Location = new System.Drawing.Point(782, 40);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(337, 103);
             this.pictureBox1.TabIndex = 2;
@@ -413,7 +413,7 @@
             this.dtgv_gioHang.Name = "dtgv_gioHang";
             this.dtgv_gioHang.RowHeadersWidth = 51;
             this.dtgv_gioHang.RowTemplate.Height = 29;
-            this.dtgv_gioHang.Size = new System.Drawing.Size(660, 242);
+            this.dtgv_gioHang.Size = new System.Drawing.Size(750, 242);
             this.dtgv_gioHang.TabIndex = 1;
             this.dtgv_gioHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_gioHang_CellClick);
             this.dtgv_gioHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_gioHang_CellValueChanged);
@@ -450,7 +450,7 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dtgv_HDcho);
-            this.groupBox3.Location = new System.Drawing.Point(1049, 425);
+            this.groupBox3.Location = new System.Drawing.Point(1187, 425);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(301, 359);
             this.groupBox3.TabIndex = 2;
@@ -463,7 +463,7 @@
             this.dtgv_HDcho.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column14,
             this.Column15});
-            this.dtgv_HDcho.Location = new System.Drawing.Point(0, 23);
+            this.dtgv_HDcho.Location = new System.Drawing.Point(6, 26);
             this.dtgv_HDcho.Name = "dtgv_HDcho";
             this.dtgv_HDcho.RowHeadersWidth = 51;
             this.dtgv_HDcho.RowTemplate.Height = 29;
@@ -504,7 +504,7 @@
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.label5);
             this.groupBox4.Controls.Add(this.label4);
-            this.groupBox4.Location = new System.Drawing.Point(899, 22);
+            this.groupBox4.Location = new System.Drawing.Point(1037, 24);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(451, 377);
             this.groupBox4.TabIndex = 3;
@@ -528,6 +528,7 @@
             this.btn_InHoaDon.TabIndex = 17;
             this.btn_InHoaDon.Text = "In hóa đơn";
             this.btn_InHoaDon.UseVisualStyleBackColor = true;
+            this.btn_InHoaDon.Click += new System.EventHandler(this.btn_InHoaDon_Click);
             // 
             // tbt_ghiChu
             // 
@@ -664,7 +665,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 813);
+            this.ClientSize = new System.Drawing.Size(1513, 813);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);

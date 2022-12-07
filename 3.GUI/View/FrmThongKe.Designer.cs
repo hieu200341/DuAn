@@ -71,7 +71,7 @@
             // 
             this.groupBox4.Controls.Add(this.tb_sdt);
             this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Location = new System.Drawing.Point(660, 148);
+            this.groupBox4.Location = new System.Drawing.Point(760, 144);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(400, 82);
             this.groupBox4.TabIndex = 13;
@@ -103,7 +103,7 @@
             this.groupBox3.Controls.Add(this.label11);
             this.groupBox3.Controls.Add(this.cbb_nam);
             this.groupBox3.Controls.Add(this.cbb_thang);
-            this.groupBox3.Location = new System.Drawing.Point(262, 148);
+            this.groupBox3.Location = new System.Drawing.Point(362, 144);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(353, 82);
             this.groupBox3.TabIndex = 12;
@@ -149,7 +149,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dtp_ngay);
-            this.groupBox2.Location = new System.Drawing.Point(12, 148);
+            this.groupBox2.Location = new System.Drawing.Point(112, 144);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(204, 82);
             this.groupBox2.TabIndex = 11;
@@ -174,22 +174,24 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(0, 237);
+            this.groupBox1.Location = new System.Drawing.Point(0, 430);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1072, 319);
+            this.groupBox1.Size = new System.Drawing.Size(1278, 319);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hàng hóa";
             // 
             // btn_clean
             // 
+            this.btn_clean.Image = global::_3.GUI.Properties.Resources.icons8_repeat_302;
+            this.btn_clean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_clean.Location = new System.Drawing.Point(745, 26);
             this.btn_clean.Name = "btn_clean";
-            this.btn_clean.Size = new System.Drawing.Size(94, 29);
+            this.btn_clean.Size = new System.Drawing.Size(142, 50);
             this.btn_clean.TabIndex = 6;
-            this.btn_clean.Text = "CLean";
+            this.btn_clean.Text = "Clear";
             this.btn_clean.UseVisualStyleBackColor = true;
             this.btn_clean.Click += new System.EventHandler(this.btn_clean_Click);
             // 
@@ -201,7 +203,7 @@
             this.dtgv_show.Name = "dtgv_show";
             this.dtgv_show.RowHeadersWidth = 51;
             this.dtgv_show.RowTemplate.Height = 29;
-            this.dtgv_show.Size = new System.Drawing.Size(1066, 206);
+            this.dtgv_show.Size = new System.Drawing.Size(1272, 206);
             this.dtgv_show.TabIndex = 5;
             // 
             // tb_timkiem
@@ -227,7 +229,7 @@
             this.panel5.BackColor = System.Drawing.Color.LightCyan;
             this.panel5.Controls.Add(this.lb_khachhang);
             this.panel5.Controls.Add(this.label5);
-            this.panel5.Location = new System.Drawing.Point(745, 28);
+            this.panel5.Location = new System.Drawing.Point(845, 24);
             this.panel5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(186, 113);
@@ -257,7 +259,7 @@
             this.panel4.BackColor = System.Drawing.Color.LightCyan;
             this.panel4.Controls.Add(this.lb_chuathanhtoan);
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Location = new System.Drawing.Point(499, 28);
+            this.panel4.Location = new System.Drawing.Point(599, 24);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(200, 113);
@@ -287,7 +289,7 @@
             this.panel3.BackColor = System.Drawing.Color.LightCyan;
             this.panel3.Controls.Add(this.lb_tonghd);
             this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(262, 28);
+            this.panel3.Location = new System.Drawing.Point(362, 24);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(200, 113);
@@ -318,7 +320,7 @@
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.lb_doanhthu);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(29, 28);
+            this.panel2.Location = new System.Drawing.Point(129, 24);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(198, 113);
@@ -356,7 +358,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1072, 556);
+            this.ClientSize = new System.Drawing.Size(1278, 749);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -367,6 +369,7 @@
             this.Controls.Add(this.panel2);
             this.Name = "FrmThongKe";
             this.Text = "FrmSanPham";
+            this.Load += new System.EventHandler(this.FrmThongKe_Load);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);

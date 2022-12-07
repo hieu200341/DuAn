@@ -162,5 +162,11 @@ namespace _3.GUI.View
             }
             
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FromSanPham.FrmSanPhamChiTiet(), sender);
+            lb_home.Text = btn_hoadon.Text;
+        }
     }
 }

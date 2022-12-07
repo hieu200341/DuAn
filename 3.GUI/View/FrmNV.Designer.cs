@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNV));
             this.tb_timkiem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_email = new System.Windows.Forms.TextBox();
@@ -58,6 +59,8 @@
             this.btn_sua = new System.Windows.Forms.Button();
             this.btn_hoadon = new System.Windows.Forms.Button();
             this.btn_tim = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_show)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +71,7 @@
             this.tb_timkiem.Name = "tb_timkiem";
             this.tb_timkiem.Size = new System.Drawing.Size(669, 27);
             this.tb_timkiem.TabIndex = 28;
+            this.tb_timkiem.TextChanged += new System.EventHandler(this.tb_timkiem_TextChanged);
             // 
             // label5
             // 
@@ -133,7 +137,7 @@
             this.dtg_show.Name = "dtg_show";
             this.dtg_show.RowHeadersWidth = 51;
             this.dtg_show.RowTemplate.Height = 29;
-            this.dtg_show.Size = new System.Drawing.Size(771, 385);
+            this.dtg_show.Size = new System.Drawing.Size(919, 385);
             this.dtg_show.TabIndex = 24;
             this.dtg_show.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_show_CellClick);
             // 
@@ -299,12 +303,12 @@
             // 
             // btn_xoahoadon
             // 
-            this.btn_xoahoadon.Image = global::_3.GUI.Properties.Resources.icons8_trash_32;
+            this.btn_xoahoadon.Image = ((System.Drawing.Image)(resources.GetObject("btn_xoahoadon.Image")));
             this.btn_xoahoadon.Location = new System.Drawing.Point(774, 486);
             this.btn_xoahoadon.Name = "btn_xoahoadon";
             this.btn_xoahoadon.Size = new System.Drawing.Size(137, 63);
             this.btn_xoahoadon.TabIndex = 32;
-            this.btn_xoahoadon.Text = "Xóa nhân viên";
+            this.btn_xoahoadon.Text = "Làm mới ";
             this.btn_xoahoadon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_xoahoadon.UseVisualStyleBackColor = true;
             this.btn_xoahoadon.Click += new System.EventHandler(this.btn_xoahoadon_Click);
@@ -335,20 +339,41 @@
             // 
             // btn_tim
             // 
-            this.btn_tim.Image = global::_3.GUI.Properties.Resources.icons8_search_32;
+            this.btn_tim.Image = ((System.Drawing.Image)(resources.GetObject("btn_tim.Image")));
             this.btn_tim.Location = new System.Drawing.Point(1119, 486);
             this.btn_tim.Name = "btn_tim";
             this.btn_tim.Size = new System.Drawing.Size(114, 63);
             this.btn_tim.TabIndex = 33;
-            this.btn_tim.Text = "Tìm hóa đơn";
+            this.btn_tim.Text = "Thoát";
             this.btn_tim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_tim.UseVisualStyleBackColor = true;
+            this.btn_tim.Click += new System.EventHandler(this.btn_tim_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1490, 24);
+            this.menuStrip1.TabIndex = 34;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1268, 486);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 35;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // FrmNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1319, 579);
+            this.ClientSize = new System.Drawing.Size(1490, 579);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_xoahoadon);
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_hoadon);
@@ -356,6 +381,8 @@
             this.Controls.Add(this.tb_timkiem);
             this.Controls.Add(this.dtg_show);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmNV";
             this.Text = "FrmNV";
             this.Load += new System.EventHandler(this.FrmNV_Load);
@@ -399,5 +426,7 @@
         private DataGridViewTextBoxColumn Column6;
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
+        private MenuStrip menuStrip1;
+        private Button button1;
     }
 }

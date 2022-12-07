@@ -28,7 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmDanhMucSP));
             this.dtgv_danhMucSp = new System.Windows.Forms.DataGridView();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_thoat = new System.Windows.Forms.Button();
@@ -41,9 +45,6 @@
             this.tbt_tenDanhMuc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_danhMucSp)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,6 +65,27 @@
             this.dtgv_danhMucSp.Size = new System.Drawing.Size(789, 290);
             this.dtgv_danhMucSp.TabIndex = 0;
             this.dtgv_danhMucSp.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_danhMucSp_CellClick);
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "ID";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Tên danh mục";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Tình trạng";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 200;
             // 
             // groupBox3
             // 
@@ -90,6 +112,8 @@
             // 
             // btn_thoat
             // 
+            this.btn_thoat.Image = global::_3.GUI.Properties.Resources.icons8_esc_30;
+            this.btn_thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_thoat.Location = new System.Drawing.Point(176, 104);
             this.btn_thoat.Name = "btn_thoat";
             this.btn_thoat.Size = new System.Drawing.Size(138, 50);
@@ -99,6 +123,8 @@
             // 
             // btn_lamMoi
             // 
+            this.btn_lamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_lamMoi.Image")));
+            this.btn_lamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_lamMoi.Location = new System.Drawing.Point(21, 104);
             this.btn_lamMoi.Name = "btn_lamMoi";
             this.btn_lamMoi.Size = new System.Drawing.Size(138, 50);
@@ -108,6 +134,8 @@
             // 
             // btb_CapNhat
             // 
+            this.btb_CapNhat.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
+            this.btb_CapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btb_CapNhat.Location = new System.Drawing.Point(176, 35);
             this.btb_CapNhat.Name = "btb_CapNhat";
             this.btb_CapNhat.Size = new System.Drawing.Size(138, 50);
@@ -118,6 +146,8 @@
             // 
             // btn_them
             // 
+            this.btn_them.Image = global::_3.GUI.Properties.Resources.icons8_add_new_32;
+            this.btn_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_them.Location = new System.Drawing.Point(21, 36);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(138, 50);
@@ -186,27 +216,6 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sản phẩm";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "ID";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tên danh mục";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Tình trạng";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 200;
             // 
             // FrmDanhMucSP
             // 

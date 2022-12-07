@@ -135,5 +135,10 @@ namespace _3.GUI.View
             cbb_nam.Items.Clear();
 
         }
+
+        private void FrmThongKe_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

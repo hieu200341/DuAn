@@ -14,7 +14,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using OfficeOpenXml;
 namespace _3.GUI.View.BanHang
 {
     public partial class FrmGioHang : Form
@@ -478,5 +478,120 @@ namespace _3.GUI.View.BanHang
                 lbl_Diem.Text = "";
             }
         }
+        private void senderexcel(string path)
+        {
+            using (ExcelPackage p = new ExcelPackage())
+            {
+                // đặt tên người tạo file
+                p.Workbook.Properties.Author = "";
+
+                // đặt tiêu đề cho file
+                p.Workbook.Properties.Title = "Báo cáo thống kê";
+
+                //Tạo một sheet để làm việc trên đó
+                p.Workbook.Worksheets.Add("sheet");
+
+                // lấy sheet vừa add ra để thao tác
+                ExcelWorksheet ws = p.Workbook.Worksheets[1];
+
+                // đặt tên cho sheet
+                ws.Name = "sheet";
+                // fontsize mặc định cho cả sheet
+                ws.Cells.Style.Font.Size = 11;
+                // font family mặc định cho cả sheet
+                ws.Cells.Style.Font.Name = "Calibri";
+
+                for (int i = 0; i < dtgv_HDcho.Columns.Count; i++)
+                {
+                    ws.Cells[1, i + 1].Value = dtgv_HDcho.Columns[i].HeaderText;
+                }
+                for (int i = 0; i < dtgv_HDcho.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dtgv_HDcho.Columns.Count; j++)
+                    {
+                        ws.Cells[i + 2, j + 1].Value = dtgv_HDcho.Rows[i].Cells[j].Value;
+                    }
+                }
+                //Lưu file lại
+                Byte[] bin = p.GetAsByteArray();
+                File.WriteAllBytes(path, bin);
+
+                /*excel.Application application = new excel.Application();
+                application.Application.Workbooks.Add(Type.Missing);
+                for (int i = 0; i < dtgv_HDcho.Columns.Count; i++)
+                {
+                    application.Cells[1, i + 1] = dtgv_HDcho.Columns[i].HeaderText;
+                }
+                for (int i = 0; i < dtgv_HDcho.Rows.Count; i++)
+                {
+                    for (int j = 0; j < dtgv_HDcho.Columns.Count; j++)
+                    {
+                        application.Cells[i + 2, j + 1] = dtgv_HDcho.Rows[i].Cells[j].Value;
+                    }
+                }
+                application.Columns.AutoFit();
+                application.ActiveWorkbook.SaveCopyAs(path);
+                application.ActiveWorkbook.Saved = true;*/
+            };
+        }
+
+        private void btn_InHoaDon_Click(object sender, EventArgs e)
+        {
+            string filePath = "";
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Title = "Export Excel";
+            saveFileDialog.Filter = "Excel | *.xlsx | Excel 2003 | *.xls";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                filePath = saveFileDialog.FileName;
+                try
+                {
+                    senderexcel(filePath);
+                    MessageBox.Show("Xuất File Excel Thành công");
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show("Xuất File Excel không  Thành công" + ex.Message);
+                }
+            }
+            //InHoaDon();
+        }
+        //private void InHoaDon()
+        //{
+        //    pddhd.Document = pdhoadon;
+        //    pddhd.ShowDialog();
+        //}
+
+        //private void pdhoadon_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        //{
+        //    //var hd = _hoaDonChiTiet.GetHoaDonChiTietFromDB().SingleOrDefault(x => x.IDHoaDon == Convert.ToInt32(tbt_maHD.Text));
+        //    var w = pdhoadon.DefaultPageSettings.PaperSize.Width;
+        //    e.Graphics.DrawString("Shop Bán quần áo",
+        //        new Font("Courier New", 12, FontStyle.Bold),
+        //        Brushes.Black, new Point(100, 20)
+        //        );
+        //    e.Graphics.DrawString(
+        //        String.Format("HD{0}", hoaDonChiTiet.IDHoaDon),
+        //        new Font("Courier New", 12, FontStyle.Bold),
+        //        Brushes.Black,
+        //        new PointF(w / 2 + 200, 20));
+        //    e.Graphics.DrawString(
+        //       String.Format("{0}", DateTime.Now.ToString("dd/MM/yyyy HH:mm")),
+        //       new Font("Courier New", 12, FontStyle.Bold),
+        //       Brushes.Black,
+        //       new PointF(w / 2 + 200, 45));
+        //    e.Graphics.DrawString(
+        //        String.Format("Tòa nhà P , CĐ FPTPOLYTECHNNIC"),
+        //        new Font("Courier New", 8, FontStyle.Bold),
+        //        Brushes.Black,
+        //        new PointF(100, 45));
+        //    var y = 70;
+        //    Pen blackpen = new Pen(Color.Black,1);
+        //    Point p1 = new Point(10, y);
+        //    Point p2 = new Point(w - 10, y);
+        //    e.Graphics.DrawLine(blackpen, p1, p2);
+        //    //e.Graphics.DrawString(String.Format("Tên sản phẩm : ", hoaDonChiTiet.sanPham), new Font("Courier New", 8, FontStyle.Bold), Brushes.Black, new Point(100, 20));
+        //}
     }
 }

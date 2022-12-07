@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKH));
             this.tbt_TimKiem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbt_DiaChi = new System.Windows.Forms.TextBox();
@@ -110,7 +111,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(22, 57);
+            this.label2.Location = new System.Drawing.Point(14, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(111, 20);
             this.label2.TabIndex = 15;
@@ -167,7 +168,7 @@
             // 
             // button1
             // 
-            this.button1.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(1047, 487);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(139, 63);
@@ -179,7 +180,7 @@
             // 
             // btn_LamMoi
             // 
-            this.btn_LamMoi.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
+            this.btn_LamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_LamMoi.Image")));
             this.btn_LamMoi.Location = new System.Drawing.Point(892, 487);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(139, 63);

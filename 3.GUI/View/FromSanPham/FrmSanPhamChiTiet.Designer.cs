@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSanPhamChiTiet));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbb_loaiHang = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,7 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_thoat = new System.Windows.Forms.Button();
-            this.btn_lamMoi = new System.Windows.Forms.Button();
             this.btn_capNhat = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -72,6 +72,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_xuat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_linkAnh)).BeginInit();
@@ -147,6 +148,9 @@
             // 
             // pictureBox2
             // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pictureBox2.BackgroundImage = global::_3.GUI.Properties.Resources.OOjs_UI_icon_add_svg;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox2.Location = new System.Drawing.Point(915, 42);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(163, 233);
@@ -155,6 +159,9 @@
             // 
             // ptb_linkAnh
             // 
+            this.ptb_linkAnh.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ptb_linkAnh.BackgroundImage = global::_3.GUI.Properties.Resources.OOjs_UI_icon_add_svg;
+            this.ptb_linkAnh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ptb_linkAnh.Location = new System.Drawing.Point(733, 42);
             this.ptb_linkAnh.Name = "ptb_linkAnh";
             this.ptb_linkAnh.Size = new System.Drawing.Size(163, 233);
@@ -310,8 +317,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_xuat);
             this.groupBox2.Controls.Add(this.btn_thoat);
-            this.groupBox2.Controls.Add(this.btn_lamMoi);
             this.groupBox2.Controls.Add(this.btn_capNhat);
             this.groupBox2.Controls.Add(this.btn_them);
             this.groupBox2.Location = new System.Drawing.Point(1129, 43);
@@ -323,6 +330,8 @@
             // 
             // btn_thoat
             // 
+            this.btn_thoat.Image = ((System.Drawing.Image)(resources.GetObject("btn_thoat.Image")));
+            this.btn_thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_thoat.Location = new System.Drawing.Point(9, 250);
             this.btn_thoat.Name = "btn_thoat";
             this.btn_thoat.Size = new System.Drawing.Size(198, 53);
@@ -330,17 +339,10 @@
             this.btn_thoat.Text = "Thoát";
             this.btn_thoat.UseVisualStyleBackColor = true;
             // 
-            // btn_lamMoi
-            // 
-            this.btn_lamMoi.Location = new System.Drawing.Point(9, 181);
-            this.btn_lamMoi.Name = "btn_lamMoi";
-            this.btn_lamMoi.Size = new System.Drawing.Size(198, 53);
-            this.btn_lamMoi.TabIndex = 2;
-            this.btn_lamMoi.Text = "Xuất excel";
-            this.btn_lamMoi.UseVisualStyleBackColor = true;
-            // 
             // btn_capNhat
             // 
+            this.btn_capNhat.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
+            this.btn_capNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_capNhat.Location = new System.Drawing.Point(9, 113);
             this.btn_capNhat.Name = "btn_capNhat";
             this.btn_capNhat.Size = new System.Drawing.Size(198, 53);
@@ -351,6 +353,8 @@
             // 
             // btn_them
             // 
+            this.btn_them.Image = global::_3.GUI.Properties.Resources.icons8_add_new_32;
+            this.btn_them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_them.Location = new System.Drawing.Point(9, 42);
             this.btn_them.Name = "btn_them";
             this.btn_them.Size = new System.Drawing.Size(198, 53);
@@ -488,11 +492,23 @@
             this.Column9.Name = "Column9";
             this.Column9.Width = 115;
             // 
+            // btn_xuat
+            // 
+            this.btn_xuat.Image = global::_3.GUI.Properties.Resources.icons8_microsoft_excel_481;
+            this.btn_xuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_xuat.Location = new System.Drawing.Point(9, 178);
+            this.btn_xuat.Name = "btn_xuat";
+            this.btn_xuat.Size = new System.Drawing.Size(198, 49);
+            this.btn_xuat.TabIndex = 4;
+            this.btn_xuat.Text = "Xuất Excel";
+            this.btn_xuat.UseVisualStyleBackColor = true;
+            this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
+            // 
             // FrmSanPhamChiTiet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1354, 736);
+            this.ClientSize = new System.Drawing.Size(1368, 736);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -534,7 +550,6 @@
         private Label label2;
         private GroupBox groupBox2;
         private Button btn_thoat;
-        private Button btn_lamMoi;
         private Button btn_capNhat;
         private Button btn_them;
         private GroupBox groupBox3;
@@ -556,5 +571,6 @@
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column11;
         private DataGridViewTextBoxColumn Column9;
+        private Button btn_xuat;
     }
 }

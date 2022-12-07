@@ -125,7 +125,73 @@ namespace _3.GUI.View.FrmNhanvien
 
         private void FrmChucVu_Load(object sender, EventArgs e)
         {
-            //load();
+            load();
+        }
+
+        private void btn_thoat_Click(object sender, EventArgs e)
+        {
+
+            this.Close();
+        }
+
+        private void btn_Sua_Click(object sender, EventArgs e)
+        {
+            if (_chucVu == null)
+            {
+                MessageBox.Show("Vui lòng chọn chức vụ");
+            }
+            else
+            {
+                if (_chucVu.tenCV == tb_tencv.Text || (_chucVu.tenCV != tb_tencv.Text && qLchucVuServices.GetchucVuFromDB().FirstOrDefault(x => x.tenCV == tb_tencv.Text) == null))
+                {
+                    _chucVu.tenCV = tb_tencv.Text;
+                    qLchucVuServices.UpdateChucVu(_chucVu);
+                    MessageBox.Show("Cập nhật thành công");
+                    load();
+                    tb_tencv.Text = "";
+                }
+                else
+                {
+                    MessageBox.Show("Tên chức vụ đã tồn tại");
+                }
+            }
+        }
+
+        private void btn_Them_Click(object sender, EventArgs e)
+        {
+            //chucVu accchucvu = qLchucVuServices.GetchucVuFromDB().FirstOrDefault(p => p.maChucVu == tb_macv.Text);
+            DialogResult dialogResult = MessageBox.Show("bạn có muốn thêm không ?", "Cảnh báo", MessageBoxButtons.YesNo);
+            if (tb_tencv.Text == "")
+            {
+                MessageBox.Show("vui lòng nhập đầy đủ thông tin");
+            }
+            //else if (accchucvu != null)
+            //{
+            //    MessageBox.Show("Mã chức vụ đã tồn tại");
+            //    tb_macv.Text = "";
+            //}
+            else if (dialogResult == DialogResult.Yes)
+            {
+                chucVu chucVu = new chucVu();
+                {
+                    chucVu.tenCV = tb_tencv.Text;
+                }
+                qLchucVuServices.addChucVu(chucVu);
+                load();
+            }
+            else
+            {
+                MessageBox.Show("bạn đã hủy thêm");
+            }
+        }
+        public void Rs()
+        {
+            tb_tencv.Text = "";
+            
+        }
+        private void btn_lamMoi_Click(object sender, EventArgs e)
+        {
+            Rs();
         }
     }
 }
