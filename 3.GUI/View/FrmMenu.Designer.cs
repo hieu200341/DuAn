@@ -67,6 +67,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -79,7 +80,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "Đăng xuất";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btn_lienhe
@@ -204,11 +205,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Montserrat", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.label2.Location = new System.Drawing.Point(15, 21);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(182, 24);
+            this.label2.Size = new System.Drawing.Size(170, 20);
             this.label2.TabIndex = 1;
             this.label2.Text = "QUẢN LÍ BÁN HÀNG";
             // 
@@ -240,11 +241,11 @@
             // 
             this.lb_home.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_home.AutoSize = true;
-            this.lb_home.Font = new System.Drawing.Font("Montserrat", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lb_home.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lb_home.Location = new System.Drawing.Point(611, 21);
             this.lb_home.Name = "lb_home";
-            this.lb_home.Size = new System.Drawing.Size(106, 37);
+            this.lb_home.Size = new System.Drawing.Size(95, 31);
             this.lb_home.TabIndex = 0;
             this.lb_home.Text = "HOME";
             // 

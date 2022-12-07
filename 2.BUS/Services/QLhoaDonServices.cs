@@ -14,6 +14,9 @@ namespace _2.BUS.Services
     public class QLhoaDonServices : IQLhoaDonServices
     {
         private IhoaDonRepositories _hoaDon;
+        InhanVienRepositories _NHanVienRe;
+        IkhachHangRepositories _KHRe;
+        IhoaDonChiTietRepositories _HoaDonChiTietRepositories;
         private List<hoaDon> _lsthoaDon;
         private IkhachHangRepositories _khachHang;
         private List<ViewHienThi1> _lstView;
@@ -23,6 +26,9 @@ namespace _2.BUS.Services
             _khachHang = new khachHangRepositories();
             _lstView = new List<ViewHienThi1>();
             _hoaDon = new hoaDonRepositories();
+            _NHanVienRe = new nhanVienRepositories();
+            _KHRe = new khachHangRepositories();
+            _HoaDonChiTietRepositories = new hoaDonChiTietRepositories();
         }
 
         public bool addHoaDon(hoaDon HoaDon)

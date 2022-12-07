@@ -40,7 +40,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.rb_Nu = new System.Windows.Forms.RadioButton();
             this.rb_nam = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
             this.btn_LamMoi = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
@@ -165,22 +164,10 @@
             this.rb_nam.Text = "Nam";
             this.rb_nam.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
-            this.button1.Location = new System.Drawing.Point(1047, 487);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 63);
-            this.button1.TabIndex = 40;
-            this.button1.Text = "Thoát";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // btn_LamMoi
             // 
             this.btn_LamMoi.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
-            this.btn_LamMoi.Location = new System.Drawing.Point(892, 487);
+            this.btn_LamMoi.Location = new System.Drawing.Point(1037, 487);
             this.btn_LamMoi.Name = "btn_LamMoi";
             this.btn_LamMoi.Size = new System.Drawing.Size(139, 63);
             this.btn_LamMoi.TabIndex = 39;
@@ -192,11 +179,11 @@
             // btn_Sua
             // 
             this.btn_Sua.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
-            this.btn_Sua.Location = new System.Drawing.Point(712, 487);
+            this.btn_Sua.Location = new System.Drawing.Point(768, 487);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(139, 63);
             this.btn_Sua.TabIndex = 38;
-            this.btn_Sua.Text = "Sửa hóa đơn";
+            this.btn_Sua.Text = "Sửa Khách hàng";
             this.btn_Sua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Sua.UseVisualStyleBackColor = true;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
@@ -208,7 +195,7 @@
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(156, 63);
             this.btn_Them.TabIndex = 37;
-            this.btn_Them.Text = "Thêm hóa đơn";
+            this.btn_Them.Text = "Thêm Khách Hàng";
             this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Them.UseVisualStyleBackColor = true;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
@@ -221,7 +208,6 @@
             this.Controls.Add(this.tbt_TimKiem);
             this.Controls.Add(this.dtgv_KH);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_LamMoi);
             this.Controls.Add(this.btn_Sua);
             this.Controls.Add(this.btn_Them);
@@ -249,7 +235,6 @@
         private Panel panel1;
         private RadioButton rb_Nu;
         private RadioButton rb_nam;
-        private Button button1;
         private Button btn_LamMoi;
         private Button btn_Sua;
         private Button btn_Them;

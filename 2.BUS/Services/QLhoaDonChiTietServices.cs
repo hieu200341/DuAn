@@ -71,5 +71,6 @@ namespace _2.BUS.Services
                         }).ToList();
             return data;
         }
+
     }
 }

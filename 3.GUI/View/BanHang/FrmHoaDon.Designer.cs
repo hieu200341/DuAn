@@ -28,274 +28,253 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.rbtn_Chuatt = new System.Windows.Forms.RadioButton();
-            this.rbtn_dathanhtoan = new System.Windows.Forms.RadioButton();
-            this.dtp_ntt = new System.Windows.Forms.DateTimePicker();
-            this.dtp_nb = new System.Windows.Forms.DateTimePicker();
-            this.cmb_TenKH = new System.Windows.Forms.ComboBox();
-            this.cmb_TenNV = new System.Windows.Forms.ComboBox();
-            this.txt_MaHD = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmHoaDon));
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dtg_hoadonchitiet = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtg_hoadon = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tbt_timk = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_xoa = new System.Windows.Forms.Button();
-            this.btn_sua = new System.Windows.Forms.Button();
-            this.btn_them = new System.Windows.Forms.Button();
-            this.dgrid_hoadon = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.txt_timkiem = new System.Windows.Forms.TextBox();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrid_hoadon)).BeginInit();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_timk = new System.Windows.Forms.Button();
+            this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_hoadonchitiet)).BeginInit();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_hoadon)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // groupBox2
             // 
-            this.panel1.Controls.Add(this.rbtn_Chuatt);
-            this.panel1.Controls.Add(this.rbtn_dathanhtoan);
-            this.panel1.Controls.Add(this.dtp_ntt);
-            this.panel1.Controls.Add(this.dtp_nb);
-            this.panel1.Controls.Add(this.cmb_TenKH);
-            this.panel1.Controls.Add(this.cmb_TenNV);
-            this.panel1.Controls.Add(this.txt_MaHD);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 37);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(408, 519);
-            this.panel1.TabIndex = 29;
+            this.groupBox2.Controls.Add(this.dtg_hoadonchitiet);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox2.Location = new System.Drawing.Point(0, 287);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox2.Size = new System.Drawing.Size(940, 224);
+            this.groupBox2.TabIndex = 3;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Hóa đơn chi tiết";
             // 
-            // rbtn_Chuatt
+            // dtg_hoadonchitiet
             // 
-            this.rbtn_Chuatt.AutoSize = true;
-            this.rbtn_Chuatt.Location = new System.Drawing.Point(256, 373);
-            this.rbtn_Chuatt.Name = "rbtn_Chuatt";
-            this.rbtn_Chuatt.Size = new System.Drawing.Size(139, 24);
-            this.rbtn_Chuatt.TabIndex = 31;
-            this.rbtn_Chuatt.TabStop = true;
-            this.rbtn_Chuatt.Text = "Chưa thanh toán";
-            this.rbtn_Chuatt.UseVisualStyleBackColor = true;
+            this.dtg_hoadonchitiet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_hoadonchitiet.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column8,
+            this.Column9,
+            this.Column13,
+            this.Column10,
+            this.Column11});
+            this.dtg_hoadonchitiet.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtg_hoadonchitiet.Location = new System.Drawing.Point(3, 32);
+            this.dtg_hoadonchitiet.Name = "dtg_hoadonchitiet";
+            this.dtg_hoadonchitiet.RowHeadersWidth = 51;
+            this.dtg_hoadonchitiet.RowTemplate.Height = 29;
+            this.dtg_hoadonchitiet.Size = new System.Drawing.Size(934, 188);
+            this.dtg_hoadonchitiet.TabIndex = 0;
             // 
-            // rbtn_dathanhtoan
+            // groupBox1
             // 
-            this.rbtn_dathanhtoan.AutoSize = true;
-            this.rbtn_dathanhtoan.Location = new System.Drawing.Point(126, 373);
-            this.rbtn_dathanhtoan.Name = "rbtn_dathanhtoan";
-            this.rbtn_dathanhtoan.Size = new System.Drawing.Size(124, 24);
-            this.rbtn_dathanhtoan.TabIndex = 30;
-            this.rbtn_dathanhtoan.TabStop = true;
-            this.rbtn_dathanhtoan.Text = "Đã thanh toán";
-            this.rbtn_dathanhtoan.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.btn_timk);
+            this.groupBox1.Controls.Add(this.dtg_hoadon);
+            this.groupBox1.Controls.Add(this.tbt_timk);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.groupBox1.Size = new System.Drawing.Size(940, 287);
+            this.groupBox1.TabIndex = 2;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Hóa đơn";
             // 
-            // dtp_ntt
+            // dtg_hoadon
             // 
-            this.dtp_ntt.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_ntt.Location = new System.Drawing.Point(172, 302);
-            this.dtp_ntt.Name = "dtp_ntt";
-            this.dtp_ntt.Size = new System.Drawing.Size(125, 27);
-            this.dtp_ntt.TabIndex = 29;
+            this.dtg_hoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtg_hoadon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7});
+            this.dtg_hoadon.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dtg_hoadon.Location = new System.Drawing.Point(3, 95);
+            this.dtg_hoadon.Name = "dtg_hoadon";
+            this.dtg_hoadon.RowHeadersWidth = 51;
+            this.dtg_hoadon.RowTemplate.Height = 29;
+            this.dtg_hoadon.Size = new System.Drawing.Size(934, 188);
+            this.dtg_hoadon.TabIndex = 16;
+            this.dtg_hoadon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtg_hoadon_CellClick);
             // 
-            // dtp_nb
+            // Column1
             // 
-            this.dtp_nb.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_nb.Location = new System.Drawing.Point(172, 237);
-            this.dtp_nb.Name = "dtp_nb";
-            this.dtp_nb.Size = new System.Drawing.Size(125, 27);
-            this.dtp_nb.TabIndex = 28;
+            this.Column1.HeaderText = "Mã hóa đơn";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
             // 
-            // cmb_TenKH
+            // Column2
             // 
-            this.cmb_TenKH.FormattingEnabled = true;
-            this.cmb_TenKH.Location = new System.Drawing.Point(172, 164);
-            this.cmb_TenKH.Name = "cmb_TenKH";
-            this.cmb_TenKH.Size = new System.Drawing.Size(204, 28);
-            this.cmb_TenKH.TabIndex = 27;
+            this.Column2.HeaderText = "Mã nhân viên";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
             // 
-            // cmb_TenNV
+            // Column3
             // 
-            this.cmb_TenNV.FormattingEnabled = true;
-            this.cmb_TenNV.Location = new System.Drawing.Point(172, 89);
-            this.cmb_TenNV.Name = "cmb_TenNV";
-            this.cmb_TenNV.Size = new System.Drawing.Size(204, 28);
-            this.cmb_TenNV.TabIndex = 26;
+            this.Column3.HeaderText = "Số điện thoại khách hàng";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
             // 
-            // txt_MaHD
+            // Column4
             // 
-            this.txt_MaHD.Location = new System.Drawing.Point(172, 20);
-            this.txt_MaHD.Name = "txt_MaHD";
-            this.txt_MaHD.Size = new System.Drawing.Size(204, 27);
-            this.txt_MaHD.TabIndex = 25;
+            this.Column4.HeaderText = "Tổng tiền";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 125;
             // 
-            // label6
+            // Column5
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 20);
-            this.label6.TabIndex = 24;
-            this.label6.Text = "Mã Hóa Đơn";
+            this.Column5.HeaderText = "Ngày bán";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 125;
             // 
-            // label5
+            // Column6
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 309);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 20);
-            this.label5.TabIndex = 23;
-            this.label5.Text = "Ngày thanh toán";
+            this.Column6.HeaderText = "Ghi chú";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            this.Column6.Width = 125;
             // 
-            // label4
+            // Column7
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 377);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(75, 20);
-            this.label4.TabIndex = 17;
-            this.label4.Text = "Trạng thái";
+            this.Column7.HeaderText = "Trạng thái";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 125;
             // 
-            // label3
+            // tbt_timk
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 244);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 20);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Ngày bán";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 172);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 20);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Tên khách hàng";
+            this.tbt_timk.Location = new System.Drawing.Point(154, 35);
+            this.tbt_timk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbt_timk.Name = "tbt_timk";
+            this.tbt_timk.Size = new System.Drawing.Size(217, 27);
+            this.tbt_timk.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 97);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(14, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Tên nhân viên";
+            this.label1.Size = new System.Drawing.Size(135, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Tìm kiếm hóa đơn";
             // 
-            // btn_xoa
+            // Column8
             // 
-            this.btn_xoa.Image = global::_3.GUI.Properties.Resources.icons8_trash_32;
-            this.btn_xoa.Location = new System.Drawing.Point(662, 493);
-            this.btn_xoa.Name = "btn_xoa";
-            this.btn_xoa.Size = new System.Drawing.Size(137, 63);
-            this.btn_xoa.TabIndex = 27;
-            this.btn_xoa.Text = "Xóa hóa đơn";
-            this.btn_xoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_xoa.UseVisualStyleBackColor = true;
-            this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
+            this.Column8.HeaderText = "Mã hóa đơn";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            this.Column8.Width = 125;
             // 
-            // btn_sua
+            // Column9
             // 
-            this.btn_sua.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
-            this.btn_sua.Location = new System.Drawing.Point(838, 493);
-            this.btn_sua.Name = "btn_sua";
-            this.btn_sua.Size = new System.Drawing.Size(139, 63);
-            this.btn_sua.TabIndex = 26;
-            this.btn_sua.Text = "Sửa hóa đơn";
-            this.btn_sua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_sua.UseVisualStyleBackColor = true;
-            this.btn_sua.Click += new System.EventHandler(this.btn_sua_Click);
+            this.Column9.HeaderText = "Mã sản phẩm";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
+            this.Column9.Width = 125;
             // 
-            // btn_them
+            // Column13
             // 
-            this.btn_them.Image = global::_3.GUI.Properties.Resources.icons8_add_new_32;
-            this.btn_them.Location = new System.Drawing.Point(459, 493);
-            this.btn_them.Name = "btn_them";
-            this.btn_them.Size = new System.Drawing.Size(156, 63);
-            this.btn_them.TabIndex = 25;
-            this.btn_them.Text = "Thêm hóa đơn";
-            this.btn_them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_them.UseVisualStyleBackColor = true;
-            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
+            this.Column13.HeaderText = "Tên Sản Phẩm";
+            this.Column13.MinimumWidth = 6;
+            this.Column13.Name = "Column13";
+            this.Column13.Width = 125;
             // 
-            // dgrid_hoadon
+            // Column10
             // 
-            this.dgrid_hoadon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrid_hoadon.Location = new System.Drawing.Point(459, 37);
-            this.dgrid_hoadon.Name = "dgrid_hoadon";
-            this.dgrid_hoadon.RowHeadersWidth = 51;
-            this.dgrid_hoadon.RowTemplate.Height = 29;
-            this.dgrid_hoadon.Size = new System.Drawing.Size(669, 385);
-            this.dgrid_hoadon.TabIndex = 24;
-            this.dgrid_hoadon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrid_hoadon_CellClick);
+            this.Column10.HeaderText = "Số lượng";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            this.Column10.Width = 125;
             // 
-            // button2
+            // Column11
             // 
-            this.button2.Image = global::_3.GUI.Properties.Resources.icons8_search_32;
-            this.button2.Location = new System.Drawing.Point(1014, 493);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(114, 63);
-            this.button2.TabIndex = 30;
-            this.button2.Text = "Tìm hóa đơn";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
+            this.Column11.HeaderText = "Đơn giá";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            this.Column11.Width = 125;
             // 
-            // txt_timkiem
+            // btn_timk
             // 
-            this.txt_timkiem.Location = new System.Drawing.Point(459, 448);
-            this.txt_timkiem.Name = "txt_timkiem";
-            this.txt_timkiem.PlaceholderText = "Tìm Kiếm";
-            this.txt_timkiem.Size = new System.Drawing.Size(669, 27);
-            this.txt_timkiem.TabIndex = 28;
+            this.btn_timk.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btn_timk.Image = ((System.Drawing.Image)(resources.GetObject("btn_timk.Image")));
+            this.btn_timk.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_timk.Location = new System.Drawing.Point(413, 33);
+            this.btn_timk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btn_timk.Name = "btn_timk";
+            this.btn_timk.Size = new System.Drawing.Size(97, 31);
+            this.btn_timk.TabIndex = 17;
+            this.btn_timk.Text = "Tìm kiếm";
+            this.btn_timk.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_timk.UseVisualStyleBackColor = false;
+            this.btn_timk.Click += new System.EventHandler(this.btn_timk_Click);
             // 
             // FrmHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1149, 573);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btn_xoa);
-            this.Controls.Add(this.btn_sua);
-            this.Controls.Add(this.btn_them);
-            this.Controls.Add(this.dgrid_hoadon);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.txt_timkiem);
+            this.ClientSize = new System.Drawing.Size(940, 511);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
             this.Name = "FrmHoaDon";
             this.Text = "FrmHoaDon";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrid_hoadon)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_hoadonchitiet)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtg_hoadon)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private Panel panel1;
-        private Label label5;
-        private Label label4;
-        private Label label3;
-        private Label label2;
+        private GroupBox groupBox2;
+        private GroupBox groupBox1;
+        private TextBox tbt_timk;
         private Label label1;
-        private Button btn_xoa;
-        private Button btn_sua;
-        private Button btn_them;
-        private DataGridView dgrid_hoadon;
-        private Button button2;
-        private TextBox txt_timkiem;
-        private RadioButton rbtn_Chuatt;
-        private RadioButton rbtn_dathanhtoan;
-        private DateTimePicker dtp_ntt;
-        private DateTimePicker dtp_nb;
-        private ComboBox cmb_TenKH;
-        private ComboBox cmb_TenNV;
-        private TextBox txt_MaHD;
-        private Label label6;
+        private DataGridView dtg_hoadonchitiet;
+        private DataGridView dtg_hoadon;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
+        private DataGridViewTextBoxColumn Column13;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column11;
+        private Button btn_timk;
     }
 }

@@ -198,7 +198,7 @@
             this.Column3,
             this.Column7,
             this.Column4});
-            this.dtgv_sanPham.Location = new System.Drawing.Point(0, 65);
+            this.dtgv_sanPham.Location = new System.Drawing.Point(1, 65);
             this.dtgv_sanPham.Name = "dtgv_sanPham";
             this.dtgv_sanPham.RowHeadersWidth = 51;
             this.dtgv_sanPham.RowTemplate.Height = 29;
@@ -413,7 +413,7 @@
             this.Column9,
             this.Column10,
             this.Column11});
-            this.dtgv_gioHang.Location = new System.Drawing.Point(0, 40);
+            this.dtgv_gioHang.Location = new System.Drawing.Point(-4, 40);
             this.dtgv_gioHang.Name = "dtgv_gioHang";
             this.dtgv_gioHang.RowHeadersWidth = 51;
             this.dtgv_gioHang.RowTemplate.Height = 29;
