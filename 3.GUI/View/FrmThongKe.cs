@@ -215,5 +215,10 @@ namespace _3.GUI.View
                 }
             }
         }
+
+        private void tb_timkiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

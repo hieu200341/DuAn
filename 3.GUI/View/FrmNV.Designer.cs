@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNV));
-            this.tb_timkiem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_email = new System.Windows.Forms.TextBox();
             this.tb_sdt = new System.Windows.Forms.TextBox();
@@ -64,14 +63,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtg_show)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tb_timkiem
-            // 
-            this.tb_timkiem.Location = new System.Drawing.Point(564, 438);
-            this.tb_timkiem.Name = "tb_timkiem";
-            this.tb_timkiem.Size = new System.Drawing.Size(669, 27);
-            this.tb_timkiem.TabIndex = 28;
-            this.tb_timkiem.TextChanged += new System.EventHandler(this.tb_timkiem_TextChanged);
             // 
             // label5
             // 
@@ -377,7 +368,6 @@
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_hoadon);
             this.Controls.Add(this.btn_tim);
-            this.Controls.Add(this.tb_timkiem);
             this.Controls.Add(this.dtg_show);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -394,8 +384,6 @@
         }
 
         #endregion
-
-        private TextBox tb_timkiem;
         private Label label5;
         private TextBox tb_email;
         private TextBox tb_sdt;

@@ -208,7 +208,7 @@ namespace _3.GUI.View
 
         private void button6_Click(object sender, EventArgs e)
         {
-            submenu.Visible = false;
+            submenu.Visible = true;
         }
 
         private void btn_sp_Click_1(object sender, EventArgs e)

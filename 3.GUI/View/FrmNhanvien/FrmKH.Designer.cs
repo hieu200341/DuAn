@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKH));
-            this.tbt_TimKiem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbt_DiaChi = new System.Windows.Forms.TextBox();
             this.tbt_SDT = new System.Windows.Forms.TextBox();
@@ -45,17 +44,10 @@
             this.btn_LamMoi = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
+            this.tbt_TimKiem = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_KH)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tbt_TimKiem
-            // 
-            this.tbt_TimKiem.Location = new System.Drawing.Point(507, 439);
-            this.tbt_TimKiem.Name = "tbt_TimKiem";
-            this.tbt_TimKiem.Size = new System.Drawing.Size(669, 27);
-            this.tbt_TimKiem.TabIndex = 35;
-            this.tbt_TimKiem.TextChanged += new System.EventHandler(this.tbt_TimKiem_TextChanged);
             // 
             // label5
             // 
@@ -214,6 +206,14 @@
             this.btn_Them.UseVisualStyleBackColor = true;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
+            // tbt_TimKiem
+            // 
+            this.tbt_TimKiem.Location = new System.Drawing.Point(507, 439);
+            this.tbt_TimKiem.Name = "tbt_TimKiem";
+            this.tbt_TimKiem.Size = new System.Drawing.Size(669, 27);
+            this.tbt_TimKiem.TabIndex = 35;
+            this.tbt_TimKiem.TextChanged += new System.EventHandler(this.tbt_TimKiem_TextChanged);
+            // 
             // FrmKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -237,8 +237,6 @@
         }
 
         #endregion
-
-        private TextBox tbt_TimKiem;
         private Label label5;
         private TextBox tbt_DiaChi;
         private TextBox tbt_SDT;
@@ -254,5 +252,6 @@
         private Button btn_LamMoi;
         private Button btn_Sua;
         private Button btn_Them;
+        private TextBox tbt_TimKiem;
     }
 }
