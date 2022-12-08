@@ -59,7 +59,6 @@
             this.btn_hoadon = new System.Windows.Forms.Button();
             this.btn_tim = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_show)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -349,21 +348,11 @@
             this.menuStrip1.TabIndex = 34;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1268, 486);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FrmNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1490, 579);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_xoahoadon);
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_hoadon);
@@ -414,6 +403,5 @@
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
         private MenuStrip menuStrip1;
-        private Button button1;
     }
 }

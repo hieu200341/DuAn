@@ -196,6 +196,7 @@
             this.tbt_XacNhanMK.Location = new System.Drawing.Point(183, 211);
             this.tbt_XacNhanMK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbt_XacNhanMK.Name = "tbt_XacNhanMK";
+            this.tbt_XacNhanMK.PasswordChar = '*';
             this.tbt_XacNhanMK.Size = new System.Drawing.Size(188, 27);
             this.tbt_XacNhanMK.TabIndex = 52;
             // 
@@ -204,6 +205,7 @@
             this.tbt_MkMoi.Location = new System.Drawing.Point(183, 160);
             this.tbt_MkMoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbt_MkMoi.Name = "tbt_MkMoi";
+            this.tbt_MkMoi.PasswordChar = '*';
             this.tbt_MkMoi.Size = new System.Drawing.Size(188, 27);
             this.tbt_MkMoi.TabIndex = 51;
             // 
@@ -212,6 +214,7 @@
             this.tbt_Mk.Location = new System.Drawing.Point(183, 109);
             this.tbt_Mk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbt_Mk.Name = "tbt_Mk";
+            this.tbt_Mk.PasswordChar = '*';
             this.tbt_Mk.Size = new System.Drawing.Size(188, 27);
             this.tbt_Mk.TabIndex = 50;
             // 
