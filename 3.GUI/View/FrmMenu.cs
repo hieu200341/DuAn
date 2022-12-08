@@ -161,14 +161,43 @@ namespace _3.GUI.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.FromSanPham.FrmSanPhamChiTiet(), sender);
-            lb_home.Text = btn_hoadon.Text;
+            //OpenChildForm(new View.FromSanPham.FrmSanPhamChiTiet(), sender);
+            //lb_home.Text = btn_hoadon.Text;
+            submenu.Visible = true;
         }
 
         private void btn_sanpham_Click_1(object sender, EventArgs e)
         {
             OpenChildForm(new View.FrmThongKe(), sender);
             lb_home.Text = btn_thongke.Text;
+        }
+
+        private void btn_sp_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FromSanPham.FrmSanPhamChiTiet(), sender);
+            lb_home.Text = btn_sp.Text;
+            submenu.Visible = false;
+        }
+
+        private void btn_size_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FromSanPham.FrmSize(), sender);
+            lb_home.Text = btn_size.Text;
+            submenu.Visible=false;
+        }
+
+        private void btn_nsx_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FrmNhaSX(), sender);
+            lb_home.Text = btn_nsx.Text;
+            submenu.Visible = false;
+        }
+
+        private void btn_ms_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FromSanPham.FrmMauSac(), sender);
+            lb_home.Text = btn_ms.Text;
+            submenu.Visible = false;
         }
     }
 }

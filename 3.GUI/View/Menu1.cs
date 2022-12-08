@@ -16,7 +16,7 @@ namespace _3.GUI.View
     {
         ViewHienThi1 v1 = new ViewHienThi1();
         IQLchucVuServices _qLchucVu;
-        IQLnhanVienServices _services;
+        private IQLnhanVienServices _qLnhanVien;
         private Button currentButton;
         private Random random;
         private int tempIndex;
@@ -24,7 +24,7 @@ namespace _3.GUI.View
         
         public Menu1()
         {
-            _services = new QLnhanVienServices();
+            _qLnhanVien = new QLnhanVienServices();
             InitializeComponent();
             random = new Random();
             btn_closechildform.Visible = false;
@@ -115,8 +115,9 @@ namespace _3.GUI.View
 
         private void button2_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new View.FromSanPham.FrmSanPhamChiTiet(), sender);
-            lb_home.Text = btn_sanpham.Text;
+            //OpenChildForm(new View.FromSanPham.FrmSanPhamChiTiet(), sender);
+            //lb_home.Text = btn_sanpham.Text;
+            submenu.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -154,23 +155,10 @@ namespace _3.GUI.View
 
         }
 
-        private void Menu1_Load(object sender, EventArgs e)
-        {
-            var layEmail = Properties.Settings.Default.TKdaLogin;
-            var nhanvien = _services.GetAll().FirstOrDefault(p => p.email == layEmail);
-         
-            lb_TenNv.Text = nhanvien.TenNV;
-            lb_Email.Text = nhanvien.email;
-            lb_DiaChi.Text = nhanvien.diaChi;
-            lb_Sdt.Text = nhanvien.SDT;
-            //var role = _qLchucVu.GetchucVuFromDB().FirstOrDefault(x => x.IDChucVu == nhanvien.IDChucVu);
-            //lb_TenDn.Text = nhanvien.TenNhanVien;
-            //lb_ChucVu.Text = role.TenCV;
-
-        }
+       
         private void btn_DoiMk_Click(object sender, EventArgs e)
         {
-            var taikhoan = _services.GetNhanVienFromDB().FirstOrDefault(c => c.nhanViens.email == tbt_email.Text);
+            var taikhoan = _qLnhanVien.GetNhanVienFromDB().FirstOrDefault(c => c.nhanViens.email == tbt_email.Text);
             var newpass = tbt_MkMoi.Text;
             var repass = tbt_XacNhanMK.Text;
 
@@ -184,7 +172,7 @@ namespace _3.GUI.View
                 if (taikhoan != null && tbt_Mk.Text == taikhoan.nhanViens.matKhau && newpass == repass)
                 {
                     taikhoan.nhanViens.matKhau = newpass;
-                    _services.UpdateNhanVien(taikhoan);
+                    _qLnhanVien.UpdateNhanVien(taikhoan);
                     MessageBox.Show("Đổi mật khẩu thành công, vui lòng đăng nhập lại");
                     Application.Restart();
                     Environment.Exit(0);
@@ -201,6 +189,39 @@ namespace _3.GUI.View
         private void timer1_Tick(object sender, EventArgs e)
         {
             lb_time.Text = DateTime.Now.ToString("T");
+        }
+
+        private void btn_sp_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FromSanPham.FrmSanPhamChiTiet(), sender);
+            lb_home.Text = btn_sanpham.Text;
+            submenu.Visible = false;
+        }
+
+        private void btn_size_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FromSanPham.FrmSize(), sender);
+            lb_home.Text = btn_size.Text;
+            submenu.Visible = false;
+        }
+
+        private void btn_nsx_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FrmNhaSX(), sender);
+            lb_home.Text = btn_nsx.Text;
+            submenu.Visible = false;
+        }
+
+        private void btn_ms_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FromSanPham.FrmMauSac(), sender);
+            lb_home.Text = btn_ms.Text;
+            submenu.Visible=false;
+        }
+
+        private void Menu1_Load(object sender, EventArgs e)
+        {
+          
         }
     }
 }
