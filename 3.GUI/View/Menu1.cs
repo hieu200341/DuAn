@@ -223,5 +223,10 @@ namespace _3.GUI.View
         {
           
         }
+
+        private void submenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

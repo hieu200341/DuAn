@@ -92,6 +92,7 @@
             this.submenu.Size = new System.Drawing.Size(246, 276);
             this.submenu.TabIndex = 16;
             this.submenu.Visible = false;
+            this.submenu.Paint += new System.Windows.Forms.PaintEventHandler(this.submenu_Paint);
             // 
             // btn_sp
             // 
@@ -107,6 +108,7 @@
             this.btn_sp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_sp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_sp.UseVisualStyleBackColor = true;
+            this.btn_sp.Click += new System.EventHandler(this.btn_sp_Click_1);
             // 
             // btn_nsx
             // 
@@ -123,6 +125,7 @@
             this.btn_nsx.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_nsx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_nsx.UseVisualStyleBackColor = true;
+            this.btn_nsx.Click += new System.EventHandler(this.btn_nsx_Click_1);
             // 
             // btn_ms
             // 
@@ -139,6 +142,7 @@
             this.btn_ms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_ms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_ms.UseVisualStyleBackColor = true;
+            this.btn_ms.Click += new System.EventHandler(this.btn_ms_Click_1);
             // 
             // btn_size
             // 
@@ -155,6 +159,7 @@
             this.btn_size.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_size.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_size.UseVisualStyleBackColor = true;
+            this.btn_size.Click += new System.EventHandler(this.btn_size_Click_1);
             // 
             // button6
             // 

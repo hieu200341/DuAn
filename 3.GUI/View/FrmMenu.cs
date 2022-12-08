@@ -210,5 +210,40 @@ namespace _3.GUI.View
         {
             submenu.Visible = false;
         }
+
+        private void btn_sp_Click_1(object sender, EventArgs e)
+        {
+
+            OpenChildForm(new View.FromSanPham.FrmSanPhamChiTiet(), sender);
+            lb_home.Text = btn_sp.Text;
+            submenu.Visible = false;
+        }
+
+        private void submenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btn_size_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FromSanPham.FrmSize(), sender);
+            lb_home.Text = btn_size.Text;
+            submenu.Visible = false;
+        }
+
+        private void btn_nsx_Click_1(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FrmNhaSX(), sender);
+            lb_home.Text = btn_nsx.Text;
+            submenu.Visible = false;
+        }
+
+        private void btn_ms_Click_1(object sender, EventArgs e)
+        {
+
+            OpenChildForm(new View.FromSanPham.FrmMauSac(), sender);
+            lb_home.Text = btn_ms.Text;
+            submenu.Visible = false;
+        }
     }
 }

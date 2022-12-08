@@ -32,6 +32,7 @@
             System.Windows.Forms.Label label3;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu1));
             this.panelmanchinh = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lb_time = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbt_email = new System.Windows.Forms.TextBox();
@@ -60,15 +61,14 @@
             this.btn_closechildform = new System.Windows.Forms.Button();
             this.lb_home = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             label3 = new System.Windows.Forms.Label();
             this.panelmanchinh.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.submenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHome.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
@@ -93,6 +93,15 @@
             this.panelmanchinh.Size = new System.Drawing.Size(1310, 668);
             this.panelmanchinh.TabIndex = 4;
             this.panelmanchinh.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmanchinh_Paint);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::_3.GUI.Properties.Resources._317502577_671965111066981_3787928448780715536_n;
+            this.pictureBox1.Location = new System.Drawing.Point(759, 150);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(337, 301);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
             // lb_time
             // 
@@ -233,6 +242,7 @@
             this.submenu.Size = new System.Drawing.Size(246, 276);
             this.submenu.TabIndex = 9;
             this.submenu.Visible = false;
+            this.submenu.Paint += new System.Windows.Forms.PaintEventHandler(this.submenu_Paint);
             // 
             // btn_sp
             // 
@@ -455,15 +465,6 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::_3.GUI.Properties.Resources._317502577_671965111066981_3787928448780715536_n;
-            this.pictureBox1.Location = new System.Drawing.Point(759, 150);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(337, 301);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
             // Menu1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -478,6 +479,7 @@
             this.Load += new System.EventHandler(this.Menu1_Load);
             this.panelmanchinh.ResumeLayout(false);
             this.panelmanchinh.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.panelMenu.ResumeLayout(false);
@@ -486,7 +488,6 @@
             this.panelLogo.PerformLayout();
             this.panelHome.ResumeLayout(false);
             this.panelHome.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
