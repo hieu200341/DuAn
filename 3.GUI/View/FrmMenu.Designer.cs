@@ -30,6 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.submenu = new System.Windows.Forms.Panel();
+            this.btn_sp = new System.Windows.Forms.Button();
+            this.btn_nsx = new System.Windows.Forms.Button();
+            this.btn_ms = new System.Windows.Forms.Button();
+            this.btn_size = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btn_thongke = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_nhanvien = new System.Windows.Forms.Button();
             this.btn_khachhang = new System.Windows.Forms.Button();
@@ -47,20 +54,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_thongke = new System.Windows.Forms.Button();
-            this.submenu = new System.Windows.Forms.Panel();
-            this.btn_sp = new System.Windows.Forms.Button();
-            this.btn_nsx = new System.Windows.Forms.Button();
-            this.btn_ms = new System.Windows.Forms.Button();
-            this.btn_size = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
+            this.submenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHome.SuspendLayout();
             this.panelmanchinh.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.submenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -80,6 +80,117 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(220, 778);
             this.panelMenu.TabIndex = 0;
+            // 
+            // submenu
+            // 
+            this.submenu.Controls.Add(this.btn_sp);
+            this.submenu.Controls.Add(this.btn_nsx);
+            this.submenu.Controls.Add(this.btn_ms);
+            this.submenu.Controls.Add(this.btn_size);
+            this.submenu.Location = new System.Drawing.Point(40, 446);
+            this.submenu.Name = "submenu";
+            this.submenu.Size = new System.Drawing.Size(246, 276);
+            this.submenu.TabIndex = 16;
+            this.submenu.Visible = false;
+            // 
+            // btn_sp
+            // 
+            this.btn_sp.FlatAppearance.BorderSize = 0;
+            this.btn_sp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_sp.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_sp.Location = new System.Drawing.Point(3, -2);
+            this.btn_sp.Name = "btn_sp";
+            this.btn_sp.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_sp.Size = new System.Drawing.Size(193, 60);
+            this.btn_sp.TabIndex = 10;
+            this.btn_sp.Text = "  Sản phẩm";
+            this.btn_sp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_sp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_sp.UseVisualStyleBackColor = true;
+            // 
+            // btn_nsx
+            // 
+            this.btn_nsx.FlatAppearance.BorderSize = 0;
+            this.btn_nsx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_nsx.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_nsx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nsx.Location = new System.Drawing.Point(3, 124);
+            this.btn_nsx.Name = "btn_nsx";
+            this.btn_nsx.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_nsx.Size = new System.Drawing.Size(193, 60);
+            this.btn_nsx.TabIndex = 11;
+            this.btn_nsx.Text = "Nhà sản xuất";
+            this.btn_nsx.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_nsx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_nsx.UseVisualStyleBackColor = true;
+            // 
+            // btn_ms
+            // 
+            this.btn_ms.FlatAppearance.BorderSize = 0;
+            this.btn_ms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ms.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_ms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ms.Location = new System.Drawing.Point(3, 190);
+            this.btn_ms.Name = "btn_ms";
+            this.btn_ms.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_ms.Size = new System.Drawing.Size(193, 60);
+            this.btn_ms.TabIndex = 9;
+            this.btn_ms.Text = "  Màu sắc";
+            this.btn_ms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_ms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_ms.UseVisualStyleBackColor = true;
+            // 
+            // btn_size
+            // 
+            this.btn_size.FlatAppearance.BorderSize = 0;
+            this.btn_size.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_size.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_size.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_size.Location = new System.Drawing.Point(3, 58);
+            this.btn_size.Name = "btn_size";
+            this.btn_size.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_size.Size = new System.Drawing.Size(193, 60);
+            this.btn_size.TabIndex = 10;
+            this.btn_size.Text = "  Size";
+            this.btn_size.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_size.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_size.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.Location = new System.Drawing.Point(0, 380);
+            this.button6.Name = "button6";
+            this.button6.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.button6.Size = new System.Drawing.Size(220, 60);
+            this.button6.TabIndex = 15;
+            this.button6.Text = "  Sản phẩm";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // btn_thongke
+            // 
+            this.btn_thongke.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_thongke.FlatAppearance.BorderSize = 0;
+            this.btn_thongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_thongke.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_thongke.Image = ((System.Drawing.Image)(resources.GetObject("btn_thongke.Image")));
+            this.btn_thongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_thongke.Location = new System.Drawing.Point(0, 320);
+            this.btn_thongke.Name = "btn_thongke";
+            this.btn_thongke.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
+            this.btn_thongke.Size = new System.Drawing.Size(220, 60);
+            this.btn_thongke.TabIndex = 14;
+            this.btn_thongke.Text = "  Thống kê";
+            this.btn_thongke.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_thongke.UseVisualStyleBackColor = true;
+            this.btn_thongke.Click += new System.EventHandler(this.btn_thongke_Click);
             // 
             // button1
             // 
@@ -298,115 +409,6 @@
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
-            // btn_thongke
-            // 
-            this.btn_thongke.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_thongke.FlatAppearance.BorderSize = 0;
-            this.btn_thongke.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_thongke.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_thongke.Image = ((System.Drawing.Image)(resources.GetObject("btn_thongke.Image")));
-            this.btn_thongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_thongke.Location = new System.Drawing.Point(0, 320);
-            this.btn_thongke.Name = "btn_thongke";
-            this.btn_thongke.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_thongke.Size = new System.Drawing.Size(220, 60);
-            this.btn_thongke.TabIndex = 14;
-            this.btn_thongke.Text = "  Thống kê";
-            this.btn_thongke.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_thongke.UseVisualStyleBackColor = true;
-            // 
-            // submenu
-            // 
-            this.submenu.Controls.Add(this.btn_sp);
-            this.submenu.Controls.Add(this.btn_nsx);
-            this.submenu.Controls.Add(this.btn_ms);
-            this.submenu.Controls.Add(this.btn_size);
-            this.submenu.Location = new System.Drawing.Point(40, 446);
-            this.submenu.Name = "submenu";
-            this.submenu.Size = new System.Drawing.Size(246, 276);
-            this.submenu.TabIndex = 16;
-            this.submenu.Visible = false;
-            // 
-            // btn_sp
-            // 
-            this.btn_sp.FlatAppearance.BorderSize = 0;
-            this.btn_sp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_sp.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_sp.Location = new System.Drawing.Point(3, -2);
-            this.btn_sp.Name = "btn_sp";
-            this.btn_sp.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_sp.Size = new System.Drawing.Size(193, 60);
-            this.btn_sp.TabIndex = 10;
-            this.btn_sp.Text = "  Sản phẩm";
-            this.btn_sp.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_sp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_sp.UseVisualStyleBackColor = true;
-            // 
-            // btn_nsx
-            // 
-            this.btn_nsx.FlatAppearance.BorderSize = 0;
-            this.btn_nsx.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_nsx.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_nsx.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nsx.Location = new System.Drawing.Point(3, 124);
-            this.btn_nsx.Name = "btn_nsx";
-            this.btn_nsx.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_nsx.Size = new System.Drawing.Size(193, 60);
-            this.btn_nsx.TabIndex = 11;
-            this.btn_nsx.Text = "Nhà sản xuất";
-            this.btn_nsx.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_nsx.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_nsx.UseVisualStyleBackColor = true;
-            // 
-            // btn_ms
-            // 
-            this.btn_ms.FlatAppearance.BorderSize = 0;
-            this.btn_ms.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ms.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_ms.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ms.Location = new System.Drawing.Point(3, 190);
-            this.btn_ms.Name = "btn_ms";
-            this.btn_ms.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_ms.Size = new System.Drawing.Size(193, 60);
-            this.btn_ms.TabIndex = 9;
-            this.btn_ms.Text = "  Màu sắc";
-            this.btn_ms.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_ms.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_ms.UseVisualStyleBackColor = true;
-            // 
-            // btn_size
-            // 
-            this.btn_size.FlatAppearance.BorderSize = 0;
-            this.btn_size.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_size.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_size.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_size.Location = new System.Drawing.Point(3, 58);
-            this.btn_size.Name = "btn_size";
-            this.btn_size.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.btn_size.Size = new System.Drawing.Size(193, 60);
-            this.btn_size.TabIndex = 10;
-            this.btn_size.Text = "  Size";
-            this.btn_size.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_size.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_size.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(0, 380);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(220, 60);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "  Sản phẩm";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -420,6 +422,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMenu_Load);
             this.panelMenu.ResumeLayout(false);
+            this.submenu.ResumeLayout(false);
             this.panelLogo.ResumeLayout(false);
             this.panelLogo.PerformLayout();
             this.panelHome.ResumeLayout(false);
@@ -428,7 +431,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.submenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

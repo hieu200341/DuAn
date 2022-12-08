@@ -199,5 +199,16 @@ namespace _3.GUI.View
             lb_home.Text = btn_ms.Text;
             submenu.Visible = false;
         }
+
+        private void btn_thongke_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new View.FrmThongKe(), sender);
+            lb_home.Text = btn_ms.Text;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            submenu.Visible = false;
+        }
     }
 }
