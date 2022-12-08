@@ -15,11 +15,13 @@ namespace _3.GUI.View
     public partial class Menu1 : Form
     {
         ViewHienThi1 v1 = new ViewHienThi1();
+        IQLchucVuServices _qLchucVu;
         IQLnhanVienServices _services;
         private Button currentButton;
         private Random random;
         private int tempIndex;
         private Form activeForm;
+        
         public Menu1()
         {
             _services = new QLnhanVienServices();
@@ -29,6 +31,8 @@ namespace _3.GUI.View
             this.Text = string.Empty;
             //this.ControlBox = false;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+            timer1.Start();
+            
         }
         private Color SelectThemeColor()
         {
@@ -152,20 +156,17 @@ namespace _3.GUI.View
 
         private void Menu1_Load(object sender, EventArgs e)
         {
-            //var layEmail = Properties.Settings.Default.TKdaLogin;
-            //var nhanvien = _nhanVienService.GetNhanVienFromDB().FirstOrDefault(p => p.Gmail == layEmail);
-
-            //lb_MaNv.Text = nhanvien.MaNhanVien;
-            //lb_TenNv.Text = nhanvien.TenNhanVien;
-            //lb_Email.Text = nhanvien.Gmail;
-            //lb_DiaChi.Text = nhanvien.DiaChi;
-            //lb_Sdt.Text = nhanvien.SDT;
-            //lb_GioiTinh.Text = nhanvien.GioiTinh == 1 ? "Nam" : "Nữ";
-
-            //var role = _chucVuService.GetChucVuFromDB().FirstOrDefault(x => x.IdChucVu == nhanvien.IdChucVu);
+            var layEmail = Properties.Settings.Default.TKdaLogin;
+            var nhanvien = _services.GetAll().FirstOrDefault(p => p.email == layEmail);
+         
+            lb_TenNv.Text = nhanvien.TenNV;
+            lb_Email.Text = nhanvien.email;
+            lb_DiaChi.Text = nhanvien.diaChi;
+            lb_Sdt.Text = nhanvien.SDT;
+            //var role = _qLchucVu.GetchucVuFromDB().FirstOrDefault(x => x.IDChucVu == nhanvien.IDChucVu);
             //lb_TenDn.Text = nhanvien.TenNhanVien;
             //lb_ChucVu.Text = role.TenCV;
-            //pictureBox1.Image = Image.FromFile(nhanvien.LinkAnh);
+
         }
         private void btn_DoiMk_Click(object sender, EventArgs e)
         {
@@ -195,6 +196,11 @@ namespace _3.GUI.View
                 }
                 
             }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lb_time.Text = DateTime.Now.ToString("T");
         }
     }
 }

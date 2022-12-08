@@ -57,6 +57,7 @@
             // 
             this.tb_pass.Location = new System.Drawing.Point(118, 227);
             this.tb_pass.Name = "tb_pass";
+            this.tb_pass.PasswordChar = '*';
             this.tb_pass.PlaceholderText = "Mật khẩu";
             this.tb_pass.ShortcutsEnabled = false;
             this.tb_pass.Size = new System.Drawing.Size(251, 27);

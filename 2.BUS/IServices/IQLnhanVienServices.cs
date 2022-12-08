@@ -15,5 +15,6 @@ namespace _2.BUS.IServices
         string RemoveNhanVien(ViewHienThi1 NhanVien);
         string UpdateNhanVien(ViewHienThi1 NhanVien);
         //List<ViewHienThi> getViewNhanVien();
+        List<nhanVien> GetAll();
     }
 }

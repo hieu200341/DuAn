@@ -28,8 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu1));
             this.panelmanchinh = new System.Windows.Forms.Panel();
+            this.lb_time = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tbt_email = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,8 +47,6 @@
             this.lb_DiaChi = new System.Windows.Forms.Label();
             this.lb_Sdt = new System.Windows.Forms.Label();
             this.lb_TenNv = new System.Windows.Forms.Label();
-            this.lb_MaNv = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,6 +62,7 @@
             this.panelHome = new System.Windows.Forms.Panel();
             this.btn_closechildform = new System.Windows.Forms.Button();
             this.lb_home = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelmanchinh.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -72,13 +73,25 @@
             // 
             // panelmanchinh
             // 
+            this.panelmanchinh.Controls.Add(this.lb_time);
             this.panelmanchinh.Controls.Add(this.groupBox2);
             this.panelmanchinh.Controls.Add(this.groupBox1);
-            this.panelmanchinh.Location = new System.Drawing.Point(220, 80);
+            this.panelmanchinh.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelmanchinh.Location = new System.Drawing.Point(220, 98);
             this.panelmanchinh.Name = "panelmanchinh";
-            this.panelmanchinh.Size = new System.Drawing.Size(1310, 558);
+            this.panelmanchinh.Size = new System.Drawing.Size(1310, 668);
             this.panelmanchinh.TabIndex = 4;
             this.panelmanchinh.Paint += new System.Windows.Forms.PaintEventHandler(this.panelmanchinh_Paint);
+            // 
+            // lb_time
+            // 
+            this.lb_time.AutoSize = true;
+            this.lb_time.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lb_time.Location = new System.Drawing.Point(85, 42);
+            this.lb_time.Name = "lb_time";
+            this.lb_time.Size = new System.Drawing.Size(107, 45);
+            this.lb_time.TabIndex = 25;
+            this.lb_time.Text = "label3";
             // 
             // groupBox2
             // 
@@ -188,8 +201,6 @@
             this.groupBox1.Controls.Add(this.lb_DiaChi);
             this.groupBox1.Controls.Add(this.lb_Sdt);
             this.groupBox1.Controls.Add(this.lb_TenNv);
-            this.groupBox1.Controls.Add(this.lb_MaNv);
-            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label6);
@@ -206,7 +217,7 @@
             // 
             this.lb_Email.AutoSize = true;
             this.lb_Email.ForeColor = System.Drawing.Color.Black;
-            this.lb_Email.Location = new System.Drawing.Point(483, 130);
+            this.lb_Email.Location = new System.Drawing.Point(163, 138);
             this.lb_Email.Name = "lb_Email";
             this.lb_Email.Size = new System.Drawing.Size(114, 20);
             this.lb_Email.TabIndex = 59;
@@ -216,7 +227,7 @@
             // 
             this.lb_DiaChi.AutoSize = true;
             this.lb_DiaChi.ForeColor = System.Drawing.Color.Black;
-            this.lb_DiaChi.Location = new System.Drawing.Point(483, 179);
+            this.lb_DiaChi.Location = new System.Drawing.Point(483, 138);
             this.lb_DiaChi.Name = "lb_DiaChi";
             this.lb_DiaChi.Size = new System.Drawing.Size(114, 20);
             this.lb_DiaChi.TabIndex = 58;
@@ -236,31 +247,11 @@
             // 
             this.lb_TenNv.AutoSize = true;
             this.lb_TenNv.ForeColor = System.Drawing.Color.Black;
-            this.lb_TenNv.Location = new System.Drawing.Point(153, 130);
+            this.lb_TenNv.Location = new System.Drawing.Point(160, 80);
             this.lb_TenNv.Name = "lb_TenNv";
             this.lb_TenNv.Size = new System.Drawing.Size(114, 20);
             this.lb_TenNv.TabIndex = 55;
             this.lb_TenNv.Text = "...................................";
-            // 
-            // lb_MaNv
-            // 
-            this.lb_MaNv.AutoSize = true;
-            this.lb_MaNv.ForeColor = System.Drawing.Color.Black;
-            this.lb_MaNv.Location = new System.Drawing.Point(153, 76);
-            this.lb_MaNv.Name = "lb_MaNv";
-            this.lb_MaNv.Size = new System.Drawing.Size(114, 20);
-            this.lb_MaNv.TabIndex = 54;
-            this.lb_MaNv.Text = "...................................";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(32, 77);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(104, 20);
-            this.label7.TabIndex = 52;
-            this.label7.Text = "Mã nhân viên: ";
             // 
             // label10
             // 
@@ -276,7 +267,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(359, 181);
+            this.label11.Location = new System.Drawing.Point(359, 140);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(58, 20);
             this.label11.TabIndex = 45;
@@ -286,7 +277,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(32, 131);
+            this.label6.Location = new System.Drawing.Point(39, 81);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 20);
             this.label6.TabIndex = 44;
@@ -296,7 +287,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(359, 132);
+            this.label8.Location = new System.Drawing.Point(39, 140);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(53, 20);
             this.label8.TabIndex = 43;
@@ -314,7 +305,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 645);
+            this.panelMenu.Size = new System.Drawing.Size(220, 766);
             this.panelMenu.TabIndex = 2;
             // 
             // btn_sanpham
@@ -343,7 +334,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 585);
+            this.button1.Location = new System.Drawing.Point(0, 706);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(220, 60);
@@ -435,10 +426,11 @@
             this.panelHome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelHome.Controls.Add(this.btn_closechildform);
             this.panelHome.Controls.Add(this.lb_home);
+            this.panelHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelHome.Location = new System.Drawing.Point(220, 0);
             this.panelHome.Name = "panelHome";
             this.panelHome.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.panelHome.Size = new System.Drawing.Size(1307, 98);
+            this.panelHome.Size = new System.Drawing.Size(1310, 98);
             this.panelHome.TabIndex = 3;
             // 
             // btn_closechildform
@@ -460,24 +452,30 @@
             this.lb_home.AutoSize = true;
             this.lb_home.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lb_home.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_home.Location = new System.Drawing.Point(621, 20);
+            this.lb_home.Location = new System.Drawing.Point(629, 20);
             this.lb_home.Name = "lb_home";
             this.lb_home.Size = new System.Drawing.Size(95, 31);
             this.lb_home.TabIndex = 0;
             this.lb_home.Text = "HOME";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Menu1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1530, 645);
+            this.ClientSize = new System.Drawing.Size(1530, 766);
             this.Controls.Add(this.panelmanchinh);
-            this.Controls.Add(this.panelMenu);
             this.Controls.Add(this.panelHome);
+            this.Controls.Add(this.panelMenu);
             this.Name = "Menu1";
             this.Text = "Menu1";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu1_Load);
             this.panelmanchinh.ResumeLayout(false);
+            this.panelmanchinh.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -518,13 +516,13 @@
         private Label lb_DiaChi;
         private Label lb_Sdt;
         private Label lb_TenNv;
-        private Label lb_MaNv;
-        private Label label7;
         private Label label10;
         private Label label11;
         private Label label6;
         private Label label8;
         private TextBox tbt_email;
         private Label label1;
+        private Label lb_time;
+        private System.Windows.Forms.Timer timer1;
     }
 }

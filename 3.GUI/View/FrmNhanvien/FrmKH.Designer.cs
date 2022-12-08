@@ -197,7 +197,7 @@
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(139, 63);
             this.btn_Sua.TabIndex = 38;
-            this.btn_Sua.Text = "Sửa hóa đơn";
+            this.btn_Sua.Text = "Sửa";
             this.btn_Sua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Sua.UseVisualStyleBackColor = true;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
@@ -209,7 +209,7 @@
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(156, 63);
             this.btn_Them.TabIndex = 37;
-            this.btn_Them.Text = "Thêm hóa đơn";
+            this.btn_Them.Text = "Thêm";
             this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Them.UseVisualStyleBackColor = true;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);

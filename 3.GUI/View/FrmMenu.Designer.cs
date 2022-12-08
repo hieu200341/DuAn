@@ -43,9 +43,18 @@
             this.btn_closechildform = new System.Windows.Forms.Button();
             this.lb_home = new System.Windows.Forms.Label();
             this.panelmanchinh = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelLogo.SuspendLayout();
             this.panelHome.SuspendLayout();
+            this.panelmanchinh.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -62,7 +71,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(220, 638);
+            this.panelMenu.Size = new System.Drawing.Size(220, 778);
             this.panelMenu.TabIndex = 0;
             // 
             // btn_thongke
@@ -109,7 +118,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.Gainsboro;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(0, 578);
+            this.button1.Location = new System.Drawing.Point(0, 718);
             this.button1.Name = "button1";
             this.button1.Padding = new System.Windows.Forms.Padding(12, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(220, 60);
@@ -251,17 +260,78 @@
             // 
             // panelmanchinh
             // 
+            this.panelmanchinh.Controls.Add(this.panel1);
             this.panelmanchinh.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelmanchinh.Location = new System.Drawing.Point(220, 80);
             this.panelmanchinh.Name = "panelmanchinh";
-            this.panelmanchinh.Size = new System.Drawing.Size(1310, 558);
+            this.panelmanchinh.Size = new System.Drawing.Size(1310, 698);
             this.panelmanchinh.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1310, 698);
+            this.panel1.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(775, 464);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(167, 20);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Chủ cửa hàng : Nhóm 7 ";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(764, 505);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(188, 20);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "Số điện thoại : 0999999999";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(563, 543);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(628, 20);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Địa chỉ : Tòa nhà P , Cao Đẳng FPTPOLYTECHNIC , Đường Trịnh Văn Bô , Nam Từ Liêm " +
+    ", Hà Nội";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Location = new System.Drawing.Point(660, 60);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(440, 54);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "SHOP ÁO PHÔNG POLY";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::_3.GUI.Properties.Resources._317502577_671965111066981_3787928448780715536_n;
+            this.pictureBox1.Location = new System.Drawing.Point(696, 127);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(337, 301);
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // FrmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1530, 638);
+            this.ClientSize = new System.Drawing.Size(1530, 778);
             this.Controls.Add(this.panelmanchinh);
             this.Controls.Add(this.panelHome);
             this.Controls.Add(this.panelMenu);
@@ -274,6 +344,10 @@
             this.panelLogo.PerformLayout();
             this.panelHome.ResumeLayout(false);
             this.panelHome.PerformLayout();
+            this.panelmanchinh.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -294,5 +368,11 @@
         private Button button1;
         private Button button2;
         private Button btn_thongke;
+        private Panel panel1;
+        private Label label5;
+        private Label label4;
+        private Label label3;
+        private Label label1;
+        private PictureBox pictureBox1;
     }
 }

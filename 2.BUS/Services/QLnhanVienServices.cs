@@ -34,6 +34,12 @@ namespace _2.BUS.Services
             return "Thêm thất bại";
         }
 
+        public List<nhanVien> GetAll()
+        {
+            _lstnhanVien = _nhanVien.GetNhanVienFromDB();
+            return _lstnhanVien;    
+        }
+
         public List<ViewHienThi1> GetNhanVienFromDB()
         {
             List<ViewHienThi1> nhanVienViews = new List<ViewHienThi1>();
