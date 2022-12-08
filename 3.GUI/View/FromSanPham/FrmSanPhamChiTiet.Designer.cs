@@ -34,7 +34,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tbt_maSP = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.ptb_linkAnh = new System.Windows.Forms.PictureBox();
             this.cb_size = new System.Windows.Forms.ComboBox();
             this.cb_NSX = new System.Windows.Forms.ComboBox();
@@ -54,6 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_xuat = new System.Windows.Forms.Button();
             this.btn_thoat = new System.Windows.Forms.Button();
             this.btn_capNhat = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
@@ -72,9 +72,7 @@
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_xuat = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_linkAnh)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -87,7 +85,6 @@
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.tbt_maSP);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.pictureBox2);
             this.groupBox1.Controls.Add(this.ptb_linkAnh);
             this.groupBox1.Controls.Add(this.cb_size);
             this.groupBox1.Controls.Add(this.cb_NSX);
@@ -145,17 +142,6 @@
             this.label1.Size = new System.Drawing.Size(98, 20);
             this.label1.TabIndex = 23;
             this.label1.Text = "Mã sản phẩm";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.pictureBox2.BackgroundImage = global::_3.GUI.Properties.Resources.OOjs_UI_icon_add_svg;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(915, 42);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(163, 233);
-            this.pictureBox2.TabIndex = 22;
-            this.pictureBox2.TabStop = false;
             // 
             // ptb_linkAnh
             // 
@@ -328,6 +314,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
             // 
+            // btn_xuat
+            // 
+            this.btn_xuat.Image = global::_3.GUI.Properties.Resources.icons8_microsoft_excel_481;
+            this.btn_xuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_xuat.Location = new System.Drawing.Point(9, 178);
+            this.btn_xuat.Name = "btn_xuat";
+            this.btn_xuat.Size = new System.Drawing.Size(198, 49);
+            this.btn_xuat.TabIndex = 4;
+            this.btn_xuat.Text = "Xuất Excel";
+            this.btn_xuat.UseVisualStyleBackColor = true;
+            this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
+            // 
             // btn_thoat
             // 
             this.btn_thoat.Image = ((System.Drawing.Image)(resources.GetObject("btn_thoat.Image")));
@@ -492,18 +490,6 @@
             this.Column9.Name = "Column9";
             this.Column9.Width = 115;
             // 
-            // btn_xuat
-            // 
-            this.btn_xuat.Image = global::_3.GUI.Properties.Resources.icons8_microsoft_excel_481;
-            this.btn_xuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_xuat.Location = new System.Drawing.Point(9, 178);
-            this.btn_xuat.Name = "btn_xuat";
-            this.btn_xuat.Size = new System.Drawing.Size(198, 49);
-            this.btn_xuat.TabIndex = 4;
-            this.btn_xuat.Text = "Xuất Excel";
-            this.btn_xuat.UseVisualStyleBackColor = true;
-            this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
-            // 
             // FrmSanPhamChiTiet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -516,7 +502,6 @@
             this.Text = "FrmSanPhamChiTiet";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_linkAnh)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -529,7 +514,6 @@
         #endregion
 
         private GroupBox groupBox1;
-        private PictureBox pictureBox2;
         private PictureBox ptb_linkAnh;
         private ComboBox cb_size;
         private ComboBox cb_NSX;
