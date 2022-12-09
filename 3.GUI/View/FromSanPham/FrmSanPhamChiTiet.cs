@@ -131,8 +131,8 @@ namespace _3.GUI.View.FromSanPham
         {
             sanPhamChiTiet masp = _qLsanPhamCTServices.GetSanPhamCTTFromDB().FirstOrDefault
             (p => p.maSP == tbt_maSP.Text);
-            sanPhamChiTiet tsp = _qLsanPhamCTServices.GetSanPhamCTTFromDB().FirstOrDefault
-            (p => p.TenSP == tbt_ten.Text);
+            //sanPhamChiTiet tsp = _qLsanPhamCTServices.GetSanPhamCTTFromDB().FirstOrDefault
+            //(p => p.TenSP == tbt_ten.Text);
             string number = tbt_giaBan.Text;
             number = tbt_giaNhap.Text;
             number = tbt_soLuong.Text;
@@ -147,11 +147,11 @@ namespace _3.GUI.View.FromSanPham
                 MessageBox.Show("Mã sản phẩm đã tồn tại");
                 tbt_maSP.Text = "";
             }
-            else if (tsp != null)
-            {
-                MessageBox.Show("Tên sản phẩm đã tồn tại");
-                tbt_ten.Text = "";
-            }
+            //else if (tsp != null)
+            //{
+            //    MessageBox.Show("Tên sản phẩm đã tồn tại");
+            //    tbt_ten.Text = "";
+            //}
             else if (checkValidate() == false)
             {
                 MessageBox.Show("Không được để trống thông tin");
@@ -231,16 +231,16 @@ namespace _3.GUI.View.FromSanPham
             }
             else
             {
-                var tensp = _qLsanPhamCTServices.GetSanPhamCTTFromDB().FirstOrDefault(p => p.TenSP == tbt_ten.Text);
+                //var tensp = _qLsanPhamCTServices.GetSanPhamCTTFromDB().FirstOrDefault(p => p.TenSP == tbt_ten.Text);
 
                 if (checkValidate() == false)
                 {
                     MessageBox.Show("Không được để trống các trường");
                 }
-                else if ( tensp != null)
-                {
-                    MessageBox.Show("Tên sản phẩm đã tồn tại");
-                }
+                //else if ( tensp != null)
+                //{
+                //    MessageBox.Show("Tên sản phẩm đã tồn tại");
+                //}
                 else if (Convert.ToDecimal(tbt_giaNhap.Text) > Convert.ToDecimal(tbt_giaBan.Text))
                 {
                     MessageBox.Show("Giá bán phải cao hơn giá nhập");
