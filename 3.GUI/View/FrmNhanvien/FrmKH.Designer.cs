@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKH));
-            this.tbt_TimKiem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tbt_DiaChi = new System.Windows.Forms.TextBox();
             this.tbt_SDT = new System.Windows.Forms.TextBox();
@@ -45,17 +44,10 @@
             this.btn_LamMoi = new System.Windows.Forms.Button();
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
+            this.tbt_TimKiem = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_KH)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tbt_TimKiem
-            // 
-            this.tbt_TimKiem.Location = new System.Drawing.Point(507, 439);
-            this.tbt_TimKiem.Name = "tbt_TimKiem";
-            this.tbt_TimKiem.Size = new System.Drawing.Size(669, 27);
-            this.tbt_TimKiem.TabIndex = 35;
-            this.tbt_TimKiem.TextChanged += new System.EventHandler(this.tbt_TimKiem_TextChanged);
             // 
             // label5
             // 
@@ -197,7 +189,7 @@
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(139, 63);
             this.btn_Sua.TabIndex = 38;
-            this.btn_Sua.Text = "Sửa hóa đơn";
+            this.btn_Sua.Text = "Sửa";
             this.btn_Sua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Sua.UseVisualStyleBackColor = true;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
@@ -209,10 +201,18 @@
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(156, 63);
             this.btn_Them.TabIndex = 37;
-            this.btn_Them.Text = "Thêm hóa đơn";
+            this.btn_Them.Text = "Thêm";
             this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Them.UseVisualStyleBackColor = true;
             this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
+            // 
+            // tbt_TimKiem
+            // 
+            this.tbt_TimKiem.Location = new System.Drawing.Point(507, 439);
+            this.tbt_TimKiem.Name = "tbt_TimKiem";
+            this.tbt_TimKiem.Size = new System.Drawing.Size(669, 27);
+            this.tbt_TimKiem.TabIndex = 35;
+            this.tbt_TimKiem.TextChanged += new System.EventHandler(this.tbt_TimKiem_TextChanged);
             // 
             // FrmKH
             // 
@@ -237,8 +237,6 @@
         }
 
         #endregion
-
-        private TextBox tbt_TimKiem;
         private Label label5;
         private TextBox tbt_DiaChi;
         private TextBox tbt_SDT;
@@ -254,5 +252,6 @@
         private Button btn_LamMoi;
         private Button btn_Sua;
         private Button btn_Them;
+        private TextBox tbt_TimKiem;
     }
 }

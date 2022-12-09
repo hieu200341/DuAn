@@ -247,7 +247,7 @@ namespace _3.GUI.View
             tb_sdt.Text = "";
             tb_diachi.Text = "";
             cbb_cv.Text = "";
-            tb_timkiem.Text = "";
+            //tb_timkiem.Text = "";
         }
         private void tb_timkiem_TextChanged(object sender, EventArgs e)
         {

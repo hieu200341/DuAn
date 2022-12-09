@@ -382,5 +382,10 @@ namespace _3.GUI.View.FromSanPham
                 }
             }
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

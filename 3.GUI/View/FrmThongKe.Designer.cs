@@ -39,6 +39,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtp_ngay = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btn_xuat = new System.Windows.Forms.Button();
             this.btn_clean = new System.Windows.Forms.Button();
             this.dtgv_show = new System.Windows.Forms.DataGridView();
             this.tb_timkiem = new System.Windows.Forms.TextBox();
@@ -168,6 +169,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btn_xuat);
             this.groupBox1.Controls.Add(this.btn_clean);
             this.groupBox1.Controls.Add(this.dtgv_show);
             this.groupBox1.Controls.Add(this.tb_timkiem);
@@ -182,6 +184,18 @@
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hàng hóa";
+            // 
+            // btn_xuat
+            // 
+            this.btn_xuat.Image = global::_3.GUI.Properties.Resources.icons8_microsoft_excel_481;
+            this.btn_xuat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_xuat.Location = new System.Drawing.Point(925, 27);
+            this.btn_xuat.Name = "btn_xuat";
+            this.btn_xuat.Size = new System.Drawing.Size(198, 49);
+            this.btn_xuat.TabIndex = 7;
+            this.btn_xuat.Text = "Xuất Excel";
+            this.btn_xuat.UseVisualStyleBackColor = true;
+            this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
             // 
             // btn_clean
             // 
@@ -213,6 +227,7 @@
             this.tb_timkiem.Name = "tb_timkiem";
             this.tb_timkiem.Size = new System.Drawing.Size(254, 30);
             this.tb_timkiem.TabIndex = 4;
+            this.tb_timkiem.TextChanged += new System.EventHandler(this.tb_timkiem_TextChanged);
             // 
             // label1
             // 
@@ -420,5 +435,6 @@
         private Label lb_doanhthu;
         private Label label2;
         private Button btn_clean;
+        private Button btn_xuat;
     }
 }

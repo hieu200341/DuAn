@@ -43,13 +43,12 @@ namespace _3.GUI.View
                     else if(tb_user.Text == Acc[i].nhanViens.email && tb_pass.Text == Acc[i].nhanViens.matKhau && Acc[i].nhanViens.IDChucVu == 2)
                     {
                         MessageBox.Show("Đăng nhập với tư cách nhân viên");
-                        FrmMenu f = new FrmMenu();
-                        f.FrmNV();
-                        f.ShowDialog();
+                        Menu1 f1 = new Menu1();                       
+                        f1.ShowDialog();
                         return;
                     }                                                               
                 }
-                MessageBox.Show("Kiểm tra lại tk mk");
+                MessageBox.Show("Tài khoản hoặc mật khẩu chưa chính xác");
             }                        
         }
         private void button1_Click(object sender, EventArgs e)

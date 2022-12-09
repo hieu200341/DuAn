@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNV));
-            this.tb_timkiem = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.tb_email = new System.Windows.Forms.TextBox();
             this.tb_sdt = new System.Windows.Forms.TextBox();
@@ -60,18 +59,9 @@
             this.btn_hoadon = new System.Windows.Forms.Button();
             this.btn_tim = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_show)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // tb_timkiem
-            // 
-            this.tb_timkiem.Location = new System.Drawing.Point(564, 438);
-            this.tb_timkiem.Name = "tb_timkiem";
-            this.tb_timkiem.Size = new System.Drawing.Size(669, 27);
-            this.tb_timkiem.TabIndex = 28;
-            this.tb_timkiem.TextChanged += new System.EventHandler(this.tb_timkiem_TextChanged);
             // 
             // label5
             // 
@@ -358,26 +348,15 @@
             this.menuStrip1.TabIndex = 34;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(1268, 486);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 29);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FrmNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1490, 579);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.btn_xoahoadon);
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_hoadon);
             this.Controls.Add(this.btn_tim);
-            this.Controls.Add(this.tb_timkiem);
             this.Controls.Add(this.dtg_show);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -394,8 +373,6 @@
         }
 
         #endregion
-
-        private TextBox tb_timkiem;
         private Label label5;
         private TextBox tb_email;
         private TextBox tb_sdt;
@@ -426,6 +403,5 @@
         private DataGridViewTextBoxColumn Column7;
         private DataGridViewTextBoxColumn Column8;
         private MenuStrip menuStrip1;
-        private Button button1;
     }
 }
