@@ -1,6 +1,7 @@
 ﻿using _1.DAL.Models;
 using _2.BUS.IServices;
 using _2.BUS.Services;
+using _3.GUI.Utilities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +52,10 @@ namespace _3.GUI.View
             {
                 MessageBox.Show("Số điện thoại khách hàng đã tồn tại");
                 tbt_SDT.Text = "";
+            }
+            else if (ValidateInput.CheckSDT(tbt_SDT.Text) == false)
+            {
+                MessageBox.Show("Bạn phải nhập đúng SĐT");
             }
             else
             {
