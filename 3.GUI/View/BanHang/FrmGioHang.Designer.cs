@@ -121,6 +121,7 @@
             this.cbb_NSX.Name = "cbb_NSX";
             this.cbb_NSX.Size = new System.Drawing.Size(103, 28);
             this.cbb_NSX.TabIndex = 8;
+            this.cbb_NSX.SelectedIndexChanged += new System.EventHandler(this.cbb_NSX_SelectedIndexChanged_1);
             // 
             // label16
             // 
@@ -138,6 +139,7 @@
             this.cbb_size.Name = "cbb_size";
             this.cbb_size.Size = new System.Drawing.Size(105, 28);
             this.cbb_size.TabIndex = 6;
+            this.cbb_size.SelectedIndexChanged += new System.EventHandler(this.cbb_size_SelectedIndexChanged_1);
             // 
             // label15
             // 
@@ -155,6 +157,7 @@
             this.cbb_Mau.Name = "cbb_Mau";
             this.cbb_Mau.Size = new System.Drawing.Size(96, 28);
             this.cbb_Mau.TabIndex = 4;
+            this.cbb_Mau.SelectedIndexChanged += new System.EventHandler(this.cbb_Mau_SelectedIndexChanged_1);
             // 
             // label14
             // 
@@ -180,6 +183,7 @@
             this.tbt_timKiem.Name = "tbt_timKiem";
             this.tbt_timKiem.Size = new System.Drawing.Size(163, 27);
             this.tbt_timKiem.TabIndex = 1;
+            this.tbt_timKiem.TextChanged += new System.EventHandler(this.tbt_timKiem_TextChanged_1);
             // 
             // dtgv_sanPham
             // 

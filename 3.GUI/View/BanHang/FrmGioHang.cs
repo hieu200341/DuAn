@@ -625,7 +625,9 @@ namespace _3.GUI.View.BanHang
             //InHoaDon();
         }
 
-        private void cbb_NSX_SelectedIndexChanged(object sender, EventArgs e)
+
+
+        private void cbb_NSX_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cbb_NSX.Text == "Tất cả")
             {
@@ -648,7 +650,7 @@ namespace _3.GUI.View.BanHang
             }
         }
 
-        private void cbb_size_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbb_size_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cbb_size.Text == "Tất cả")
             {
@@ -671,7 +673,7 @@ namespace _3.GUI.View.BanHang
             }
         }
 
-        private void cbb_Mau_SelectedIndexChanged(object sender, EventArgs e)
+        private void cbb_Mau_SelectedIndexChanged_1(object sender, EventArgs e)
         {
             if (cbb_Mau.Text == "Tất cả")
             {
@@ -694,7 +696,7 @@ namespace _3.GUI.View.BanHang
             }
         }
 
-        private void tbt_timKiem_TextChanged(object sender, EventArgs e)
+        private void tbt_timKiem_TextChanged_1(object sender, EventArgs e)
         {
             dtgv_sanPham.Rows.Clear();
             foreach (var item in _qlSanPhamCT.getViewSanPhamCT().Where(x => x.SanPhamChiTiets.TenSP.ToLower().Contains(tbt_timKiem.Text) || x.SanPhamChiTiets.maSP.ToLower().Contains(tbt_timKiem.Text.ToLower())
