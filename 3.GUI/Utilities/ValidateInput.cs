@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace _3.GUI.Utilities
@@ -43,6 +44,20 @@ namespace _3.GUI.Utilities
                 return true;
             }
             else return false;
+        }
+        public static bool IsEmail(string email)
+        {
+            if (string.IsNullOrEmpty(email))
+                return false;
+
+            return Regex.IsMatch(email.Trim(), @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+        }
+        public static bool IsValidVietNamPhoneNumber(string phoneNum)
+        {
+            if (string.IsNullOrEmpty(phoneNum))
+                return false;
+            string sMailPattern = @"^((0(\d){9}))$";
+            return Regex.IsMatch(phoneNum.Trim(), sMailPattern);
         }
     }
 }

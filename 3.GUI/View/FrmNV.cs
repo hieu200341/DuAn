@@ -22,7 +22,7 @@ namespace _3.GUI.View
         private IQLchucVuServices _IQLchucVuServices;
         public nhanVien _NhanVien;
         private int _maclick;
-        private List<ViewHienThi> lstNv;
+        //private List<ViewHienThi> lstNv;
         public FrmNV()
         {
             _IqLnhanVienServices = new QLnhanVienServices();
@@ -30,7 +30,7 @@ namespace _3.GUI.View
             InitializeComponent();
             rd_hd.Checked = false;
             loadcbb();
-            lstNv = new List<ViewHienThi>();
+            //lstNv = new List<ViewHienThi>();
         }
         public void loadDuLieu()
         {
@@ -116,11 +116,7 @@ namespace _3.GUI.View
             double s1;
             bool checksdt = double.TryParse(tb_sdt.Text, out s1);
             DialogResult dialogResult = MessageBox.Show("bạn có muốn thêm không ?", "Cảnh báo", MessageBoxButtons.YesNo);
-            if (tb_ten.Text == "" || tb_sdt.Text == "" || tb_email.Text == "" || tb_diachi.Text == "")
-            {
-                MessageBox.Show("vui lòng nhập đầy đủ thông tin");
-            }
-            else if (ValidateInput.CheckSDT(tb_sdt.Text) == false)
+            if (ValidateInput.CheckSDT(tb_sdt.Text) == false)
             {
                 MessageBox.Show("Bạn phải nhập đúng số điện thoại");
             }
@@ -128,7 +124,42 @@ namespace _3.GUI.View
             {
                 MessageBox.Show("SĐT này đã bị trùng");
             }
-
+            else if (ValidateInput.IsEmail(tb_email.Text) == false)
+            {
+                MessageBox.Show("Nhập đúng email");
+            }
+            else if(_IqLnhanVienServices.GetNhanVienFromDB().Any(c=>c.nhanViens.email == tb_email.Text))
+            {
+                MessageBox.Show("Email đã bị trùng");
+            }
+            else if(rd_hd.Checked == false && rd_khd.Checked== false)
+            {
+                MessageBox.Show("Không được để trống trạng thái");
+            }
+            else if (string.IsNullOrWhiteSpace(tb_ten.Text))
+            {
+                MessageBox.Show("Không đước để trống tên");
+            }
+            else if (string.IsNullOrWhiteSpace(tb_diachi.Text))
+            {
+                MessageBox.Show("Không được để trống địa chỉ");
+            }
+            else if (string.IsNullOrWhiteSpace(tb_email.Text))
+            {
+                MessageBox.Show("Không được để trống email");
+            }
+            else if (string.IsNullOrWhiteSpace(tb_matkhau.Text))
+            {
+                MessageBox.Show("Không được để trống mật khẩu");
+            }
+            else if (string.IsNullOrWhiteSpace(tb_email.Text))
+            {
+                MessageBox.Show("Không được để trống email");
+            }
+            else if (string.IsNullOrWhiteSpace(cbb_cv.Text))
+            {
+                MessageBox.Show("Không được để trống chức vụ");
+            }
             else if (dialogResult == DialogResult.Yes)
             {
 
