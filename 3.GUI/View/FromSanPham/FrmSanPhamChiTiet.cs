@@ -122,9 +122,9 @@ namespace _3.GUI.View.FromSanPham
         }
         private bool checkValidate()
         {
-            if ( tbt_ten.Text == "" || tbt_giaNhap.Text == "" 
-                || tbt_giaBan.Text == "" || tbt_soLuong.Text == "" || cb_Mau.Text =="" 
-                || cb_size.Text == ""|| cb_NSX.Text =="" || cbb_loaiHang.Text == "") return false;
+            if ( tbt_ten.Text.Trim() == "" || tbt_giaNhap.Text.Trim() == "" 
+                || tbt_giaBan.Text.Trim() == "" || tbt_soLuong.Text.Trim() == "" || cb_Mau.Text.Trim() =="" 
+                || cb_size.Text.Trim() == ""|| cb_NSX.Text.Trim() =="" || cbb_loaiHang.Text.Trim() == "") return false;
             return true;
         }
         private void btn_them_Click(object sender, EventArgs e)
