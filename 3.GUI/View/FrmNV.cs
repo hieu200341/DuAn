@@ -22,7 +22,7 @@ namespace _3.GUI.View
         private IQLchucVuServices _IQLchucVuServices;
         public nhanVien _NhanVien;
         private int _maclick;
-        private List<ViewHienThi> lstNv;
+        private List<ViewHienThi1> lstNv;
         public FrmNV()
         {
             _IqLnhanVienServices = new QLnhanVienServices();
@@ -30,7 +30,7 @@ namespace _3.GUI.View
             InitializeComponent();
             rd_hd.Checked = false;
             loadcbb();
-            lstNv = new List<ViewHienThi>();
+            lstNv = new List<ViewHienThi1>();
         }
         public void loadDuLieu()
         {
