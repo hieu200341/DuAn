@@ -100,7 +100,7 @@ namespace _3.GUI.View
 
         private void btn_hoadon_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new BanHang.FrmHoaDon(), sender);
+            OpenChildForm(new BanHang.FrmHoaDonn(), sender);
             lb_home.Text = btn_hoadon.Text;
         }
 

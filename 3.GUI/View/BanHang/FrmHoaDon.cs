@@ -37,7 +37,6 @@ namespace _3.GUI.View.BanHang
         }
         private void LoadHD()
         {
-
             dtg_hoadon.Rows.Clear();
             foreach (var i in _lstOrder)
             {
@@ -61,16 +60,6 @@ namespace _3.GUI.View.BanHang
                 DataGridViewRow r = dtg_hoadon.Rows[e.RowIndex];
                 LoadHDCT(Convert.ToInt32(r.Cells[0].Value));
             }
-            //if (e.RowIndex >= 0 && e.RowIndex <= dtg_hoadon.RowCount - 1)
-            //{
-            //    _idHD = Convert.ToInt32(dtg_hoadon.Rows[e.RowIndex].Cells[1].Value.ToString());
-            //    _lstHDCT = _HDCTser.getViewHoaDonChiTiet(_HDservices.GetHoaDonFromDB());
-            //    foreach (var x in lstHdct)
-            //    {
-            //        dgrid_ctHoadon.Rows.Add(stt++, x.Ma, x.TenDt, x.DonGia, x.SoLuong, x.ThanhTien, x.TrangThai);
-            //    }
-            //}
-            //else return;
         }
 
         private void btn_timk_Click(object sender, EventArgs e)
@@ -103,5 +92,7 @@ namespace _3.GUI.View.BanHang
                 } 
             }
         }
+
+
     }
 }
