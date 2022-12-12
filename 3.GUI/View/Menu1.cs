@@ -162,7 +162,7 @@ namespace _3.GUI.View
             var newpass = tbt_MkMoi.Text;
             var repass = tbt_XacNhanMK.Text;
 
-            if (tbt_Mk.Text ==""|| tbt_MkMoi.Text==""|| tbt_XacNhanMK.Text == ""||tbt_email.Text=="")
+            if (tbt_Mk.Text.Trim() == ""|| tbt_MkMoi.Text.Trim() == ""|| tbt_XacNhanMK.Text.Trim() == ""||tbt_email.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng điền đầy đủ thông tin");
                 return;

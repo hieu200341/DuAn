@@ -109,7 +109,7 @@
             this.Controls.Add(this.btn_send);
             this.Controls.Add(this.panel1);
             this.Name = "FrmQuenMk";
-            this.Text = "c";
+            this.Text = "Quên mật khẩu";
             this.Load += new System.EventHandler(this.FrmQuenMk_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

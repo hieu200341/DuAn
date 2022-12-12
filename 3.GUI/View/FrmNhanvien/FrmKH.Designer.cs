@@ -81,6 +81,7 @@
             // 
             // dtgv_KH
             // 
+            this.dtgv_KH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_KH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_KH.Location = new System.Drawing.Point(507, 31);
             this.dtgv_KH.Name = "dtgv_KH";

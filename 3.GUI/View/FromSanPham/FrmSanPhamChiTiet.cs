@@ -387,5 +387,10 @@ namespace _3.GUI.View.FromSanPham
         {
 
         }
+
+        private void ptb_linkAnh_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

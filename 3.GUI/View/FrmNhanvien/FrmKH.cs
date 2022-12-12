@@ -44,7 +44,7 @@ namespace _3.GUI.View
         {
             khachHang accKH = _QLkhachHangServices.GetkhachHangFromDB().FirstOrDefault
               (p => p.SDT_KH == tbt_SDT.Text);
-            if (tbt_SDT.Text == "" || tbt_TenKH.Text == "" || tbt_SDT.Text =="")
+            if (tbt_SDT.Text.Trim() == "" || tbt_TenKH.Text.Trim() == "" || tbt_SDT.Text.Trim() == "")
             {
                 MessageBox.Show("Không được để trống thông tin");
             }
@@ -99,7 +99,7 @@ namespace _3.GUI.View
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             var update = _QLkhachHangServices.GetkhachHangFromDB().FirstOrDefault(p => p.SDT_KH == tbt_SDT.Text);
-            if (tbt_SDT.Text == "" || tbt_TenKH.Text == "" || tbt_SDT.Text == "")
+            if (tbt_SDT.Text.Trim() == "" || tbt_TenKH.Text.Trim() == "" || tbt_SDT.Text.Trim() == "")
             {
                 MessageBox.Show("Không được để trống thông tin");
             }

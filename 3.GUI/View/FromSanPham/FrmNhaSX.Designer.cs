@@ -183,6 +183,7 @@
             // 
             // dtgv_NSX
             // 
+            this.dtgv_NSX.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_NSX.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_NSX.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
@@ -201,21 +202,18 @@
             this.Column2.HeaderText = "Mã NSX";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 170;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Tên NSX";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 180;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Trạng thái";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 170;
             // 
             // FrmNhaSX
             // 

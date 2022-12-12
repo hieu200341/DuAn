@@ -12,8 +12,8 @@ using _1.DAL.Context;
 namespace _1.DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221203140208_111")]
-    partial class _111
+    [Migration("20221212150545_1111")]
+    partial class _1111
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -336,19 +336,37 @@ namespace _1.DAL.Migrations
                         new
                         {
                             IDsanPham = 1,
-                            tenLoaiHang = "Áo ba lỗ",
+                            tenLoaiHang = "Cổ tròn",
                             trangThai = true
                         },
                         new
                         {
                             IDsanPham = 2,
-                            tenLoaiHang = "Áo Phông",
+                            tenLoaiHang = "Cổ tim",
                             trangThai = true
                         },
                         new
                         {
                             IDsanPham = 3,
-                            tenLoaiHang = "Áo Phông 2",
+                            tenLoaiHang = "Oversize",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            IDsanPham = 4,
+                            tenLoaiHang = "Ba lỗ",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            IDsanPham = 5,
+                            tenLoaiHang = "Cổ chữ V",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            IDsanPham = 6,
+                            tenLoaiHang = "Polo",
                             trangThai = true
                         });
                 });

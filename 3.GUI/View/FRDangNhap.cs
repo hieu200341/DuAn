@@ -24,7 +24,7 @@ namespace _3.GUI.View
         {
             var Acc = _sv.GetNhanVienFromDB().ToList();
 
-            if (tb_user.Text == "" || tb_pass.Text == "")
+            if (tb_user.Text.Trim() == "" || tb_pass.Text.Trim() == "")
             {
                 MessageBox.Show("Vui lòng điền tài khoản mật khẩu");
             }

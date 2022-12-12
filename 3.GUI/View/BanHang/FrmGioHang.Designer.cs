@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmGioHang));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbb_NSX = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -86,6 +87,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ppdhd = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdhd = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_sanPham)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -187,6 +190,9 @@
             // 
             // dtgv_sanPham
             // 
+            this.dtgv_sanPham.AllowUserToAddRows = false;
+            this.dtgv_sanPham.AllowUserToDeleteRows = false;
+            this.dtgv_sanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_sanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_sanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column16,
@@ -199,6 +205,7 @@
             this.Column4});
             this.dtgv_sanPham.Location = new System.Drawing.Point(1, 65);
             this.dtgv_sanPham.Name = "dtgv_sanPham";
+            this.dtgv_sanPham.ReadOnly = true;
             this.dtgv_sanPham.RowHeadersWidth = 51;
             this.dtgv_sanPham.RowTemplate.Height = 29;
             this.dtgv_sanPham.Size = new System.Drawing.Size(976, 310);
@@ -210,56 +217,56 @@
             this.Column16.HeaderText = "ID";
             this.Column16.MinimumWidth = 6;
             this.Column16.Name = "Column16";
-            this.Column16.Width = 50;
+            this.Column16.ReadOnly = true;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Mã sản phẩm";
             this.Column1.MinimumWidth = 6;
             this.Column1.Name = "Column1";
-            this.Column1.Width = 125;
+            this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
             this.Column2.HeaderText = "Tên sản phẩm";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 125;
+            this.Column2.ReadOnly = true;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Màu sắc";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
-            this.Column5.Width = 125;
+            this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Size";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
-            this.Column6.Width = 125;
+            this.Column6.ReadOnly = true;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Đơn giá";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 125;
+            this.Column3.ReadOnly = true;
             // 
             // Column7
             // 
             this.Column7.HeaderText = "Nhà sản xuất";
             this.Column7.MinimumWidth = 6;
             this.Column7.Name = "Column7";
-            this.Column7.Width = 115;
+            this.Column7.ReadOnly = true;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Số lượng tồn";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 115;
+            this.Column4.ReadOnly = true;
             // 
             // groupBox2
             // 
@@ -635,6 +642,7 @@
             this.label7.Size = new System.Drawing.Size(71, 20);
             this.label7.TabIndex = 3;
             this.label7.Text = "Tiền thừa";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 
@@ -662,6 +670,20 @@
             this.label4.Size = new System.Drawing.Size(89, 20);
             this.label4.TabIndex = 0;
             this.label4.Text = "Mã hóa đơn";
+            // 
+            // ppdhd
+            // 
+            this.ppdhd.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.ppdhd.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.ppdhd.ClientSize = new System.Drawing.Size(400, 300);
+            this.ppdhd.Enabled = true;
+            this.ppdhd.Icon = ((System.Drawing.Icon)(resources.GetObject("ppdhd.Icon")));
+            this.ppdhd.Name = "ppdhd";
+            this.ppdhd.Visible = false;
+            // 
+            // pdhd
+            // 
+            this.pdhd.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.pdhd_PrintPage);
             // 
             // FrmGioHang
             // 
@@ -749,5 +771,7 @@
         private DataGridViewTextBoxColumn Column10;
         private DataGridViewTextBoxColumn Column11;
         private Label lbl_giamGia;
+        private PrintPreviewDialog ppdhd;
+        private System.Drawing.Printing.PrintDocument pdhd;
     }
 }
