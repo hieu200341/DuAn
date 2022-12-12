@@ -99,7 +99,7 @@
             this.pictureBox1.Image = global::_3.GUI.Properties.Resources._317502577_671965111066981_3787928448780715536_n;
             this.pictureBox1.Location = new System.Drawing.Point(759, 150);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(337, 301);
+            this.pictureBox1.Size = new System.Drawing.Size(337, 356);
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 

@@ -29,6 +29,21 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmSanPhamChiTiet));
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.tbt_timKiem = new System.Windows.Forms.TextBox();
+            this.dtgv_sanPham = new System.Windows.Forms.DataGridView();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbb_loaiHang = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -57,32 +72,129 @@
             this.btn_thoat = new System.Windows.Forms.Button();
             this.btn_capNhat = new System.Windows.Forms.Button();
             this.btn_them = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.tbt_timKiem = new System.Windows.Forms.TextBox();
-            this.dtgv_sanPham = new System.Windows.Forms.DataGridView();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_sanPham)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_linkAnh)).BeginInit();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_sanPham)).BeginInit();
-            this.tabControl1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label11);
+            this.groupBox3.Controls.Add(this.tbt_timKiem);
+            this.groupBox3.Controls.Add(this.dtgv_sanPham);
+            this.groupBox3.Location = new System.Drawing.Point(28, 378);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(1321, 322);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Danh sách sản phẩm";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(844, 22);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(138, 20);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Tìm kiếm sản phẩm";
+            // 
+            // tbt_timKiem
+            // 
+            this.tbt_timKiem.Location = new System.Drawing.Point(988, 19);
+            this.tbt_timKiem.Name = "tbt_timKiem";
+            this.tbt_timKiem.Size = new System.Drawing.Size(327, 27);
+            this.tbt_timKiem.TabIndex = 1;
+            // 
+            // dtgv_sanPham
+            // 
+            this.dtgv_sanPham.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgv_sanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgv_sanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column10,
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column11,
+            this.Column9});
+            this.dtgv_sanPham.Location = new System.Drawing.Point(0, 50);
+            this.dtgv_sanPham.Name = "dtgv_sanPham";
+            this.dtgv_sanPham.RowHeadersWidth = 51;
+            this.dtgv_sanPham.RowTemplate.Height = 29;
+            this.dtgv_sanPham.Size = new System.Drawing.Size(1321, 266);
+            this.dtgv_sanPham.TabIndex = 0;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "ID";
+            this.Column10.MinimumWidth = 6;
+            this.Column10.Name = "Column10";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Mã sản phẩm";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Tên sản phẩm";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Giá nhập";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Giá bán";
+            this.Column4.MinimumWidth = 6;
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "Số lượng";
+            this.Column5.MinimumWidth = 6;
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Màu sắc";
+            this.Column6.MinimumWidth = 6;
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "Size";
+            this.Column7.MinimumWidth = 6;
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Nhà sản xuất";
+            this.Column8.MinimumWidth = 6;
+            this.Column8.Name = "Column8";
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Loại hàng";
+            this.Column11.MinimumWidth = 6;
+            this.Column11.Name = "Column11";
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Trạng thái";
+            this.Column9.MinimumWidth = 6;
+            this.Column9.Name = "Column9";
             // 
             // groupBox1
             // 
@@ -108,10 +220,10 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(6, 6);
+            this.groupBox1.Location = new System.Drawing.Point(20, 37);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1096, 335);
-            this.groupBox1.TabIndex = 0;
+            this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin sản phẩm";
             // 
@@ -157,7 +269,7 @@
             this.ptb_linkAnh.Size = new System.Drawing.Size(163, 233);
             this.ptb_linkAnh.TabIndex = 21;
             this.ptb_linkAnh.TabStop = false;
-            this.ptb_linkAnh.Click += new System.EventHandler(this.ptb_linkAnh_Click);
+            this.ptb_linkAnh.Click += new System.EventHandler(this.ptb_linkAnh_Click_1);
             // 
             // cb_size
             // 
@@ -311,10 +423,10 @@
             this.groupBox2.Controls.Add(this.btn_thoat);
             this.groupBox2.Controls.Add(this.btn_capNhat);
             this.groupBox2.Controls.Add(this.btn_them);
-            this.groupBox2.Location = new System.Drawing.Point(1123, 19);
+            this.groupBox2.Location = new System.Drawing.Point(1136, 37);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(213, 335);
-            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Chức năng";
             // 
@@ -328,7 +440,6 @@
             this.btn_xuat.TabIndex = 4;
             this.btn_xuat.Text = "Xuất Excel";
             this.btn_xuat.UseVisualStyleBackColor = true;
-            this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
             // 
             // btn_thoat
             // 
@@ -351,7 +462,6 @@
             this.btn_capNhat.TabIndex = 1;
             this.btn_capNhat.Text = "Cập nhật";
             this.btn_capNhat.UseVisualStyleBackColor = true;
-            this.btn_capNhat.Click += new System.EventHandler(this.btn_capNhat_Click);
             // 
             // btn_them
             // 
@@ -363,194 +473,50 @@
             this.btn_them.TabIndex = 0;
             this.btn_them.Text = "Thêm";
             this.btn_them.UseVisualStyleBackColor = true;
-            this.btn_them.Click += new System.EventHandler(this.btn_them_Click);
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label11);
-            this.groupBox3.Controls.Add(this.tbt_timKiem);
-            this.groupBox3.Controls.Add(this.dtgv_sanPham);
-            this.groupBox3.Location = new System.Drawing.Point(15, 360);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(1321, 322);
-            this.groupBox3.TabIndex = 2;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Danh sách sản phẩm";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(844, 22);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(138, 20);
-            this.label11.TabIndex = 2;
-            this.label11.Text = "Tìm kiếm sản phẩm";
-            // 
-            // tbt_timKiem
-            // 
-            this.tbt_timKiem.Location = new System.Drawing.Point(988, 19);
-            this.tbt_timKiem.Name = "tbt_timKiem";
-            this.tbt_timKiem.Size = new System.Drawing.Size(327, 27);
-            this.tbt_timKiem.TabIndex = 1;
-            this.tbt_timKiem.TextChanged += new System.EventHandler(this.tbt_timKiem_TextChanged);
-            // 
-            // dtgv_sanPham
-            // 
-            this.dtgv_sanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_sanPham.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column10,
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column11,
-            this.Column9});
-            this.dtgv_sanPham.Location = new System.Drawing.Point(0, 50);
-            this.dtgv_sanPham.Name = "dtgv_sanPham";
-            this.dtgv_sanPham.RowHeadersWidth = 51;
-            this.dtgv_sanPham.RowTemplate.Height = 29;
-            this.dtgv_sanPham.Size = new System.Drawing.Size(1321, 266);
-            this.dtgv_sanPham.TabIndex = 0;
-            this.dtgv_sanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_sanPham_CellClick);
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "ID";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.Width = 80;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Mã sản phẩm";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 130;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Tên sản phẩm";
-            this.Column2.MinimumWidth = 6;
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 130;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Giá nhập";
-            this.Column3.MinimumWidth = 6;
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 115;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Giá bán";
-            this.Column4.MinimumWidth = 6;
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 115;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Số lượng";
-            this.Column5.MinimumWidth = 6;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 115;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Màu sắc";
-            this.Column6.MinimumWidth = 6;
-            this.Column6.Name = "Column6";
-            this.Column6.Width = 115;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Size";
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 115;
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Nhà sản xuất";
-            this.Column8.MinimumWidth = 6;
-            this.Column8.Name = "Column8";
-            this.Column8.Width = 125;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Loại hàng";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.Width = 115;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Trạng thái";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.Width = 115;
-            // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Location = new System.Drawing.Point(1, 1);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1364, 734);
-            this.tabControl1.TabIndex = 27;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.groupBox3);
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 29);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1356, 701);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Nhân viên";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1356, 701);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Chức vụ";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // FrmSanPhamChiTiet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1368, 736);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox2);
             this.Name = "FrmSanPhamChiTiet";
             this.Text = "FrmSanPhamChiTiet";
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgv_sanPham)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ptb_linkAnh)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgv_sanPham)).EndInit();
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
+        private GroupBox groupBox3;
+        private Label label11;
+        private TextBox tbt_timKiem;
+        private DataGridView dtgv_sanPham;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column11;
+        private DataGridViewTextBoxColumn Column9;
         private GroupBox groupBox1;
+        private ComboBox cbb_loaiHang;
+        private Label label7;
+        private TextBox tbt_maSP;
+        private Label label1;
         private PictureBox ptb_linkAnh;
         private ComboBox cb_size;
         private ComboBox cb_NSX;
@@ -570,31 +536,9 @@
         private Label label3;
         private Label label2;
         private GroupBox groupBox2;
+        private Button btn_xuat;
         private Button btn_thoat;
         private Button btn_capNhat;
         private Button btn_them;
-        private GroupBox groupBox3;
-        private DataGridView dtgv_sanPham;
-        private Label label11;
-        private TextBox tbt_timKiem;
-        private TextBox tbt_maSP;
-        private Label label1;
-        private ComboBox cbb_loaiHang;
-        private Label label7;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewTextBoxColumn Column7;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column9;
-        private Button btn_xuat;
-        private TabControl tabControl1;
-        private TabPage tabPage2;
-        private TabPage tabPage1;
     }
 }

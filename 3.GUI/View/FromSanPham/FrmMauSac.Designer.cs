@@ -52,6 +52,7 @@
             // 
             // dtgv_Mau
             // 
+            this.dtgv_Mau.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_Mau.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_Mau.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
@@ -70,21 +71,18 @@
             this.Column2.HeaderText = "Mã màu sắc";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
             // 
             // Column3
             // 
             this.Column3.HeaderText = "Tên màu sắc";
             this.Column3.MinimumWidth = 6;
             this.Column3.Name = "Column3";
-            this.Column3.Width = 200;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "Tình trạng";
             this.Column4.MinimumWidth = 6;
             this.Column4.Name = "Column4";
-            this.Column4.Width = 200;
             // 
             // groupBox3
             // 

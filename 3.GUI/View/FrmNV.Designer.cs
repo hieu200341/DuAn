@@ -111,7 +111,7 @@
             // 
             // dtg_show
             // 
-            this.dtg_show.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dtg_show.BackgroundColor = System.Drawing.SystemColors.AppWorkspace;
             this.dtg_show.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtg_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_show.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
