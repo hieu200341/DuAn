@@ -14,5 +14,6 @@ namespace _2.BUS.IServices
         List<ViewHienThi1> getViewhoaDon();
         bool addHoaDon(hoaDon HoaDon);
         bool RemoveHoaDon(hoaDon HoaDon);
-        bool UpdateHoaDon(hoaDon HoaDon);    }
+        bool UpdateHoaDon(hoaDon HoaDon);    
+    }
 }
