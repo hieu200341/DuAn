@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1.DAL.Migrations
 {
-    public partial class _111 : Migration
+    public partial class _1111 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -266,9 +266,12 @@ namespace _1.DAL.Migrations
                 columns: new[] { "IDsanPham", "tenLoaiHang", "trangThai" },
                 values: new object[,]
                 {
-                    { 1, "Áo ba lỗ", true },
-                    { 2, "Áo Phông", true },
-                    { 3, "Áo Phông 2", true }
+                    { 1, "Cổ tròn", true },
+                    { 2, "Cổ tim", true },
+                    { 3, "Oversize", true },
+                    { 4, "Ba lỗ", true },
+                    { 5, "Cổ chữ V", true },
+                    { 6, "Polo", true }
                 });
 
             migrationBuilder.InsertData(

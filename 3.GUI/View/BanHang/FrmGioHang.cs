@@ -438,7 +438,7 @@ namespace _3.GUI.View.BanHang
                 {
                     if (float.TryParse(tbt_tienKhachDua.Text, out float x))
                     {
-                        0lbl_TienThua.Text = (float.Parse(tbt_tienKhachDua.Text) - float.Parse(lbl_Tong.Text)).ToString();
+                        lbl_TienThua.Text = (float.Parse(tbt_tienKhachDua.Text) - float.Parse(lbl_Tong.Text)).ToString();
                     }
                 }
                 else
@@ -769,6 +769,11 @@ namespace _3.GUI.View.BanHang
             e.Graphics.DrawLine(pn, p1, p2);
             y += 20;
             e.Graphics.DrawString(String.Format("Tổng Tiền : {0}", hd.tongTien), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 200, y));
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 
