@@ -47,7 +47,7 @@ namespace _3.GUI.View
             }
             //var x = Convert.ToInt32(_order.GetHoaDonFromDB().First().ngayBan.ToString("yyyy"));
             //var y = Convert.ToInt32(_order.GetHoaDonFromDB().Last().ngayBan.ToString("yyyy"));
-            for (int i = 0; i <= 9999; i++)
+            for (int i = 2010; i <= 9999; i++)
             {
                 cbb_nam.Items.Add(i);
             }
