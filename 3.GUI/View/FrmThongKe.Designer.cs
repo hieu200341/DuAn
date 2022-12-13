@@ -41,8 +41,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_xuat = new System.Windows.Forms.Button();
             this.dtgv_show = new System.Windows.Forms.DataGridView();
-            this.tb_timkiem = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lb_khachhang = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -170,8 +168,6 @@
             // 
             this.groupBox1.Controls.Add(this.btn_xuat);
             this.groupBox1.Controls.Add(this.dtgv_show);
-            this.groupBox1.Controls.Add(this.tb_timkiem);
-            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
             this.groupBox1.Location = new System.Drawing.Point(0, 233);
@@ -205,25 +201,6 @@
             this.dtgv_show.RowTemplate.Height = 29;
             this.dtgv_show.Size = new System.Drawing.Size(1177, 228);
             this.dtgv_show.TabIndex = 5;
-            // 
-            // tb_timkiem
-            // 
-            this.tb_timkiem.Location = new System.Drawing.Point(102, 28);
-            this.tb_timkiem.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tb_timkiem.Name = "tb_timkiem";
-            this.tb_timkiem.Size = new System.Drawing.Size(254, 30);
-            this.tb_timkiem.TabIndex = 4;
-            this.tb_timkiem.TextChanged += new System.EventHandler(this.tb_timkiem_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(13, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Tìm kiếm";
             // 
             // panel5
             // 
@@ -377,7 +354,6 @@
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_show)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
@@ -405,8 +381,6 @@
         private DateTimePicker dtp_ngay;
         private GroupBox groupBox1;
         private DataGridView dtgv_show;
-        private TextBox tb_timkiem;
-        private Label label1;
         private Panel panel5;
         private Label lb_khachhang;
         private Label label5;
