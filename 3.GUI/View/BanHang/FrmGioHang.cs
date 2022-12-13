@@ -15,6 +15,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using OfficeOpenXml;
+using _3.GUI.Utilities;
+
 namespace _3.GUI.View.BanHang
 {
     public partial class FrmGioHang : Form
@@ -23,7 +25,7 @@ namespace _3.GUI.View.BanHang
         private IQLsanPhamChiTietServices _qlSanPhamCT;
         private IQLhoaDonChiTietServices _qlhoaDonChiTiet;
         private IQLhoaDonServices _qlhoaDon;
-        private IQLnhanVienServices qLnhanVienServices;
+        private IQLnhanVienServices _qLnhanVienServices;
         private IQLkhachHangServices _qlKhachHang;
         public List<ViewHoaDonCT> _lstViewHoaDon;
         private IQLhangSXServices _qlNSX;
@@ -43,11 +45,12 @@ namespace _3.GUI.View.BanHang
             _qlSanPhamCT = new QLsanPhamChiTietServices();
             _qlhoaDonChiTiet = new QLhoaDonChiTietServices();
             _qlhoaDon = new QLhoaDonServices();
-            qLnhanVienServices = new QLnhanVienServices();
+            _qLnhanVienServices = new QLnhanVienServices();
             _qlKhachHang = new QLkhachHangServices();
             _lstViewHoaDon = new List<ViewHoaDonCT>();
             KH = new khachHang();
             oID = -1;
+
             LoadSanPham();
             loadHDcho();
             LoadNhaSanXuat();
@@ -215,12 +218,12 @@ namespace _3.GUI.View.BanHang
                 {
                     lbl_Tong.Text = o.tongTien.ToString();
                     var khach = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == o.SDT_KH);
-                    lbl_giamGia.Text = $"(Tối đa : {khach.diem})";
+                    lbl_giamGia.Text = $"{khach.diem}";
                 }
                 else
                 {
                     lbl_Tong.Text = "0";
-                    lbl_giamGia.Text = "Tối đa : 0";
+                    lbl_giamGia.Text = "0";
                 }
             }
         }
@@ -262,12 +265,12 @@ namespace _3.GUI.View.BanHang
                     Tong += item.donGia * item.soLuong;
                 }
                 KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
-
+                int IDNV = _qLnhanVienServices.GetNhanVienFromDB().FirstOrDefault(x => x.nhanViens.email == Properties.Settings.Default.TKdaLogin).nhanViens.IDNhanVien;
                 if (KH != null)
                 {
                     hoaDon HD = new hoaDon()
                     {
-                        IDNhanVien = 1,
+                        IDNhanVien = IDNV,
                         SDT_KH = KH.SDT_KH,
                         ngayBan = DateTime.Now,
                         tongTien = Tong,
@@ -360,6 +363,8 @@ namespace _3.GUI.View.BanHang
                         lbl_tongTien.Text = Tien.ToString();
                         tbt_SDT.Text = "";
                         lbl_Tong.Text = "";
+                        lbl_giamGia.Text = "";
+                        tbt_maHD.Text= "";
                         MessageBox.Show($"Cập nhật hóa đơn thành công. ID: {oID}");
                         oID = -1;
                         loadHDcho();
@@ -467,7 +472,11 @@ namespace _3.GUI.View.BanHang
             {
                 var KhachH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == HD.SDT_KH);
                 int x;
-                if (tbt_giamGia.Text == "" || float.Parse(tbt_giamGia.Text) < 0 || float.Parse(lbl_TienThua.Text) < 0 || tbt_tienKhachDua.Text == "" || (!float.TryParse(tbt_giamGia.Text, out float z) && tbt_giamGia.Text != "") || !float.TryParse(tbt_tienKhachDua.Text, out float y) || float.Parse(tbt_giamGia.Text) > float.Parse(lbl_tongTien.Text))
+                if (tbt_giamGia.Text == "" || float.Parse(tbt_giamGia.Text) < 0 || float.Parse(lbl_TienThua.Text) < 0 || tbt_tienKhachDua.Text == "" || (!float.TryParse(tbt_giamGia.Text, out float z) && tbt_giamGia.Text != "") || !float.TryParse(tbt_tienKhachDua.Text, out float y) || float.Parse(tbt_giamGia.Text) > float.Parse(lbl_tongTien.Text) )
+                {
+                    MessageBox.Show("Vui lòng nhập đúng số tiền");
+                }
+                else if (Convert.ToInt32(lbl_Diem.Text) < Convert.ToInt32(tbt_giamGia.Text))
                 {
                     MessageBox.Show("Vui lòng nhập đúng số tiền");
                 }
@@ -477,6 +486,7 @@ namespace _3.GUI.View.BanHang
                     if (dialogResult == DialogResult.Yes)
                     {
                         HD.trangThai = true;
+                        HD.ghiChu = tbt_ghiChu.Text;
                         _qlhoaDon.UpdateHoaDon(HD);
                         if (tbt_tienKhachDua.Text == "0" && float.Parse(tbt_giamGia.Text) > HD.tongTien)
                         {
@@ -533,18 +543,18 @@ namespace _3.GUI.View.BanHang
                 KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
                 if (KH != null)
                 {
-                    lbl_tenKhach.Text = KH.TenKH;
+                    tbt_tenKh.Text = KH.TenKH;
                     lbl_Diem.Text = KH.diem.ToString();
                 }
                 else
                 {
-                    lbl_tenKhach.Text = "";
+                    tbt_tenKh.Text = "";
                     lbl_Diem.Text = "";
                 }
             }
             else
             {
-                lbl_tenKhach.Text = "";
+                tbt_tenKh.Text = "";
                 lbl_Diem.Text = "";
             }
         }
@@ -720,7 +730,7 @@ namespace _3.GUI.View.BanHang
         {
             var hd = _qlhoaDon.GetHoaDonFromDB().FirstOrDefault(c => c.IDHoaDon == oID);
             var kh = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(c => c.SDT_KH == hd.SDT_KH);
-            var nv = qLnhanVienServices.GetNhanVienFromDB().FirstOrDefault(c => c.nhanViens.IDNhanVien == hd.IDNhanVien);
+            var nv = _qLnhanVienServices.GetNhanVienFromDB().FirstOrDefault(c => c.nhanViens.IDNhanVien == hd.IDNhanVien);
 
             //lấy chiều rộng của giấy
             var w = pdhd.DefaultPageSettings.PaperSize.Width;
@@ -774,6 +784,38 @@ namespace _3.GUI.View.BanHang
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btn_themKH_Click(object sender, EventArgs e)
+        {
+            khachHang accKH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault
+             (p => p.SDT_KH == tbt_SDT.Text);
+            if (tbt_SDT.Text.Trim() == "" || tbt_tenKh.Text.Trim() == "")
+            {
+                MessageBox.Show("Không được để trống thông tin khách hàng");
+            }
+            else if (accKH != null)
+            {
+                MessageBox.Show("Số điện thoại khách hàng đã tồn tại");
+                tbt_SDT.Text = "";
+            }
+            else if (ValidateInput.CheckSDT(tbt_SDT.Text) == false)
+            {
+                MessageBox.Show("Bạn phải nhập đúng SĐT");
+            }
+            else
+            {
+                khachHang addKH = new khachHang()
+                {
+                    SDT_KH = tbt_SDT.Text,
+                    TenKH = tbt_tenKh.Text,
+                    diaChi = "",
+                    gioiTinh = true,
+                    diem = 0,
+                };
+                _qlKhachHang.addkhachHang(addKH);
+                MessageBox.Show("Thêm khách hàng thành công");
+            }
         }
     }
 

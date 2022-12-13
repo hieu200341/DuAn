@@ -62,9 +62,7 @@ namespace _2.BUS.Services
             _lstView = (from a in GetHoaDonFromDB()
                         join b in _khachHang.GetkhachHangFromDB() on a.SDT_KH equals b.SDT_KH
                         join c in _NHanVienRe.GetNhanVienFromDB() on a.IDNhanVien equals c.IDNhanVien
-                        join d in _HoaDonChiTietRepositories.GetHoaDonChiTietFromDB() on a.IDHoaDon equals d.IDHoaDon
-                        join e in _isanPhamChiTiet.GetSanPhamFromDB() on d.IDSanPham equals e.IDsanPham
-                        select new ViewHienThi1 { hoaDons = a, khachHangs = b, nhanViens = c, HoaDonChiTiets = d, SanPhamChiTiets = e }).ToList();
+                        select new ViewHienThi1 { hoaDons = a, khachHangs = b, nhanViens = c }).ToList();
             return _lstView;
         }
     }
