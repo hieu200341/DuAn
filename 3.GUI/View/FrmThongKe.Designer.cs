@@ -40,7 +40,6 @@
             this.dtp_ngay = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btn_xuat = new System.Windows.Forms.Button();
-            this.btn_clean = new System.Windows.Forms.Button();
             this.dtgv_show = new System.Windows.Forms.DataGridView();
             this.tb_timkiem = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -132,7 +131,7 @@
             // cbb_nam
             // 
             this.cbb_nam.FormattingEnabled = true;
-            this.cbb_nam.Location = new System.Drawing.Point(210, 41);
+            this.cbb_nam.Location = new System.Drawing.Point(210, 48);
             this.cbb_nam.Name = "cbb_nam";
             this.cbb_nam.Size = new System.Drawing.Size(109, 28);
             this.cbb_nam.TabIndex = 1;
@@ -170,17 +169,16 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btn_xuat);
-            this.groupBox1.Controls.Add(this.btn_clean);
             this.groupBox1.Controls.Add(this.dtgv_show);
             this.groupBox1.Controls.Add(this.tb_timkiem);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point);
-            this.groupBox1.Location = new System.Drawing.Point(0, 430);
+            this.groupBox1.Location = new System.Drawing.Point(0, 233);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1278, 319);
+            this.groupBox1.Size = new System.Drawing.Size(1183, 314);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Hàng hóa";
@@ -197,27 +195,15 @@
             this.btn_xuat.UseVisualStyleBackColor = true;
             this.btn_xuat.Click += new System.EventHandler(this.btn_xuat_Click);
             // 
-            // btn_clean
-            // 
-            this.btn_clean.Image = global::_3.GUI.Properties.Resources.icons8_repeat_302;
-            this.btn_clean.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_clean.Location = new System.Drawing.Point(745, 26);
-            this.btn_clean.Name = "btn_clean";
-            this.btn_clean.Size = new System.Drawing.Size(142, 50);
-            this.btn_clean.TabIndex = 6;
-            this.btn_clean.Text = "Clear";
-            this.btn_clean.UseVisualStyleBackColor = true;
-            this.btn_clean.Click += new System.EventHandler(this.btn_clean_Click);
-            // 
             // dtgv_show
             // 
             this.dtgv_show.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgv_show.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dtgv_show.Location = new System.Drawing.Point(3, 109);
+            this.dtgv_show.Location = new System.Drawing.Point(3, 82);
             this.dtgv_show.Name = "dtgv_show";
             this.dtgv_show.RowHeadersWidth = 51;
             this.dtgv_show.RowTemplate.Height = 29;
-            this.dtgv_show.Size = new System.Drawing.Size(1272, 206);
+            this.dtgv_show.Size = new System.Drawing.Size(1177, 228);
             this.dtgv_show.TabIndex = 5;
             // 
             // tb_timkiem
@@ -373,7 +359,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1278, 749);
+            this.ClientSize = new System.Drawing.Size(1183, 547);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -434,7 +420,6 @@
         private Label label10;
         private Label lb_doanhthu;
         private Label label2;
-        private Button btn_clean;
         private Button btn_xuat;
     }
 }
