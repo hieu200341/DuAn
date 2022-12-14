@@ -70,6 +70,7 @@ namespace _3.GUI.View
                      join c in _orderdetail.GetHoaDonChiTietFromDB() on a.IDHoaDon equals c.IDHoaDon
                      join d in _product.GetSanPhamCTTFromDB() on c.IDSanPham equals d.IDsanPham
                      where b.SDT_KH.Contains(tb_sdt.Text)
+
                      select new { a, b, c, d });
 
             foreach (var i in x)
