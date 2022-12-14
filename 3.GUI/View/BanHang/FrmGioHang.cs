@@ -49,8 +49,9 @@ namespace _3.GUI.View.BanHang
             _qlKhachHang = new QLkhachHangServices();
             _lstViewHoaDon = new List<ViewHoaDonCT>();
             KH = new khachHang();
-            oID = -1;
 
+            oID = -1;
+            tbt_SDT.Text = "0123456567";
             LoadSanPham();
             loadHDcho();
             LoadNhaSanXuat();
@@ -265,7 +266,8 @@ namespace _3.GUI.View.BanHang
                     Tong += item.donGia * item.soLuong;
                 }
                 KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
-                int IDNV = _qLnhanVienServices.GetNhanVienFromDB().FirstOrDefault(x => x.nhanViens.email == Properties.Settings.Default.TKdaLogin).nhanViens.IDNhanVien;
+                var KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456567");
+                int IDNV = _qLnhanVienServices.GetNhanVienFromDB().FirstOrDefault(x => x.nhanViens.email == Properties.Settings.Default.tk).nhanViens.IDNhanVien;
                 if (KH != null)
                 {
                     hoaDon HD = new hoaDon()
@@ -471,6 +473,7 @@ namespace _3.GUI.View.BanHang
             else
             {
                 var KhachH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == HD.SDT_KH);
+                var KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456567");
                 int x;
                 if (tbt_giamGia.Text == "" || float.Parse(tbt_giamGia.Text) < 0 || float.Parse(lbl_TienThua.Text) < 0 || tbt_tienKhachDua.Text == "" || (!float.TryParse(tbt_giamGia.Text, out float z) && tbt_giamGia.Text != "") || !float.TryParse(tbt_tienKhachDua.Text, out float y) || float.Parse(tbt_giamGia.Text) > float.Parse(lbl_tongTien.Text) )
                 {
@@ -479,6 +482,36 @@ namespace _3.GUI.View.BanHang
                 else if (Convert.ToInt32(lbl_Diem.Text) < Convert.ToInt32(tbt_giamGia.Text))
                 {
                     MessageBox.Show("Vui lòng nhập đúng số tiền");
+                }
+                else if (KHH != null)
+                {
+                    DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn thanh toán không?", "Thanh toán", MessageBoxButtons.YesNo);
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        HD.trangThai = true;
+                        HD.ghiChu = tbt_ghiChu.Text;
+                        _qlhoaDon.UpdateHoaDon(HD);
+                        if (tbt_tienKhachDua.Text == "0" && float.Parse(tbt_giamGia.Text) > HD.tongTien)
+                        {
+                            lbl_TienThua.Text = "0";
+                            KHH.diem -= Convert.ToInt32(HD.tongTien);
+                        }
+                        MessageBox.Show("Thanh toán thành công");
+                        tbt_maHD.Text = "";
+                        tbt_SDT.Text = "";
+                        tbt_giamGia.Text = "";
+                        lbl_giamGia.Text = "";
+                        tbt_tienKhachDua.Text = "";
+                        lbl_Tong.Text = "";
+                        lbl_tongTien.Text = "";
+                        lbl_TienThua.Text = "0";
+                        tbt_ghiChu.Text = "";
+                        _lstViewHoaDon = new List<ViewHoaDonCT>();
+                        loadGioHang();
+                        loadHDcho();
+                        LoadSanPham();
+                        InHoaDon();
+                    }
                 }
                 else
                 {
@@ -538,14 +571,22 @@ namespace _3.GUI.View.BanHang
 
         private void tbt_SDT_TextChanged(object sender, EventArgs e)
         {
+            
             if (int.TryParse(tbt_SDT.Text, out int x))
             {
+
                 KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
+                var  KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456567");
                 if (KH != null)
                 {
                     tbt_tenKh.Text = KH.TenKH;
                     lbl_Diem.Text = KH.diem.ToString();
                 }
+                else if (KHH != null) 
+                {
+                    tbt_tenKh.Text = KHH.TenKH;
+                    lbl_Diem.Text = KHH.diem.ToString();
+                } 
                 else
                 {
                     tbt_tenKh.Text = "";
@@ -735,7 +776,7 @@ namespace _3.GUI.View.BanHang
             //lấy chiều rộng của giấy
             var w = pdhd.DefaultPageSettings.PaperSize.Width;
             //
-            e.Graphics.DrawString("BarMart", new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(100, 20));
+            e.Graphics.DrawString("Poly Shirt", new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(100, 20));
 
             e.Graphics.DrawString(String.Format("Mã Hóa Đơn : {0}", hd.IDHoaDon), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 200, 20));
             e.Graphics.DrawString(String.Format(" {0}", DateTime.Now.ToString()), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 200, 45));

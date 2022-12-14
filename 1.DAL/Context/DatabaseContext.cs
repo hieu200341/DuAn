@@ -33,19 +33,11 @@ namespace _1.DAL.Context
         public DbSet<size> Sizes { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //Thực hiện các ràng buộc kết nối
-            //base.OnConfiguring(optionsBuilder.
-            //    ; User ID = daonvph18705; Password = 123
             if (!optionsBuilder.IsConfigured)
             {
-                // Lấy code về muốn kết nối database thì phải sửa lại dòng này
                 optionsBuilder.UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True");
-//=======
-//                optionsBuilder.UseSqlServer("Data Source=DESKTOP-CRIH29T\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True");
-//>>>>>>> cdf51996f230783d7a80ede419e362452e0938e6
             }
         }
-        //Data Source=DESKTOP-T0CSGCJ\SQLEXPRESS;Initial Catalog=DuAnOne;Persist Security Info=True;User ID=accmoitao5;Password=***********
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new chucVuConfigurations());

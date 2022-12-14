@@ -99,10 +99,15 @@ namespace _3.GUI.View
         private void btn_Sua_Click(object sender, EventArgs e)
         {
             var update = _QLkhachHangServices.GetkhachHangFromDB().FirstOrDefault(p => p.SDT_KH == tbt_SDT.Text);
+            var KHH = _QLkhachHangServices.GetkhachHangFromDB().FirstOrDefault(p => p.SDT_KH == "0123456567");
             if (tbt_SDT.Text.Trim() == "" || tbt_TenKH.Text.Trim() == "" || tbt_SDT.Text.Trim() == "")
             {
                 MessageBox.Show("Không được để trống thông tin");
             }
+            //else if (KHH != null)
+            //{
+            //    MessageBox.Show("Không được sửa khách hàng này");
+            //}
             else if (update == null)
             {
                 MessageBox.Show("Số điện thoại khách hàng không tồn tại");
