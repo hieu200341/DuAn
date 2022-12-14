@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmNV));
             this.label5 = new System.Windows.Forms.Label();
             this.tb_email = new System.Windows.Forms.TextBox();
             this.tb_sdt = new System.Windows.Forms.TextBox();
@@ -54,10 +53,8 @@
             this.rd_hd = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.cbb_cv = new System.Windows.Forms.ComboBox();
-            this.btn_xoahoadon = new System.Windows.Forms.Button();
             this.btn_sua = new System.Windows.Forms.Button();
             this.btn_hoadon = new System.Windows.Forms.Button();
-            this.btn_tim = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_show)).BeginInit();
             this.panel1.SuspendLayout();
@@ -291,18 +288,6 @@
             this.cbb_cv.Size = new System.Drawing.Size(177, 28);
             this.cbb_cv.TabIndex = 34;
             // 
-            // btn_xoahoadon
-            // 
-            this.btn_xoahoadon.Image = ((System.Drawing.Image)(resources.GetObject("btn_xoahoadon.Image")));
-            this.btn_xoahoadon.Location = new System.Drawing.Point(774, 486);
-            this.btn_xoahoadon.Name = "btn_xoahoadon";
-            this.btn_xoahoadon.Size = new System.Drawing.Size(137, 63);
-            this.btn_xoahoadon.TabIndex = 32;
-            this.btn_xoahoadon.Text = "Làm mới ";
-            this.btn_xoahoadon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_xoahoadon.UseVisualStyleBackColor = true;
-            this.btn_xoahoadon.Click += new System.EventHandler(this.btn_xoahoadon_Click);
-            // 
             // btn_sua
             // 
             this.btn_sua.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
@@ -318,7 +303,7 @@
             // btn_hoadon
             // 
             this.btn_hoadon.Image = global::_3.GUI.Properties.Resources.icons8_add_new_32;
-            this.btn_hoadon.Location = new System.Drawing.Point(564, 486);
+            this.btn_hoadon.Location = new System.Drawing.Point(765, 486);
             this.btn_hoadon.Name = "btn_hoadon";
             this.btn_hoadon.Size = new System.Drawing.Size(156, 63);
             this.btn_hoadon.TabIndex = 30;
@@ -326,18 +311,6 @@
             this.btn_hoadon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_hoadon.UseVisualStyleBackColor = true;
             this.btn_hoadon.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btn_tim
-            // 
-            this.btn_tim.Image = ((System.Drawing.Image)(resources.GetObject("btn_tim.Image")));
-            this.btn_tim.Location = new System.Drawing.Point(1119, 486);
-            this.btn_tim.Name = "btn_tim";
-            this.btn_tim.Size = new System.Drawing.Size(114, 63);
-            this.btn_tim.TabIndex = 33;
-            this.btn_tim.Text = "Thoát";
-            this.btn_tim.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_tim.UseVisualStyleBackColor = true;
-            this.btn_tim.Click += new System.EventHandler(this.btn_tim_Click);
             // 
             // menuStrip1
             // 
@@ -353,10 +326,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1490, 579);
-            this.Controls.Add(this.btn_xoahoadon);
             this.Controls.Add(this.btn_sua);
             this.Controls.Add(this.btn_hoadon);
-            this.Controls.Add(this.btn_tim);
             this.Controls.Add(this.dtg_show);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -384,10 +355,8 @@
         private Label label2;
         private Label label1;
         private Panel panel1;
-        private Button btn_xoahoadon;
         private Button btn_sua;
         private Button btn_hoadon;
-        private Button btn_tim;
         private Label label6;
         private ComboBox cbb_cv;
         private RadioButton rd_khd;

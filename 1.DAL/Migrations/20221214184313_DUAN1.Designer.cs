@@ -12,8 +12,8 @@ using _1.DAL.Context;
 namespace _1.DAL.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    [Migration("20221212200042_44444")]
-    partial class _44444
+    [Migration("20221214184313_DUAN1")]
+    partial class DUAN1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -183,27 +183,27 @@ namespace _1.DAL.Migrations
                         new
                         {
                             SDT_KH = "0123456789",
-                            TenKH = "Nguyễn Văn A",
+                            TenKH = "Không tên",
                             diaChi = "Hà Nội",
-                            diem = 10000,
+                            diem = 0,
                             gioiTinh = true,
                             trangThai = true
                         },
                         new
                         {
-                            SDT_KH = "0123456567",
+                            SDT_KH = "0923456567",
                             TenKH = "Nguyễn Văn B",
                             diaChi = "Hải Phòng",
-                            diem = 10000,
+                            diem = 0,
                             gioiTinh = false,
                             trangThai = true
                         },
                         new
                         {
-                            SDT_KH = "0123456678",
+                            SDT_KH = "0923456678",
                             TenKH = "Nguyễn Văn C",
                             diaChi = "Lạng Sơn",
-                            diem = 10000,
+                            diem = 0,
                             gioiTinh = true,
                             trangThai = true
                         });
@@ -245,6 +245,18 @@ namespace _1.DAL.Migrations
                         {
                             IDMauSac = 3,
                             tenMau = "Trắng",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            IDMauSac = 4,
+                            tenMau = "Hồng",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            IDMauSac = 5,
+                            tenMau = "Nâu",
                             trangThai = true
                         });
                 });
@@ -296,7 +308,7 @@ namespace _1.DAL.Migrations
                             SDT = "0379702133",
                             TenNV = "Nguyễn Văn Đạo",
                             diaChi = "Tuyên Quang",
-                            email = "daonvph18705@gmail.com",
+                            email = "dao7773@gmail.com",
                             matKhau = "123",
                             tinhTrang = true
                         },
@@ -304,10 +316,32 @@ namespace _1.DAL.Migrations
                         {
                             IDNhanVien = 2,
                             IDChucVu = 2,
-                            SDT = "0379702144",
-                            TenNV = "Nguyễn Văn B",
+                            SDT = "0963147647",
+                            TenNV = "Phạm Bá Hiếu",
                             diaChi = "Hà Nội",
-                            email = "baaa@gmail.com",
+                            email = "hieupbph20211@fpt.edu.vn",
+                            matKhau = "123",
+                            tinhTrang = true
+                        },
+                        new
+                        {
+                            IDNhanVien = 3,
+                            IDChucVu = 2,
+                            SDT = "0962611544",
+                            TenNV = "Vũ Văn Quý",
+                            diaChi = "Hà Nội",
+                            email = "quyvvph26931@fpt.edu.vn",
+                            matKhau = "123",
+                            tinhTrang = true
+                        },
+                        new
+                        {
+                            IDNhanVien = 4,
+                            IDChucVu = 2,
+                            SDT = "0314134789",
+                            TenNV = "Vũ Đình Hưng",
+                            diaChi = "Hà Nội",
+                            email = "hungvdph27472@fpt.edu.vn",
                             matKhau = "123",
                             tinhTrang = true
                         });
@@ -438,7 +472,7 @@ namespace _1.DAL.Migrations
                             IDSize = 1,
                             IDsanPham = 1,
                             Soluong = 1000,
-                            TenSP = "Lacoste",
+                            TenSP = "Áo Thun Unisex",
                             Trangthai = true,
                             linkAnh = "",
                             maSP = "SP01"
@@ -453,7 +487,7 @@ namespace _1.DAL.Migrations
                             IDSize = 2,
                             IDsanPham = 2,
                             Soluong = 1200,
-                            TenSP = "Gucci",
+                            TenSP = "Áo Thun BAD VIBES BA VÌ ",
                             Trangthai = true,
                             linkAnh = "",
                             maSP = "SP02"
@@ -468,7 +502,7 @@ namespace _1.DAL.Migrations
                             IDSize = 3,
                             IDsanPham = 1,
                             Soluong = 1300,
-                            TenSP = "ADLV",
+                            TenSP = "Áo Thun SAD BOIZ SADTAGRAM ",
                             Trangthai = true,
                             linkAnh = "",
                             maSP = "SP03"
@@ -483,10 +517,250 @@ namespace _1.DAL.Migrations
                             IDSize = 1,
                             IDsanPham = 3,
                             Soluong = 1400,
-                            TenSP = "Uniqlo",
+                            TenSP = "Áo Thun 18 EIGHTEEN STUDIO",
                             Trangthai = true,
                             linkAnh = "",
                             maSP = "SP04"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 5,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 2,
+                            IDMauSac = 2,
+                            IDSize = 2,
+                            IDsanPham = 2,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun UNDERBROKEN ",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP05"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 6,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 3,
+                            IDMauSac = 3,
+                            IDSize = 3,
+                            IDsanPham = 3,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun WAKE MORE TO THE POINT",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP06"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 7,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 1,
+                            IDMauSac = 1,
+                            IDSize = 1,
+                            IDsanPham = 1,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun SADBOIZ SAD STORY",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP07"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 8,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 2,
+                            IDMauSac = 2,
+                            IDSize = 2,
+                            IDsanPham = 2,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun WAKE MORE TO THE POINT",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP08"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 9,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 3,
+                            IDMauSac = 3,
+                            IDSize = 3,
+                            IDsanPham = 3,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun PHI HÀNH GIA VŨ TRỤ",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP09"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 10,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 1,
+                            IDMauSac = 1,
+                            IDSize = 1,
+                            IDsanPham = 1,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun FIGHT FOR YOUR RIGHT",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP10"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 11,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 2,
+                            IDMauSac = 2,
+                            IDSize = 2,
+                            IDsanPham = 2,
+                            Soluong = 1400,
+                            TenSP = "Áo thun nữ Premium YODY",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP11"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 12,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 1,
+                            IDMauSac = 1,
+                            IDSize = 1,
+                            IDsanPham = 1,
+                            Soluong = 1400,
+                            TenSP = "Áo thun nam Premium YODY,",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP12"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 13,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 2,
+                            IDMauSac = 2,
+                            IDSize = 2,
+                            IDsanPham = 2,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun MẶT CƯỜI MAY MẮN",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP13"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 14,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 3,
+                            IDMauSac = 3,
+                            IDSize = 3,
+                            IDsanPham = 3,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun Tay Lỡ Form Rộng",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP14"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 15,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 1,
+                            IDMauSac = 1,
+                            IDSize = 1,
+                            IDsanPham = 1,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun HECHO POR MAMA TEE ",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP15"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 16,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 2,
+                            IDMauSac = 3,
+                            IDSize = 1,
+                            IDsanPham = 3,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun SAD BOIZ VIBES TOSS BLACK",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP16"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 17,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 2,
+                            IDMauSac = 2,
+                            IDSize = 2,
+                            IDsanPham = 2,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun Graphic Logo Future ",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP17"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 18,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 3,
+                            IDMauSac = 3,
+                            IDSize = 3,
+                            IDsanPham = 3,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun YOUNG GREEN ",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP18"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 19,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 1,
+                            IDMauSac = 1,
+                            IDSize = 1,
+                            IDsanPham = 1,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun 3 Sọc Essentials",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP19"
+                        },
+                        new
+                        {
+                            IDSanPhamChiTiet = 20,
+                            Giaban = 2100f,
+                            Gianhap = 1600f,
+                            IDHangSX = 2,
+                            IDMauSac = 3,
+                            IDSize = 1,
+                            IDsanPham = 3,
+                            Soluong = 1400,
+                            TenSP = "Áo Thun GẤU TRÚC PANDA",
+                            Trangthai = true,
+                            linkAnh = "",
+                            maSP = "SP20"
                         });
                 });
 
@@ -513,19 +787,31 @@ namespace _1.DAL.Migrations
                         new
                         {
                             IDSize = 1,
-                            SiZe = "M",
+                            SiZe = "S",
                             trangThai = true
                         },
                         new
                         {
                             IDSize = 2,
-                            SiZe = "L",
+                            SiZe = "M",
                             trangThai = true
                         },
                         new
                         {
                             IDSize = 3,
+                            SiZe = "L",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            IDSize = 4,
                             SiZe = "XL",
+                            trangThai = true
+                        },
+                        new
+                        {
+                            IDSize = 5,
+                            SiZe = "XXL",
                             trangThai = true
                         });
                 });

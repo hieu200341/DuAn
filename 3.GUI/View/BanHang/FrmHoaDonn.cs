@@ -88,6 +88,39 @@ namespace _3.GUI.View.BanHang
             if(updateHD == null){
                 MessageBox.Show("Vui lòng chọn hóa đơn");
             }
+            else if(tbt_SDT.Text == "0123456789")
+            {
+                if (updateHD.trangThai == true)
+                {
+                    if (rb_daThanhToan.Checked == true)
+                    {
+                        MessageBox.Show("Hóa đơn đã thanh toán");
+                    }
+                    else
+                    {
+                        updateHD.trangThai = rb_daThanhToan.Checked;
+                        _HDservices.UpdateHoaDon(updateHD);
+                        MessageBox.Show("Cập nhật hóa đơn thành công");
+                        LoadHD();
+                    }
+
+                }
+                else
+                {
+                    if (rb_ChuaThanhToan.Checked == false)
+                    {
+                        updateHD.trangThai = rb_daThanhToan.Checked;
+                        _HDservices.UpdateHoaDon(updateHD);
+                        MessageBox.Show("Cập nhật hóa đơn thành công");
+                        LoadHD();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hóa đơn chưa thanh toán");
+                    }
+
+                }
+            }
             else
             {
                 if (updateHD.trangThai == true)
@@ -176,6 +209,14 @@ namespace _3.GUI.View.BanHang
             if (accHD == null)
             {
                 MessageBox.Show("Vui lòng chọn hóa đơn");
+            }else if(tbt_SDT.Text == "0123456789")
+            {
+                _HDservices.RemoveHoaDon(accHD);
+                var updateSP = _qLsanPhamChiTiet.GetSanPhamCTTFromDB().FirstOrDefault(p => p.IDsanPham == HDCT.IDSanPham);
+                updateSP.Soluong = updateSP.Soluong += HDCT.Soluong;
+                _qLsanPhamChiTiet.UpdateSanPham(updateSP);
+                MessageBox.Show("Xóa hóa đơn thành công");
+                LoadHD();
             }
             else
             {

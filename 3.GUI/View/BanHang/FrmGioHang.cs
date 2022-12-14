@@ -51,7 +51,7 @@ namespace _3.GUI.View.BanHang
             KH = new khachHang();
 
             oID = -1;
-            tbt_SDT.Text = "0123456567";
+            tbt_SDT.Text = "0123456789";
             LoadSanPham();
             loadHDcho();
             LoadNhaSanXuat();
@@ -266,7 +266,7 @@ namespace _3.GUI.View.BanHang
                     Tong += item.donGia * item.soLuong;
                 }
                 KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
-                var KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456567");
+                var KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456789");
                 int IDNV = _qLnhanVienServices.GetNhanVienFromDB().FirstOrDefault(x => x.nhanViens.email == Properties.Settings.Default.tk).nhanViens.IDNhanVien;
                 if (KH != null)
                 {
@@ -482,7 +482,7 @@ namespace _3.GUI.View.BanHang
                 {
                     MessageBox.Show("Vui lòng nhập đúng số tiền");
                 }
-                else if (tbt_SDT.Text == "0123456567")
+                else if (tbt_SDT.Text == "0123456789")
                 {
                     DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn thanh toán không?", "Thanh toán", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
@@ -575,7 +575,7 @@ namespace _3.GUI.View.BanHang
             {
 
                 KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
-                var  KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456567");
+                var  KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456789");
                 if (KH != null)
                 {
                     tbt_tenKh.Text = KH.TenKH;

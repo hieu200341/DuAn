@@ -28,12 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChucVu));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tb_tencv = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btn_thoat = new System.Windows.Forms.Button();
-            this.btn_lamMoi = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtg_show = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -73,30 +70,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên chức vụ";
             // 
-            // btn_thoat
-            // 
-            this.btn_thoat.Image = global::_3.GUI.Properties.Resources.icons8_esc_30;
-            this.btn_thoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_thoat.Location = new System.Drawing.Point(176, 104);
-            this.btn_thoat.Name = "btn_thoat";
-            this.btn_thoat.Size = new System.Drawing.Size(138, 50);
-            this.btn_thoat.TabIndex = 3;
-            this.btn_thoat.Text = "Thoát";
-            this.btn_thoat.UseVisualStyleBackColor = true;
-            this.btn_thoat.Click += new System.EventHandler(this.btn_thoat_Click);
-            // 
-            // btn_lamMoi
-            // 
-            this.btn_lamMoi.Image = ((System.Drawing.Image)(resources.GetObject("btn_lamMoi.Image")));
-            this.btn_lamMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_lamMoi.Location = new System.Drawing.Point(21, 104);
-            this.btn_lamMoi.Name = "btn_lamMoi";
-            this.btn_lamMoi.Size = new System.Drawing.Size(138, 50);
-            this.btn_lamMoi.TabIndex = 2;
-            this.btn_lamMoi.Text = "   Làm mới";
-            this.btn_lamMoi.UseVisualStyleBackColor = true;
-            this.btn_lamMoi.Click += new System.EventHandler(this.btn_lamMoi_Click);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dtg_show);
@@ -123,8 +96,6 @@
             // 
             this.groupBox2.Controls.Add(this.btn_Sua);
             this.groupBox2.Controls.Add(this.btn_Them);
-            this.groupBox2.Controls.Add(this.btn_thoat);
-            this.groupBox2.Controls.Add(this.btn_lamMoi);
             this.groupBox2.Location = new System.Drawing.Point(566, 26);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(335, 242);
@@ -135,11 +106,11 @@
             // btn_Sua
             // 
             this.btn_Sua.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
-            this.btn_Sua.Location = new System.Drawing.Point(175, 35);
+            this.btn_Sua.Location = new System.Drawing.Point(84, 102);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(139, 63);
             this.btn_Sua.TabIndex = 39;
-            this.btn_Sua.Text = "Sửa chức vụ";
+            this.btn_Sua.Text = "Cập nhật chức vụ";
             this.btn_Sua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Sua.UseVisualStyleBackColor = true;
             this.btn_Sua.Click += new System.EventHandler(this.btn_Sua_Click);
@@ -147,7 +118,7 @@
             // btn_Them
             // 
             this.btn_Them.Image = global::_3.GUI.Properties.Resources.icons8_add_new_32;
-            this.btn_Them.Location = new System.Drawing.Point(14, 35);
+            this.btn_Them.Location = new System.Drawing.Point(84, 26);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(145, 57);
             this.btn_Them.TabIndex = 38;
@@ -188,8 +159,6 @@
         private GroupBox groupBox1;
         private TextBox tb_tencv;
         private Label label2;
-        private Button btn_thoat;
-        private Button btn_lamMoi;
         private GroupBox groupBox3;
         private GroupBox groupBox2;
         private DataGridView dtg_show;

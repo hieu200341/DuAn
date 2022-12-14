@@ -100,7 +100,7 @@ namespace _3.GUI.View
             {
                 MessageBox.Show("Không được để trống thông tin");
             }
-            else if (update.SDT_KH == "0123456567")
+            else if (update.SDT_KH == "0123456789")
             {
                 MessageBox.Show("Không được sửa khách hàng này");
             }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace _1.DAL.Migrations
 {
-    public partial class _1111 : Migration
+    public partial class DUAN1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -246,9 +246,9 @@ namespace _1.DAL.Migrations
                 columns: new[] { "SDT_KH", "TenKH", "diaChi", "diem", "gioiTinh", "trangThai" },
                 values: new object[,]
                 {
-                    { "0123456567", "Nguyễn Văn B", "Hải Phòng", 10000, false, true },
-                    { "0123456678", "Nguyễn Văn C", "Lạng Sơn", 10000, true, true },
-                    { "0123456789", "Nguyễn Văn A", "Hà Nội", 10000, true, true }
+                    { "0123456789", "Không tên", "Hà Nội", 0, true, true },
+                    { "0923456567", "Nguyễn Văn B", "Hải Phòng", 0, false, true },
+                    { "0923456678", "Nguyễn Văn C", "Lạng Sơn", 0, true, true }
                 });
 
             migrationBuilder.InsertData(
@@ -258,7 +258,9 @@ namespace _1.DAL.Migrations
                 {
                     { 1, "Xanh", true },
                     { 2, "Đỏ", true },
-                    { 3, "Trắng", true }
+                    { 3, "Trắng", true },
+                    { 4, "Hồng", true },
+                    { 5, "Nâu", true }
                 });
 
             migrationBuilder.InsertData(
@@ -279,9 +281,11 @@ namespace _1.DAL.Migrations
                 columns: new[] { "IDSize", "SiZe", "trangThai" },
                 values: new object[,]
                 {
-                    { 1, "M", true },
-                    { 2, "L", true },
-                    { 3, "XL", true }
+                    { 1, "S", true },
+                    { 2, "M", true },
+                    { 3, "L", true },
+                    { 4, "XL", true },
+                    { 5, "XXL", true }
                 });
 
             migrationBuilder.InsertData(
@@ -289,8 +293,10 @@ namespace _1.DAL.Migrations
                 columns: new[] { "IDNhanVien", "IDChucVu", "SDT", "TenNV", "diaChi", "email", "matKhau", "tinhTrang" },
                 values: new object[,]
                 {
-                    { 1, 1, "0379702133", "Nguyễn Văn Đạo", "Tuyên Quang", "daonvph18705@gmail.com", "123", true },
-                    { 2, 2, "0379702144", "Nguyễn Văn B", "Hà Nội", "baaa@gmail.com", "123", true }
+                    { 1, 1, "0379702133", "Nguyễn Văn Đạo", "Tuyên Quang", "dao7773@gmail.com", "123", true },
+                    { 2, 2, "0963147647", "Phạm Bá Hiếu", "Hà Nội", "hieupbph20211@fpt.edu.vn", "123", true },
+                    { 3, 2, "0962611544", "Vũ Văn Quý", "Hà Nội", "quyvvph26931@fpt.edu.vn", "123", true },
+                    { 4, 2, "0314134789", "Vũ Đình Hưng", "Hà Nội", "hungvdph27472@fpt.edu.vn", "123", true }
                 });
 
             migrationBuilder.InsertData(
@@ -298,10 +304,26 @@ namespace _1.DAL.Migrations
                 columns: new[] { "IDSanPhamChiTiet", "Giaban", "Gianhap", "IDHangSX", "IDMauSac", "IDSize", "IDsanPham", "Soluong", "TenSP", "Trangthai", "linkAnh", "maSP" },
                 values: new object[,]
                 {
-                    { 1, 1500f, 1000f, 1, 1, 1, 1, 1000, "Lacoste", true, "", "SP01" },
-                    { 2, 2000f, 1500f, 2, 2, 2, 2, 1200, "Gucci", true, "", "SP02" },
-                    { 3, 1700f, 1200f, 3, 3, 3, 1, 1300, "ADLV", true, "", "SP03" },
-                    { 4, 2100f, 1600f, 2, 3, 1, 3, 1400, "Uniqlo", true, "", "SP04" }
+                    { 1, 1500f, 1000f, 1, 1, 1, 1, 1000, "Áo Thun Unisex", true, "", "SP01" },
+                    { 2, 2000f, 1500f, 2, 2, 2, 2, 1200, "Áo Thun BAD VIBES BA VÌ ", true, "", "SP02" },
+                    { 3, 1700f, 1200f, 3, 3, 3, 1, 1300, "Áo Thun SAD BOIZ SADTAGRAM ", true, "", "SP03" },
+                    { 4, 2100f, 1600f, 2, 3, 1, 3, 1400, "Áo Thun 18 EIGHTEEN STUDIO", true, "", "SP04" },
+                    { 5, 2100f, 1600f, 2, 2, 2, 2, 1400, "Áo Thun UNDERBROKEN ", true, "", "SP05" },
+                    { 6, 2100f, 1600f, 3, 3, 3, 3, 1400, "Áo Thun WAKE MORE TO THE POINT", true, "", "SP06" },
+                    { 7, 2100f, 1600f, 1, 1, 1, 1, 1400, "Áo Thun SADBOIZ SAD STORY", true, "", "SP07" },
+                    { 8, 2100f, 1600f, 2, 2, 2, 2, 1400, "Áo Thun WAKE MORE TO THE POINT", true, "", "SP08" },
+                    { 9, 2100f, 1600f, 3, 3, 3, 3, 1400, "Áo Thun PHI HÀNH GIA VŨ TRỤ", true, "", "SP09" },
+                    { 10, 2100f, 1600f, 1, 1, 1, 1, 1400, "Áo Thun FIGHT FOR YOUR RIGHT", true, "", "SP10" },
+                    { 11, 2100f, 1600f, 2, 2, 2, 2, 1400, "Áo thun nữ Premium YODY", true, "", "SP11" },
+                    { 12, 2100f, 1600f, 1, 1, 1, 1, 1400, "Áo thun nam Premium YODY,", true, "", "SP12" },
+                    { 13, 2100f, 1600f, 2, 2, 2, 2, 1400, "Áo Thun MẶT CƯỜI MAY MẮN", true, "", "SP13" },
+                    { 14, 2100f, 1600f, 3, 3, 3, 3, 1400, "Áo Thun Tay Lỡ Form Rộng", true, "", "SP14" },
+                    { 15, 2100f, 1600f, 1, 1, 1, 1, 1400, "Áo Thun HECHO POR MAMA TEE ", true, "", "SP15" },
+                    { 16, 2100f, 1600f, 2, 3, 1, 3, 1400, "Áo Thun SAD BOIZ VIBES TOSS BLACK", true, "", "SP16" },
+                    { 17, 2100f, 1600f, 2, 2, 2, 2, 1400, "Áo Thun Graphic Logo Future ", true, "", "SP17" },
+                    { 18, 2100f, 1600f, 3, 3, 3, 3, 1400, "Áo Thun YOUNG GREEN ", true, "", "SP18" },
+                    { 19, 2100f, 1600f, 1, 1, 1, 1, 1400, "Áo Thun 3 Sọc Essentials", true, "", "SP19" },
+                    { 20, 2100f, 1600f, 2, 3, 1, 3, 1400, "Áo Thun GẤU TRÚC PANDA", true, "", "SP20" }
                 });
 
             migrationBuilder.CreateIndex(

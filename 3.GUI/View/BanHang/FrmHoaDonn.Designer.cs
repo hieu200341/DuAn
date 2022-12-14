@@ -49,7 +49,6 @@
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.btn_xoa = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.tbt_ghiChu = new System.Windows.Forms.TextBox();
@@ -244,7 +243,6 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.btn_xoa);
-            this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Location = new System.Drawing.Point(888, 12);
             this.groupBox3.Name = "groupBox3";
@@ -255,7 +253,7 @@
             // 
             // btn_xoa
             // 
-            this.btn_xoa.Location = new System.Drawing.Point(27, 95);
+            this.btn_xoa.Location = new System.Drawing.Point(27, 106);
             this.btn_xoa.Name = "btn_xoa";
             this.btn_xoa.Size = new System.Drawing.Size(202, 45);
             this.btn_xoa.TabIndex = 3;
@@ -263,18 +261,9 @@
             this.btn_xoa.UseVisualStyleBackColor = true;
             this.btn_xoa.Click += new System.EventHandler(this.btn_xoa_Click);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(27, 146);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(202, 45);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Thoát";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(27, 39);
+            this.button1.Location = new System.Drawing.Point(27, 55);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(202, 45);
             this.button1.TabIndex = 0;
@@ -482,7 +471,6 @@
         private TextBox textBox1;
         private DataGridView dtgv_hoaDon;
         private DataGridView dtgv_CTHD;
-        private Button button3;
         private Button button1;
         private GroupBox groupBox4;
         private Label label4;
