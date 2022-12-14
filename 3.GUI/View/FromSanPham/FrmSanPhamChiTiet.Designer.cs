@@ -129,6 +129,7 @@
             this.dtgv_sanPham.RowTemplate.Height = 29;
             this.dtgv_sanPham.Size = new System.Drawing.Size(1321, 266);
             this.dtgv_sanPham.TabIndex = 0;
+            this.dtgv_sanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgv_sanPham_CellClick_1);
             // 
             // Column10
             // 

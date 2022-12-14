@@ -188,40 +188,7 @@ namespace _3.GUI.View.FromSanPham
             }
         }
 
-        private void dtgv_sanPham_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dtgv_sanPham.Rows[e.RowIndex];
-                tbt_maSP.Text = row.Cells[1].Value.ToString();
-                tbt_ten.Text = row.Cells[2].Value.ToString();
-                tbt_giaNhap.Text = row.Cells[3].Value.ToString();
-                tbt_giaBan.Text = row.Cells[4].Value.ToString();
-                tbt_soLuong.Text = row.Cells[5].Value.ToString();
-                cb_Mau.Text = row.Cells[6].Value.ToString();
-                cb_size.Text = row.Cells[7].Value.ToString();
-                cb_NSX.Text = row.Cells[8].Value.ToString();
-                cbb_loaiHang.Text = row.Cells[9].Value.ToString();
-                rb_con.Checked = row.Cells[10].Value.ToString() == "Còn hàng" ? true : false;
-                rb_het.Checked = row.Cells[10].Value.ToString() == "Hết hàng" ? true : false;
-                var data = _qLsanPhamCTServices.GetSanPhamCTTFromDB().FirstOrDefault(p => p.maSP.ToString() == row.Cells[1].Value.ToString());
-                //Image image = Image.FromFile(laylinkanh);
-                //Avatar = laylinkanh;
-                //ptb_linkAnh.Image = image;
-                ptb_linkAnh.SizeMode = PictureBoxSizeMode.StretchImage;
-                if (data.linkAnh != null && File.Exists(data.linkAnh))
-                {
-                    ptb_linkAnh.Image = Image.FromFile(data.linkAnh);
-                    ptb_linkAnh.SizeMode = PictureBoxSizeMode.StretchImage;
-                    Avatar = data.linkAnh;
-                }
-                else
-                {
-                    ptb_linkAnh.Image = null;
-                }
-            }
-        }
-
+      
         private void btn_capNhat_Click(object sender, EventArgs e)
         {
             var update = _qLsanPhamCTServices.GetSanPhamCTTFromDB().FirstOrDefault(p => p.maSP == tbt_maSP.Text);
@@ -391,6 +358,40 @@ namespace _3.GUI.View.FromSanPham
         private void ptb_linkAnh_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtgv_sanPham_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dtgv_sanPham.Rows[e.RowIndex];
+                tbt_maSP.Text = row.Cells[1].Value.ToString();
+                tbt_ten.Text = row.Cells[2].Value.ToString();
+                tbt_giaNhap.Text = row.Cells[3].Value.ToString();
+                tbt_giaBan.Text = row.Cells[4].Value.ToString();
+                tbt_soLuong.Text = row.Cells[5].Value.ToString();
+                cb_Mau.Text = row.Cells[6].Value.ToString();
+                cb_size.Text = row.Cells[7].Value.ToString();
+                cb_NSX.Text = row.Cells[8].Value.ToString();
+                cbb_loaiHang.Text = row.Cells[9].Value.ToString();
+                rb_con.Checked = row.Cells[10].Value.ToString() == "Còn hàng" ? true : false;
+                rb_het.Checked = row.Cells[10].Value.ToString() == "Hết hàng" ? true : false;
+                var data = _qLsanPhamCTServices.GetSanPhamCTTFromDB().FirstOrDefault(p => p.maSP.ToString() == row.Cells[1].Value.ToString());
+                //Image image = Image.FromFile(laylinkanh);
+                //Avatar = laylinkanh;
+                //ptb_linkAnh.Image = image;
+                ptb_linkAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+                if (data.linkAnh != null && File.Exists(data.linkAnh))
+                {
+                    ptb_linkAnh.Image = Image.FromFile(data.linkAnh);
+                    ptb_linkAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+                    Avatar = data.linkAnh;
+                }
+                else
+                {
+                    ptb_linkAnh.Image = null;
+                }
+            }
         }
     }
 }
