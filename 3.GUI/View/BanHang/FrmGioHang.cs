@@ -473,7 +473,6 @@ namespace _3.GUI.View.BanHang
             else
             {
                 var KhachH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == HD.SDT_KH);
-                var KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456567");
                 int x;
                 if (tbt_giamGia.Text == "" || float.Parse(tbt_giamGia.Text) < 0 || float.Parse(lbl_TienThua.Text) < 0 || tbt_tienKhachDua.Text == "" || (!float.TryParse(tbt_giamGia.Text, out float z) && tbt_giamGia.Text != "") || !float.TryParse(tbt_tienKhachDua.Text, out float y) || float.Parse(tbt_giamGia.Text) > float.Parse(lbl_tongTien.Text) )
                 {
@@ -483,7 +482,7 @@ namespace _3.GUI.View.BanHang
                 {
                     MessageBox.Show("Vui lòng nhập đúng số tiền");
                 }
-                else if (KHH != null)
+                else if (tbt_SDT.Text == "0123456567")
                 {
                     DialogResult dialogResult = MessageBox.Show("Bạn có chắc muốn thanh toán không?", "Thanh toán", MessageBoxButtons.YesNo);
                     if (dialogResult == DialogResult.Yes)
@@ -494,7 +493,7 @@ namespace _3.GUI.View.BanHang
                         if (tbt_tienKhachDua.Text == "0" && float.Parse(tbt_giamGia.Text) > HD.tongTien)
                         {
                             lbl_TienThua.Text = "0";
-                            KHH.diem -= Convert.ToInt32(HD.tongTien);
+                            KhachH.diem -= Convert.ToInt32(HD.tongTien);
                         }
                         MessageBox.Show("Thanh toán thành công");
                         tbt_maHD.Text = "";

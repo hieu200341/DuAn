@@ -23,19 +23,23 @@ namespace _1.DAL.Extensions
                 new hangSX() { IDHangSX = 3, tenHangSX = "Tỷ Xuân", trangThai = true }
                 );
             modelBuilder.Entity<khachHang>().HasData(
-                new khachHang() { SDT_KH = "0123456789", TenKH = "Nguyễn Văn A", gioiTinh=true, diaChi="Hà Nội", trangThai=true, diem = 10000 },
-                new khachHang() { SDT_KH = "0123456567", TenKH = "Nguyễn Văn B", gioiTinh = false, diaChi = "Hải Phòng", trangThai = true, diem = 10000 },
-                new khachHang() { SDT_KH = "0123456678", TenKH = "Nguyễn Văn C", gioiTinh = true, diaChi = "Lạng Sơn", trangThai = true, diem = 10000 }
+                new khachHang() { SDT_KH = "0123456789", TenKH = "Không tên", gioiTinh=true, diaChi="Hà Nội", trangThai=true, diem = 0 },
+                new khachHang() { SDT_KH = "0923456567", TenKH = "Nguyễn Văn B", gioiTinh = false, diaChi = "Hải Phòng", trangThai = true, diem = 0 },
+                new khachHang() { SDT_KH = "0923456678", TenKH = "Nguyễn Văn C", gioiTinh = true, diaChi = "Lạng Sơn", trangThai = true, diem = 0 }
                 );
             modelBuilder.Entity<mauSac>().HasData(
                 new mauSac() { IDMauSac = 1, tenMau = "Xanh" ,trangThai = true},
                 new mauSac() { IDMauSac = 2, tenMau = "Đỏ", trangThai = true },
-                new mauSac() { IDMauSac = 3, tenMau = "Trắng", trangThai = true }
+                new mauSac() { IDMauSac = 3, tenMau = "Trắng", trangThai = true },
+                new mauSac() { IDMauSac = 4, tenMau = "Hồng", trangThai = true },
+                new mauSac() { IDMauSac = 5, tenMau = "Nâu", trangThai = true }
                 );
             modelBuilder.Entity<size>().HasData(
-                new size() { IDSize = 1, SiZe = "M", trangThai = true },
-                new size() { IDSize = 2, SiZe = "L", trangThai = true },
-                new size() { IDSize = 3, SiZe = "XL", trangThai = true }
+                new size() { IDSize = 1, SiZe = "S", trangThai = true },
+                new size() { IDSize = 2, SiZe = "M", trangThai = true },
+                new size() { IDSize = 3, SiZe = "L", trangThai = true },
+                new size() { IDSize = 3, SiZe = "XL", trangThai = true },
+                new size() { IDSize = 4, SiZe = "XXL", trangThai = true }
                 );
             modelBuilder.Entity<sanPham1>().HasData(
               new sanPham1() { IDsanPham = 1, tenLoaiHang = "Cổ tròn", trangThai = true },
@@ -47,8 +51,10 @@ namespace _1.DAL.Extensions
              
               );
             modelBuilder.Entity<nhanVien>().HasData(
-                new nhanVien() { IDNhanVien = 1, TenNV = "Nguyễn Văn Đạo", IDChucVu = 1, diaChi = "Tuyên Quang",SDT="0379702133", email="daonvph18705@gmail.com" ,tinhTrang=true, matKhau="123" },
-                 new nhanVien() { IDNhanVien = 2, TenNV = "Nguyễn Văn B", IDChucVu = 2, diaChi = "Hà Nội", SDT = "0379702144", email = "baaa@gmail.com", tinhTrang = true, matKhau = "123" }
+                new nhanVien() { IDNhanVien = 1, TenNV = "Nguyễn Văn Đạo", IDChucVu = 1, diaChi = "Tuyên Quang",SDT="0379702133", email="dao7773@gmail.com" ,tinhTrang=true, matKhau="123" },
+                 new nhanVien() { IDNhanVien = 2, TenNV = "Phạm Bá Hiếu", IDChucVu = 2, diaChi = "Hà Nội", SDT = "0379702144", email = "hieupbph20211@fpt.edu.vn", tinhTrang = true, matKhau = "123" },
+                 new nhanVien() { IDNhanVien = 2, TenNV = "Vũ Văn Quý", IDChucVu = 2, diaChi = "Hà Nội", SDT = "0379702144", email = "quyvvph26931@fpt.edu.vn", tinhTrang = true, matKhau = "123" },
+                 new nhanVien() { IDNhanVien = 2, TenNV = "Vũ Đình Hưng", IDChucVu = 2, diaChi = "Hà Nội", SDT = "0379702144", email = "hungvdph27472@fpt.edu.vn", tinhTrang = true, matKhau = "123" }
                 );
             modelBuilder.Entity<sanPhamChiTiet>().HasData(
                 new sanPhamChiTiet() { IDSanPhamChiTiet = 1,maSP = "SP01", TenSP = "Lacoste", Gianhap = 1000, Giaban = 1500, Soluong = 1000, Trangthai = true, IDHangSX = 1, IDSize = 1, IDMauSac = 1, IDsanPham = 1, linkAnh="" },
