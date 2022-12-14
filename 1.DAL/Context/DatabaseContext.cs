@@ -35,7 +35,7 @@ namespace _1.DAL.Context
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=LAPTOP-S17TKNI9\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True");
+                optionsBuilder.UseSqlServer("Data Source=DESKTOP-733UBE0\\SQLEXPRESS;Initial Catalog=DuAnOne;Integrated Security=True");
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

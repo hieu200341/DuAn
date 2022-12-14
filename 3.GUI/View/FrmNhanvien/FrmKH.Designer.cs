@@ -42,6 +42,7 @@
             this.btn_Sua = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
             this.tbt_TimKiem = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgv_KH)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +81,7 @@
             // 
             this.dtgv_KH.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgv_KH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgv_KH.Location = new System.Drawing.Point(507, 31);
+            this.dtgv_KH.Location = new System.Drawing.Point(507, 70);
             this.dtgv_KH.Name = "dtgv_KH";
             this.dtgv_KH.RowHeadersWidth = 51;
             this.dtgv_KH.RowTemplate.Height = 29;
@@ -159,9 +160,9 @@
             // btn_Sua
             // 
             this.btn_Sua.Image = global::_3.GUI.Properties.Resources.icons8_edit_32;
-            this.btn_Sua.Location = new System.Drawing.Point(712, 487);
+            this.btn_Sua.Location = new System.Drawing.Point(733, 487);
             this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(139, 63);
+            this.btn_Sua.Size = new System.Drawing.Size(188, 63);
             this.btn_Sua.TabIndex = 38;
             this.btn_Sua.Text = "Cập nhật";
             this.btn_Sua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -173,7 +174,7 @@
             this.btn_Them.Image = global::_3.GUI.Properties.Resources.icons8_add_new_32;
             this.btn_Them.Location = new System.Drawing.Point(507, 487);
             this.btn_Them.Name = "btn_Them";
-            this.btn_Them.Size = new System.Drawing.Size(156, 63);
+            this.btn_Them.Size = new System.Drawing.Size(199, 63);
             this.btn_Them.TabIndex = 37;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -182,17 +183,27 @@
             // 
             // tbt_TimKiem
             // 
-            this.tbt_TimKiem.Location = new System.Drawing.Point(507, 439);
+            this.tbt_TimKiem.Location = new System.Drawing.Point(909, 31);
             this.tbt_TimKiem.Name = "tbt_TimKiem";
-            this.tbt_TimKiem.Size = new System.Drawing.Size(669, 27);
+            this.tbt_TimKiem.Size = new System.Drawing.Size(267, 27);
             this.tbt_TimKiem.TabIndex = 35;
             this.tbt_TimKiem.TextChanged += new System.EventHandler(this.tbt_TimKiem_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(821, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Tìm kiếm";
             // 
             // FrmKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1215, 580);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.tbt_TimKiem);
             this.Controls.Add(this.dtgv_KH);
             this.Controls.Add(this.panel1);
@@ -223,5 +234,6 @@
         private Button btn_Sua;
         private Button btn_Them;
         private TextBox tbt_TimKiem;
+        private Label label4;
     }
 }

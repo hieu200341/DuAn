@@ -176,7 +176,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(538, 32);
+            this.label1.Location = new System.Drawing.Point(670, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 20);
             this.label1.TabIndex = 2;
@@ -184,7 +184,7 @@
             // 
             // tbt_timKiem
             // 
-            this.tbt_timKiem.Location = new System.Drawing.Point(692, 26);
+            this.tbt_timKiem.Location = new System.Drawing.Point(814, 25);
             this.tbt_timKiem.Name = "tbt_timKiem";
             this.tbt_timKiem.Size = new System.Drawing.Size(163, 27);
             this.tbt_timKiem.TabIndex = 1;
@@ -679,7 +679,6 @@
             this.label7.Size = new System.Drawing.Size(71, 20);
             this.label7.TabIndex = 3;
             this.label7.Text = "Tiền thừa";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label6
             // 

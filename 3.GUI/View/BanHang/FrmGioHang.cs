@@ -57,7 +57,9 @@ namespace _3.GUI.View.BanHang
             LoadNhaSanXuat();
             LoadMauSac();
             LoadSize();
+            //loadSDT_KH();
         }
+      
         public void LoadNhaSanXuat()
         {
             cbb_NSX.Items.Clear();
@@ -570,22 +572,21 @@ namespace _3.GUI.View.BanHang
 
         private void tbt_SDT_TextChanged(object sender, EventArgs e)
         {
-            
+
             if (int.TryParse(tbt_SDT.Text, out int x))
             {
-
                 KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == tbt_SDT.Text);
-                var  KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456789");
+                var KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456789");
                 if (KH != null)
                 {
                     tbt_tenKh.Text = KH.TenKH;
                     lbl_Diem.Text = KH.diem.ToString();
                 }
-                else if (KHH != null) 
+                else if (KHH != null)
                 {
                     tbt_tenKh.Text = KHH.TenKH;
                     lbl_Diem.Text = KHH.diem.ToString();
-                } 
+                }
                 else
                 {
                     tbt_tenKh.Text = "";
@@ -752,9 +753,7 @@ namespace _3.GUI.View.BanHang
         private void tbt_timKiem_TextChanged_1(object sender, EventArgs e)
         {
             dtgv_sanPham.Rows.Clear();
-            foreach (var item in _qlSanPhamCT.getViewSanPhamCT().Where(x => x.SanPhamChiTiets.TenSP.ToLower().Contains(tbt_timKiem.Text) || x.SanPhamChiTiets.maSP.ToLower().Contains(tbt_timKiem.Text.ToLower())
-            || x.mauSacs.tenMau.ToLower().Contains(tbt_timKiem.Text) || x.hangSXs.tenHangSX.ToLower().Contains(tbt_timKiem.Text)
-            || x.sizes.SiZe.ToLower().Contains(tbt_timKiem.Text) || x.sanPhams.tenLoaiHang.ToLower().Contains(tbt_timKiem.Text)
+            foreach (var item in _qlSanPhamCT.getViewSanPhamCT().Where(x => x.SanPhamChiTiets.TenSP.ToLower().Contains(tbt_timKiem.Text.ToLower()) || x.SanPhamChiTiets.maSP.ToLower().Contains(tbt_timKiem.Text.ToLower())
             || Convert.ToString(x.SanPhamChiTiets.IDsanPham).Contains(tbt_timKiem.Text)))
             {
                 dtgv_sanPham.Rows.Add(item.SanPhamChiTiets.IDSanPhamChiTiet, item.SanPhamChiTiets.maSP, item.SanPhamChiTiets.TenSP, item.mauSacs.tenMau, item.sizes.SiZe, item.SanPhamChiTiets.Giaban, item.hangSXs.tenHangSX, item.SanPhamChiTiets.Soluong);
@@ -821,10 +820,6 @@ namespace _3.GUI.View.BanHang
             e.Graphics.DrawString(String.Format("Tổng Tiền : {0}", hd.tongTien), new System.Drawing.Font("Times New Roman", 15, FontStyle.Bold), Brushes.Black, new System.Drawing.Point(w / 2 + 200, y));
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_themKH_Click(object sender, EventArgs e)
         {
@@ -856,6 +851,42 @@ namespace _3.GUI.View.BanHang
                 _qlKhachHang.addkhachHang(addKH);
                 MessageBox.Show("Thêm khách hàng thành công");
             }
+        }
+
+        private void cbb_SDTKH_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //var cbb = _qlKhachHang.GetkhachHangFromDB().Where(x => x.SDT_KH == cbb_SDTKH.Text);
+            //foreach (var item in cbb)
+            //{
+            //    cbb_SDTKH.Items.Add(item.SDT_KH.ToString());
+            //}
+            //cbb_SDTKH.SelectedIndex = 0;
+            //if (int.TryParse(tbt_SDT.Text, out int x))
+            //{
+
+            //    KH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == cbb_SDTKH.Text);
+            //    var KHH = _qlKhachHang.GetkhachHangFromDB().FirstOrDefault(x => x.SDT_KH == "0123456789");
+            //    if (KH != null)
+            //    {
+            //        tbt_tenKh.Text = KH.TenKH;
+            //        lbl_Diem.Text = KH.diem.ToString();
+            //    }
+            //    else if (KHH != null)
+            //    {
+            //        tbt_tenKh.Text = KHH.TenKH;
+            //        lbl_Diem.Text = KHH.diem.ToString();
+            //    }
+            //    else
+            //    {
+            //        tbt_tenKh.Text = "";
+            //        lbl_Diem.Text = "";
+            //    }
+            //}
+            //else
+            //{
+            //    tbt_tenKh.Text = "";
+            //    lbl_Diem.Text = "";
+            //}
         }
     }
 
