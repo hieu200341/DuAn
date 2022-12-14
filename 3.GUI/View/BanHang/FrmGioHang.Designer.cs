@@ -306,7 +306,7 @@
             // 
             // btn_themKH
             // 
-            this.btn_themKH.Image = global::_3.GUI.Properties.Resources.icons8_repeat_30;
+            this.btn_themKH.Image = global::_3.GUI.Properties.Resources.icons8_add_new_32;
             this.btn_themKH.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_themKH.Location = new System.Drawing.Point(856, 304);
             this.btn_themKH.Name = "btn_themKH";

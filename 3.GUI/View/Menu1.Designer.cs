@@ -97,9 +97,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::_3.GUI.Properties.Resources._317502577_671965111066981_3787928448780715536_n;
-            this.pictureBox1.Location = new System.Drawing.Point(759, 150);
+            this.pictureBox1.Location = new System.Drawing.Point(973, 193);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(337, 356);
+            this.pictureBox1.Size = new System.Drawing.Size(337, 415);
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
@@ -107,7 +107,7 @@
             // 
             this.lb_time.AutoSize = true;
             this.lb_time.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lb_time.Location = new System.Drawing.Point(852, 102);
+            this.lb_time.Location = new System.Drawing.Point(1098, 117);
             this.lb_time.Name = "lb_time";
             this.lb_time.Size = new System.Drawing.Size(107, 45);
             this.lb_time.TabIndex = 25;
@@ -127,35 +127,38 @@
             this.groupBox2.ForeColor = System.Drawing.Color.Black;
             this.groupBox2.Location = new System.Drawing.Point(101, 134);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(409, 316);
+            this.groupBox2.Size = new System.Drawing.Size(622, 449);
             this.groupBox2.TabIndex = 24;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Đổi mật khẩu";
             // 
             // tbt_email
             // 
-            this.tbt_email.Location = new System.Drawing.Point(183, 56);
+            this.tbt_email.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbt_email.Location = new System.Drawing.Point(279, 70);
             this.tbt_email.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbt_email.Name = "tbt_email";
-            this.tbt_email.Size = new System.Drawing.Size(188, 27);
+            this.tbt_email.Size = new System.Drawing.Size(310, 27);
             this.tbt_email.TabIndex = 57;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(26, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 20);
+            this.label1.Size = new System.Drawing.Size(83, 38);
             this.label1.TabIndex = 56;
             this.label1.Text = "Email";
             // 
             // btn_DoiMk
             // 
-            this.btn_DoiMk.ForeColor = System.Drawing.Color.Black;
-            this.btn_DoiMk.Location = new System.Drawing.Point(183, 269);
+            this.btn_DoiMk.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_DoiMk.ForeColor = System.Drawing.Color.Red;
+            this.btn_DoiMk.Location = new System.Drawing.Point(94, 374);
             this.btn_DoiMk.Name = "btn_DoiMk";
-            this.btn_DoiMk.Size = new System.Drawing.Size(188, 32);
+            this.btn_DoiMk.Size = new System.Drawing.Size(196, 44);
             this.btn_DoiMk.TabIndex = 55;
             this.btn_DoiMk.Text = "Đổi mật khẩu";
             this.btn_DoiMk.UseVisualStyleBackColor = true;
@@ -164,58 +167,64 @@
             // label16
             // 
             this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label16.ForeColor = System.Drawing.Color.Black;
             this.label16.Location = new System.Drawing.Point(19, 218);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(134, 20);
+            this.label16.Size = new System.Drawing.Size(254, 38);
             this.label16.TabIndex = 54;
             this.label16.Text = "Xác nhận mật khẩu";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label15.ForeColor = System.Drawing.Color.Black;
             this.label15.Location = new System.Drawing.Point(26, 167);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(100, 20);
+            this.label15.Size = new System.Drawing.Size(189, 38);
             this.label15.TabIndex = 53;
             this.label15.Text = "Mật khẩu mới";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label14.ForeColor = System.Drawing.Color.Black;
             this.label14.Location = new System.Drawing.Point(26, 112);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 20);
+            this.label14.Size = new System.Drawing.Size(170, 38);
             this.label14.TabIndex = 49;
             this.label14.Text = "Mật khẩu cũ";
             // 
             // tbt_XacNhanMK
             // 
-            this.tbt_XacNhanMK.Location = new System.Drawing.Point(183, 211);
+            this.tbt_XacNhanMK.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbt_XacNhanMK.Location = new System.Drawing.Point(279, 229);
             this.tbt_XacNhanMK.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbt_XacNhanMK.Name = "tbt_XacNhanMK";
             this.tbt_XacNhanMK.PasswordChar = '*';
-            this.tbt_XacNhanMK.Size = new System.Drawing.Size(188, 27);
+            this.tbt_XacNhanMK.Size = new System.Drawing.Size(310, 27);
             this.tbt_XacNhanMK.TabIndex = 52;
             // 
             // tbt_MkMoi
             // 
-            this.tbt_MkMoi.Location = new System.Drawing.Point(183, 160);
+            this.tbt_MkMoi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbt_MkMoi.Location = new System.Drawing.Point(279, 178);
             this.tbt_MkMoi.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbt_MkMoi.Name = "tbt_MkMoi";
             this.tbt_MkMoi.PasswordChar = '*';
-            this.tbt_MkMoi.Size = new System.Drawing.Size(188, 27);
+            this.tbt_MkMoi.Size = new System.Drawing.Size(310, 27);
             this.tbt_MkMoi.TabIndex = 51;
             // 
             // tbt_Mk
             // 
-            this.tbt_Mk.Location = new System.Drawing.Point(183, 109);
+            this.tbt_Mk.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbt_Mk.Location = new System.Drawing.Point(279, 123);
             this.tbt_Mk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbt_Mk.Name = "tbt_Mk";
             this.tbt_Mk.PasswordChar = '*';
-            this.tbt_Mk.Size = new System.Drawing.Size(188, 27);
+            this.tbt_Mk.Size = new System.Drawing.Size(310, 27);
             this.tbt_Mk.TabIndex = 50;
             // 
             // panelMenu
@@ -338,7 +347,7 @@
             this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.button1.ForeColor = System.Drawing.Color.Red;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.Location = new System.Drawing.Point(0, 706);
             this.button1.Name = "button1";

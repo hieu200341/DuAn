@@ -203,7 +203,7 @@ namespace _3.GUI.View
         private void btn_thongke_Click(object sender, EventArgs e)
         {
             OpenChildForm(new View.FrmThongKe(), sender);
-            lb_home.Text = btn_ms.Text;
+            lb_home.Text = btn_thongke.Text;
         }
 
         private void button6_Click(object sender, EventArgs e)
