@@ -12,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace _3.GUI.View.BanHang
 {
@@ -24,6 +25,7 @@ namespace _3.GUI.View.BanHang
         List<ViewHoaDonCT> _lstHDCT;
         IQLhoaDonChiTietServices _HDCTser;
        private hoaDon _HD;
+        private IQLsanPhamChiTietServices _qLsanPhamChiTiet;
         int _idHD;
         public FrmHoaDonn()
         {
@@ -35,14 +37,21 @@ namespace _3.GUI.View.BanHang
             _lstOrder = _HDservices.GetHoaDonFromDB();
             _lstHDCT = new List<ViewHoaDonCT>();
             _HD = new hoaDon();
+            _qLsanPhamChiTiet = new QLsanPhamChiTietServices();
+            //tbt_ghiChu.Visible= false;
+            //tbt_MaHD.Visible= false;
+            //tbt_maNV.Visible= false;
+            //tbt_SDT.Visible= false;
+            //tbt_tongTien.Visible= false;
+            //dtp_ngay.Visible= false;
             LoadHD();
         }
         public void LoadHD()
         {
             dtgv_hoaDon.Rows.Clear();
-            foreach (var i in _HDservices.getViewhoaDon())
+            foreach (var i in _HDservices.GetHoaDonFromDB())
             {
-                dtgv_hoaDon.Rows.Add(i.hoaDons.IDHoaDon, i.nhanViens.IDNhanVien, i.khachHangs.SDT_KH, i.hoaDons.tongTien, i.hoaDons.ngayBan, i.hoaDons.ghiChu, i.hoaDons.trangThai == true ? "Đã thanh toán" : "Chưa thanh toán");
+                dtgv_hoaDon.Rows.Add(i.IDHoaDon, i.IDNhanVien, i.SDT_KH, i.tongTien, i.ngayBan, i.ghiChu, i.trangThai == true ? "Đã thanh toán" : "Chưa thanh toán");
             }
         }
         public void LoadHDCT(int maHoaDon)
@@ -61,12 +70,12 @@ namespace _3.GUI.View.BanHang
             {
                 DataGridViewRow r = dtgv_hoaDon.Rows[e.RowIndex];
                 LoadHDCT(Convert.ToInt32(r.Cells[0].Value));
-                lbl_MaHD.Text = r.Cells[0].Value.ToString();
-                lbl_TenNV.Text = r.Cells[1].Value.ToString();
-                lbl_TenKhachH.Text = r.Cells[2].Value.ToString();
-                lbl_tongTien.Text = r.Cells[3].Value.ToString();
-                lbl_ngayBan.Text = r.Cells[4].Value.ToString();
-                lbl_ghiChu.Text = r.Cells[5].Value.ToString();
+                tbt_MaHD.Text = r.Cells[0].Value.ToString();
+                tbt_maNV.Text = r.Cells[1].Value.ToString();
+                tbt_SDT.Text = r.Cells[2].Value.ToString();
+                tbt_tongTien.Text = r.Cells[3].Value.ToString();
+                dtp_ngay.Text = r.Cells[4].Value.ToString();
+                tbt_ghiChu.Text = r.Cells[5].Value.ToString();
                 rb_ChuaThanhToan.Checked = r.Cells[6].Value.ToString() == "Chưa thanh toán" ? true : false;
                 rb_daThanhToan.Checked = r.Cells[6].Value.ToString() == "Đã thanh toán" ? true : false;
             }
@@ -74,29 +83,51 @@ namespace _3.GUI.View.BanHang
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var updateHD = _HDservices.GetHoaDonFromDB().FirstOrDefault(p => p.IDHoaDon == Convert.ToInt32(lbl_MaHD.Text));
-            
-                if (rb_ChuaThanhToan.Checked == true)
+            var updateHD = _HDservices.GetHoaDonFromDB().FirstOrDefault(p => Convert.ToString( p.IDHoaDon) == tbt_MaHD.Text);
+            //var HDD = _HDservices.GetHoaDonFromDB().FirstOrDefault(p=>p.trangThai == rb_daThanhToan.Checked);
+            if(updateHD == null){
+                MessageBox.Show("Vui lòng chọn hóa đơn");
+            }
+            else
+            {
+                if (updateHD.trangThai == true)
                 {
+                    if (rb_daThanhToan.Checked == true)
+                    {
+                        MessageBox.Show("Hóa đơn đã thanh toán");
+                    }
+                    else
+                    {
+                        updateHD.trangThai = rb_daThanhToan.Checked;
+                        _HDservices.UpdateHoaDon(updateHD);
+                        var updateKH = _KHSer.GetkhachHangFromDB().FirstOrDefault(p => p.SDT_KH == tbt_SDT.Text);
+                        updateKH.diem = updateKH.diem -= Convert.ToInt32((updateHD.tongTien * 10) / 100);
+                        _KHSer.UpdateKhachHang(updateKH);
+                        MessageBox.Show("Cập nhật hóa đơn thành công");
+                        LoadHD();
+                    }
                     
-                    updateHD.trangThai = rb_daThanhToan.Checked;
-                    _HDservices.UpdateHoaDon(updateHD);
-                    var updateKH = _KHSer.GetkhachHangFromDB().FirstOrDefault(p => p.SDT_KH == lbl_TenKhachH.Text);
-                    updateKH.diem = updateKH.diem -= Convert.ToInt32((updateHD.tongTien * 10) / 100);
-                    _KHSer.UpdateKhachHang(updateKH);
-                    MessageBox.Show("sửa thành công");
-                    LoadHD();
                 }
-                else
-                {
-                    updateHD.trangThai = rb_daThanhToan.Checked;
-                    _HDservices.UpdateHoaDon(updateHD);
-                    var updateKH = _KHSer.GetkhachHangFromDB().FirstOrDefault(p => p.SDT_KH == lbl_TenKhachH.Text);
-                    updateKH.diem = updateKH.diem += Convert.ToInt32((updateHD.tongTien * 10) / 100);
-                    _KHSer.UpdateKhachHang(updateKH);
-                    MessageBox.Show("sửa thành công");
-                    LoadHD();
+                else{
+                    if (rb_ChuaThanhToan.Checked == false)
+                    {
+                        updateHD.trangThai = rb_daThanhToan.Checked;
+                        _HDservices.UpdateHoaDon(updateHD);
+                        var updateKH = _KHSer.GetkhachHangFromDB().FirstOrDefault(p => p.SDT_KH == tbt_SDT.Text);
+                        updateKH.diem = updateKH.diem += Convert.ToInt32((updateHD.tongTien * 10) / 100);
+                        _KHSer.UpdateKhachHang(updateKH);
+                        MessageBox.Show("Cập nhật hóa đơn thành công");
+                        LoadHD();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Hóa đơn chưa thanh toán");
+                    }
+
                 }
+              
+            }
+                
                
             
         }
@@ -134,6 +165,29 @@ namespace _3.GUI.View.BanHang
                     MessageBox.Show("Yêu cầu kiểm tra lại thông tin cần tìm");
                     LoadHD();
                 }
+            }
+        }
+
+        private void btn_xoa_Click(object sender, EventArgs e)
+        {
+            var accHD = _HDservices.GetHoaDonFromDB().FirstOrDefault(p => Convert.ToString(p.IDHoaDon) == tbt_MaHD.Text);
+            //var HDD = _HDservices.GetHoaDonFromDB().FirstOrDefault(p=>p.trangThai == rb_daThanhToan.Checked);
+            var HDCT = _HDCTser.GetHoaDonChiTietFromDB().FirstOrDefault(p=> Convert.ToString(p.IDHoaDon) == tbt_MaHD.Text);
+            if (accHD == null)
+            {
+                MessageBox.Show("Vui lòng chọn hóa đơn");
+            }
+            else
+            {
+                _HDservices.RemoveHoaDon(accHD);
+                var updateKH = _KHSer.GetkhachHangFromDB().FirstOrDefault(p => p.SDT_KH == tbt_SDT.Text);
+                updateKH.diem = updateKH.diem -= Convert.ToInt32((accHD.tongTien * 10) / 100);
+                _KHSer.UpdateKhachHang(updateKH);
+                var updateSP = _qLsanPhamChiTiet.GetSanPhamCTTFromDB().FirstOrDefault(p=>p.IDsanPham == HDCT.IDSanPham);
+                updateSP.Soluong = updateSP.Soluong += HDCT.Soluong;
+                _qLsanPhamChiTiet.UpdateSanPham(updateSP);
+                MessageBox.Show("Xóa hóa đơn thành công");
+                LoadHD();
             }
         }
     }

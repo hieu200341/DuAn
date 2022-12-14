@@ -20,6 +20,7 @@ namespace _2.BUS.Services
         private List<hoaDon> _lsthoaDon;
         private IkhachHangRepositories _khachHang;
         private List<ViewHienThi1> _lstView;
+        private IsanPhamChiTietRepositories _isanPhamChiTiet;
         public QLhoaDonServices()
         {
             _lsthoaDon = new List<hoaDon>();
@@ -29,6 +30,7 @@ namespace _2.BUS.Services
             _NHanVienRe = new nhanVienRepositories();
             _KHRe = new khachHangRepositories();
             _HoaDonChiTietRepositories = new hoaDonChiTietRepositories();
+            _isanPhamChiTiet = new sanPhamChiTietRepositories();
         }
 
         public bool addHoaDon(hoaDon HoaDon)

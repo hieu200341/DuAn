@@ -18,6 +18,7 @@ namespace _3.GUI.View
         {
             _sv = new QLnhanVienServices();
             InitializeComponent();
+            this.CenterToScreen();
         }
 
         public void Check()

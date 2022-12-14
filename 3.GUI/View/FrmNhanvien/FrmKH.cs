@@ -17,13 +17,16 @@ namespace _3.GUI.View
     public partial class FrmKH : Form
     {
         private IQLkhachHangServices _QLkhachHangServices;
+        private IQLhoaDonServices _qlhoadon;
         private khachHang _khachHang;
         string sdt = "";
         public FrmKH()
         {
+           
+            InitializeComponent();
             _QLkhachHangServices = new QLkhachHangServices();
             _khachHang = new khachHang();
-            InitializeComponent();
+            _qlhoadon = new QLhoaDonServices();
             loaddata();
         }
         private void loaddata()
@@ -88,13 +91,7 @@ namespace _3.GUI.View
 
         }
 
-        private void btn_LamMoi_Click(object sender, EventArgs e)
-        {
-            tbt_TenKH.Clear();
-            rb_nam.Checked = true;
-            tbt_SDT.Clear();
-            tbt_DiaChi.Clear();
-        }
+       
 
         private void btn_Sua_Click(object sender, EventArgs e)
         {
@@ -102,6 +99,10 @@ namespace _3.GUI.View
             if (tbt_SDT.Text.Trim() == "" || tbt_TenKH.Text.Trim() == "" || tbt_SDT.Text.Trim() == "")
             {
                 MessageBox.Show("Không được để trống thông tin");
+            }
+            else if (update.SDT_KH == "0123456567")
+            {
+                MessageBox.Show("Không được sửa khách hàng này");
             }
             else if (update == null)
             {
@@ -115,7 +116,7 @@ namespace _3.GUI.View
                 update.diaChi = tbt_DiaChi.Text;
                 update.gioiTinh = rb_nam.Checked == true ? true : false;
                 _QLkhachHangServices.UpdateKhachHang(update);
-                MessageBox.Show("sửa thành công");
+                MessageBox.Show("Cập nhật khách hàng thành công");
                 loaddata();
             }
         }
@@ -144,5 +145,7 @@ namespace _3.GUI.View
             rb_Nu.Checked = row.Cells[2].Value.ToString() == "Nữ" ? true : false;
             tbt_DiaChi.Text = row.Cells[3].Value.ToString();
         }
+
+        
     }
 }
