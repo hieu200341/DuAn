@@ -69,7 +69,7 @@ namespace _3.GUI.View
                      join b in _customer.GetkhachHangFromDB() on a.SDT_KH equals b.SDT_KH
                      join c in _orderdetail.GetHoaDonChiTietFromDB() on a.IDHoaDon equals c.IDHoaDon
                      join d in _product.GetSanPhamCTTFromDB() on c.IDSanPham equals d.IDsanPham
-                     where b.SDT_KH.Contains(tb_sdt.Text) && d.TenSP.ToLower().Contains(tb_timkiem.Text.ToLower())
+                     where b.SDT_KH.Contains(tb_sdt.Text)
                      select new { a, b, c, d });
 
             foreach (var i in x)
