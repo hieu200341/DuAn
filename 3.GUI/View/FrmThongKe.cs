@@ -21,10 +21,8 @@ namespace _3.GUI.View
         private IQLhoaDonChiTietServices _orderdetail;
         private IQLkhachHangServices _customer;
         private IQLsanPhamChiTietServices _product;
-        public List<hoaDon> _lstOrder;
-        public List<hoaDonChiTiet> _lstOrderDetail;
-        public List<khachHang> _lstCustomer;
-        public List<ViewHienThi1> _lst;
+        List<hoaDon> _lstOrder;
+
 
         public FrmThongKe()
         {
@@ -34,8 +32,7 @@ namespace _3.GUI.View
             _customer = new QLkhachHangServices();
             _product = new QLsanPhamChiTietServices();
             _lstOrder = _order.GetHoaDonFromDB();
-            _lstOrderDetail = new List<hoaDonChiTiet>();
-            _lstCustomer = new List<khachHang>();
+
             loadDate();
             loadData();
         }
@@ -56,30 +53,28 @@ namespace _3.GUI.View
         {
             dtgv_show.ColumnCount = 8;
             dtgv_show.Columns[0].Name = "Mã hóa đơn";
-            dtgv_show.Columns[1].Name = "Tên sản phẩm";
-            dtgv_show.Columns[2].Name = "Số lượng";
-            dtgv_show.Columns[3].Name = "Đơn giá";
-            dtgv_show.Columns[4].Name = "Tổng tiền";
-            dtgv_show.Columns[5].Name = "Tổng tiền trong hóa đơn";
-            dtgv_show.Columns[6].Name = "Ngày bán";
-            dtgv_show.Columns[7].Name = "Trạng thái";
+            //dtgv_show.Columns[1].Name = "Tên sản phẩm";
+            //dtgv_show.Columns[2].Name = "Số lượng";
+            //dtgv_show.Columns[3].Name = "Đơn giá";
+            dtgv_show.Columns[1].Name = "Tổng tiền";
+            //dtgv_show.Columns[5].Name = "Tổng tiền trong hóa đơn";
+            dtgv_show.Columns[2].Name = "Ngày bán";
+            dtgv_show.Columns[3].Name = "Trạng thái";
 
             dtgv_show.Rows.Clear();
             var x = (from a in _lstOrder
                      join b in _customer.GetkhachHangFromDB() on a.SDT_KH equals b.SDT_KH
                      join c in _orderdetail.GetHoaDonChiTietFromDB() on a.IDHoaDon equals c.IDHoaDon
                      join d in _product.GetSanPhamCTTFromDB() on c.IDSanPham equals d.IDsanPham
-                     where b.SDT_KH.Contains(tb_sdt.Text)
+                     where b.SDT_KH.Contains(tb_sdt.Text) 
+                     select new { a, b, c, d }) ;
 
-                     select new { a, b, c, d });
-
-            foreach (var i in x)
+            foreach (var i in _lstOrder)
             {
-                dtgv_show.Rows.Add(i.a.IDHoaDon, i.d.TenSP, i.c.Soluong, i.c.donGia, i.c.donGia * i.c.Soluong,i.a.tongTien, i.a.ngayBan, i.a.trangThai == true ? "Đã thanh toán": "Chưa thanh toán" ) ;
+                dtgv_show.Rows.Add(i.IDHoaDon, i.tongTien, i.ngayBan, i.trangThai == true ? "Đã thanh toán" : "Chưa thanh toán");
             }
-
-            lb_doanhthu.Text = x.Select(x => x.a).Distinct().Sum(x => x.tongTien).ToString();
-            lb_tonghd.Text = x.GroupBy(x => x.a).Count().ToString();
+            lb_tonghd.Text = x.Select(x => x.a).Distinct().Where(x => x.trangThai == true).Count().ToString();
+            lb_doanhthu.Text = x.Select(x => x.a).Distinct().Sum(x => x.tongTien).ToString() ;
             lb_chuathanhtoan.Text = x.Select(x => x.a).Distinct().Where(x => x.trangThai == false).Count().ToString();
             lb_khachhang.Text = x.GroupBy(x => x.b).Count().ToString();
         }
@@ -90,7 +85,12 @@ namespace _3.GUI.View
 
         private void dtp_ngay_ValueChanged(object sender, EventArgs e)
         {
-            _lstOrder = _order.GetHoaDonFromDB().Where(x => x.ngayBan.ToString("dd-MM-yyyy") == dtp_ngay.Value.ToString("dd-MM-yyyy")).ToList(); 
+            _lstOrder= (_order.GetHoaDonFromDB().Where(x => x.ngayBan.ToString("dd-MM-yyyy") == dtp_ngay.Value.ToString("dd-MM-yyyy")).ToList());
+            //dtgv_show.Rows.Clear();
+            //foreach (var i in _lstOrder)
+            //{
+            //    dtgv_show.Rows.Add(i.IDHoaDon, i.tongTien, i.ngayBan, i.trangThai == true ? "Đã thanh toán" : "Chưa thanh toán");
+            //}
             loadData();
         }
 
@@ -98,7 +98,12 @@ namespace _3.GUI.View
         {
             if (cbb_nam.Text != "")
             {
-                _lstOrder = _order.GetHoaDonFromDB().Where(x => (x.ngayBan.Month.ToString() == cbb_thang.Text && x.ngayBan.Year.ToString() == cbb_nam.Text)).ToList();
+                _lstOrder =(_order.GetHoaDonFromDB().Where(x => (x.ngayBan.Month.ToString() == cbb_thang.Text && x.ngayBan.Year.ToString() == cbb_nam.Text)).ToList());
+                dtgv_show.Rows.Clear();
+                foreach (var i in _lstOrder)
+                {
+                    dtgv_show.Rows.Add(i.IDHoaDon, i.tongTien, i.ngayBan, i.trangThai == true ? "Đã thanh toán" : "Chưa thanh toán");
+                }
                 loadData();
             }
         }
@@ -107,26 +112,51 @@ namespace _3.GUI.View
         {
             if (cbb_thang.Text != "")
             {
-                _lstOrder = _order.GetHoaDonFromDB().Where(x => (x.ngayBan.Month.ToString() == cbb_thang.Text && x.ngayBan.Year.ToString() == cbb_nam.Text)).ToList();
+                _lstOrder = (_order.GetHoaDonFromDB().Where(x => (x.ngayBan.Month.ToString() == cbb_thang.Text && x.ngayBan.Year.ToString() == cbb_nam.Text)).ToList());
+                dtgv_show.Rows.Clear();
+                foreach (var i in _lstOrder)
+                {
+                    dtgv_show.Rows.Add(i.IDHoaDon, i.tongTien, i.ngayBan, i.trangThai == true ? "Đã thanh toán" : "Chưa thanh toán");
+                }
                 loadData();
             }
             else
             {
-                _lstOrder = _order.GetHoaDonFromDB().Where(x => x.ngayBan.Year.ToString() == cbb_nam.Text).ToList();
+                _lstOrder = (_order.GetHoaDonFromDB().Where(x => x.ngayBan.Year.ToString() == cbb_nam.Text).ToList());
+                dtgv_show.Rows.Clear();
+                foreach (var i in _lstOrder)
+                {
+                    dtgv_show.Rows.Add(i.IDHoaDon, i.tongTien, i.ngayBan, i.trangThai == true ? "Đã thanh toán" : "Chưa thanh toán");
+                }
                 loadData();
             }
         }
 
         private void tb_sdt_TextChanged(object sender, EventArgs e)
         {
+            
             if (int.TryParse(tb_sdt.Text, out int x) || tb_sdt.Text.Length <= 10)
             {
+                _lstOrder = (_order.GetHoaDonFromDB().Where(x => x.SDT_KH.ToLower().Contains(tb_sdt.Text.ToLower())).ToList());
+                dtgv_show.Rows.Clear();
+                foreach (var i in _lstOrder)
+                {
+                    dtgv_show.Rows.Add(i.IDHoaDon, i.tongTien, i.ngayBan, i.trangThai == true ? "Đã thanh toán" : "Chưa thanh toán");
+                }
                 loadData();
             }
+
             else
             {
                 dtgv_show.Rows.Clear();
+                foreach (var i in _order.GetHoaDonFromDB().Where(x => x.SDT_KH.ToLower().Contains(tb_sdt.Text.ToLower())))
+                {
+                    dtgv_show.Rows.Add(i.IDHoaDon, i.tongTien, i.ngayBan, i.trangThai == true ? "Đã thanh toán" : "Chưa thanh toán");
+                    
+                }
+                loadData();
             }
+            
         }
 
         private void btn_clean_Click(object sender, EventArgs e)
