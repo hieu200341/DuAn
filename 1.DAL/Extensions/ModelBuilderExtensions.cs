@@ -52,15 +52,31 @@ namespace _1.DAL.Extensions
               );
             modelBuilder.Entity<nhanVien>().HasData(
                 new nhanVien() { IDNhanVien = 1, TenNV = "Nguyễn Văn Đạo", IDChucVu = 1, diaChi = "Tuyên Quang",SDT="0379702133", email="dao7773@gmail.com" ,tinhTrang=true, matKhau="123" },
-                 new nhanVien() { IDNhanVien = 2, TenNV = "Phạm Bá Hiếu", IDChucVu = 2, diaChi = "Hà Nội", SDT = "0379702144", email = "hieupbph20211@fpt.edu.vn", tinhTrang = true, matKhau = "123" },
-                 new nhanVien() { IDNhanVien = 2, TenNV = "Vũ Văn Quý", IDChucVu = 2, diaChi = "Hà Nội", SDT = "0379702144", email = "quyvvph26931@fpt.edu.vn", tinhTrang = true, matKhau = "123" },
-                 new nhanVien() { IDNhanVien = 2, TenNV = "Vũ Đình Hưng", IDChucVu = 2, diaChi = "Hà Nội", SDT = "0379702144", email = "hungvdph27472@fpt.edu.vn", tinhTrang = true, matKhau = "123" }
+                 new nhanVien() { IDNhanVien = 2, TenNV = "Phạm Bá Hiếu", IDChucVu = 2, diaChi = "Hà Nội", SDT = "0963147647", email = "hieupbph20211@fpt.edu.vn", tinhTrang = true, matKhau = "123" },
+                 new nhanVien() { IDNhanVien = 3, TenNV = "Vũ Văn Quý", IDChucVu = 2, diaChi = "Hà Nội", SDT = "0962611544", email = "quyvvph26931@fpt.edu.vn", tinhTrang = true, matKhau = "123" },
+                 new nhanVien() { IDNhanVien = 4, TenNV = "Vũ Đình Hưng", IDChucVu = 2, diaChi = "Hà Nội", SDT = "0314134789", email = "hungvdph27472@fpt.edu.vn", tinhTrang = true, matKhau = "123" }
                 );
             modelBuilder.Entity<sanPhamChiTiet>().HasData(
-                new sanPhamChiTiet() { IDSanPhamChiTiet = 1,maSP = "SP01", TenSP = "Lacoste", Gianhap = 1000, Giaban = 1500, Soluong = 1000, Trangthai = true, IDHangSX = 1, IDSize = 1, IDMauSac = 1, IDsanPham = 1, linkAnh="" },
-                new sanPhamChiTiet() { IDSanPhamChiTiet = 2, maSP = "SP02", TenSP = "Gucci", Gianhap = 1500, Giaban = 2000, Soluong = 1200, Trangthai = true, IDHangSX = 2, IDSize = 2, IDMauSac = 2, IDsanPham = 2, linkAnh = "" },
-                new sanPhamChiTiet() { IDSanPhamChiTiet = 3, maSP = "SP03", TenSP = "ADLV", Gianhap = 1200, Giaban = 1700, Soluong = 1300, Trangthai = true, IDHangSX = 3, IDSize = 3, IDMauSac = 3, IDsanPham = 1, linkAnh = "" },
-                new sanPhamChiTiet() { IDSanPhamChiTiet = 4, maSP = "SP04", TenSP = "Uniqlo", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" }
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 1,maSP = "SP01", TenSP = "Áo Thun Unisex", Gianhap = 1000, Giaban = 1500, Soluong = 1000, Trangthai = true, IDHangSX = 1, IDSize = 1, IDMauSac = 1, IDsanPham = 1, linkAnh="" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 2, maSP = "SP02", TenSP = "Áo Thun BAD VIBES BA VÌ ", Gianhap = 1500, Giaban = 2000, Soluong = 1200, Trangthai = true, IDHangSX = 2, IDSize = 2, IDMauSac = 2, IDsanPham = 2, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 3, maSP = "SP03", TenSP = "Áo Thun SAD BOIZ SADTAGRAM ", Gianhap = 1200, Giaban = 1700, Soluong = 1300, Trangthai = true, IDHangSX = 3, IDSize = 3, IDMauSac = 3, IDsanPham = 1, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 4, maSP = "SP04", TenSP = "Áo Thun 18 EIGHTEEN STUDIO", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 5, maSP = "SP04", TenSP = "Áo Thun UNDERBROKEN ", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 6, maSP = "SP04", TenSP = "Áo Thun WAKE MORE TO THE POINT", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 7, maSP = "SP04", TenSP = "Áo Thun SADBOIZ SAD STORY", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 8, maSP = "SP04", TenSP = "Áo Thun WAKE MORE TO THE POINT", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 9, maSP = "SP04", TenSP = "Áo Thun PHI HÀNH GIA VŨ TRỤ", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 10, maSP = "SP04", TenSP = "Áo Thun FIGHT FOR YOUR RIGHT", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 11, maSP = "SP04", TenSP = "Áo thun nữ Premium YODY", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 12, maSP = "SP04", TenSP = "Áo thun nam Premium YODY,", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 13, maSP = "SP04", TenSP = "Áo Thun MẶT CƯỜI MAY MẮN", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 14, maSP = "SP04", TenSP = "Áo Thun Tay Lỡ Form Rộng", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 15, maSP = "SP04", TenSP = "Áo Thun HECHO POR MAMA TEE ", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 16, maSP = "SP04", TenSP = "Áo Thun SAD BOIZ VIBES TOSS BLACK", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 17, maSP = "SP04", TenSP = "Áo Thun Graphic Logo Future ", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 18, maSP = "SP04", TenSP = "Áo Thun YOUNG GREEN ", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 19, maSP = "SP04", TenSP = "Áo Thun 3 Sọc Essentials", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" },
+                new sanPhamChiTiet() { IDSanPhamChiTiet = 20, maSP = "SP04", TenSP = "Áo Thun GẤU TRÚC PANDA", Gianhap = 1600, Giaban = 2100, Soluong = 1400, Trangthai = true, IDHangSX = 2, IDSize = 1, IDMauSac = 3, IDsanPham = 3, linkAnh = "" }
                 );
         }
     }
