@@ -73,8 +73,10 @@ namespace _3.GUI.View
             {
                 dtgv_show.Rows.Add(i.IDHoaDon, i.tongTien, i.ngayBan, i.trangThai == true ? "Đã thanh toán" : "Chưa thanh toán");
             }
+            lb_doanhthu.Text = x.Select(x => x.a).Distinct().Where(x => x.trangThai == true).Sum(x=>x.tongTien).ToString();
+
             lb_tonghd.Text = x.Select(x => x.a).Distinct().Where(x => x.trangThai == true).Count().ToString();
-            lb_doanhthu.Text = x.Select(x => x.a).Distinct().Sum(x => x.tongTien).ToString() ;
+            //lb_doanhthu.Text = x.Select(x => x.a).Distinct().Sum(x => x.tongTien).ToString() ;
             lb_chuathanhtoan.Text = x.Select(x => x.a).Distinct().Where(x => x.trangThai == false).Count().ToString();
             lb_khachhang.Text = x.GroupBy(x => x.b).Count().ToString();
         }
